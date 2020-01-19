@@ -14,7 +14,7 @@ from six.moves import range
 
 # Values to plug in below as needed.
 LOCAL = 'localhost'
-HOSTING = '0.0.0.0'
+HOSTING = '192.168.1.37'
 
 METADATA_EXTENSION = '.' + tuf.conf.METADATA_FORMAT
 
