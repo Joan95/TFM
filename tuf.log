@@ -565,3 +565,191 @@ open(/home/joan/Escriptori/TFM/TFM/demo/keys/timeserver.pub)
 [2020-01-19 12:15:12,105 UTC] [tuf] [DEBUG] [add_console_handler:323@log.py]
 Added a console handler.
 
+[2020-01-20 18:06:17,671 UTC] [tuf] [DEBUG] [add_console_handler:323@log.py]
+Added a console handler.
+
+[2020-01-20 18:06:17,694 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2876@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo'
+
+[2020-01-20 18:06:17,695 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2900@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged'
+
+[2020-01-20 18:06:17,695 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2913@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo/targets'
+
+[2020-01-20 18:06:17,695 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/mainroot.pub)
+
+[2020-01-20 18:06:19,309 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/maintimestamp.pub)
+
+[2020-01-20 18:06:20,942 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/mainsnapshot.pub)
+
+[2020-01-20 18:06:22,578 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/maintargets.pub)
+
+[2020-01-20 18:06:24,206 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/mainrole1.pub)
+
+[2020-01-20 18:06:25,857 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/root.der'
+
+[2020-01-20 18:06:25,862 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/root.der'
+
+[2020-01-20 18:06:25,897 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/targets.der'
+
+[2020-01-20 18:06:25,907 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/snapshot.der'
+
+[2020-01-20 18:06:25,908 UTC] [tuf.repository_lib] [WARNING] [_log_warning_if_expires_soon:767@repository_lib.py]
+u'timestamp.der' expires Tue Jan 21 18:06:17 2020 (UTC).
+0.9999074074074074 day(s) until it expires.
+
+[2020-01-20 18:06:25,914 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:25,916 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:25,924 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/directorroot.pub)
+
+[2020-01-20 18:06:27,620 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/directortimestamp.pub)
+
+[2020-01-20 18:06:29,357 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/directorsnapshot.pub)
+
+[2020-01-20 18:06:31,172 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/director.pub)
+
+[2020-01-20 18:06:32,856 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2876@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/111'
+
+[2020-01-20 18:06:32,856 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2900@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged'
+
+[2020-01-20 18:06:32,856 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2913@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/111/targets'
+
+[2020-01-20 18:06:32,859 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2876@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/112'
+
+[2020-01-20 18:06:32,859 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2900@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged'
+
+[2020-01-20 18:06:32,859 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2913@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/112/targets'
+
+[2020-01-20 18:06:32,864 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2876@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/113'
+
+[2020-01-20 18:06:32,865 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2900@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged'
+
+[2020-01-20 18:06:32,865 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2913@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/113/targets'
+
+[2020-01-20 18:06:32,870 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2876@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/democar'
+
+[2020-01-20 18:06:32,870 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2900@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged'
+
+[2020-01-20 18:06:32,870 UTC] [tuf.repository_tool] [INFO] [create_new_repository:2913@repository_tool.py]
+Creating u'/home/joan/Escriptori/TFM/TFM/director/democar/targets'
+
+[2020-01-20 18:06:32,901 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/root.der'
+
+[2020-01-20 18:06:32,906 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/root.der'
+
+[2020-01-20 18:06:32,914 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/targets.der'
+
+[2020-01-20 18:06:32,925 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/snapshot.der'
+
+[2020-01-20 18:06:32,926 UTC] [tuf.repository_lib] [WARNING] [_log_warning_if_expires_soon:767@repository_lib.py]
+u'timestamp.der' expires Tue Jan 21 18:06:32 2020 (UTC).
+1.0 day(s) until it expires.
+
+[2020-01-20 18:06:32,934 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:32,936 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:32,960 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/root.der'
+
+[2020-01-20 18:06:32,964 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/root.der'
+
+[2020-01-20 18:06:32,970 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/targets.der'
+
+[2020-01-20 18:06:32,980 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/snapshot.der'
+
+[2020-01-20 18:06:32,980 UTC] [tuf.repository_lib] [WARNING] [_log_warning_if_expires_soon:767@repository_lib.py]
+u'timestamp.der' expires Tue Jan 21 18:06:32 2020 (UTC).
+1.0 day(s) until it expires.
+
+[2020-01-20 18:06:32,988 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:32,990 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:33,011 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/root.der'
+
+[2020-01-20 18:06:33,015 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/root.der'
+
+[2020-01-20 18:06:33,020 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/targets.der'
+
+[2020-01-20 18:06:33,029 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/snapshot.der'
+
+[2020-01-20 18:06:33,030 UTC] [tuf.repository_lib] [WARNING] [_log_warning_if_expires_soon:767@repository_lib.py]
+u'timestamp.der' expires Tue Jan 21 18:06:32 2020 (UTC).
+0.999988425925926 day(s) until it expires.
+
+[2020-01-20 18:06:33,037 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:33,038 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:33,059 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/root.der'
+
+[2020-01-20 18:06:33,064 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/root.der'
+
+[2020-01-20 18:06:33,070 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/targets.der'
+
+[2020-01-20 18:06:33,079 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/snapshot.der'
+
+[2020-01-20 18:06:33,080 UTC] [tuf.repository_lib] [WARNING] [_log_warning_if_expires_soon:767@repository_lib.py]
+u'timestamp.der' expires Tue Jan 21 18:06:32 2020 (UTC).
+0.999988425925926 day(s) until it expires.
+
+[2020-01-20 18:06:33,086 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:33,089 UTC] [tuf.repository_lib] [DEBUG] [write_metadata_file:2053@repository_lib.py]
+Saving u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged/timestamp.der'
+
+[2020-01-20 18:06:34,834 UTC] [tuf.util] [DEBUG] [load_json_file:984@util.py]
+open(/home/joan/Escriptori/TFM/TFM/demo/keys/timeserver.pub)
+
