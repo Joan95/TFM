@@ -13,9 +13,8 @@ import random, string # To generate random strings for Secondary directory names
 from six.moves import range
 
 # Values to plug in below as needed.
-LOCAL = 'milax'
-HOSTING = '192.168.1.65'
-HOSTING_RASP = '0.0.0.0'
+LOCAL = 'localhost'
+HOSTING = '0.0.0.0'
 
 METADATA_EXTENSION = '.' + tuf.conf.METADATA_FORMAT
 
@@ -50,7 +49,7 @@ IMAGE_REPO_SERVICE_PORT = 30309
 TIMESERVER_HOST = HOSTING
 TIMESERVER_PORT = 30601
 
-PRIMARY_SERVER_HOST = HOSTING_RASP
+PRIMARY_SERVER_HOST = HOSTING
 PRIMARY_SERVER_DEFAULT_PORT = 30701
 PRIMARY_SERVER_AVAILABLE_PORTS = [
     30701, 30702, 30703, 30704, 30705, 30706, 30707, 30708, 30709, 30710, 30711]
