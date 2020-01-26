@@ -107,6 +107,10 @@ SUPPORTED_COMPRESSION_EXTENSIONS = ['.gz']
 # The full list of supported TUF metadata extensions.
 METADATA_EXTENSIONS = ['.json', '.der']
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+
 
 def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
                                  targets_directory, metadata_directory,
@@ -1081,11 +1085,20 @@ def import_ed25519_publickey_from_file(filepath):
     An ED25519 key object conformant to 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking format for\n\t\t\t%s' % filepath)
+  #TODO: Until here
+
   # Does 'filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
   # Raise 'tuf.FormatError' if there is a mismatch.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'ED25519 key object are saved in .json and metadata format.' + 
+	'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid')
+  #TODO: Until here
 
   # ED25519 key objects are saved in json and metadata format.  Return the
   # loaded key object in tuf.formats.ED25519KEY_SCHEMA' format that also
@@ -1100,6 +1113,9 @@ def import_ed25519_publickey_from_file(filepath):
     message = 'Invalid key type loaded: ' + repr(ed25519_key['keytype'])
     raise tuf.FormatError(message)
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Returning the key: %s' % ed25519_key)
+  #TODO: Until here
   return ed25519_key
 
 

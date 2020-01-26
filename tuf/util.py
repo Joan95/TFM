@@ -52,6 +52,11 @@ HASH_FUNCTION = 'sha256'
 # See 'log.py' to learn how logging is handled in TUF.
 logger = logging.getLogger('tuf.util')
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t--------> [tuf/util.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+
+
 
 class TempFile(object):
   """
@@ -969,11 +974,19 @@ def load_json_file(filepath):
     Deserialized object.  For example, a dictionary.
   """
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking format of: %s' % filepath)
+  #TODO: Until here
+
   # Making sure that the format of 'filepath' is a path string.
   # tuf.FormatError is raised on incorrect format.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
   deserialized_object = None
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking whether the file is mostly likely gzipped: %s' % filepath.endswith('.gz'))
+  #TODO: Until here
 
   # The file is mostly likely gzipped.
   if filepath.endswith('.gz'):
@@ -984,8 +997,17 @@ def load_json_file(filepath):
     logger.debug('open(' + str(filepath) + ')')
     fileobject = open(filepath)
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Loading %s' % fileobject)
+  #TODO: Until here
+
   try:
     deserialized_object = json.load(fileobject)
+
+    #TODO: Print to be deleted
+    print(TO_PRINT + 'Loading json: %s' % deserialized_object)
+    #TODO: Until here
+
   
   except (ValueError, TypeError):
     raise tuf.Error('Cannot deserialize to a Python object: ' + repr(filepath))

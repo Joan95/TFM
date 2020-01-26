@@ -99,6 +99,11 @@ SNAPSHOT_EXPIRATION = 604800
 # Initial 'timestamp.json' expiration time of 1 day.
 TIMESTAMP_EXPIRATION = 86400
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+
+
 try:
   tuf.keys.check_crypto_libraries(['rsa', 'ed25519', 'general'])
 
@@ -2859,18 +2864,30 @@ def create_new_repository(repository_directory, repository_name='default'):
     A 'tuf.repository_tool.Repository' object.
   """
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking format for:\n\t\t' + repository_directory)
+  #TODO: Until here
+
   # Does 'repository_directory' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
   # Raise 'tuf.FormatError' if there is a mismatch.
   tuf.formats.PATH_SCHEMA.check_match(repository_directory)
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Setting the repository, metadata (as None) and targets direcotires (as None) for:\n\t\t' + repository_directory)
+  #TODO: Until here
+
   # Set the repository, metadata, and targets directories.  These directories
   # are created if they do not exist.
   repository_directory = os.path.abspath(repository_directory)
   metadata_directory = None
   targets_directory = None
-  
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating repository:\n\t\t' + repository_directory)
+  #TODO: Until here  
+
   # Try to create 'repository_directory' if it does not exist.
   try:
     logger.info('Creating ' + repr(repository_directory))
@@ -2885,6 +2902,12 @@ def create_new_repository(repository_directory, repository_name='default'):
     else:
       raise
   
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Setting the metadata and targets direcotries:\n\t\t' + 
+	'metadata:'+ METADATA_STAGED_DIRECTORY_NAME + 
+	'\n\t\ttargets:' + TARGETS_DIRECTORY_NAME)
+  #TODO: Until here
+
   # Set the metadata and targets directories.  The metadata directory is a
   # staged one so that the "live" repository is not affected.  The
   # staged metadata changes may be moved over to "live" after all updated
@@ -2894,6 +2917,11 @@ def create_new_repository(repository_directory, repository_name='default'):
   targets_directory = \
     os.path.join(repository_directory, TARGETS_DIRECTORY_NAME) 
   
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating the metadata directory that will hold all of ' + 
+	'the metadata files, such as \'root.json\' at:\n\t\t' + metadata_directory)
+  #TODO: Until here
+
   # Try to create the metadata directory that will hold all of the metadata
   # files, such as 'root.json' and 'snapshot.json'.
   try:
@@ -2908,6 +2936,11 @@ def create_new_repository(repository_directory, repository_name='default'):
     else:
       raise
   
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating the targets directory that will hold all of ' + 
+	'the targets files at:\n\t\t' + targets_directory)
+  #TODO: Until here
+
   # Try to create the targets directory that will hold all of the target files.
   try:
     logger.info('Creating ' + repr(targets_directory))
@@ -2920,6 +2953,12 @@ def create_new_repository(repository_directory, repository_name='default'):
     else:
       raise
  
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Create the bare bones repository object, where only ' + 
+	'top-level roles have been set and contain default values ' + 
+	'(e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)')
+  #TODO: Until here
+
   # Create the bare bones repository object, where only the top-level roles
   # have been set and contain default values (e.g., Root roles has a threshold
   # of 1, expires 1 year into the future, etc.)

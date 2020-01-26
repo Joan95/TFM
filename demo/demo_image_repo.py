@@ -48,6 +48,7 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Action Perfomed: ' + ENDCOLORS + ' '
 
 repo = None
 server_process = None
@@ -62,10 +63,27 @@ def clean_slate(use_new_keys=False):
 
   # Create target files: file1.txt and infotainment_firmware.txt
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating target files:\n\t\tfile1.txt and infotainment_firmware.txt')
+  #TODO: Until here
+
+
   if os.path.exists(demo.IMAGE_REPO_TARGETS_DIR):
+    #TODO: Print to be deleted
+    print(TO_PRINT + 'Removing files:\n\t\t' + demo.IMAGE_REPO_TARGETS_DIR)
+    #TODO: Until here
+
     shutil.rmtree(demo.IMAGE_REPO_TARGETS_DIR)
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating directories:\n\t\t' + demo.IMAGE_REPO_TARGETS_DIR)
+  #TODO: Until here
+
   os.makedirs(demo.IMAGE_REPO_TARGETS_DIR)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Writing content for file1.txt and infotainment_firmware.txt')
+  #TODO: Until here
 
   fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'file1.txt'), 'w')
   fobj.write('Contents of file1.txt')
@@ -77,11 +95,19 @@ def clean_slate(use_new_keys=False):
 
   # Create repo at './repomain'
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Creating new repository at:\n\t\t' + demo.IMAGE_REPO_NAME)
+  #TODO: Until here
+
   repo = rt.create_new_repository(demo.IMAGE_REPO_NAME)
 
   print(LOG_PREFIX + 'Loading all keys')
 
   # Create keys and/or load keys into memory.
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Create keys and/or load keys into memory.\n\t\t[use_new_keys] = %s' % use_new_keys)
+  #TODO: Until here
 
   if use_new_keys:
     demo.generate_key('mainroot')
@@ -90,7 +116,16 @@ def clean_slate(use_new_keys=False):
     demo.generate_key('maintargets')
     demo.generate_key('mainrole1')
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Loading keys...')
+  #TODO: Until here
+
   key_root_pub = demo.import_public_key('mainroot')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_root_pub]\n%s' % key_root_pub)
+  #TODO: Until here
+
   key_root_pri = demo.import_private_key('mainroot')
   key_timestamp_pub = demo.import_public_key('maintimestamp')
   key_timestamp_pri = demo.import_private_key('maintimestamp')

@@ -54,6 +54,10 @@ PRIMARY_SERVER_DEFAULT_PORT = 30701
 PRIMARY_SERVER_AVAILABLE_PORTS = [
     30701, 30702, 30703, 30704, 30705, 30706, 30707, 30708, 30709, 30710, 30711]
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.YELLOW + '\t[demo/__init__.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+
 
 
 
@@ -79,6 +83,10 @@ def import_public_key(keyname):
     Key type: ed25519
     Key location: DEMO_KEYS_DIR
   """
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Calling rt.import_ed25519_publickey_from_file')
+  #TODO: Until here
+
   return rt.import_ed25519_publickey_from_file(
       os.path.join(DEMO_KEYS_DIR, keyname + '.pub'))
 
