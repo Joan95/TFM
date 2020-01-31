@@ -76,7 +76,8 @@ def clean_slate(use_new_keys=False):
 
   global repo
 
-  TO_PRINT = TO_PRINT + '[clean_slate()]'
+  global TO_PRINT
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]' + ENDCOLORS
 
   print(LOG_PREFIX + 'Initializing repository')
 
