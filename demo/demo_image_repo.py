@@ -61,11 +61,14 @@ server_process = None
 xmlrpc_service_thread = None
 
 
-def print_key(key):
+def print_key(dictionary, count=0):
 
-    for element in key.keys():
-        print(TABULATION + element + ':' + key[element])
-
+    for key in dictionary.keys():
+	if type(dictionary[key]) == dict:
+		print(TABULATION + str(' %s' % (key)))
+		print_key(dictionary[key], 1)
+	else:
+		print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
     pass
 
 
