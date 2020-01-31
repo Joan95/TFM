@@ -1209,7 +1209,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   key_object = tuf.keys.decrypt_key(encrypted_key, password)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Decrypted content of: \'' + filepath + '\': ' + key_object + TO_PRINT_END)
+  print(str('%s %s %s %s %s %s' % (TO_PRINT, 'Decrypted content of: \'', filepath, '\': ', key_object, TO_PRINT_END)))
   #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
