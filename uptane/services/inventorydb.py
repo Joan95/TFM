@@ -286,7 +286,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   (ecus_by_vin[vin]) twice.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu()]: ' + uptane.ENDCOLORS
 
   tuf.formats.BOOLEAN_SCHEMA.check_match(is_primary)
   uptane.formats.VIN_SCHEMA.check_match(vin)
@@ -339,7 +339,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
 
 def register_vehicle(vin, primary_ecu_serial=None, overwrite=True):
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_vehicle()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_vehicle()]: ' + uptane.ENDCOLORS
 
   _check_registration_is_sane(vin)
 
@@ -363,7 +363,7 @@ def register_vehicle(vin, primary_ecu_serial=None, overwrite=True):
 
 def check_vin_registered(vin):
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[check_vin_registered()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[check_vin_registered()]: ' + uptane.ENDCOLORS
 
   _check_registration_is_sane(vin)
 
@@ -387,7 +387,7 @@ def _check_registration_is_sane(vin):
   none of them if it is not.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_registration_is_sane()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_registration_is_sane()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'Checking format of vin: ' + vin)
