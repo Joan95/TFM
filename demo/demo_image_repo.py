@@ -76,39 +76,38 @@ def clean_slate(use_new_keys=False):
 
   global repo
 
-  global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
 
   print(LOG_PREFIX + 'Initializing repository')
 
   # Create target files: file1.txt and infotainment_firmware.txt
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating target files for %s' % target_files.keys())
+  print(I_TO_PRINT + 'Creating target files for %s' % target_files.keys())
   #TODO: Until here
 
 
   if os.path.exists(demo.IMAGE_REPO_TARGETS_DIR):
     #TODO: Print to be deleted
-    print(TO_PRINT + 'Removing files: ' + demo.IMAGE_REPO_TARGETS_DIR)
+    print(I_TO_PRINT + 'Removing files: ' + demo.IMAGE_REPO_TARGETS_DIR)
     #TODO: Until here
 
     shutil.rmtree(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating directories: ' + demo.IMAGE_REPO_TARGETS_DIR)
+  print(I_TO_PRINT + 'Creating directories: ' + demo.IMAGE_REPO_TARGETS_DIR)
   #TODO: Until here
 
   os.makedirs(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Writing content for: %s' % target_files.keys())
+  print(I_TO_PRINT + 'Writing content for: %s' % target_files.keys())
   #TODO: Until here
 
   for target in target_files.keys():
 
     #TODO: Print to be deleted
-    print(TO_PRINT + 'Target --> %s' % target)
+    print(I_TO_PRINT + 'Target --> %s' % target)
     #TODO: Until here
 
     fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, target), 'w')
@@ -119,7 +118,7 @@ def clean_slate(use_new_keys=False):
   # Create repo at './repomain'
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating new repository at: ' + demo.IMAGE_REPO_NAME)
+  print(I_TO_PRINT + 'Creating new repository at: ' + demo.IMAGE_REPO_NAME)
   #TODO: Until here
 
   repo = rt.create_new_repository(demo.IMAGE_REPO_NAME)
@@ -129,7 +128,7 @@ def clean_slate(use_new_keys=False):
   # Create keys and/or load keys into memory.
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Create keys and/or load keys into memory.\n\t\t[use_new_keys] = %s' % use_new_keys)
+  print(I_TO_PRINT + 'Create keys and/or load keys into memory.\n\t\t[use_new_keys] = %s' % use_new_keys)
   #TODO: Until here
 
   if use_new_keys:
@@ -140,82 +139,82 @@ def clean_slate(use_new_keys=False):
     demo.generate_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Loading keys...')
+  print(I_TO_PRINT + 'Loading keys...')
   #TODO: Until here
 
   key_root_pub = demo.import_public_key('mainroot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_root_pub]')
+  print(I_TO_PRINT + '[key_root_pub]')
   print_key(key_root_pub)
   #TODO: Until here
 
   key_root_pri = demo.import_private_key('mainroot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_root_pri]')
+  print(I_TO_PRINT + '[key_root_pri]')
   print_key(key_root_pri)
   #TODO: Until here
 
   key_timestamp_pub = demo.import_public_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pub]')
+  print(I_TO_PRINT + '[key_timestamp_pub]')
   print_key(key_timestamp_pub)
   #TODO: Until here
 
   key_timestamp_pri = demo.import_private_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pri]')
+  print(I_TO_PRINT + '[key_timestamp_pri]')
   print_key(key_timestamp_pri)
   #TODO: Until here
 
   key_snapshot_pub = demo.import_public_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pub]')
+  print(I_TO_PRINT + '[key_snapshot_pub]')
   print_key(key_snapshot_pub)
   #TODO: Until here
 
   key_snapshot_pri = demo.import_private_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pri]')
+  print(I_TO_PRINT + '[key_snapshot_pri]')
   print_key(key_snapshot_pri)
   #TODO: Until here
 
   key_targets_pub = demo.import_public_key('maintargets')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pub]')
+  print(I_TO_PRINT + '[key_targets_pub]')
   print_key(key_targets_pub)
   #TODO: Until here
 
   key_targets_pri = demo.import_private_key('maintargets')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pri]')
+  print(I_TO_PRINT + '[key_targets_pri]')
   print_key(key_targets_pri)
   #TODO: Until here
 
   key_role1_pub = demo.import_public_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_role1_pub]')
+  print(I_TO_PRINT + '[key_role1_pub]')
   print_key(key_role1_pub)
   #TODO: Until here
 
   key_role1_pri = demo.import_private_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_role1_pri]')
+  print(I_TO_PRINT + '[key_role1_pri]')
   print_key(key_role1_pri)
   #TODO: Until here
 
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Adding top level keys to the main repository')
+  print(I_TO_PRINT + 'Adding top level keys to the main repository')
   #TODO: Until here
 
   # Add top level keys to the main repository.
@@ -223,56 +222,56 @@ def clean_slate(use_new_keys=False):
   repo.root.add_verification_key(key_root_pub)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'key_root_pub')
+  print(I_TO_PRINT + 'key_root_pub')
   print_key(key_root_pub)
   #TODO: Until here
 
   repo.timestamp.add_verification_key(key_timestamp_pub)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pub]')
+  print(I_TO_PRINT + '[key_timestamp_pub]')
   print_key(key_timestamp_pub)
   #TODO: Until here
 
   repo.snapshot.add_verification_key(key_snapshot_pub)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pub]')
+  print(I_TO_PRINT + '[key_snapshot_pub]')
   print_key(key_snapshot_pub)
   #TODO: Until here
 
   repo.targets.add_verification_key(key_targets_pub)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pub]')
+  print(I_TO_PRINT + '[key_targets_pub]')
   print_key(key_targets_pub)
   #TODO: Until here
 
   repo.root.load_signing_key(key_root_pri)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_root_pri]')
+  print(I_TO_PRINT + '[key_root_pri]')
   print_key(key_root_pri)
   #TODO: Until here
 
   repo.timestamp.load_signing_key(key_timestamp_pri)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pri]')
+  print(I_TO_PRINT + '[key_timestamp_pri]')
   print_key(key_timestamp_pri)
   #TODO: Until here
 
   repo.snapshot.load_signing_key(key_snapshot_pri)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pri]')
+  print(I_TO_PRINT + '[key_snapshot_pri]')
   print_key(key_snapshot_pri)
   #TODO: Until here
 
   repo.targets.load_signing_key(key_targets_pri)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pri]')
+  print(I_TO_PRINT + '[key_targets_pri]')
   print_key(key_targets_pri)
   #TODO: Until here
 
@@ -295,7 +294,7 @@ def clean_slate(use_new_keys=False):
 
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Adding some already created targets to imagerepo')
+  print(I_TO_PRINT + 'Adding some already created targets to imagerepo')
   #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
@@ -323,8 +322,7 @@ def write_to_live():
 
   global repo
 
-  global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
 
   # Write the metadata files out to the Image Repository's 'metadata.staged'
   repo.mark_dirty(['timestamp', 'snapshot'])
@@ -367,11 +365,10 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   """
   global repo
 
-  global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format of: ' + target_fname)
+  print(I_TO_PRINT + 'Checking format of: ' + target_fname)
   #TODO: Until here
 
   tuf.formats.RELPATH_SCHEMA.check_match(target_fname)
@@ -382,7 +379,7 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   destination_filepath = os.path.join(repo_dir, 'targets', filepath_in_repo)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Copying: ' + target_fname + ' to: ' + destination_filepath)
+  print(I_TO_PRINT + 'Copying: ' + target_fname + ' to: ' + destination_filepath)
   #TODO: Until here
 
   shutil.copy(target_fname, destination_filepath)
@@ -397,11 +394,10 @@ def host():
 
   global server_process
 
-  global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Attempting to start server process...')
+  print(I_TO_PRINT + 'Attempting to start server process...')
   #TODO: Until here
 
   if server_process is not None:
@@ -409,7 +405,7 @@ def host():
     return
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Preparing to host the main repo contents')
+  print(I_TO_PRINT + 'Preparing to host the main repo contents')
   #TODO: Until here
 
   # Prepare to host the main repo contents
@@ -428,7 +424,7 @@ def host():
   server_process = subprocess.Popen(command, stderr=subprocess.PIPE)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (TO_PRINT, 'Beginning hosting the server process', TABULATION, server_process)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Beginning hosting the server process', TABULATION, server_process)))
   #TODO: Until here
 
   os.chdir(uptane.WORKING_DIR)
