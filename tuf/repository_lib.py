@@ -1099,7 +1099,7 @@ def import_ed25519_publickey_from_file(filepath):
 
   #TODO: Print to be deleted
   print(TO_PRINT + 'ED25519 key objects are saved in .json and metadata format.' +
-	'\n' + TABULATE + 'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
+        TABULATE + 'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
   #TODO: Until here
 
   # ED25519 key objects are saved in json and metadata format.  Return the

@@ -76,6 +76,8 @@ def clean_slate(use_new_keys=False):
 
   global repo
 
+  TO_PRINT = TO_PRINT + '[clean_slate()]'
+
   print(LOG_PREFIX + 'Initializing repository')
 
   # Create target files: file1.txt and infotainment_firmware.txt
