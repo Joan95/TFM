@@ -516,6 +516,13 @@ class Repository(object):
     # of TUF. (Bug results in more role writes than necessary.)
     # This code is excerpted from more recent TUF versions.
     # TODO: When merging, mind this.
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s' % (I_TO_PRINT + 'For repository:', self.repository_name, ' marking dirty roles the following ones:', roles)))
+    #TODO: Until here
+
     tuf.roledb.mark_dirty(roles, self.repository_name)
 
 
@@ -2917,8 +2924,10 @@ def create_new_repository(repository_directory, repository_name='default'):
     A 'tuf.repository_tool.Repository' object.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_new_repository()]: ' + ENDCOLORS
+
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format for: ' + repository_directory + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format for: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'repository_directory' have the correct format?
@@ -2928,7 +2937,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   tuf.formats.PATH_SCHEMA.check_match(repository_directory)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Setting the repository, metadata (as None) and targets direcotires (as None) for: ' + repository_directory + TO_PRINT_END)
+  print(I_TO_PRINT + 'Setting the repository, metadata (as None) and targets direcotires (as None) for: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Set the repository, metadata, and targets directories.  These directories
@@ -2938,7 +2947,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   targets_directory = None
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating repository: ' + repository_directory + TO_PRINT_END)
+  print(I_TO_PRINT + 'Creating repository: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Try to create 'repository_directory' if it does not exist.
@@ -2956,7 +2965,7 @@ def create_new_repository(repository_directory, repository_name='default'):
       raise
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Setting the metadata and targets directories: ' + TABULATE +
+  print(I_TO_PRINT + 'Setting the metadata and targets directories: ' + TABULATE +
 	'metadata:'+ METADATA_STAGED_DIRECTORY_NAME + TABULATE +
 	'targets:' + TARGETS_DIRECTORY_NAME + TO_PRINT_END)
   #TODO: Until here
@@ -2971,7 +2980,7 @@ def create_new_repository(repository_directory, repository_name='default'):
     os.path.join(repository_directory, TARGETS_DIRECTORY_NAME)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating the metadata directory that will hold all of ' +
+  print(I_TO_PRINT + 'Creating the metadata directory that will hold all of ' +
 	'the metadata files, such as \'root.json\' at:' + TABULATE + metadata_directory + TO_PRINT_END)
   #TODO: Until here
 
@@ -2990,7 +2999,7 @@ def create_new_repository(repository_directory, repository_name='default'):
       raise
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating the targets directory that will hold all of ' +
+  print(I_TO_PRINT + 'Creating the targets directory that will hold all of ' +
 	'the targets files at:' + TABULATE + targets_directory + TO_PRINT_END)
   #TODO: Until here
 
@@ -3007,7 +3016,7 @@ def create_new_repository(repository_directory, repository_name='default'):
       raise
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Create the bare bones repository object, where only ' +
+  print(I_TO_PRINT + 'Create the bare bones repository object, where only ' +
 	'top-level roles have been set and contain default values ' +
 	'(e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)' + TO_PRINT_END)
   #TODO: Until here
