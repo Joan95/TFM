@@ -102,6 +102,8 @@ TIMESTAMP_EXPIRATION = 86400
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TABULATE = '\n\t\t\t\t'
+TO_PRINT_END = '\n'
 
 
 try:
@@ -2865,7 +2867,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   """
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format for: ' + repository_directory)
+  print(TO_PRINT + 'Checking format for: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'repository_directory' have the correct format?
@@ -2875,7 +2877,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   tuf.formats.PATH_SCHEMA.check_match(repository_directory)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Setting the repository, metadata (as None) and targets direcotires (as None) for: ' + repository_directory)
+  print(TO_PRINT + 'Setting the repository, metadata (as None) and targets direcotires (as None) for: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Set the repository, metadata, and targets directories.  These directories
@@ -2885,7 +2887,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   targets_directory = None
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating repository: ' + repository_directory)
+  print(TO_PRINT + 'Creating repository: ' + repository_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Try to create 'repository_directory' if it does not exist.
@@ -2903,9 +2905,9 @@ def create_new_repository(repository_directory, repository_name='default'):
       raise
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Setting the metadata and targets direcotries: ' +
-	'metadata:'+ METADATA_STAGED_DIRECTORY_NAME +
-	'\n\t\ttargets:' + TARGETS_DIRECTORY_NAME)
+  print(TO_PRINT + 'Setting the metadata and targets direcotries: ' + TABULATE +
+	'metadata:'+ METADATA_STAGED_DIRECTORY_NAME + TABULATE +
+	'targets:' + TARGETS_DIRECTORY_NAME + TO_PRINT_END)
   #TODO: Until here
 
   # Set the metadata and targets directories.  The metadata directory is a
@@ -2919,7 +2921,7 @@ def create_new_repository(repository_directory, repository_name='default'):
 
   #TODO: Print to be deleted
   print(TO_PRINT + 'Creating the metadata directory that will hold all of ' +
-	'the metadata files, such as \'root.json\' at: ' + metadata_directory)
+	'the metadata files, such as \'root.json\' at:' + TABULATE + metadata_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Try to create the metadata directory that will hold all of the metadata
@@ -2938,7 +2940,7 @@ def create_new_repository(repository_directory, repository_name='default'):
 
   #TODO: Print to be deleted
   print(TO_PRINT + 'Creating the targets directory that will hold all of ' +
-	'the targets files at: ' + targets_directory)
+	'the targets files at:' + TABULATE + targets_directory + TO_PRINT_END)
   #TODO: Until here
 
   # Try to create the targets directory that will hold all of the target files.
@@ -2956,7 +2958,7 @@ def create_new_repository(repository_directory, repository_name='default'):
   #TODO: Print to be deleted
   print(TO_PRINT + 'Create the bare bones repository object, where only ' +
 	'top-level roles have been set and contain default values ' +
-	'(e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)')
+	'(e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)' + TO_PRINT_END)
   #TODO: Until here
 
   # Create the bare bones repository object, where only the top-level roles
