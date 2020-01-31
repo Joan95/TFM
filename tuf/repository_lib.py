@@ -108,6 +108,7 @@ SUPPORTED_COMPRESSION_EXTENSIONS = ['.gz']
 METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
+import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
