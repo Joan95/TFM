@@ -62,6 +62,8 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
+TABULATION = '\t\t\t\t'
 
 KNOWN_VINS = ['111', '112', '113', 'democar']
 
@@ -72,12 +74,28 @@ director_service_instance = None
 director_service_thread = None
 
 
+def print_key(dictionary, count=0):
+
+    for key in dictionary.keys():
+	if type(dictionary[key]) == dict:
+		print(TABULATION + str(' %s' % (key)))
+		print_key(dictionary[key], 1)
+	else:
+		print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
+    pass
+
+
 def clean_slate(use_new_keys=False):
 
   global director_service_instance
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
 
   director_dir = os.path.join(uptane.WORKING_DIR, 'director')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Adding: ' + director_dir + 'to os.path')
+  #TODO: Until here
 
   # Create a directory for the Director's files.
   if os.path.exists(director_dir):
@@ -89,6 +107,10 @@ def clean_slate(use_new_keys=False):
 
   print(LOG_PREFIX + 'Loading all keys')
 
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Create keys and/or load keys into memory.\n\t\t[use_new_keys] = %s' % use_new_keys)
+  #TODO: Until here
+
   if use_new_keys:
     demo.generate_key('directorroot')
     demo.generate_key('directortimestamp')
@@ -96,13 +118,61 @@ def clean_slate(use_new_keys=False):
     demo.generate_key('director') # targets
 
   key_dirroot_pub = demo.import_public_key('directorroot')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirroot_pub]')
+  print_key(key_dirroot_pub)
+  #TODO: Until here
+
   key_dirroot_pri = demo.import_private_key('directorroot')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirroot_pri]')
+  print_key(key_dirroot_pri)
+  #TODO: Until here
+
   key_dirtime_pub = demo.import_public_key('directortimestamp')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirtime_pub]')
+  print_key(key_dirtime_pub)
+  #TODO: Until here
+
   key_dirtime_pri = demo.import_private_key('directortimestamp')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirtime_pri]')
+  print_key(key_dirtime_pri)
+  #TODO: Until here
+
   key_dirsnap_pub = demo.import_public_key('directorsnapshot')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirsnap_pub]')
+  print_key(key_dirsnap_pub)
+  #TODO: Until here
+
   key_dirsnap_pri = demo.import_private_key('directorsnapshot')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirsnap_pri]')
+  print_key(key_dirsnap_pri)
+  #TODO: Until here
+
   key_dirtarg_pub = demo.import_public_key('director')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirtarg_pub]')
+  print_key(key_dirtarg_pub)
+  #TODO: Until here
+
   key_dirtarg_pri = demo.import_private_key('director')
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + '[key_dirtarg_pri]')
+  print_key(key_dirtarg_pri)
+  #TODO: Until here
+
 
 
   print(LOG_PREFIX + 'Initializing vehicle repositories')

@@ -102,6 +102,10 @@ def import_private_key(keyname):
     Key type: ed25519
     Key location: DEMO_KEYS_DIR
   """
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Calling rt.import_ed25519_privatekey_from_file' + TO_PRINT_END)
+  #TODO: Until here
+
   return rt.import_ed25519_privatekey_from_file(
       os.path.join(DEMO_KEYS_DIR, keyname), password='pw')
 
