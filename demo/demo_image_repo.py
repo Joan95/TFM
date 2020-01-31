@@ -49,6 +49,7 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Action Perfomed: ' + ENDCOLORS + ' '
+TABULATION = '\t\t\t\t'
 
 target_files = {
                     'file1.txt' : "This is the content for file1",
@@ -58,6 +59,15 @@ target_files = {
 repo = None
 server_process = None
 xmlrpc_service_thread = None
+
+
+def print_key(key):
+
+    for element in key.keys():
+        print(TABULATION + element + ':' + key[element])
+
+    pass
+
 
 def clean_slate(use_new_keys=False):
 
@@ -130,61 +140,71 @@ def clean_slate(use_new_keys=False):
   key_root_pub = demo.import_public_key('mainroot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_root_pub]\n%s' % key_root_pub)
+  print(TO_PRINT + '[key_root_pub]')
+  print_key(key_root_pub)
   #TODO: Until here
 
   key_root_pri = demo.import_private_key('mainroot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_root_pri]\n%s' % key_root_pri)
+  print(TO_PRINT + '[key_root_pri]')
+  print_key(key_root_pri)
   #TODO: Until here
 
   key_timestamp_pub = demo.import_public_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pub]\n%s' % key_timestamp_pub)
+  print(TO_PRINT + '[key_timestamp_pub]')
+  print_key(key_timestamp_pub)
   #TODO: Until here
 
   key_timestamp_pri = demo.import_private_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_timestamp_pri]\n%s' % key_timestamp_pri)
+  print(TO_PRINT + '[key_timestamp_pri]')
+  print_key(key_timestamp_pri)
   #TODO: Until here
 
   key_snapshot_pub = demo.import_public_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pub]\n%s' % key_snapshot_pub)
+  print(TO_PRINT + '[key_snapshot_pub]')
+  print_key(key_snapshot_pub)
   #TODO: Until here
 
   key_snapshot_pri = demo.import_private_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_snapshot_pri]\n%s' % key_snapshot_pri)
+  print(TO_PRINT + '[key_snapshot_pri]')
+  print_key(key_snapshot_pri)
   #TODO: Until here
 
   key_targets_pub = demo.import_public_key('maintargets')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pub]\n%s' % key_targets_pub)
+  print(TO_PRINT + '[key_targets_pub]')
+  print_key(key_targets_pub)
   #TODO: Until here
 
   key_targets_pri = demo.import_private_key('maintargets')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_targets_pri]\n%s' % key_targets_pri)
+  print(TO_PRINT + '[key_targets_pri]')
+  print_key(key_targets_pri)
   #TODO: Until here
 
   key_role1_pub = demo.import_public_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_role1_pub]\n%s' % key_role1_pub)
+  print(TO_PRINT + '[key_role1_pub]')
+  print_key(key_role1_pub)
   #TODO: Until here
 
   key_role1_pri = demo.import_private_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(TO_PRINT + '[key_role1_pri]\n%s' % key_role1_pri)
+  print(TO_PRINT + '[key_role1_pri]')
+  print_key(key_role1_pri)
   #TODO: Until here
 
 
