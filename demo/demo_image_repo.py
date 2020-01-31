@@ -48,7 +48,7 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
-TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Action Perfomed: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
 TABULATION = '\t\t\t\t'
 
 target_files = {
@@ -77,7 +77,7 @@ def clean_slate(use_new_keys=False):
   global repo
 
   global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]' + ENDCOLORS
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
 
   print(LOG_PREFIX + 'Initializing repository')
 
@@ -214,16 +214,68 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Adding top level keys to the main repository')
+  #TODO: Until here
+
   # Add top level keys to the main repository.
 
   repo.root.add_verification_key(key_root_pub)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'key_root_pub')
+  print_key(key_root_pub)
+  #TODO: Until here
+
   repo.timestamp.add_verification_key(key_timestamp_pub)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_timestamp_pub]')
+  print_key(key_timestamp_pub)
+  #TODO: Until here
+
   repo.snapshot.add_verification_key(key_snapshot_pub)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_snapshot_pub]')
+  print_key(key_snapshot_pub)
+  #TODO: Until here
+
   repo.targets.add_verification_key(key_targets_pub)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_targets_pub]')
+  print_key(key_targets_pub)
+  #TODO: Until here
+
   repo.root.load_signing_key(key_root_pri)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_root_pri]')
+  print_key(key_root_pri)
+  #TODO: Until here
+
   repo.timestamp.load_signing_key(key_timestamp_pri)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_timestamp_pri]')
+  print_key(key_timestamp_pri)
+  #TODO: Until here
+
   repo.snapshot.load_signing_key(key_snapshot_pri)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_snapshot_pri]')
+  print_key(key_snapshot_pri)
+  #TODO: Until here
+
   repo.targets.load_signing_key(key_targets_pri)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_targets_pri]')
+  print_key(key_targets_pri)
+  #TODO: Until here
+
 
 
   # Perform delegation from Image Repo's targets role to Image Repo's role1
@@ -241,6 +293,10 @@ def clean_slate(use_new_keys=False):
   # Add delegated role keys to repo
   # repo.targets('role1').load_signing_key(key_role1_pri)
 
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Adding some already created targets to imagerepo')
+  #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
   add_target_to_imagerepo('demo/images/INFO1.0.txt', 'INFO1.0.txt')
@@ -267,9 +323,14 @@ def write_to_live():
 
   global repo
 
+  global TO_PRINT
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
+
   # Write the metadata files out to the Image Repository's 'metadata.staged'
   repo.mark_dirty(['timestamp', 'snapshot'])
   repo.write() # will be writeall() in most recent TUF branch
+
+
 
   # Move staged metadata (from the write above) to live metadata directory.
 
@@ -306,12 +367,23 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   """
   global repo
 
+  global TO_PRINT
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking format of: ' + target_fname)
+  #TODO: Until here
+
   tuf.formats.RELPATH_SCHEMA.check_match(target_fname)
 
 
   print(LOG_PREFIX + 'Copying target file into place.')
   repo_dir = repo._repository_directory
   destination_filepath = os.path.join(repo_dir, 'targets', filepath_in_repo)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Copying :' + target_fname + ' to: ' + destination_filepath)
+  #TODO: Until here
 
   shutil.copy(target_fname, destination_filepath)
 
@@ -324,6 +396,9 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
 def host():
 
   global server_process
+
+  global TO_PRINT
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
 
   if server_process is not None:
     print(LOG_PREFIX + 'Sorry: there is already a server process running.')
@@ -389,6 +464,9 @@ def listen():
   """
 
   global xmlrpc_service_thread
+
+  global TO_PRINT
+  TO_PRINT = TO_PRINT + uptane.YELLOW + '[listen()]: ' + ENDCOLORS
 
   if xmlrpc_service_thread is not None:
     print(LOG_PREFIX + 'Sorry: there is already a listening Image Repository '
