@@ -180,7 +180,7 @@ class Repository(object):
     tuf.formats.PATH_SCHEMA.check_match(metadata_directory)
     tuf.formats.PATH_SCHEMA.check_match(targets_directory)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
