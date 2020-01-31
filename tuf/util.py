@@ -54,7 +54,7 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
 TO_PRINT_END = '\n'
 
 
@@ -986,7 +986,7 @@ def load_json_file(filepath):
   deserialized_object = None
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking whether the file is mostly likely gzipped: ' + filepath.endswith('.gz') + TO_PRINT_END)
+  print(str('%s %s %s %s' % (TO_PRINT, 'Checking whether the file is mostly likely gzipped: ', filepath.endswith('.gz'), TO_PRINT_END))
   #TODO: Until here
 
   # The file is mostly likely gzipped.
