@@ -382,7 +382,7 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   destination_filepath = os.path.join(repo_dir, 'targets', filepath_in_repo)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Copying :' + target_fname + ' to: ' + destination_filepath)
+  print(TO_PRINT + 'Copying: ' + target_fname + ' to: ' + destination_filepath)
   #TODO: Until here
 
   shutil.copy(target_fname, destination_filepath)
@@ -400,9 +400,17 @@ def host():
   global TO_PRINT
   TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Attempting to start server process...')
+  #TODO: Until here
+
   if server_process is not None:
     print(LOG_PREFIX + 'Sorry: there is already a server process running.')
     return
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Preparing to host the main repo contents')
+  #TODO: Until here
 
   # Prepare to host the main repo contents
 
@@ -418,6 +426,10 @@ def host():
   # Begin hosting Image Repository.
 
   server_process = subprocess.Popen(command, stderr=subprocess.PIPE)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (TO_PRINT, 'Beginning hosting the server process', TABULATION, server_process)))
+  #TODO: Until here
 
   os.chdir(uptane.WORKING_DIR)
 
