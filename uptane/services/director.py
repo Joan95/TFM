@@ -54,7 +54,7 @@ log.addHandler(uptane.console_handler)
 log.setLevel(uptane.logging.DEBUG)
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
-TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/director.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/director.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATION = '\t\t\t\t'
 
 class Director:
@@ -99,7 +99,7 @@ class Director:
     """
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.__init__]: ' + ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for director_repos_dir: ', director_repos_dir)))
@@ -187,9 +187,30 @@ class Director:
       uptane.FormatError or tuf.FormatError
         if the arguments do not fit the correct format.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_serial()]: ' + ENDCOLORS
+
     uptane.formats.VIN_SCHEMA.check_match(vin)
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Checking format of: ' + vin)
+    #TODO: Until here
+
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Checking format of: ' + ecu_serial)
+    #TODO: Until here
+
     tuf.formats.ANYKEY_SCHEMA.check_match(ecu_key)
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Checking format of: ' + ecu_key)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Checking whether vin: \'' + vin + '\' has been registered previously')
+    #TODO: Until here
 
     inventory.check_vin_registered(vin)
 

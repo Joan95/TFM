@@ -100,7 +100,6 @@ SNAPSHOT_EXPIRATION = 604800
 TIMESTAMP_EXPIRATION = 86400
 
 # TODO: To be deleted
-import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
