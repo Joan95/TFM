@@ -1099,7 +1099,7 @@ def import_ed25519_publickey_from_file(filepath):
 
   #TODO: Print to be deleted
   print(TO_PRINT + 'ED25519 key object are saved in .json and metadata format.' +
-	'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
+	'\n' + TABULATE + 'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
   #TODO: Until here
 
   # ED25519 key objects are saved in json and metadata format.  Return the
@@ -1163,6 +1163,10 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     An ed25519 key object of the form: 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking format for' + TABULATE + filepath + TABULATE + 'Password?' + password + TO_PRINT_END)
+  #TODO: Until here
+
   # Does 'filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -1176,6 +1180,10 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     message = 'Enter a password for the encrypted ED25519 key: '
     password = _get_password(message, confirm=False)
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Checking password: \'' + password + '\' have the correct format' + TO_PRINT_END)
+  #TODO: Until here
+
   # Does 'password' have the correct format?
   tuf.formats.PASSWORD_SCHEMA.check_match(password)
 
@@ -1183,14 +1191,26 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   # routine.
   encrypted_key = None
 
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Store the encrypted contents of \'' + filepath +'\' prior to calling the decryption routine' + TO_PRINT_END)
+  #TODO: Until here
+
   with open(filepath, 'rb') as file_object:
     encrypted_key = file_object.read()
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Encrypted content of: \'' + filepath + '\': ' + encrypted_key + TO_PRINT_END)
+  #TODO: Until here
 
   # Decrypt the loaded key file, calling the appropriate cryptography library
   # (i.e., set by the user) and generating the derived encryption key from
   # 'password'.  Raise 'tuf.CryptoError' or 'tuf.UnsupportedLibraryError' if the
   # decryption fails.
   key_object = tuf.keys.decrypt_key(encrypted_key, password)
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Decrypted content of: \'' + filepath + '\': ' + key_object + TO_PRINT_END)
+  #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
   if key_object['keytype'] != 'ed25519':
