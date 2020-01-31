@@ -56,7 +56,9 @@ PRIMARY_SERVER_AVAILABLE_PORTS = [
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW + '\t[demo/__init__.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t-------->[demo/__init__.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TABULATION = '\t\t\t\t'
+TO_PRINT_END = '\n'
 
 
 
@@ -84,7 +86,7 @@ def import_public_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Calling rt.import_ed25519_publickey_from_file')
+  print(TO_PRINT + 'Calling rt.import_ed25519_publickey_from_file' + TO_PRINT_END)
   #TODO: Until here
 
   return rt.import_ed25519_publickey_from_file(

@@ -54,7 +54,8 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/util.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT_END = '\n'
 
 
 
@@ -73,7 +74,7 @@ class TempFile(object):
     """__init__ helper."""
     try:
       self.temporary_file = tempfile.NamedTemporaryFile(prefix=prefix)
-    
+
     except OSError as err: # pragma: no cover
       logger.critical('Cannot create a system temporary directory: '+repr(err))
       raise tuf.Error(err)
@@ -97,7 +98,7 @@ class TempFile(object):
     """
 
     self._compression = None
-    
+
     # If compression is set then the original file is saved in 'self._orig_file'.
     self._orig_file = None
     temp_dir = tuf.conf.temporary_directory
@@ -109,7 +110,7 @@ class TempFile(object):
         logger.error('Temp file in ' + temp_dir + ' failed: '+repr(err))
         logger.error('Will attempt to use system default temp dir.')
         self._default_temporary_directory(prefix)
-    
+
     else:
       self._default_temporary_directory(prefix)
 
@@ -181,13 +182,13 @@ class TempFile(object):
       self.temporary_file.seek(0)
       data = self.temporary_file.read()
       self.temporary_file.seek(0)
-      
+
       return data
-    
+
     else:
       if not (isinstance(size, int) and size > 0):
         raise tuf.FormatError
-      
+
       return self.temporary_file.read(size)
 
 
@@ -242,7 +243,7 @@ class TempFile(object):
     destination_file = open(destination_path, 'wb')
     shutil.copyfileobj(self.temporary_file, destination_file)
     destination_file.close()
-    
+
     # 'self.close()' closes temporary file which destroys itself.
     self.close_temp_file()
 
@@ -315,7 +316,7 @@ class TempFile(object):
     # Does 'compression' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
     tuf.formats.NAME_SCHEMA.check_match(compression)
-    
+
     if self._orig_file is not None:
       raise tuf.Error('Can only set compression on a TempFile once.')
 
@@ -331,8 +332,8 @@ class TempFile(object):
       uncompressed_content = gzip_file_object.read()
       self.temporary_file = tempfile.NamedTemporaryFile()
       self.temporary_file.write(uncompressed_content)
-      self.flush() 
-    
+      self.flush()
+
     except Exception as exception:
       raise tuf.DecompressionError(exception)
 
@@ -388,12 +389,12 @@ def get_file_details(filepath, hash_algorithms=['sha256']):
   <Exceptions>
     tuf.FormatError: If hash of the file does not match HASHDICT_SCHEMA.
 
-    tuf.Error: If 'filepath' does not exist. 
+    tuf.Error: If 'filepath' does not exist.
 
   <Returns>
     A tuple (length, hashes) describing 'filepath'.
   """
-  
+
   # Making sure that the format of 'filepath' is a path string.
   # 'tuf.FormatError' is raised on incorrect format.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
@@ -502,7 +503,7 @@ def file_in_confined_directories(filepath, confined_directories):
     # 'confined_directories'.
     filepath = os.path.normpath(filepath)
     confined_directory = os.path.normpath(confined_directory)
-    
+
     # A TUF client may restrict himself to specific directories on the
     # remote repository.  The list of paths in 'confined_path', not including
     # each path's subdirectories, are the only directories the client will
@@ -553,12 +554,12 @@ def find_delegated_role(roles, delegated_role):
   for index in six.moves.xrange(len(roles)):
     role = roles[index]
     name = role.get('name')
-    
+
     # This role has no name.
     if name is None:
       no_name_message = 'Role with no name.'
       raise tuf.RepositoryError(no_name_message)
-    
+
     # Does this role have the same name?
     else:
       # This role has the same name, and...
@@ -566,12 +567,12 @@ def find_delegated_role(roles, delegated_role):
         # ...it is the only known role with the same name.
         if role_index is None:
           role_index = index
-        
+
         # ...there are at least two roles with the same name.
         else:
           duplicate_role_message = 'Duplicate role (' + str(delegated_role) + ').'
           raise tuf.RepositoryError(duplicate_role_message)
-      
+
       # This role has a different name.
       else:
         logger.debug('Skipping delegated role: ' + repr(delegated_role))
@@ -588,11 +589,11 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
   <Purpose>
     Ensure that the list of targets specified by 'rolename' are allowed; this is
     determined by inspecting the 'delegations' field of the parent role
-    of 'rolename'.  If a target specified by 'rolename' is not found in the 
+    of 'rolename'.  If a target specified by 'rolename' is not found in the
     delegations field of 'metadata_object_of_parent', raise an exception.  The
     top-level role 'targets' is allowed to list any target file, so this
     function does not raise an exception if 'rolename' is 'targets'.
- 
+
     Targets allowed are either exlicitly listed under the 'paths' field, or
     match one of the patterns (i.e., Unix shell-style wildcards) listed there.
     A parent role may delegate trust to all files under a particular directory,
@@ -602,7 +603,7 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
     hash prefix must be delegated by the parent role).
 
     TODO: Should the TUF spec restrict the repository to one particular
-    algorithm when calcutating path hash prefixes (currently restricted to 
+    algorithm when calcutating path hash prefixes (currently restricted to
     SHA256)?  Should we allow the repository to specify in the role dictionary
     the algorithm used for these generated hashed paths?
 
@@ -617,10 +618,10 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
       metadata.  'list_of_targets' are target paths relative to the targets
       directory of the repository.  The delegations of the parent role are
       checked to verify that the targets of 'list_of_targets' are valid.
-    
+
     parent_delegations:
       The parent delegations of 'rolename'.  The metadata object stores
-      the allowed paths and path hash prefixes of child delegations in its 
+      the allowed paths and path hash prefixes of child delegations in its
       'delegations' attribute.
 
   <Exceptions>
@@ -641,7 +642,7 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
   <Returns>
     None.
   """
-  
+
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -649,12 +650,12 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
   tuf.formats.ROLENAME_SCHEMA.check_match(rolename)
   tuf.formats.RELPATHS_SCHEMA.check_match(list_of_targets)
   tuf.formats.DELEGATIONS_SCHEMA.check_match(parent_delegations)
-  
+
   # Return if 'rolename' is 'targets'.  'targets' is not a delegated role.  Any
   # target file listed in 'targets' is allowed.
   if rolename == 'targets':
     return
-  
+
   # The allowed targets of delegated roles are stored in the parent's metadata
   # file.  Iterate 'list_of_targets' and confirm they are trusted, or their root
   # parent directory exists in the role delegated paths, or path hash prefixes,
@@ -667,14 +668,14 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
   # the parent's 'paths', or trusted path hash prefixes from the parent's
   # 'path_hash_prefixes'.
   if role_index is not None:
-    role = roles[role_index] 
+    role = roles[role_index]
     allowed_child_paths = role.get('paths')
     allowed_child_path_hash_prefixes = role.get('path_hash_prefixes')
-    actual_child_targets = list_of_targets 
+    actual_child_targets = list_of_targets
 
     if allowed_child_path_hash_prefixes is not None:
       consistent = paths_are_consistent_with_hash_prefixes
-      
+
       # 'actual_child_targets' (i.e., 'list_of_targets') should have length
       # greater than zero due to the tuf.format check above.
       if not consistent(actual_child_targets,
@@ -682,21 +683,21 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
         message =  repr(rolename) + ' specifies a target that does not' + \
           ' have a path hash prefix listed in its parent role.'
         raise tuf.ForbiddenTargetError(message)
-    
-    elif allowed_child_paths is not None: 
+
+    elif allowed_child_paths is not None:
       # Check that each delegated target is either explicitly listed or a parent
       # directory is found under role['paths'], otherwise raise an exception.
       # If the parent role explicitly lists target file paths in 'paths',
       # this loop will run in O(n^2), the worst-case.  The repository
       # maintainer will likely delegate entire directories, and opt for
-      # explicit file paths if the targets in a directory are delegated to 
+      # explicit file paths if the targets in a directory are delegated to
       # different roles/developers.
       for child_target in actual_child_targets:
         for allowed_child_path in allowed_child_paths:
           if fnmatch.fnmatch(child_target, allowed_child_path):
             break
-        
-        else: 
+
+        else:
           raise tuf.ForbiddenTargetError('Role '+repr(rolename)+' specifies'+\
                                          ' target '+repr(child_target)+','+\
                                          ' which is not an allowed path'+\
@@ -745,7 +746,7 @@ def paths_are_consistent_with_hash_prefixes(paths, path_hash_prefixes):
     A Boolean indicating whether or not the paths are consistent with the
     hash prefix.
   """
-  
+
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -761,7 +762,7 @@ def paths_are_consistent_with_hash_prefixes(paths, path_hash_prefixes):
   # have lengths greater than zero.
   for path in paths:
     path_hash = get_target_hash(path)
-    
+
     # Assume that every path is inconsistent until proven otherwise.
     consistent = False
 
@@ -786,10 +787,10 @@ def get_target_hash(target_filepath):
     Compute the hash of 'target_filepath'. This is useful in conjunction with
     the "path_hash_prefixes" attribute in a delegated targets role, which
     tells us which paths it is implicitly responsible for.
-    
+
     The repository may optionally organize targets into hashed bins to ease
     target delegations and role metadata management.  The use of consistent
-    hashing allows for a uniform distribution of targets into bins. 
+    hashing allows for a uniform distribution of targets into bins.
 
   <Arguments>
     target_filepath:
@@ -798,27 +799,27 @@ def get_target_hash(target_filepath):
 
   <Exceptions>
     None.
- 
+
   <Side Effects>
     None.
-  
+
   <Returns>
     The hash of 'target_filepath'.
   """
-  
+
   # Does 'target_filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
   # Raise 'tuf.FormatError' if there is a mismatch.
   tuf.formats.RELPATH_SCHEMA.check_match(target_filepath)
 
-  # Calculate the hash of the filepath to determine which bin to find the 
+  # Calculate the hash of the filepath to determine which bin to find the
   # target.  The client currently assumes the repository uses
   # 'HASH_FUNCTION' to generate hashes and 'utf-8'.
   digest_object = tuf.hash.digest(HASH_FUNCTION)
   encoded_target_filepath = target_filepath.encode('utf-8')
   digest_object.update(encoded_target_filepath)
-  target_filepath_hash = digest_object.hexdigest() 
+  target_filepath_hash = digest_object.hexdigest()
 
   return target_filepath_hash
 
@@ -852,16 +853,16 @@ def import_json():
 
   if _json_module is not None:
     return _json_module
-  
+
   else:
     try:
       module = __import__('json')
-   
+
     # The 'json' module is available in Python > 2.6, and thus this exception
     # should not occur in all supported Python installations (> 2.6) of TUF.
     except ImportError: #pragma: no cover
       raise ImportError('Could not import the json module')
-    
+
     else:
       _json_module = module
       return module
@@ -878,7 +879,7 @@ def load_json_string(data):
   <Arguments>
     data:
       A JSON string.
-  
+
   <Exceptions>
     tuf.Error, if 'data' cannot be deserialized to a Python object.
 
@@ -890,7 +891,7 @@ def load_json_string(data):
   """
 
   deserialized_object = None
-  
+
   try:
     deserialized_object = json.loads(data)
 
@@ -901,9 +902,9 @@ def load_json_string(data):
   except ValueError:
     message = 'Cannot deserialize to a Python object: ' + repr(data)
     raise tuf.Error(message)
-  
+
   else:
-    return deserialized_object    
+    return deserialized_object
 
 
 
@@ -975,7 +976,7 @@ def load_json_file(filepath):
   """
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format of: %s' % filepath)
+  print(TO_PRINT + 'Checking format of: ' + filepath + TO_PRINT_END)
   #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
@@ -985,38 +986,38 @@ def load_json_file(filepath):
   deserialized_object = None
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking whether the file is mostly likely gzipped: %s' % filepath.endswith('.gz'))
+  print(TO_PRINT + 'Checking whether the file is mostly likely gzipped: ' + filepath.endswith('.gz') + TO_PRINT_END)
   #TODO: Until here
 
   # The file is mostly likely gzipped.
   if filepath.endswith('.gz'):
     logger.debug('gzip.open(' + str(filepath) + ')')
     fileobject = six.StringIO(gzip.open(filepath).read().decode('utf-8'))
-  
+
   else:
     logger.debug('open(' + str(filepath) + ')')
     fileobject = open(filepath)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Loading %s' % fileobject)
+  print(TO_PRINT + 'Loading: ' + fileobject + TO_PRINT_END)
   #TODO: Until here
 
   try:
     deserialized_object = json.load(fileobject)
 
     #TODO: Print to be deleted
-    print(TO_PRINT + 'Loading json: %s' % deserialized_object)
+    print(TO_PRINT + 'Loading json: ' + deserialized_object + TO_PRINT_END)
     #TODO: Until here
 
-  
+
   except (ValueError, TypeError):
     raise tuf.Error('Cannot deserialize to a Python object: ' + repr(filepath))
 
-  
+
   else:
-    fileobject.close() 
+    fileobject.close()
     return deserialized_object
-  
+
   finally:
     fileobject.close()
 
@@ -1174,7 +1175,7 @@ def digests_are_equal(digest1, digest2):
   <Return>
     Return True if 'digest1' is equal to 'digest2', False otherwise.
   """
-  
+
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
   # Raise 'tuf.FormatError' if there is a mismatch.
@@ -1185,7 +1186,7 @@ def digests_are_equal(digest1, digest2):
     return False
 
   are_equal = True
-  
+
   for element in range(len(digest1)):
     if digest1[element] != digest2[element]:
       are_equal = False
