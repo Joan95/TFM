@@ -180,7 +180,7 @@ class Repository(object):
     tuf.formats.PATH_SCHEMA.check_match(metadata_directory)
     tuf.formats.PATH_SCHEMA.check_match(targets_directory)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
@@ -1469,8 +1469,18 @@ class Root(Metadata):
 
     super(Root, self).__init__()
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__]: ' + uptane.ENDCOLORS
+
     self._rolename = 'root'
     self._repository_name = repository_name
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._rolename: ', self._rolename)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._repository_name: ', self._repository_name)))
+    #TODO: Until here
 
     # By default, 'snapshot' metadata is set to expire 1 week from the current
     # time.  The expiration may be modified.
