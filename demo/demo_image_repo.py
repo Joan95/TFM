@@ -50,10 +50,14 @@ uptane.DEMO_MODE = True
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Action Perfomed: ' + ENDCOLORS + ' '
 
+target_files = {
+                    'file1.txt' : "This is the content for file1",
+                    'infotainment_firmware.txt': "This is the content for infotainment_firmware"
+                }
+
 repo = None
 server_process = None
 xmlrpc_service_thread = None
-
 
 def clean_slate(use_new_keys=False):
 
@@ -64,7 +68,7 @@ def clean_slate(use_new_keys=False):
   # Create target files: file1.txt and infotainment_firmware.txt
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating target files:\n\t\tfile1.txt and infotainment_firmware.txt')
+  print(TO_PRINT + 'Creating target files for %s' % target_files.keys())
   #TODO: Until here
 
 
@@ -82,15 +86,13 @@ def clean_slate(use_new_keys=False):
   os.makedirs(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Writing content for file1.txt and infotainment_firmware.txt')
+  print(TO_PRINT + 'Writing content for %s' % target_files.keys())
   #TODO: Until here
 
-  fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'file1.txt'), 'w')
-  fobj.write('Contents of file1.txt')
-  fobj.close()
-  fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'infotainment_firmware.txt'), 'w')
-  fobj.write('Contents of infotainment_firmware.txt')
-  fobj.close()
+  for target in target_files.keys():
+    fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, target), 'w')
+    fobj.write(target_files[target])
+    fobj.close()
 
 
   # Create repo at './repomain'
