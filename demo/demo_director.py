@@ -120,56 +120,56 @@ def clean_slate(use_new_keys=False):
   key_dirroot_pub = demo.import_public_key('directorroot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirroot_pub]')
+  print(I_TO_PRINT + 'imported [key_dirroot_pub]')
   print_key(key_dirroot_pub)
   #TODO: Until here
 
   key_dirroot_pri = demo.import_private_key('directorroot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirroot_pri]')
+  print(I_TO_PRINT + 'imported [key_dirroot_pri]')
   print_key(key_dirroot_pri)
   #TODO: Until here
 
   key_dirtime_pub = demo.import_public_key('directortimestamp')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirtime_pub]')
+  print(I_TO_PRINT + 'imported [key_dirtime_pub]')
   print_key(key_dirtime_pub)
   #TODO: Until here
 
   key_dirtime_pri = demo.import_private_key('directortimestamp')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirtime_pri]')
+  print(I_TO_PRINT + 'imported [key_dirtime_pri]')
   print_key(key_dirtime_pri)
   #TODO: Until here
 
   key_dirsnap_pub = demo.import_public_key('directorsnapshot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirsnap_pub]')
+  print(I_TO_PRINT + 'imported [key_dirsnap_pub]')
   print_key(key_dirsnap_pub)
   #TODO: Until here
 
   key_dirsnap_pri = demo.import_private_key('directorsnapshot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirsnap_pri]')
+  print(I_TO_PRINT + 'imported [key_dirsnap_pri]')
   print_key(key_dirsnap_pri)
   #TODO: Until here
 
   key_dirtarg_pub = demo.import_public_key('director')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirtarg_pub]')
+  print(I_TO_PRINT + 'imported [key_dirtarg_pub]')
   print_key(key_dirtarg_pub)
   #TODO: Until here
 
   key_dirtarg_pri = demo.import_private_key('director')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_dirtarg_pri]')
+  print(I_TO_PRINT + 'imported [key_dirtarg_pri]')
   print_key(key_dirtarg_pri)
   #TODO: Until here
 
