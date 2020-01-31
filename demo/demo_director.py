@@ -193,18 +193,6 @@ def clean_slate(use_new_keys=False):
       key_targets_pri=key_dirtarg_pri,
       key_targets_pub=key_dirtarg_pub)
 
-  #TODO: Print to be deleted
-  print(str('DIRECTOR INSTANCE\ndirector_repos_dir: %s\nkey_root_pri: %s\n%s\n%s\n%s\n%s\n%s\n%s\n%s'
-        %  (director_service_instance.director_repos_dir,
-            director_service_instance.key_root_pri,
-            director_service_instance.key_root_pub,
-            director_service_instance.key_timestamp_pri,
-            director_service_instance.key_timestamp_pub,
-            director_service_instance.key_snapshot_pri,
-            director_service_instance.key_snapshot_pub,
-            director_service_instance.key_targets_pri,
-            director_service_instance.key_targets_pub)))
-  #TODO: Until here
 
   for vin in KNOWN_VINS:
     #TODO: Print to be deleted

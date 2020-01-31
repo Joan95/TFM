@@ -53,7 +53,9 @@ log.addHandler(uptane.file_handler)
 log.addHandler(uptane.console_handler)
 log.setLevel(uptane.logging.DEBUG)
 
-
+LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/director.py]\t>>Function: ' + ENDCOLORS + ' '
+TABULATION = '\t\t\t\t'
 
 class Director:
   """
@@ -97,7 +99,50 @@ class Director:
     """
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for director_repos_dir: ' + director_repos_dir)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_root_pri: ' + key_root_pri)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_root_pub: ' + key_root_pub)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_timestamp_pri: ' + key_timestamp_pri)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_timestamp_pub: ' + key_timestamp_pub)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_snapshot_pri: ' + key_snapshot_pri)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_snapshot_pub: ' + key_snapshot_pub)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_targets_pri: ' + key_targets_pri)
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Value for key_targets_pub: ' + key_targets_pub)
+    #TODO: Until here
+
+
     tuf.formats.RELPATH_SCHEMA.check_match(director_repos_dir)
+
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Checking format of: ' + director_repos_dir)
+    #TODO: Until here
 
     for key in [
         key_root_pri, key_root_pub, key_timestamp_pri, key_timestamp_pub,
