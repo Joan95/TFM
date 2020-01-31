@@ -74,22 +74,27 @@ def clean_slate(use_new_keys=False):
 
   if os.path.exists(demo.IMAGE_REPO_TARGETS_DIR):
     #TODO: Print to be deleted
-    print(TO_PRINT + 'Removing files:\n\t\t' + demo.IMAGE_REPO_TARGETS_DIR)
+    print(TO_PRINT + 'Removing files: ' + demo.IMAGE_REPO_TARGETS_DIR)
     #TODO: Until here
 
     shutil.rmtree(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating directories:\n\t\t' + demo.IMAGE_REPO_TARGETS_DIR)
+  print(TO_PRINT + 'Creating directories: ' + demo.IMAGE_REPO_TARGETS_DIR)
   #TODO: Until here
 
   os.makedirs(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Writing content for %s' % target_files.keys())
+  print(TO_PRINT + 'Writing content for: %s' % target_files.keys())
   #TODO: Until here
 
   for target in target_files.keys():
+
+    #TODO: Print to be deleted
+    print(TO_PRINT + 'Target --> %s' % target)
+    #TODO: Until here
+
     fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, target), 'w')
     fobj.write(target_files[target])
     fobj.close()
@@ -98,7 +103,7 @@ def clean_slate(use_new_keys=False):
   # Create repo at './repomain'
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Creating new repository at:\n\t\t' + demo.IMAGE_REPO_NAME)
+  print(TO_PRINT + 'Creating new repository at: ' + demo.IMAGE_REPO_NAME)
   #TODO: Until here
 
   repo = rt.create_new_repository(demo.IMAGE_REPO_NAME)

@@ -2905,7 +2905,7 @@ def create_new_repository(repository_directory, repository_name='default'):
       raise
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Setting the metadata and targets direcotries: ' + TABULATE +
+  print(TO_PRINT + 'Setting the metadata and targets directories: ' + TABULATE +
 	'metadata:'+ METADATA_STAGED_DIRECTORY_NAME + TABULATE +
 	'targets:' + TARGETS_DIRECTORY_NAME + TO_PRINT_END)
   #TODO: Until here
