@@ -101,7 +101,7 @@ TIMESTAMP_EXPIRATION = 86400
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -180,6 +180,24 @@ class Repository(object):
     tuf.formats.PATH_SCHEMA.check_match(metadata_directory)
     tuf.formats.PATH_SCHEMA.check_match(targets_directory)
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[__init__]: ' + ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for metadata_directory: ', metadata_directory)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for targets_directory: ', targets_directory)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_name: ', repository_name)))
+    #TODO: Until here
+
     self._repository_directory = repository_directory
     self._metadata_directory = metadata_directory
     self._targets_directory = targets_directory
@@ -189,12 +207,35 @@ class Repository(object):
       tuf.roledb.create_roledb(self.repository_name)
       tuf.keydb.create_keydb(self.repository_name)
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Setting the top-level roles')))
+    #TODO: Until here
+
     # Set the top-level role objects.
     self.root = Root(repository_name=self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self.root: ', self.root)))
+    #TODO: Until here
+
     self.snapshot = Snapshot(repository_name=self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self.snapshot: ', self.snapshot)))
+    #TODO: Until here
+
     self.timestamp = Timestamp(repository_name=self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self.timestamp: ', self.timestamp)))
+    #TODO: Until here
+
     self.targets = Targets(self._targets_directory, 'targets',
         repository_name=self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self.targets: ', self.targets)))
+    #TODO: Until here
 
 
 
