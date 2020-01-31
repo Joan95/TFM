@@ -54,7 +54,7 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TO_PRINT_END = '\n'
 
 
@@ -975,8 +975,10 @@ def load_json_file(filepath):
     Deserialized object.  For example, a dictionary.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file()]: ' + uptane.ENDCOLORS
+
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format of: ' + filepath + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format of: ' + filepath + TO_PRINT_END)
   #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
@@ -986,7 +988,7 @@ def load_json_file(filepath):
   deserialized_object = None
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (TO_PRINT, 'Checking whether the file is mostly likely gzipped:', filepath.endswith('.gz'), TO_PRINT_END)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking whether the file is mostly likely gzipped:', filepath.endswith('.gz'), TO_PRINT_END)))
   #TODO: Until here
 
   # The file is mostly likely gzipped.
@@ -999,14 +1001,14 @@ def load_json_file(filepath):
     fileobject = open(filepath)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (TO_PRINT, 'Loading:', fileobject, TO_PRINT_END)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Loading:', fileobject, TO_PRINT_END)))
   #TODO: Until here
 
   try:
     deserialized_object = json.load(fileobject)
 
     #TODO: Print to be deleted
-    print(str('%s %s %s %s' % (TO_PRINT, 'Loading json:', deserialized_object, TO_PRINT_END)))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Loading json:', deserialized_object, TO_PRINT_END)))
     #TODO: Until here
 
 
