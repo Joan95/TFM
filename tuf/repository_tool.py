@@ -520,7 +520,7 @@ class Repository(object):
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s' % (I_TO_PRINT + 'For repository:', self.repository_name, ' marking dirty roles the following ones:', roles)))
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'For repository:', self.repository_name, ' marking dirty roles the following ones:', roles)))
     #TODO: Until here
 
     tuf.roledb.mark_dirty(roles, self.repository_name)
