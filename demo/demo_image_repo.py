@@ -127,14 +127,58 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
   key_root_pri = demo.import_private_key('mainroot')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_root_pri]\n%s' % key_root_pri)
+  #TODO: Until here
+
   key_timestamp_pub = demo.import_public_key('maintimestamp')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_timestamp_pub]\n%s' % key_timestamp_pub)
+  #TODO: Until here
+
   key_timestamp_pri = demo.import_private_key('maintimestamp')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_timestamp_pri]\n%s' % key_timestamp_pri)
+  #TODO: Until here
+
   key_snapshot_pub = demo.import_public_key('mainsnapshot')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_snapshot_pub]\n%s' % key_snapshot_pub)
+  #TODO: Until here
+
   key_snapshot_pri = demo.import_private_key('mainsnapshot')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_snapshot_pri]\n%s' % key_snapshot_pri)
+  #TODO: Until here
+
   key_targets_pub = demo.import_public_key('maintargets')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_targets_pub]\n%s' % key_targets_pub)
+  #TODO: Until here
+
   key_targets_pri = demo.import_private_key('maintargets')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_targets_pri]\n%s' % key_targets_pri)
+  #TODO: Until here
+
   key_role1_pub = demo.import_public_key('mainrole1')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_role1_pub]\n%s' % key_role1_pub)
+  #TODO: Until here
+
   key_role1_pri = demo.import_private_key('mainrole1')
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + '[key_role1_pri]\n%s' % key_role1_pri)
+  #TODO: Until here
 
 
   # Add top level keys to the main repository.
