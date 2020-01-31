@@ -1088,7 +1088,7 @@ def import_ed25519_publickey_from_file(filepath):
   """
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format for' + TABULATE + '%s' + TO_PRINT_END % filepath)
+  print(TO_PRINT + 'Checking format for' + TABULATE + filepath + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'filepath' have the correct format?
