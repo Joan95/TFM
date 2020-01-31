@@ -56,7 +56,7 @@ PRIMARY_SERVER_AVAILABLE_PORTS = [
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW + '\t[demo/__init__.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/__init__.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
 
 
 

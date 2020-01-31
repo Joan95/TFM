@@ -109,7 +109,7 @@ METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -1116,7 +1116,7 @@ def import_ed25519_publickey_from_file(filepath):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Returning the key: %s' + TO_PRINT_END % ed25519_key)
+  print(TO_PRINT + 'Returning the key: %s' % ed25519_key)
   #TODO: Until here
   return ed25519_key
 
