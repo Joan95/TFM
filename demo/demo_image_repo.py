@@ -324,11 +324,23 @@ def write_to_live():
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
 
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'timestamp and snapshot marked as dirty')
+  #TODO: Until here
+
   # Write the metadata files out to the Image Repository's 'metadata.staged'
   repo.mark_dirty(['timestamp', 'snapshot'])
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Writting in repo instance...')
+  #TODO: Until here
+
   repo.write() # will be writeall() in most recent TUF branch
 
 
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Moving staged metadata to live metadata directory in: ' + TABULATION + demo.IMAGE_REPO_DIR)
+  #TODO: Until here
 
   # Move staged metadata (from the write above) to live metadata directory.
 

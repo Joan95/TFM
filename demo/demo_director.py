@@ -190,6 +190,10 @@ def clean_slate(use_new_keys=False):
       key_targets_pub=key_dirtarg_pub)
 
   for vin in KNOWN_VINS:
+    #TODO: Print to be deleted
+    print(I_TO_PRINT + 'Adding new vehicle to director instance with vin: ' + vin)
+    #TODO: Until here
+
     director_service_instance.add_new_vehicle(vin)
 
   # You can tell the Director about ECUs this way:
@@ -198,7 +202,9 @@ def clean_slate(use_new_keys=False):
   # director_service_instance.register_ecu_serial(
   #     test_ecu_serial, test_ecu_public_key, vin='111')
 
-
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Adding first files')
+  #TODO: Until here
 
   # Add a first target file, for use by every ECU in every vehicle in that the
   # Director starts off with. (Currently 3)
