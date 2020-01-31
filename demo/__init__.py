@@ -71,6 +71,11 @@ def generate_key(keyname):
     Key type: ed25519
     Key location: DEMO_KEYS_DIR
   """
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Calling rt.generate_and_write_ed25519_keypair' + TO_PRINT_END)
+  #TODO: Until here
+
   rt.generate_and_write_ed25519_keypair(
       os.path.join(DEMO_KEYS_DIR, keyname), password='pw')
 
@@ -85,6 +90,7 @@ def import_public_key(keyname):
     Key type: ed25519
     Key location: DEMO_KEYS_DIR
   """
+
   #TODO: Print to be deleted
   print(TO_PRINT + 'Calling rt.import_ed25519_publickey_from_file' + TO_PRINT_END)
   #TODO: Until here
@@ -102,6 +108,7 @@ def import_private_key(keyname):
     Key type: ed25519
     Key location: DEMO_KEYS_DIR
   """
+
   #TODO: Print to be deleted
   print(TO_PRINT + 'Calling rt.import_ed25519_privatekey_from_file' + TO_PRINT_END)
   #TODO: Until here
@@ -116,6 +123,11 @@ def get_random_string(length):
   Returns a random alphanumeric string of length length. Not
   cryptographically reliable.
   """
+
+  #TODO: Print to be deleted
+  print(TO_PRINT + 'Getting random string. NOT CRYPTOGRAPHICALLY RELIABLE!' + TO_PRINT_END)
+  #TODO: Until here
+
   return ''.join(
       random.choice(string.ascii_uppercase + string.ascii_lowercase +
       string.digits) for i in range(length))
