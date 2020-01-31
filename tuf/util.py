@@ -986,7 +986,7 @@ def load_json_file(filepath):
   deserialized_object = None
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (TO_PRINT, 'Checking whether the file is mostly likely gzipped: ', filepath.endswith('.gz'), TO_PRINT_END))
+  print(str('%s %s %s %s' % (TO_PRINT, 'Checking whether the file is mostly likely gzipped:', filepath.endswith('.gz'), TO_PRINT_END)))
   #TODO: Until here
 
   # The file is mostly likely gzipped.
@@ -999,14 +999,14 @@ def load_json_file(filepath):
     fileobject = open(filepath)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Loading: ' + fileobject + TO_PRINT_END)
+  print(str('%s %s %s %s' % (TO_PRINT, 'Loading:', fileobject, TO_PRINT_END)))
   #TODO: Until here
 
   try:
     deserialized_object = json.load(fileobject)
 
     #TODO: Print to be deleted
-    print(TO_PRINT + 'Loading json: ' + deserialized_object + TO_PRINT_END)
+    print(str('%s %s %s %s' % (TO_PRINT, 'Loading json:', deserialized_object, TO_PRINT_END)))
     #TODO: Until here
 
 
