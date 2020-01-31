@@ -517,7 +517,7 @@ class Repository(object):
     # This code is excerpted from more recent TUF versions.
     # TODO: When merging, mind this.
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT + 'For repository:', self.repository_name, ' marking dirty roles the following ones:', roles)))
@@ -2924,7 +2924,7 @@ def create_new_repository(repository_directory, repository_name='default'):
     A 'tuf.repository_tool.Repository' object.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_new_repository()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_new_repository()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'Checking format for: ' + repository_directory + TO_PRINT_END)
