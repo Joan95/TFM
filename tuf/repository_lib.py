@@ -109,7 +109,7 @@ METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -1087,8 +1087,10 @@ def import_ed25519_publickey_from_file(filepath):
     An ED25519 key object conformant to 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_publickey_from_file()]: ' + uptane.ENDCOLORS
+
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format for' + TABULATE + filepath + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format for' + TABULATE + filepath + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'filepath' have the correct format?
@@ -1098,7 +1100,7 @@ def import_ed25519_publickey_from_file(filepath):
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'ED25519 key objects are saved in .json and metadata format.' +
+  print(I_TO_PRINT + 'ED25519 key objects are saved in .json and metadata format.' +
         TABULATE + 'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
   #TODO: Until here
 
@@ -1109,15 +1111,15 @@ def import_ed25519_publickey_from_file(filepath):
   ed25519_key, junk = tuf.keys.format_metadata_to_key(ed25519_key_metadata)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (TO_PRINT, 'ed25519_key_metadata: ', TABULATE, ed25519_key_metadata, TO_PRINT_END)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key_metadata: ', TABULATE, ed25519_key_metadata, TO_PRINT_END)))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (TO_PRINT, 'ed25519_key: ', TABULATE, ed25519_key, TO_PRINT_END)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key: ', TABULATE, ed25519_key, TO_PRINT_END)))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (TO_PRINT, 'junk: ', TABULATE, junk, TO_PRINT_END)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'junk: ', TABULATE, junk, TO_PRINT_END)))
   #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
@@ -1128,7 +1130,7 @@ def import_ed25519_publickey_from_file(filepath):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Returning the key: %s' % ed25519_key)
+  print(I_TO_PRINT + 'Returning the key: %s' % ed25519_key)
   #TODO: Until here
   return ed25519_key
 
@@ -1175,8 +1177,10 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     An ed25519 key object of the form: 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_privatekey_from_file()]: ' + uptane.ENDCOLORS
+
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking format for' + TABULATE + filepath + TABULATE + 'Password? ' + password + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format for' + TABULATE + filepath + TABULATE + 'Password? ' + password + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'filepath' have the correct format?
@@ -1193,7 +1197,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     password = _get_password(message, confirm=False)
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Checking password: \'' + password + '\' have the correct format' + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking password: \'' + password + '\' have the correct format' + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'password' have the correct format?
@@ -1204,14 +1208,14 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   encrypted_key = None
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Store the encrypted contents of \'' + filepath +'\' prior to calling the decryption routine' + TO_PRINT_END)
+  print(I_TO_PRINT + 'Store the encrypted contents of \'' + filepath +'\' prior to calling the decryption routine' + TO_PRINT_END)
   #TODO: Until here
 
   with open(filepath, 'rb') as file_object:
     encrypted_key = file_object.read()
 
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Encrypted content of: \'' + filepath + '\': ' + TABULATE + encrypted_key + TO_PRINT_END)
+  print(I_TO_PRINT + 'Encrypted content of: \'' + filepath + '\': ' + TABULATE + encrypted_key + TO_PRINT_END)
   #TODO: Until here
 
   # Decrypt the loaded key file, calling the appropriate cryptography library
@@ -1221,11 +1225,11 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   key_object = tuf.keys.decrypt_key(encrypted_key, password)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s' % (TO_PRINT, 'Decrypted content of: \'', filepath, '\': ', key_object, TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s' % (I_TO_PRINT, 'Decrypted content of: \'', filepath, '\': ', key_object, TO_PRINT_END)))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (TO_PRINT, 'Checking that \'keytype\' equals to \'ed25519\'', TO_PRINT_END)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Checking that \'keytype\' equals to \'ed25519\'', TO_PRINT_END)))
   #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
