@@ -1481,7 +1481,7 @@ class Root(Metadata):
 
     super(Root, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__]: ' + uptane.ENDCOLORS
 
     self._rolename = 'root'
     self._repository_name = repository_name
@@ -1504,7 +1504,16 @@ class Root(Metadata):
                 'signatures': [], 'version': 0, 'consistent_snapshot': False,
                 'compressions': [''], 'expires': expiration,
                 'partial_loaded': False}
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Filling info for roleinfo: ', roleinfo)))
+    #TODO: Until here
+
     try:
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Adding role to roleDB' )))
+      #TODO: Until here
+
       tuf.roledb.add_role(self.rolename, roleinfo, self.repository_name)
 
     except tuf.RoleAlreadyExistsError:
