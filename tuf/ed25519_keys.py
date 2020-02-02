@@ -163,7 +163,7 @@ def generate_public_and_private():
     and 'tuf.formats.ED25519SEED_SCHEMA', respectively.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_public_and_private()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[generate_public_and_private()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generate public and private keys ')))
@@ -243,14 +243,14 @@ def create_signature(public_key, private_key, data):
     stored in the dictionary returned.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[create_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s:' % (I_TO_PRINT, 'Create signature. Entered data')))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s public key: %s %s private key: %s %s data: %s %s ' % (TABULATE, public_key, TABULATE, private_key, TABULATE, data, TO_PRINT_END)))
+  print(str('\n\t\t\tpublic key: %s private key: %s data: %s %s' % (public_key, private_key, data, TO_PRINT_END)))
   #TODO: Until here
 
 
@@ -349,7 +349,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     Boolean.  True if the signature is valid, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[verify_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Verify signature. Entered data:')))
