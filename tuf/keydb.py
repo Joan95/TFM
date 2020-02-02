@@ -97,7 +97,7 @@ def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb_from_root_metadata()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
@@ -174,6 +174,13 @@ def create_keydb(repository_name):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Create new keyDB for: ', repository_name)))
+  #TODO: Until here
+
 
   # Is 'repository_name' properly formatted?  Raise 'tuf.FormatError' if not.
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
