@@ -1570,6 +1570,14 @@ class Timestamp(Metadata):
     self._rolename = 'timestamp'
     self._repository_name = repository_name
 
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._rolename: ', self._rolename)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._repository_name: ', self._repository_name)))
+    #TODO: Until here
+
     # By default, 'snapshot' metadata is set to expire 1 week from the current
     # time.  The expiration may be modified.
     expiration = tuf.formats.unix_timestamp_to_datetime(
@@ -1634,6 +1642,14 @@ class Snapshot(Metadata):
 
     self._rolename = 'snapshot'
     self._repository_name = repository_name
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._rolename: ', self._rolename)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._repository_name: ', self._repository_name)))
+    #TODO: Until here
 
     # By default, 'snapshot' metadata is set to expire 1 week from the current
     # time.  The expiration may be modified.
@@ -1720,6 +1736,8 @@ class Targets(Metadata):
     tuf.formats.ROLENAME_SCHEMA.check_match(rolename)
     tuf.formats.REPOSITORY_NAME_SCHEMA.check_match(repository_name)
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__init__]: ' + uptane.ENDCOLORS
+
     if roleinfo is not None:
       tuf.formats.ROLEDB_SCHEMA.check_match(roleinfo)
 
@@ -1730,6 +1748,30 @@ class Targets(Metadata):
     self._target_files = []
     self._delegated_roles = {}
     self._parent_targets_object = self
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._targets_directory: ', self._targets_directory)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._rolename: ', self._rolename)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._repository_name: ', self._repository_name)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._target_files: ', self._target_files)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._delegated_roles: ', self._delegated_roles)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._parent_targets_object: ', self._parent_targets_object)))
+    #TODO: Until here
 
     # Keep a reference to the top-level 'targets' object.  Any delegated roles
     # that may be created, can be added to and accessed via the top-level
@@ -1753,6 +1795,10 @@ class Targets(Metadata):
 
     # Add the new role to the 'tuf.roledb'.
     try:
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Adding role to roleDB' )))
+      #TODO: Until here
+
       tuf.roledb.add_role(self.rolename, roleinfo, repository_name)
 
     except tuf.RoleAlreadyExistsError:
