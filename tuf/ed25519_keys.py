@@ -250,11 +250,7 @@ def create_signature(public_key, private_key, data):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Private key:', 'IT CRASHES')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%spublic key: %s%sprivate key: %s%sdata: %s%s' % (I_TO_PRINT, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, data, TO_PRINT_END)))
+  print(str('%spublic key: %s%sprivate key: %s%sdata: %s%s' % (I_TO_PRINT, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TO_PRINT_END)))
   #TODO: Until here
 
 

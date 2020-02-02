@@ -83,7 +83,7 @@ def clean_slate(use_new_keys=False):
   # Create target files: file1.txt and infotainment_firmware.txt
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Creating target files for %s' % target_files.keys())
+  print(I_TO_PRINT + 'Target files: %s' % target_files.keys())
   #TODO: Until here
 
 

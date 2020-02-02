@@ -204,6 +204,11 @@ class Repository(object):
     self.repository_name = repository_name # TODO: Review this. Unlike class Metadata, this just uses a literal attribute
 
     if self.repository_name != 'default':
+
+      #TODO: Print to be deleted
+      print(str('%s %s %s' % (I_TO_PRINT, 'self.repository_name = ', self.repository_name)))
+      #TODO: Until here
+
       tuf.roledb.create_roledb(self.repository_name)
       tuf.keydb.create_keydb(self.repository_name)
 
@@ -3014,12 +3019,6 @@ def create_new_repository(repository_directory, repository_name='default'):
 
     else:
       raise
-
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Create the bare bones repository object, where only ' +
-	'top-level roles have been set and contain default values ' +
-	'(e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)' + TO_PRINT_END)
-  #TODO: Until here
 
   # Create the bare bones repository object, where only the top-level roles
   # have been set and contain default values (e.g., Root roles has a threshold

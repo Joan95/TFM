@@ -169,6 +169,12 @@ def create_roledb(repository_name):
     None.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Creating new roleDB for repository: ', repository_name)))
+  #TODO: Until here
+
   # Is 'repository_name' properly formatted?  If not, raise 'tuf.FormatError'.
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
 
@@ -276,6 +282,10 @@ def add_role(rolename, roleinfo, repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[addRole()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding new Role: ', rolename)))
+  #TODO: Until here
 
   # Does 'rolename' have the correct object format?
   # This check will ensure 'rolename' has the appropriate number of objects
