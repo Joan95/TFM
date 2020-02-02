@@ -51,6 +51,12 @@ import tuf.asn1_codec as asn1_codec
 
 import hashlib
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/sig.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TABULATION = '\n\t\t\t\t'
+TO_PRINT_END = '\n'
+
 def get_signature_status(signable, role=None, repository_name='default'):
   """
   <Purpose>
@@ -108,6 +114,16 @@ def get_signature_status(signable, role=None, repository_name='default'):
     A dictionary representing the status of the signatures in 'signable'.
     Conformant to tuf.formats.SIGNATURESTATUS_SCHEMA.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking format of: ', signable, TO_PRINT_END)))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking format of: ', repository_name, TO_PRINT_END)))
+  #TODO: Until here
 
   # Do the arguments have the correct format?  This check will ensure that
   # arguments have the appropriate number of objects and object types, and that
@@ -207,6 +223,11 @@ def get_signature_status(signable, role=None, repository_name='default'):
   signature_status['unknown_sigs'] = unknown_sigs
   signature_status['untrusted_sigs'] = untrusted_sigs
   signature_status['unknown_method_sigs'] = unknown_method_sigs
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Signature status returned'+ TO_PRINT_END)
+  print(str('%s%sThreshold:%s%sGood Sigs:%s%sBad Sigs:%s%sUnknown Sigs:%s%sUntrusted Sigs:%s%sUnknown Method Sigs:%s%s' % (I_TO_PRINT, TABULATION, threshold, TABULATION, good_sigs, TABULATION, bad_sigs, TABULATION, unknown_sigs, TABULATION, untrusted_sigs, TABULATION, unknown_method_sigs, TO_PRINT_END)))
+  #TODO: Until here
 
   return signature_status
 
@@ -358,13 +379,27 @@ def generate_rsa_signature(signed, rsakey_dict):
     {'keyid': keyid, 'method': 'evp', 'sig': sig}
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_signature()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'Checking format of: ' + signed + TO_PRINT_END)
+  #TODO: Until here
+
   # We need 'signed' in canonical JSON format to generate
   # the 'method' and 'sig' fields of the signature.
   signed = tuf.formats.encode_canonical(signed)
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Canonical JSON format to generate signature:', TABULATION, signed, TO_PRINT_END)))
+  #TODO: Until here
+
   # Generate the RSA signature.
   # Raises tuf.FormatError and TypeError.
   signature = tuf.keys.create_signature(rsakey_dict, signed)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Signature:', TABULATION, signature, TO_PRINT_END)))
+  #TODO: Until here
 
   return signature
 
