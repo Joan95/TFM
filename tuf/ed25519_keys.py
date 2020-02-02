@@ -246,7 +246,13 @@ def create_signature(public_key, private_key, data):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Create signature')))
+  print(str('%s %s' % (I_TO_PRINT, 'Create signature. Entered data')))
+  #TODO: Until here
+
+  # public_key, private_key, data
+
+  #TODO: Print to be deleted
+  print(str('%spublic key: %s%sprivate key: %s%sdata:%s%s' % (TABULATE, public_key, TABULATE, private_key, TABULATE, data, TO_PRINT_END)))
   #TODO: Until here
 
 
@@ -348,7 +354,11 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Verify signature')))
+  print(str('%s %s' % (I_TO_PRINT, 'Verify signature. Entered data:')))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%spublic key: %s%smethod: %s%ssignature:%s%sdata:%s%suse pynacl:%s%s' % (TABULATE, public_key, TABULATE, method, TABULATE, signature, TABULATE, data, TABULATE, use_pynacl, TO_PRINT_END)))
   #TODO: Until here
 
 
@@ -374,6 +384,10 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   public = public_key
   valid_signature = False
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s%s %s' % (I_TO_PRINT, 'Checking if method: \'', method, '\' is supported', TO_PRINT_END)))
+  #TODO: Until here
+
   if method in _SUPPORTED_ED25519_SIGNING_METHODS:
     if use_pynacl:
       try:
@@ -391,6 +405,11 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     # Verify 'ed25519' signature with the pure Python implementation.
     else:
       try:
+
+        #TODO: Print to be deleted
+        print(str('%s %s %s' % (I_TO_PRINT, 'Verifying \'ed25519\' signature with the pure Python implementation', TO_PRINT_END)))
+        #TODO: Until here
+
         tuf._vendor.ed25519.ed25519.checkvalid(signature, data, public)
         valid_signature = True
 
