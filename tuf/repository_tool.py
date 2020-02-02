@@ -1565,6 +1565,8 @@ class Timestamp(Metadata):
 
     super(Timestamp, self).__init__()
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Timestamp.__init__]: ' + uptane.ENDCOLORS
+
     self._rolename = 'timestamp'
     self._repository_name = repository_name
 
@@ -1579,6 +1581,10 @@ class Timestamp(Metadata):
                 'expires': expiration, 'partial_loaded': False}
 
     try:
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Adding role to roleDB' )))
+      #TODO: Until here
+
       tuf.roledb.add_role(self.rolename, roleinfo, self.repository_name)
 
     except tuf.RoleAlreadyExistsError:
@@ -1624,6 +1630,8 @@ class Snapshot(Metadata):
 
     super(Snapshot, self).__init__()
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Snapshot.__init__]: ' + uptane.ENDCOLORS
+
     self._rolename = 'snapshot'
     self._repository_name = repository_name
 
@@ -1638,6 +1646,10 @@ class Snapshot(Metadata):
                 'expires': expiration, 'partial_loaded': False}
 
     try:
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Adding role to roleDB' )))
+      #TODO: Until here
+
       tuf.roledb.add_role(self.rolename, roleinfo, self.repository_name)
 
     except tuf.RoleAlreadyExistsError:
