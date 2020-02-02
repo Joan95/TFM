@@ -1,5 +1,6 @@
+joan@milax:~/Escriptori/TFM/TFM$ python -i demo/start_servers.py 
 ImageRepo: Initializing repository
-	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Creating target files for [u'file1.txt', u'infotainment_firmware.txt']
+	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Target files: [u'file1.txt', u'infotainment_firmware.txt']
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Removing files: /home/joan/Escriptori/TFM/TFM/imagerepo/targets
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Creating directories: /home/joan/Escriptori/TFM/TFM/imagerepo/targets
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Writing content for: [u'file1.txt', u'infotainment_firmware.txt']
@@ -32,9 +33,6 @@ Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged'
 
 Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo/targets'
 	--------> [tuf/repository_tool.py]
-			>>Function:  [create_new_repository()]: Create the bare bones repository object, where only top-level roles have been set and contain default values (e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)
-
-	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_directory:  /home/joan/Escriptori/TFM/TFM/imagerepo
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for metadata_directory:  /home/joan/Escriptori/TFM/TFM/imagerepo/metadata.staged
@@ -45,41 +43,79 @@ Creating u'/home/joan/Escriptori/TFM/TFM/imagerepo/targets'
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Setting the top-level roles
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._rolename:  root
+			>>Function:  [Root.__init__]:  Value for self._rolename:  root
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._repository_name:  default
+			>>Function:  [Root.__init__]:  Value for self._repository_name:  default
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Filling info for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:30Z', u'signing_keyids': []}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  root
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  root
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-01-31T00:14:26Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:30Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  default
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7fca62332690>
+			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7f4bbc8f6650>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._rolename:  snapshot
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._repository_name:  default
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  snapshot
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  snapshot
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-07T18:26:06Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-09T19:09:10Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  default
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7fca62332790>
+			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7f4bbc8f6750>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._rolename:  timestamp
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._repository_name:  default
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  timestamp
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  timestamp
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-01T18:26:06Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-03T19:09:10Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  default
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7fca623327d0>
+			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7f4bbc8f6790>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._targets_directory:  /home/joan/Escriptori/TFM/TFM/imagerepo/targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._rolename:  targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._repository_name:  default
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._target_files:  []
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._delegated_roles:  {}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._parent_targets_object:  <tuf.repository_tool.Targets object at 0x7f4bbc8f67d0>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  targets
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  targets
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-02T01:53:16Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-04T02:36:20Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  default
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7fca62332810>
+			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7f4bbc8f67d0>
 ImageRepo: Loading all keys
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: Create keys and/or load keys into memory.
 		[use_new_keys] = False
@@ -102,7 +138,7 @@ ImageRepo: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainroot.pub', mode 'r' at 0x7fca62306540> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainroot.pub', mode 'r' at 0x7f4bbd01aed0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}} 
@@ -175,7 +211,7 @@ ImageRepo: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/maintimestamp.pub', mode 'r' at 0x7fca62306540> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/maintimestamp.pub', mode 'r' at 0x7f4bbd01aed0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}} 
@@ -248,7 +284,7 @@ ImageRepo: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainsnapshot.pub', mode 'r' at 0x7fca62306540> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainsnapshot.pub', mode 'r' at 0x7f4bbd01aed0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}} 
@@ -321,7 +357,7 @@ ImageRepo: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/maintargets.pub', mode 'r' at 0x7fca62306540> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/maintargets.pub', mode 'r' at 0x7f4bbd01aed0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}} 
@@ -394,7 +430,7 @@ ImageRepo: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainrole1.pub', mode 'r' at 0x7fca62306540> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/mainrole1.pub', mode 'r' at 0x7f4bbd01aed0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'c5a78db3f3ba96462525664e502f2e7893b81e7e270d75ffb9a6bb95b56857ca'}} 
@@ -456,28 +492,28 @@ ImageRepo: Loading all keys
 				 keytype ed25519
 				 keyid 94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290
 				 keyid_hash_algorithms [u'sha256', u'sha512']
-				 expires 2021-01-31T00:14:34Z
+				 expires 2021-02-02T00:57:38Z
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: [key_timestamp_pub]
 				 keyval
 					 public 97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654
 				 keytype ed25519
 				 keyid 6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a
 				 keyid_hash_algorithms [u'sha256', u'sha512']
-				 expires 2020-02-01T18:26:14Z
+				 expires 2020-02-03T19:09:18Z
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: [key_snapshot_pub]
 				 keyval
 					 public 497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83
 				 keytype ed25519
 				 keyid aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99
 				 keyid_hash_algorithms [u'sha256', u'sha512']
-				 expires 2020-02-01T18:26:14Z
+				 expires 2020-02-03T19:09:18Z
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: [key_targets_pub]
 				 keyval
 					 public 729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e
 				 keytype ed25519
 				 keyid c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596
 				 keyid_hash_algorithms [u'sha256', u'sha512']
-				 expires 2020-02-01T18:26:14Z
+				 expires 2020-02-03T19:09:18Z
 	[demo/demo_image_repo.py]	>>Function:  [clean_slate()]: [key_root_pri]
 				 keytype ed25519
 				 keyid 94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290
@@ -529,13 +565,357 @@ ImageRepo: Signing and hosting initial repository metadata
 	--------> [tuf/repository_tool.py]
 			>>Function:  [mark_dirty()]:  For repository: default  marking dirty roles the following ones: [u'timestamp', u'snapshot']
 	[demo/demo_image_repo.py]	>>Function:  [write_to_live()]: Writting in repo instance...
-u'timestamp.der' expires Sat Feb  1 18:26:06 2020 (UTC).
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290', u'sig': u'5b8e017d9f7afeb3da02987e4f7cb9fcd0082258496f7551c41b40f5403583bd3dee9016e9bdbfbae413eb6fd7e0275c69e4609d4492df472a7d1472ec533b06', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']}, u'root': {u'threshold': 1, u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']}, u'targets': {u'threshold': 1, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']}, u'timestamp': {u'threshold': 1, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']}}, 'keys': {u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}}, u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}}, u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}}, u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}}}, 'expires': u'2021-02-02T00:57:30Z', 'version': 0, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290', u'sig': u'96e5e4f85724ab96c23f270f1979aad2a7a611ff5eb12a6a38f0ba24d4c2cb861c6e1a4d9cefc90dcb0dcff731684defad31e5dc61ef8be2c7428d60b715580b', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']}, u'root': {u'threshold': 1, u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']}, u'targets': {u'threshold': 1, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']}, u'timestamp': {u'threshold': 1, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']}}, 'keys': {u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}}, u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}}, u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}}, u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}}}, 'expires': u'2021-02-02T00:57:30Z', 'version': 1, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'b02a5c12907793aaf31a132f9d369fa905bfb1dbb122f389865f3e00b975402b50ed64e994d44bc895c65853b5d6bb8a67a3983a1a12cee525cf4448d057f106', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 0, 'targets': {u'/TCU1.0.txt': {u'length': 16, u'hashes': {u'sha256': 'c0f997636d40ef418697e85add2e3e6f994592de0c4d90ffe0f86e177281b0dc', u'sha512': '87e3d4f40b43f457e507c81e0caa306893ecf4eb65c28a8ef4a5e5e66323c460c500a7cb9489221eb8bcd2eb5b7e848dcf8c631518289fa07e629c4ffcf8e686'}}, u'/TCU1.2.txt': {u'length': 17, u'hashes': {u'sha256': 'fbc8fa01df33f30833428be0fb20edfaafa444ed23d020e3cbc9c60cff167288', u'sha512': 'c7c3924d33804eca1d691c5fe61bb965646bf9b6225ce1f040dcde81ce0fc26f4be323f4995e0dee35a847fdbb6efe5a8c8e248e07d1728af0b4cc6fb3179d38'}}, u'/BCU1.2.txt': {u'length': 18, u'hashes': {u'sha256': '42914dc1509923fc83b6945cbaaec193a22077ae3bb799e84b900570715fcb5a', u'sha512': 'f213f63b79b05e3ea2045ffe198ab75a993ca5b2709a2e1eac5f18a1a6be1b5eb6af9964b78d388b404414e296b046228f9b68eb75db684eed75b509518a77a5'}}, u'/BCU1.0.txt': {u'length': 15, u'hashes': {u'sha256': 'fb0aa5699a4e7b68009fed6b094ecb00c3ad5670921be1b902b72a23cd4675b1', u'sha512': '0b0bb00bccf7bdad519d0a0af2794c945bd51ebdbc79f9616f0e3903b32f4ce2d5b250ab1bc2d34194bacf720b4f0aed361ef8d59ac72b1bc19e3a223a5e87cd'}}, u'/INFO1.0.txt': {u'length': 18, u'hashes': {u'sha256': 'e116d4ef5a2f2dbba9a61970a25cab3e6695418e3dbfa71071e4d07aebb1f083', u'sha512': '7cfa230b2ad2290d38d0da9f0320c1de0dcc9acc40a74154d8f6461c9acb63e7a41a34034b6d84fed6220e1a42afbaa0846efcfc85e1d83c5174f1f8d88d2694'}}, u'/BCU1.1.txt': {u'length': 18, u'hashes': {u'sha256': '1eb6fa5c6bb606c5326d6ef0ff05f5fcefde4e50c7daea530978090778b38bf4', u'sha512': '9727058c2ba828fdd2fc5ae02f52c10e47404283f92df3539989e2ada3cf7e85a9772faed1bd0bad3fc2bd8f6e5d15b976b8e832dd46874be72b994bc57a62a0'}}, u'/TCU1.1.txt': {u'length': 17, u'hashes': {u'sha256': '56d7cd56a85e34e40d005e1f79c0e95d6937d5528ac0b301dbe68d57e03a5c21', u'sha512': '94d7419b8606103f363aa17feb875575a978df8e88038ea284ff88d90e534eaa7218040384b19992cc7866f5eca803e1654c9ccdf3b250d6198b3c4731216db4'}}}, 'expires': u'2020-05-04T02:36:20Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'1373ba14a3ae3944f2a2954045c4995685672492fb110f5229b5aba8a8c9216c9fe4d0aeb5901b83d6e9058b86cfe6647f7abf0fcf81f377b22220bbb2ac080e', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 1, 'targets': {u'/TCU1.0.txt': {u'length': 16, u'hashes': {u'sha256': 'c0f997636d40ef418697e85add2e3e6f994592de0c4d90ffe0f86e177281b0dc', u'sha512': '87e3d4f40b43f457e507c81e0caa306893ecf4eb65c28a8ef4a5e5e66323c460c500a7cb9489221eb8bcd2eb5b7e848dcf8c631518289fa07e629c4ffcf8e686'}}, u'/TCU1.2.txt': {u'length': 17, u'hashes': {u'sha256': 'fbc8fa01df33f30833428be0fb20edfaafa444ed23d020e3cbc9c60cff167288', u'sha512': 'c7c3924d33804eca1d691c5fe61bb965646bf9b6225ce1f040dcde81ce0fc26f4be323f4995e0dee35a847fdbb6efe5a8c8e248e07d1728af0b4cc6fb3179d38'}}, u'/BCU1.2.txt': {u'length': 18, u'hashes': {u'sha256': '42914dc1509923fc83b6945cbaaec193a22077ae3bb799e84b900570715fcb5a', u'sha512': 'f213f63b79b05e3ea2045ffe198ab75a993ca5b2709a2e1eac5f18a1a6be1b5eb6af9964b78d388b404414e296b046228f9b68eb75db684eed75b509518a77a5'}}, u'/BCU1.0.txt': {u'length': 15, u'hashes': {u'sha256': 'fb0aa5699a4e7b68009fed6b094ecb00c3ad5670921be1b902b72a23cd4675b1', u'sha512': '0b0bb00bccf7bdad519d0a0af2794c945bd51ebdbc79f9616f0e3903b32f4ce2d5b250ab1bc2d34194bacf720b4f0aed361ef8d59ac72b1bc19e3a223a5e87cd'}}, u'/INFO1.0.txt': {u'length': 18, u'hashes': {u'sha256': 'e116d4ef5a2f2dbba9a61970a25cab3e6695418e3dbfa71071e4d07aebb1f083', u'sha512': '7cfa230b2ad2290d38d0da9f0320c1de0dcc9acc40a74154d8f6461c9acb63e7a41a34034b6d84fed6220e1a42afbaa0846efcfc85e1d83c5174f1f8d88d2694'}}, u'/BCU1.1.txt': {u'length': 18, u'hashes': {u'sha256': '1eb6fa5c6bb606c5326d6ef0ff05f5fcefde4e50c7daea530978090778b38bf4', u'sha512': '9727058c2ba828fdd2fc5ae02f52c10e47404283f92df3539989e2ada3cf7e85a9772faed1bd0bad3fc2bd8f6e5d15b976b8e832dd46874be72b994bc57a62a0'}}, u'/TCU1.1.txt': {u'length': 17, u'hashes': {u'sha256': '56d7cd56a85e34e40d005e1f79c0e95d6937d5528ac0b301dbe68d57e03a5c21', u'sha512': '94d7419b8606103f363aa17feb875575a978df8e88038ea284ff88d90e534eaa7218040384b19992cc7866f5eca803e1654c9ccdf3b250d6198b3c4731216db4'}}}, 'expires': u'2020-05-04T02:36:20Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'8a3ab7e3fac80642b7d877769d7c0febf85da2c0b12b045b7070e45153392a3401bdd14557026a1bf5a381e78c9e80e1743ee36372277dd3de06ea747572c30c', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 0, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': 'c9681b6afe2feb004b22b7356d6346a497e365fe33b6654a10f8c94a61a52634'}}}, 'expires': u'2020-02-09T19:09:10Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'9f3e1a474dbd030ac29876fd9124ee40fdc10a4eb2415cb85676f74374279d4a6ba5de15f25f486a1697c6398a501cff708a7993168900ffb94d91c5fa0f8a0e', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 1, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': 'c9681b6afe2feb004b22b7356d6346a497e365fe33b6654a10f8c94a61a52634'}}}, 'expires': u'2020-02-09T19:09:10Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+u'timestamp.der' expires Mon Feb  3 19:09:10 2020 (UTC).
 0.9999074074074074 day(s) until it expires.
-	[demo/demo_image_repo.py]	>>Function:  [write_to_live()]: Moving staged metadata to live metadata directory in: 			/home/joan/Escriptori/TFM/TFM/imagerepo
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'63dba3eb99cf9fdba808d299d0ef6699b1615085876c747cff57eb722b49fae13f5325545f8cf5d8b559649236111a93c9d3d13bbab68584defc8e0468657301', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 0, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': '5785326e90143fdb3a739950e4f98238690ef7322d315ec1c20a8e5d4de65ea3'}}}, 'expires': u'2020-02-03T19:09:10Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'8826fdd20a7710b53907c118e8ad323b04d86474a781b815ac42f440d46c7735a5c777f80cf5bca8fb61a415ea65fe3a7cbbccccc8deb2ff725de7c82664300c', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 1, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': '5785326e90143fdb3a739950e4f98238690ef7322d315ec1c20a8e5d4de65ea3'}}}, 'expires': u'2020-02-03T19:09:10Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  default 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	[demo/demo_image_repo.py]	>>Function:  [write_to_live()]: Moving staged metadata to live metadata directory in: 				/home/joan/Escriptori/TFM/TFM/imagerepo
 	[demo/demo_image_repo.py]	>>Function:  [host()]: Attempting to start server process...
 	[demo/demo_image_repo.py]	>>Function:  [host()]: Preparing to host the main repo contents
-	[demo/demo_image_repo.py]	>>Function:  [host()]:  Beginning hosting the server process 				 <subprocess.Popen object at 0x7fca62332c10>
-ImageRepo: Main Repo server process started, with pid 4412; Main Repo serving on port: 30301; Main repo URL is 0.0.0.0:30301/
+	[demo/demo_image_repo.py]	>>Function:  [host()]:  Beginning hosting the server process 				 <subprocess.Popen object at 0x7f4bbc8f6c50>
+ImageRepo: Main Repo server process started, with pid 4831; Main Repo serving on port: 30301; Main repo URL is 0.0.0.0:30301/
 ImageRepo: Starting Image Repo Services Thread: will now listen on port 30309
 	[demo/demo_director.py]	>>Function:  [clean_slate()]: Adding: /home/joan/Escriptori/TFM/TFM/directorto os.path
 Director: Loading all keys
@@ -559,7 +939,7 @@ Director: Loading all keys
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directorroot.pub', mode 'r' at 0x7fca623065d0> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directorroot.pub', mode 'r' at 0x7f4bbc9495d0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}} 
@@ -633,7 +1013,7 @@ Serving HTTP on 0.0.0.0 port 30301 ...
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directortimestamp.pub', mode 'r' at 0x7fca623065d0> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directortimestamp.pub', mode 'r' at 0x7f4bbc9495d0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}} 
@@ -706,7 +1086,7 @@ Serving HTTP on 0.0.0.0 port 30301 ...
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directorsnapshot.pub', mode 'r' at 0x7fca623065d0> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/directorsnapshot.pub', mode 'r' at 0x7f4bbc9495d0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}} 
@@ -779,7 +1159,7 @@ Serving HTTP on 0.0.0.0 port 30301 ...
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/director.pub', mode 'r' at 0x7fca623065d0> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/director.pub', mode 'r' at 0x7f4bbc9495d0> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}} 
@@ -874,9 +1254,6 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/111/metadata.staged'
 
 Creating u'/home/joan/Escriptori/TFM/TFM/director/111/targets'
 	--------> [tuf/repository_tool.py]
-			>>Function:  [create_new_repository()]: Create the bare bones repository object, where only top-level roles have been set and contain default values (e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)
-
-	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_directory:  /home/joan/Escriptori/TFM/TFM/director/111
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for metadata_directory:  /home/joan/Escriptori/TFM/TFM/director/111/metadata.staged
@@ -885,43 +1262,87 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/111/targets'
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_name:  111
 	--------> [tuf/repository_tool.py]
+			>>Function:  [Repository.__init__]:  self.repository_name =  111
+	--------> [tuf/roledb.py]
+			>>Function:  [create_roledb()]:  Creating new roleDB for repository:  111
+	--------> [tuf/repository_tool.py]
+			>>Function:  [create_keydb()]:  Create new keyDB for:  111
+	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Setting the top-level roles
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._rolename:  root
+			>>Function:  [Root.__init__]:  Value for self._rolename:  root
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._repository_name:  111
+			>>Function:  [Root.__init__]:  Value for self._repository_name:  111
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Filling info for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  root
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  root
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-01-31T00:14:41Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  111
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7fca61ddeb90>
+			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7f4bbc918b50>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._rolename:  snapshot
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._repository_name:  111
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  snapshot
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  snapshot
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-07T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-09T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  111
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7fca61ddef10>
+			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7f4bbc918d50>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._rolename:  timestamp
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._repository_name:  111
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  timestamp
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  timestamp
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-01T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-03T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  111
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7fca61dde290>
+			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7f4bbc9181d0>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._targets_directory:  /home/joan/Escriptori/TFM/TFM/director/111/targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._rolename:  targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._repository_name:  111
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._target_files:  []
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._delegated_roles:  {}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._parent_targets_object:  <tuf.repository_tool.Targets object at 0x7f4bbc918b90>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  targets
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  targets
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-02T01:53:31Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-04T02:36:35Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  111
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7fca61dde050>
+			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7f4bbc918b90>
 	[demo/demo_director.py]	>>Function:  [clean_slate()]: Adding new vehicle to director instance with vin: 112
 		[uptane/services/inventorydb.py]	>>Function:  [_check_registration_is_sane()]: Checking format of vin: 112
 	--------> [tuf/repository_tool.py]
@@ -950,9 +1371,6 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/112/metadata.staged'
 
 Creating u'/home/joan/Escriptori/TFM/TFM/director/112/targets'
 	--------> [tuf/repository_tool.py]
-			>>Function:  [create_new_repository()]: Create the bare bones repository object, where only top-level roles have been set and contain default values (e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)
-
-	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_directory:  /home/joan/Escriptori/TFM/TFM/director/112
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for metadata_directory:  /home/joan/Escriptori/TFM/TFM/director/112/metadata.staged
@@ -961,43 +1379,87 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/112/targets'
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_name:  112
 	--------> [tuf/repository_tool.py]
+			>>Function:  [Repository.__init__]:  self.repository_name =  112
+	--------> [tuf/roledb.py]
+			>>Function:  [create_roledb()]:  Creating new roleDB for repository:  112
+	--------> [tuf/repository_tool.py]
+			>>Function:  [create_keydb()]:  Create new keyDB for:  112
+	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Setting the top-level roles
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._rolename:  root
+			>>Function:  [Root.__init__]:  Value for self._rolename:  root
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._repository_name:  112
+			>>Function:  [Root.__init__]:  Value for self._repository_name:  112
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Filling info for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  root
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  root
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-01-31T00:14:41Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  112
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7fca61dded90>
+			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7f4bbc918a10>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._rolename:  snapshot
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._repository_name:  112
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  snapshot
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  snapshot
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-07T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-09T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  112
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7fca61dde510>
+			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7f4bbc918a50>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._rolename:  timestamp
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._repository_name:  112
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  timestamp
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  timestamp
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-01T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-03T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  112
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7fca61dde0d0>
+			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7f4bbc918210>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._targets_directory:  /home/joan/Escriptori/TFM/TFM/director/112/targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._rolename:  targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._repository_name:  112
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._target_files:  []
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._delegated_roles:  {}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._parent_targets_object:  <tuf.repository_tool.Targets object at 0x7f4bbc9184d0>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  targets
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  targets
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-02T01:53:31Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-04T02:36:35Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  112
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7fca61dde3d0>
+			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7f4bbc9184d0>
 	[demo/demo_director.py]	>>Function:  [clean_slate()]: Adding new vehicle to director instance with vin: 113
 		[uptane/services/inventorydb.py]	>>Function:  [_check_registration_is_sane()]: Checking format of vin: 113
 	--------> [tuf/repository_tool.py]
@@ -1026,9 +1488,6 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/113/metadata.staged'
 
 Creating u'/home/joan/Escriptori/TFM/TFM/director/113/targets'
 	--------> [tuf/repository_tool.py]
-			>>Function:  [create_new_repository()]: Create the bare bones repository object, where only top-level roles have been set and contain default values (e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)
-
-	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_directory:  /home/joan/Escriptori/TFM/TFM/director/113
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for metadata_directory:  /home/joan/Escriptori/TFM/TFM/director/113/metadata.staged
@@ -1037,43 +1496,87 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/113/targets'
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_name:  113
 	--------> [tuf/repository_tool.py]
+			>>Function:  [Repository.__init__]:  self.repository_name =  113
+	--------> [tuf/roledb.py]
+			>>Function:  [create_roledb()]:  Creating new roleDB for repository:  113
+	--------> [tuf/repository_tool.py]
+			>>Function:  [create_keydb()]:  Create new keyDB for:  113
+	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Setting the top-level roles
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._rolename:  root
+			>>Function:  [Root.__init__]:  Value for self._rolename:  root
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._repository_name:  113
+			>>Function:  [Root.__init__]:  Value for self._repository_name:  113
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Filling info for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  root
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  root
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-01-31T00:14:41Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  113
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7fca61dde390>
+			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7f4bbc918110>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._rolename:  snapshot
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._repository_name:  113
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  snapshot
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  snapshot
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-07T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-09T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  113
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7fca61dde150>
+			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7f4bbc918ad0>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._rolename:  timestamp
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._repository_name:  113
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  timestamp
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  timestamp
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-01T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-03T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  113
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7fca61dde610>
+			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7f4bbc918410>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._targets_directory:  /home/joan/Escriptori/TFM/TFM/director/113/targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._rolename:  targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._repository_name:  113
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._target_files:  []
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._delegated_roles:  {}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._parent_targets_object:  <tuf.repository_tool.Targets object at 0x7f4bbc918310>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  targets
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  targets
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-02T01:53:31Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-04T02:36:35Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  113
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7fca61dde450>
+			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7f4bbc918310>
 	[demo/demo_director.py]	>>Function:  [clean_slate()]: Adding new vehicle to director instance with vin: democar
 		[uptane/services/inventorydb.py]	>>Function:  [_check_registration_is_sane()]: Checking format of vin: democar
 	--------> [tuf/repository_tool.py]
@@ -1102,9 +1605,6 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged'
 
 Creating u'/home/joan/Escriptori/TFM/TFM/director/democar/targets'
 	--------> [tuf/repository_tool.py]
-			>>Function:  [create_new_repository()]: Create the bare bones repository object, where only top-level roles have been set and contain default values (e.g., Root roles has a threshold of 1, expires 1 year into the future, etc...)
-
-	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_directory:  /home/joan/Escriptori/TFM/TFM/director/democar
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for metadata_directory:  /home/joan/Escriptori/TFM/TFM/director/democar/metadata.staged
@@ -1113,62 +1613,1482 @@ Creating u'/home/joan/Escriptori/TFM/TFM/director/democar/targets'
 	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Value for repository_name:  democar
 	--------> [tuf/repository_tool.py]
+			>>Function:  [Repository.__init__]:  self.repository_name =  democar
+	--------> [tuf/roledb.py]
+			>>Function:  [create_roledb()]:  Creating new roleDB for repository:  democar
+	--------> [tuf/repository_tool.py]
+			>>Function:  [create_keydb()]:  Create new keyDB for:  democar
+	--------> [tuf/repository_tool.py]
 			>>Function:  [Repository.__init__]:  Setting the top-level roles
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._rolename:  root
+			>>Function:  [Root.__init__]:  Value for self._rolename:  root
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self._repository_name:  democar
+			>>Function:  [Root.__init__]:  Value for self._repository_name:  democar
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Filling info for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Root.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  root
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  root
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-01-31T00:14:41Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'consistent_snapshot': False, u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2021-02-02T00:57:45Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  democar
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7fca61dde110>
+			>>Function:  [Repository.__init__]:  Value for self.root:  <tuf.repository_tool.Root object at 0x7f4bbc918d90>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._rolename:  snapshot
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Value for self._repository_name:  democar
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Snapshot.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  snapshot
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  snapshot
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-07T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-09T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  democar
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7fca61dde410>
+			>>Function:  [Repository.__init__]:  Value for self.snapshot:  <tuf.repository_tool.Snapshot object at 0x7f4bbc918390>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._rolename:  timestamp
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Value for self._repository_name:  democar
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Timestamp.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  timestamp
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  timestamp
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-01T18:26:21Z', u'signing_keyids': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'partial_loaded': False, u'signatures': [], u'version': 0, u'keyids': [], u'threshold': 1, u'compressions': [u''], u'expires': u'2020-02-03T19:09:25Z', u'signing_keyids': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  democar
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7fca61dde790>
+			>>Function:  [Repository.__init__]:  Value for self.timestamp:  <tuf.repository_tool.Timestamp object at 0x7f4bbc918590>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._targets_directory:  /home/joan/Escriptori/TFM/TFM/director/democar/targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._rolename:  targets
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._repository_name:  democar
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._target_files:  []
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._delegated_roles:  {}
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Value for self._parent_targets_object:  <tuf.repository_tool.Targets object at 0x7f4bbc918750>
+	--------> [tuf/repository_tool.py]
+			>>Function:  [Targets.__init__]:  Adding role to roleDB
+	--------> [tuf/roledb.py]
+			>>Function:  [addRole()]:  Adding new Role:  targets
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for rolename:  targets
 	--------> [tuf/roledb.py]
-			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-02T01:53:31Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
+			>>Function:  [addRole()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [], u'expires': u'2020-05-04T02:36:35Z', u'threshold': 1, u'signing_keyids': [], u'paths': {}, u'partial_loaded': False, u'version': 0, u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'path_hash_prefixes': []}
 	--------> [tuf/roledb.py]
 			>>Function:  [addRole()]:  Value for repository_name:  democar
 	--------> [tuf/repository_tool.py]
-			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7fca61dde690>
+			>>Function:  [Repository.__init__]:  Value for self.targets:  <tuf.repository_tool.Targets object at 0x7f4bbc918750>
 	[demo/demo_director.py]	>>Function:  [clean_slate()]: Adding first files
 Director: Signing and hosting initial repository metadata
 	--------> [tuf/repository_tool.py]
 			>>Function:  [mark_dirty()]:  For repository: democar  marking dirty roles the following ones: [u'timestamp', u'snapshot']
-u'timestamp.der' expires Sat Feb  1 18:26:21 2020 (UTC).
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'faeb32a577e2f6f3b5ed64d898afec96240ac594239159a58efc9920cad51cc9408b69f93bd2b12bd79112e074c2c85d7b690342fdf1aa802a8704eab0bd280e', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 0, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'105a96f11876979c30e1de8ecdfb73fbec8adb3ed3e95fe76af88354c454a5d729357f31e2070eae15c61b6b1272163c6ff9aba03ef21005ec40c284540d550c', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 1, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'14e83d7d1a5091a5330b97cde84f76ba7d5fbac0205aa8f6000342bba49d3016d4c5eae2541695c44343e499700e89f7055f444fde2441038a34c7bfbe92fc0d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 0, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'c36e79b6770f954ce39c059067e8af77bfdcf834eb5a56609d141461f561c9c5ece337eb036bf0caa5a5ee40670f70270d31d18a4b6c7f6aa2ebc20c2783360d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 1, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'68d6eb6b29105e90aa05e0ae641c1cce8657fdf72365043d12cca0cdc1bb4ce8c2630afefa5f85ea14b9224ecde2a678173f15d2671af11d75e7b58f28749506', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 0, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'7173b90ea667b3fe99296a7188b34b084064a743048fdf8e68927d4eea772068ba296aa6d1980aa3baca73c8def7847216d5fa9fd9f2258f231326a3f59bff07', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 1, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+u'timestamp.der' expires Mon Feb  3 19:09:25 2020 (UTC).
 1.0 day(s) until it expires.
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'dbf8e6af0a7aeb1ea2109231f905b4cf5fc460d1aa2261817525fda822b912d6af6eebe4709ff4935acba24828c23ec18f598f7453b1383e010ba3866ba24b0e', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 0, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'8624d00d80bd1f45158f38322fc9c950b700c45c122ee0f9bf78ec482d494878430fa6ab63094aa8769f58108378d64b1de4095189e820ae22eae59e70233705', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 1, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  democar 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
 	--------> [tuf/repository_tool.py]
 			>>Function:  [mark_dirty()]:  For repository: 111  marking dirty roles the following ones: [u'timestamp', u'snapshot']
-u'timestamp.der' expires Sat Feb  1 18:26:21 2020 (UTC).
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'faeb32a577e2f6f3b5ed64d898afec96240ac594239159a58efc9920cad51cc9408b69f93bd2b12bd79112e074c2c85d7b690342fdf1aa802a8704eab0bd280e', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 0, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'105a96f11876979c30e1de8ecdfb73fbec8adb3ed3e95fe76af88354c454a5d729357f31e2070eae15c61b6b1272163c6ff9aba03ef21005ec40c284540d550c', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 1, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'14e83d7d1a5091a5330b97cde84f76ba7d5fbac0205aa8f6000342bba49d3016d4c5eae2541695c44343e499700e89f7055f444fde2441038a34c7bfbe92fc0d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 0, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'c36e79b6770f954ce39c059067e8af77bfdcf834eb5a56609d141461f561c9c5ece337eb036bf0caa5a5ee40670f70270d31d18a4b6c7f6aa2ebc20c2783360d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 1, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'68d6eb6b29105e90aa05e0ae641c1cce8657fdf72365043d12cca0cdc1bb4ce8c2630afefa5f85ea14b9224ecde2a678173f15d2671af11d75e7b58f28749506', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 0, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'7173b90ea667b3fe99296a7188b34b084064a743048fdf8e68927d4eea772068ba296aa6d1980aa3baca73c8def7847216d5fa9fd9f2258f231326a3f59bff07', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 1, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+u'timestamp.der' expires Mon Feb  3 19:09:25 2020 (UTC).
 1.0 day(s) until it expires.
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'dbf8e6af0a7aeb1ea2109231f905b4cf5fc460d1aa2261817525fda822b912d6af6eebe4709ff4935acba24828c23ec18f598f7453b1383e010ba3866ba24b0e', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 0, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'8624d00d80bd1f45158f38322fc9c950b700c45c122ee0f9bf78ec482d494878430fa6ab63094aa8769f58108378d64b1de4095189e820ae22eae59e70233705', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 1, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  111 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
 	--------> [tuf/repository_tool.py]
 			>>Function:  [mark_dirty()]:  For repository: 113  marking dirty roles the following ones: [u'timestamp', u'snapshot']
-u'timestamp.der' expires Sat Feb  1 18:26:21 2020 (UTC).
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'faeb32a577e2f6f3b5ed64d898afec96240ac594239159a58efc9920cad51cc9408b69f93bd2b12bd79112e074c2c85d7b690342fdf1aa802a8704eab0bd280e', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 0, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'105a96f11876979c30e1de8ecdfb73fbec8adb3ed3e95fe76af88354c454a5d729357f31e2070eae15c61b6b1272163c6ff9aba03ef21005ec40c284540d550c', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 1, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'14e83d7d1a5091a5330b97cde84f76ba7d5fbac0205aa8f6000342bba49d3016d4c5eae2541695c44343e499700e89f7055f444fde2441038a34c7bfbe92fc0d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 0, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'c36e79b6770f954ce39c059067e8af77bfdcf834eb5a56609d141461f561c9c5ece337eb036bf0caa5a5ee40670f70270d31d18a4b6c7f6aa2ebc20c2783360d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 1, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'68d6eb6b29105e90aa05e0ae641c1cce8657fdf72365043d12cca0cdc1bb4ce8c2630afefa5f85ea14b9224ecde2a678173f15d2671af11d75e7b58f28749506', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 0, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'7173b90ea667b3fe99296a7188b34b084064a743048fdf8e68927d4eea772068ba296aa6d1980aa3baca73c8def7847216d5fa9fd9f2258f231326a3f59bff07', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 1, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+u'timestamp.der' expires Mon Feb  3 19:09:25 2020 (UTC).
 1.0 day(s) until it expires.
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'dbf8e6af0a7aeb1ea2109231f905b4cf5fc460d1aa2261817525fda822b912d6af6eebe4709ff4935acba24828c23ec18f598f7453b1383e010ba3866ba24b0e', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 0, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'8624d00d80bd1f45158f38322fc9c950b700c45c122ee0f9bf78ec482d494878430fa6ab63094aa8769f58108378d64b1de4095189e820ae22eae59e70233705', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 1, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  113 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
 	--------> [tuf/repository_tool.py]
 			>>Function:  [mark_dirty()]:  For repository: 112  marking dirty roles the following ones: [u'timestamp', u'snapshot']
-u'timestamp.der' expires Sat Feb  1 18:26:21 2020 (UTC).
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'faeb32a577e2f6f3b5ed64d898afec96240ac594239159a58efc9920cad51cc9408b69f93bd2b12bd79112e074c2c85d7b690342fdf1aa802a8704eab0bd280e', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 0, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'sig': u'105a96f11876979c30e1de8ecdfb73fbec8adb3ed3e95fe76af88354c454a5d729357f31e2070eae15c61b6b1272163c6ff9aba03ef21005ec40c284540d550c', u'method': u'ed25519'}], u'signed': {'_type': u'Root', 'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 'keys': {u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 'expires': u'2021-02-02T00:57:45Z', 'version': 1, 'consistent_snapshot': False, 'compression_algorithms': [u'gz']}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'14e83d7d1a5091a5330b97cde84f76ba7d5fbac0205aa8f6000342bba49d3016d4c5eae2541695c44343e499700e89f7055f444fde2441038a34c7bfbe92fc0d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 0, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'c36e79b6770f954ce39c059067e8af77bfdcf834eb5a56609d141461f561c9c5ece337eb036bf0caa5a5ee40670f70270d31d18a4b6c7f6aa2ebc20c2783360d', u'method': u'ed25519'}], u'signed': {'_type': u'Targets', 'version': 1, 'targets': {}, 'expires': u'2020-05-04T02:36:35Z', 'delegations': {u'keys': {}, u'roles': []}}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'68d6eb6b29105e90aa05e0ae641c1cce8657fdf72365043d12cca0cdc1bb4ce8c2630afefa5f85ea14b9224ecde2a678173f15d2671af11d75e7b58f28749506', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 0, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'7173b90ea667b3fe99296a7188b34b084064a743048fdf8e68927d4eea772068ba296aa6d1980aa3baca73c8def7847216d5fa9fd9f2258f231326a3f59bff07', u'method': u'ed25519'}], u'signed': {'_type': u'Snapshot', 'version': 1, 'meta': {u'targets.der': {u'version': 1}, u'root.der': {u'length': 631, u'version': 1, u'hashes': {u'sha256': '24fabc035b05ff938bfaba3d8a9a8e2a2efeafce7b7814cccefdd45d1de40b0b'}}}, 'expires': u'2020-02-09T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+u'timestamp.der' expires Mon Feb  3 19:09:25 2020 (UTC).
 1.0 day(s) until it expires.
-Director: Director repo server process started, with pid 4415, serving on port 30401. Director repo URL is: 0.0.0.0:30401/
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'dbf8e6af0a7aeb1ea2109231f905b4cf5fc460d1aa2261817525fda822b912d6af6eebe4709ff4935acba24828c23ec18f598f7453b1383e010ba3866ba24b0e', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 0, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'8624d00d80bd1f45158f38322fc9c950b700c45c122ee0f9bf78ec482d494878430fa6ab63094aa8769f58108378d64b1de4095189e820ae22eae59e70233705', u'method': u'ed25519'}], u'signed': {'_type': u'Timestamp', 'version': 1, 'meta': {u'snapshot.der': {u'length': 217, u'version': 1, u'hashes': {u'sha256': 'f303ceba1a904a83bff6d5e8f924a1c8ea9234ecde5023f0ecadc263db117b2d'}}}, 'expires': u'2020-02-03T19:09:25Z'}} 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]:  Checking format of:  112 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: Signature status returned
+
+	-------- --------> [tuf/sig.py]
+			>>Function:  [get_signature_status()]: 
+				Threshold:1
+				Good Sigs:[u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+				Bad Sigs:[]
+				Unknown Sigs:[]
+				Untrusted Sigs:[]
+				Unknown Method Sigs:[]
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+Director: Director repo server process started, with pid 4839, serving on port 30401. Director repo URL is: 0.0.0.0:30401/
 Director: Starting Director Services Thread: will now listen on port 30501
 Timeserver: Loading timeserver signing key.
 	-------->[demo/__init__.py]
@@ -1215,7 +3135,7 @@ Timeserver: Timeserver signing key loaded.
 			>>Function:  [load_json_file()]:  Checking whether the file is mostly likely gzipped: False 
 
 	-------- --------> [tuf/util.py]
-			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/timeserver.pub', mode 'r' at 0x7fca623069c0> 
+			>>Function:  [load_json_file()]:  Loading: <open file u'/home/joan/Escriptori/TFM/TFM/demo/keys/timeserver.pub', mode 'r' at 0x7f4bbc949a50> 
 
 	-------- --------> [tuf/util.py]
 			>>Function:  [load_json_file()]:  Loading json: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'5d7750b208dfc7ade8f6106b9c3fa25162d5a184f302161e429f19a79e66a908'}} 
@@ -1234,6 +3154,58 @@ Timeserver: Timeserver signing key loaded.
 
 	--------> [tuf/repository_lib.py]
 			>>Function:  [import_ed25519_publickey_from_file()]: Returning the key: {u'keyval': {u'public': u'5d7750b208dfc7ade8f6106b9c3fa25162d5a184f302161e429f19a79e66a908'}, u'keytype': u'ed25519', u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', u'keyid_hash_algorithms': [u'sha256', u'sha512']}
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]:  Create signature. Entered data
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [create_signature()]: public key: IT CRASHES
+				private key: IT CRASHES
+				data: IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Verify signature. Entered data:
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]: public key: IT CRASHES
+				method: IT CRASHES
+				signature:IT CRASHES
+				data:IT CRASHES
+				use pynacl:IT CRASHES
+
+	--------> [tuf/ed25519_keys.py]
+			>>Function:  [verify_signature()]:  Checking if method: ' ed25519' is supported 
+
 Timeserver: Timeserver will now listen on port 30601
 >>> 
+Director: Killing repository hosting process with pid: 4839
+ImageRepo: Killing repository hosting process with pid: 4831
 
