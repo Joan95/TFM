@@ -246,11 +246,15 @@ def create_signature(public_key, private_key, data):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[create_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s:' % (I_TO_PRINT, 'Create signature. Entered data')))
+  print(str('%s %s' % (I_TO_PRINT, 'Create signature. Entered data')))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('\n\t\t\tpublic key: %s private key: %s data: %s %s' % (public_key, private_key, data, TO_PRINT_END)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Private key:', private_key)))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('public key: %s private key: %s data: %s' % (public_key, private_key, data)))
   #TODO: Until here
 
 
