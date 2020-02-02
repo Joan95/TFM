@@ -356,7 +356,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%spublic key: %s%smethod: %s%ssignature:%s%sdata:%s%suse pynacl:%s%s' % (TABULATE, public_key, TABULATE, method, TABULATE, signature, TABULATE, data, TABULATE, use_pynacl, TO_PRINT_END)))
+  print(str('%spublic key: %s%smethod: %s%ssignature:%s%sdata:%s%suse pynacl:%s%s' % (I_TO_PRINT, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TO_PRINT_END)))
   #TODO: Until here
 
 
