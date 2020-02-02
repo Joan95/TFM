@@ -119,5 +119,8 @@ GREEN = '\033[42m\033[30m' # black on green
 YELLOW = '\033[93m' # yellow on black
 WHITE = '\033[47m\033[30m' # black on white
 
+# Custom Combinations
+YELLOW_BG = '\033[43m\033[30m'
+
 ENDCOLORS = '\033[0m'
 
