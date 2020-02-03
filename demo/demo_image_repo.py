@@ -65,11 +65,12 @@ xmlrpc_service_thread = None
 def print_key(dictionary, count=0):
 
     for key in dictionary.keys():
-	if type(dictionary[key]) == dict:
-		print(TABULATION + str(' %s' % (key)))
-		print_key(dictionary[key], 1)
-	else:
-		print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
+    	if type(dictionary[key]) == dict:
+    		print(TABULATION + str(' %s' % (key)))
+    		print_key(dictionary[key], 1)
+    	else:
+    		print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
+    print(TO_PRINT_END)
     pass
 
 
@@ -209,13 +210,13 @@ def clean_slate(use_new_keys=False):
   key_role1_pri = demo.import_private_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_role1_pri]' + TO_PRINT_END)
+  print(I_TO_PRINT + '[key_role1_pri]')
   print_key(key_role1_pri)
   #TODO: Until here
 
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Adding top level keys to the main repository')
+  print(TO_PRINT_END + I_TO_PRINT + 'Adding top level keys to the main repository')
   #TODO: Until here
 
   # Add top level keys to the main repository.
