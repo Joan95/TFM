@@ -57,7 +57,7 @@ _keydb_dict['default'] = {}
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/keydb.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -218,6 +218,13 @@ def remove_keydb(repository_name):
     None.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_keydb()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Removing keyDB for: ', repository_name)))
+  #TODO: Until here
+
+
   # Is 'repository_name' properly formatted?  Raise 'tuf.FormatError' if not.
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
 
@@ -275,6 +282,12 @@ def add_key(key_dict, keyid=None, repository_name='default'):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_key()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding key to keyDB for: ', repository_name, TABULATE, key_dict)))
+  #TODO: Until here
 
   # Does 'key_dict' have the correct format?
   # This check will ensure 'key_dict' has the appropriate number of objects
@@ -394,6 +407,12 @@ def remove_key(keyid, repository_name='default'):
     None.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_key()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Removing key from keyDB: ', keyid)))
+  #TODO: Until here
+
   # Does 'keyid' have the correct format?
   # This check will ensure 'keyid' has the appropriate number of objects
   # and object types, and that all dict keys are properly named.
@@ -444,6 +463,12 @@ def clear_keydb(repository_name='default', clear_all=False):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_keydb()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Clearing keyDB for repository: ', repository_name)))
+  #TODO: Until here
 
   # Do the arguments have the correct format?  Raise 'tuf.FormatError' if
   # 'repository_name' is improperly formatted.
