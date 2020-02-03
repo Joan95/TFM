@@ -1108,11 +1108,12 @@ def import_ed25519_publickey_from_file(filepath):
   # loaded key object in tuf.formats.ED25519KEY_SCHEMA' format that also
   # includes the keyid.
   ed25519_key_metadata = tuf.util.load_json_file(filepath)
-  ed25519_key, junk = tuf.keys.format_metadata_to_key(ed25519_key_metadata)
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key_metadata: ', TABULATE, ed25519_key_metadata, TO_PRINT_END)))
   #TODO: Until here
+
+  ed25519_key, junk = tuf.keys.format_metadata_to_key(ed25519_key_metadata)
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key: ', TABULATE, ed25519_key, TO_PRINT_END)))
