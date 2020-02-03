@@ -182,6 +182,11 @@ class Repository(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__()]: ' + uptane.ENDCOLORS
 
+    self._repository_directory = repository_directory
+    self._metadata_directory = metadata_directory
+    self._targets_directory = targets_directory
+    self.repository_name = repository_name # TODO: Review this. Unlike class Metadata, this just uses a literal attribute
+
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
     #TODO: Until here
@@ -198,10 +203,6 @@ class Repository(object):
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_name: ', repository_name)))
     #TODO: Until here
 
-    self._repository_directory = repository_directory
-    self._metadata_directory = metadata_directory
-    self._targets_directory = targets_directory
-    self.repository_name = repository_name # TODO: Review this. Unlike class Metadata, this just uses a literal attribute
 
     if self.repository_name != 'default':
 
@@ -680,7 +681,7 @@ class Metadata(object):
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_verification_key()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
+    print(str('%s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Value rolename:', self.rolename, TABULATE, 'Value for key: ', key, TABULATE, 'Value for expires:', expires, TO_PRINT_END)))
     #TODO: Until here
 
     # Does 'key' have the correct format?
