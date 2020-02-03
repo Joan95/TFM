@@ -1008,7 +1008,7 @@ def load_json_file(filepath):
     deserialized_object = json.load(fileobject)
 
     #TODO: Print to be deleted
-    print(str('%s %s %s %s' % (I_TO_PRINT, 'Loading json:', deserialized_object, TO_PRINT_END)))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Loaded json:', deserialized_object, TO_PRINT_END)))
     #TODO: Until here
 
 

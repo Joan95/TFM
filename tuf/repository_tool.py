@@ -220,7 +220,7 @@ class Repository(object):
     self.root = Root(repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self.root: ', self.root)))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Root added to roleDB. Value for self.root: ', self.root)))
     #TODO: Until here
 
     self.snapshot = Snapshot(repository_name=self.repository_name)
