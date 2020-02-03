@@ -1119,7 +1119,7 @@ def import_ed25519_publickey_from_file(filepath):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'junk: ', TABULATE, junk, TO_PRINT_END)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'junk == keyids: ', TABULATE, junk, TO_PRINT_END)))
   #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.

@@ -538,11 +538,21 @@ def format_metadata_to_key(key_metadata):
   # Convert 'key_value' to 'tuf.formats.KEY_SCHEMA' and generate its hash
   # The hash is in hexdigest form.
   default_keyid = _get_keyid(keytype, key_value)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'default_keyid:', default_keyid, TO_PRINT_END)))
+  #TODO: Until here
+
   keyids = set()
   keyids.add(default_keyid)
 
   for hash_algorithm in tuf.conf.REPOSITORY_HASH_ALGORITHMS:
     keyid = _get_keyid(keytype, key_value, hash_algorithm)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'default_keyid:', default_keyid, TO_PRINT_END)))
+    #TODO: Until here
+
     keyids.add(keyid)
 
   # All the required key values gathered.  Build 'key_dict'.
@@ -553,7 +563,7 @@ def format_metadata_to_key(key_metadata):
   key_dict['keyval'] = key_value
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'key_dict:', key_dict, TABULATE, 'keyids:', keyids, TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'key_dict:', key_dict, TABULATE, 'keyids:', keyids, TO_PRINT_END)))
   #TODO: Until here
 
   return key_dict, keyids
