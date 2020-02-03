@@ -532,7 +532,7 @@ def format_metadata_to_key(key_metadata):
   key_value = key_metadata['keyval']
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Convert \'key_value\' to \'tuf.formats.KEY_SCHEMA\' and generate its hash', TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Convert \'key_value\' to \'tuf.formats.KEY_SCHEMA\' and generate its hash', TABULATE, 'ENTERED:', TABULATE, 'key_metadata:', key_metadata, TO_PRINT_END)))
   #TODO: Until here
 
   # Convert 'key_value' to 'tuf.formats.KEY_SCHEMA' and generate its hash
@@ -598,6 +598,10 @@ def _get_keyid(keytype, key_value, hash_algorithm=_KEY_ID_HASH_ALGORITHM):
 
   # 'keyid' becomes the hexadecimal representation of the hash.
   keyid = digest_object.hexdigest()
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Returning keyid:', keyid, TO_PRINT_END)))
+  #TODO: Until here
 
   return keyid
 
