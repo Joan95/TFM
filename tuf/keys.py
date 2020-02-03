@@ -418,6 +418,13 @@ def format_keyval_to_metadata(keytype, key_value, private=False):
     A 'tuf.formats.KEY_SCHEMA' dictionary.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[format_keyval_to_metadata()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'keytype:', keytype, TABULATE, 'key_value:', key_value, TABULATE, 'private:', private, TO_PRINT_END)))
+  #TODO: Until here
+
+
   # Does 'keytype' have the correct format?
   # This check will ensure 'keytype' has the appropriate number
   # of objects and object types, and that all dict keys are properly named.
@@ -437,10 +444,18 @@ def format_keyval_to_metadata(keytype, key_value, private=False):
         ' from: ' + repr(key_value))
 
     else:
+      #TODO: Print to be deleted
+      print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'keytype:', keytype, TABULATE, 'keyval:', key_value, TO_PRINT_END)))
+      #TODO: Until here
+
       return {'keytype': keytype, 'keyval': key_value}
 
   else:
     public_key_value = {'public': key_value['public']}
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'keytype:', keytype, TABULATE, 'keyid_hash_algorithms:', tuf.conf.REPOSITORY_HASH_ALGORITHMS, TABULATE, 'keyval:', public_key_value, TO_PRINT_END)))
+    #TODO: Until here
 
     return {'keytype': keytype,
             'keyid_hash_algorithms': tuf.conf.REPOSITORY_HASH_ALGORITHMS,
@@ -516,6 +531,10 @@ def format_metadata_to_key(key_metadata):
   keytype = key_metadata['keytype']
   key_value = key_metadata['keyval']
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Convert \'key_value\' to \'tuf.formats.KEY_SCHEMA\' and generate its hash', TO_PRINT_END)))
+  #TODO: Until here
+
   # Convert 'key_value' to 'tuf.formats.KEY_SCHEMA' and generate its hash
   # The hash is in hexdigest form.
   default_keyid = _get_keyid(keytype, key_value)
@@ -545,6 +564,12 @@ def format_metadata_to_key(key_metadata):
 
 def _get_keyid(keytype, key_value, hash_algorithm=_KEY_ID_HASH_ALGORITHM):
   """Return the keyid of 'key_value'."""
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_keyid()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'keytype:', keytype, TABULATE, 'key_value:', key_value, TABULATE, 'hash_algorithm:', hash_algorithm, TO_PRINT_END)))
+  #TODO: Until here
 
   # 'keyid' will be generated from an object conformant to KEY_SCHEMA,
   # which is the format Metadata files (e.g., root.json) store keys.
