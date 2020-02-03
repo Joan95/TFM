@@ -63,6 +63,7 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT_END = '\n'
 TABULATION = '\t\t\t\t'
 
 KNOWN_VINS = ['111', '112', '113', 'democar']
@@ -77,11 +78,13 @@ director_service_thread = None
 def print_key(dictionary, count=0):
 
     for key in dictionary.keys():
-	if type(dictionary[key]) == dict:
-		print(TABULATION + str(' %s' % (key)))
-		print_key(dictionary[key], 1)
-	else:
-		print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
+        if type(dictionary[key]) == dict:
+            print(TABULATION + str(' %s' % (key)))
+            print_key(dictionary[key], 1)
+        else:
+            print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
+
+    print(TO_PRINT_END)
     pass
 
 

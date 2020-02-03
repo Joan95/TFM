@@ -1216,7 +1216,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     encrypted_key = file_object.read()
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Encrypted content of: \'' + filepath + '\': ' + TABULATE + encrypted_key + TO_PRINT_END)
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Encrypted content of:', filepath, TABULATE, 'encrypted_key:', encrypted_key, TO_PRINT_END)))
   #TODO: Until here
 
   # Decrypt the loaded key file, calling the appropriate cryptography library
