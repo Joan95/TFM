@@ -49,6 +49,7 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT_END = '\n'
 TABULATION = '\t\t\t\t'
 
 target_files = {
@@ -208,7 +209,7 @@ def clean_slate(use_new_keys=False):
   key_role1_pri = demo.import_private_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_role1_pri]')
+  print(I_TO_PRINT + '[key_role1_pri]' + TO_PRINT_END)
   print_key(key_role1_pri)
   #TODO: Until here
 

@@ -1412,6 +1412,14 @@ def decrypt_key(encrypted_key, passphrase):
     RSAKEY_SCHEMA, ED25519KEY_SCHEMA).
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[decrypt_key()]: ' + uptane.ENDCOLORS
+
+  encrypted_key, passphrase
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'encrypted_key:', encrypted_key, TABULATE, 'passphrase:', passphrase, TO_PRINT_END)))
+  #TODO: Until here
+
   # Does 'encrypted_key' have the correct format?
   # This check ensures 'encrypted_key' has the appropriate number
   # of objects and object types, and that all dict keys are properly named.
