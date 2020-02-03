@@ -221,60 +221,84 @@ def clean_slate(use_new_keys=False):
 
   # Add top level keys to the main repository.
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding verification key_root_pub:', key_root_pub)))
+  #TODO: Until here
+
   repo.root.add_verification_key(key_root_pub)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'key_root_pub')
-  print_key(key_root_pub)
+  print(I_TO_PRINT + '[key_root_pub]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding verification key_timestamp_pub:', key_timestamp_pub)))
   #TODO: Until here
 
   repo.timestamp.add_verification_key(key_timestamp_pub)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_timestamp_pub]')
-  print_key(key_timestamp_pub)
+  print(I_TO_PRINT + '[key_timestamp_pub]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding verification key_snapshot_pub:', key_snapshot_pub)))
   #TODO: Until here
 
   repo.snapshot.add_verification_key(key_snapshot_pub)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_snapshot_pub]')
-  print_key(key_snapshot_pub)
+  print(I_TO_PRINT + '[key_snapshot_pub]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding verification key_targets_pub:', key_targets_pub)))
   #TODO: Until here
 
   repo.targets.add_verification_key(key_targets_pub)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_targets_pub]')
-  print_key(key_targets_pub)
+  print(I_TO_PRINT + '[key_targets_pub]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding signing key_root_pri:', key_root_pri)))
   #TODO: Until here
 
   repo.root.load_signing_key(key_root_pri)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_root_pri]')
-  print_key(key_root_pri)
+  print(I_TO_PRINT + '[key_root_pri]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding signing key_timestamp_pri:', key_timestamp_pri)))
   #TODO: Until here
 
   repo.timestamp.load_signing_key(key_timestamp_pri)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_timestamp_pri]')
-  print_key(key_timestamp_pri)
+  print(I_TO_PRINT + '[key_timestamp_pri]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding signing key_snapshot_pri:', key_snapshot_pri)))
   #TODO: Until here
 
   repo.snapshot.load_signing_key(key_snapshot_pri)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_snapshot_pri]')
-  print_key(key_snapshot_pri)
+  print(I_TO_PRINT + '[key_snapshot_pri]: ADDED')
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Adding signing key_targets_pri:', key_targets_pri)))
   #TODO: Until here
 
   repo.targets.load_signing_key(key_targets_pri)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + '[key_targets_pri]')
-  print_key(key_targets_pri)
+  print(I_TO_PRINT + '[key_targets_pri]: ADDED')
   #TODO: Until here
 
 
