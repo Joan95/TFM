@@ -546,6 +546,10 @@ def format_metadata_to_key(key_metadata):
   keyids = set()
   keyids.add(default_keyid)
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'keyids:', keyids, TO_PRINT_END)))
+  #TODO: Until here
+
   for hash_algorithm in tuf.conf.REPOSITORY_HASH_ALGORITHMS:
     keyid = _get_keyid(keytype, key_value, hash_algorithm)
 
@@ -554,6 +558,10 @@ def format_metadata_to_key(key_metadata):
     #TODO: Until here
 
     keyids.add(keyid)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'keyids:', keyids, TO_PRINT_END)))
+    #TODO: Until here
 
   # All the required key values gathered.  Build 'key_dict'.
   # 'keyid_hash_algorithms'
