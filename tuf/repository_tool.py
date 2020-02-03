@@ -180,7 +180,7 @@ class Repository(object):
     tuf.formats.PATH_SCHEMA.check_match(metadata_directory)
     tuf.formats.PATH_SCHEMA.check_match(targets_directory)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
@@ -633,6 +633,12 @@ class Metadata(object):
     self._rolename = None
     self._repository_name = None
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.__init__()]: ' + uptane.ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, '__init__ function called', TO_PRINT_END)))
+    #TODO: Until here
+
 
 
   def add_verification_key(self, key, expires=None):
@@ -670,6 +676,12 @@ class Metadata(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_verification_key()]: ' + uptane.ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
+    #TODO: Until here
 
     # Does 'key' have the correct format?
     # Ensure the arguments have the appropriate number of objects and object
@@ -1481,7 +1493,7 @@ class Root(Metadata):
 
     super(Root, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__()]: ' + uptane.ENDCOLORS
 
     self._rolename = 'root'
     self._repository_name = repository_name
@@ -1565,7 +1577,7 @@ class Timestamp(Metadata):
 
     super(Timestamp, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Timestamp.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Timestamp.__init__()]: ' + uptane.ENDCOLORS
 
     self._rolename = 'timestamp'
     self._repository_name = repository_name
@@ -1638,7 +1650,7 @@ class Snapshot(Metadata):
 
     super(Snapshot, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Snapshot.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Snapshot.__init__()]: ' + uptane.ENDCOLORS
 
     self._rolename = 'snapshot'
     self._repository_name = repository_name
@@ -1736,7 +1748,7 @@ class Targets(Metadata):
     tuf.formats.ROLENAME_SCHEMA.check_match(rolename)
     tuf.formats.REPOSITORY_NAME_SCHEMA.check_match(repository_name)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__init__]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__init__()]: ' + uptane.ENDCOLORS
 
     if roleinfo is not None:
       tuf.formats.ROLEDB_SCHEMA.check_match(roleinfo)

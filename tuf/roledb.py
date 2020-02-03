@@ -383,6 +383,12 @@ def update_roleinfo(rolename, roleinfo, mark_role_as_dirty=True, repository_name
     None.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_roleinfo()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Updating infor for Role: ', rolename, 'With roleinfo:', roleinfo)))
+  #TODO: Until here
+
   # Does the arguments have the correct object format?
   # This check will ensure arguments have the appropriate number of objects
   # and object types, and that all dict keys are properly named.
