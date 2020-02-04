@@ -835,6 +835,12 @@ class Metadata(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.load_signing_key()]: ' + uptane.ENDCOLORS
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Key:', key, TO_PRINT_END)))
+    #TODO: Until here
+
     # Does 'key' have the correct format?
     # Ensure the arguments have the appropriate number of objects and object
     # types, and that all dict keys are properly named.
@@ -852,8 +858,17 @@ class Metadata(object):
       tuf.keydb.add_key(key, repository_name=self.repository_name)
 
     except tuf.KeyAlreadyExistsError:
+
+      #TODO: Print to be deleted
+      print(str('%s %s %s %s' % (I_TO_PRINT, 'EXCEPTION key already exists:', key, TO_PRINT_END)))
+      #TODO: Until here
+
       tuf.keydb.remove_key(key['keyid'], repository_name=self.repository_name)
       tuf.keydb.add_key(key, repository_name=self.repository_name)
+
+      #TODO: Print to be deleted
+      print(str('%s %s %s %s' % (I_TO_PRINT, 'END EXCEPTION key arleady added:', key, TO_PRINT_END)))
+      #TODO: Until here
 
     # Update the role's 'signing_keys' field in 'tuf.roledb.py'.
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
