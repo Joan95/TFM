@@ -285,6 +285,8 @@ class Repository(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.write()]: ' + uptane.ENDCOLORS
+
     # Does 'write_partial' have the correct format?
     # Ensure the arguments have the appropriate number of objects and object
     # types, and that all dict keys are properly named.
@@ -297,9 +299,19 @@ class Repository(object):
     # populated, otherwise write() throws a 'tuf.UnsignedMetadataError'
     # exception if any of the top-level roles are missing signatures, keys, etc.
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Getting dirty roles...')))
+    #TODO: Until here
+
+
     # Write the metadata files of all the Targets roles that are dirty (i.e.,
     # have been modified via roledb.update_roleinfo()).
     dirty_roles = tuf.roledb.get_dirty_roles(self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'dirty_roles:', dirty_roles)))
+    #TODO: Until here
 
     filenames = {'root': os.path.join(self._metadata_directory, repo_lib.ROOT_FILENAME),
                  'targets': os.path.join(self._metadata_directory, repo_lib.TARGETS_FILENAME),
@@ -308,7 +320,17 @@ class Repository(object):
 
     snapshot_signable = None
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Getting dirty_rolenames...')))
+    #TODO: Until here
+
+
     dirty_rolenames = tuf.roledb.get_dirty_roles(self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'dirty_rolenames:', dirty_rolenames)))
+    #TODO: Until here
 
     for dirty_rolename in dirty_rolenames:
 
@@ -318,6 +340,12 @@ class Repository(object):
 
       dirty_filename = os.path.join(self._metadata_directory,
                                     dirty_rolename + METADATA_EXTENSION)
+
+      #TODO: Print to be deleted
+      print(str('%s %s %s' % (I_TO_PRINT, 'generating and writing metadata for:', dirty_rolename)))
+      #TODO: Until here
+
+
       repo_lib._generate_and_write_metadata(dirty_rolename,
           dirty_filename, write_partial, self._targets_directory,
           self._metadata_directory, consistent_snapshot, filenames,
@@ -2068,6 +2096,8 @@ class Targets(Metadata):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_target()]: ' + uptane.ENDCOLORS
 
     # Does 'filepath' have the correct format?
     # Ensure the arguments have the appropriate number of objects and object
