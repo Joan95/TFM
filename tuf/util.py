@@ -146,10 +146,10 @@ class TempFile(object):
       Nonnegative integer representing compressed file size.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.get_compressed_length()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.get_compressed_length()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     # Even if we read a compressed file with the gzip standard library module,
     # the original file will remain compressed.
@@ -172,10 +172,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.flush()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.flush()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
 
     self.temporary_file.flush()
@@ -201,10 +201,10 @@ class TempFile(object):
       String of data.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.read()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.read()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     if size is None:
       self.temporary_file.seek(0)
@@ -243,10 +243,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.write()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.write()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     self.temporary_file.write(data)
     if auto_flush:
@@ -271,10 +271,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.move()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.move()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     self.flush()
     self.seek(0)
@@ -308,10 +308,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.seek()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.seek()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     self.temporary_file.seek(*args)
 
@@ -356,10 +356,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.decompress_temp_file_object()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.decompress_temp_file_object()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     # Does 'compression' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
@@ -411,10 +411,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.close_temp_file()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.close_temp_file()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
 
     self.temporary_file.close()
