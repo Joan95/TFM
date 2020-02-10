@@ -843,10 +843,10 @@ def _generate_derived_key(password, salt=None, iterations=None):
     by default.  'pseudorandom_function' instead sets 'prf' to HMAC-SHA256.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[pseudorandom_function()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[pseudorandom_function()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     return Crypto.Hash.HMAC.new(password, salt, Crypto.Hash.SHA256).digest()
 
