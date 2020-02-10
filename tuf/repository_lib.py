@@ -129,11 +129,21 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
       partially written, and a write_partial is not needed.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_and_write_metadata()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for:', rolename)))
+  #TODO: Until here
+
   metadata = None
 
   # Retrieve the roleinfo of 'rolename' to extract the needed metadata
   # attributes, such as version number, expiration, etc.
   roleinfo = tuf.roledb.get_roleinfo(rolename, repository_name)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'roleinfo:', roleinfo, 'repository_name:', repository_name)))
+  #TODO: Until here
 
   # Generate the appropriate role metadata for 'rolename'.
   if rolename == 'root':
@@ -443,6 +453,16 @@ def _delete_obsolete_metadata(metadata_directory, snapshot_metadata,
   top-level metadata during loading) due to partial metadata and top-level
   metadata that have not been written yet.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_delete_obsolete_metadata()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be delted
+  print(str('%s %s' % (I_TO_PRINT, 'Non-public function that deletes metadata files marked as removed by \'repository_tool.py\'. Revoked metadata files are not actually deleted until this function is called. Obsolete metadata should *not* be retained in \"metadata.staged\", otherwise they may be re-loaded by \'load_repository()\'. Note: Obsolete metadata may not always be easily detected \(by inspecting top-level metadata during loading\) due to partial metadata and top-level metadata that have not been written yet.')))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Deleting metadata for:', metadata_directory)))
+  #TODO: Until here
 
   # Walk the repository's metadata 'targets' sub-directory, where all the
   # metadata of delegated roles is stored.
@@ -1481,6 +1501,12 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
     A root metadata object, conformant to 'tuf.formats.ROOT_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_root_metadata()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Create the root metadata.  \'tuf.roledb.py\' and \'tuf.keydb.py\' are read and the information returned by these modules is used to generate the root metadata object.')))
+  # TODO: Until here
+
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -1555,6 +1581,11 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
   #       generate_root_metadata, etc. with one function that generates
   #       metadata, possibly rolling that upwards into the calling function.
   #       There are very few things that really need to be done differently.
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning Root Metadata schema with corresponding format')))
+  # TODO: Until here
+
   return tuf.formats.build_dict_conforming_to_schema(
       tuf.formats.ROOT_SCHEMA,
       _type='Root',   # TODO: Does this have to be capitalized? -.-
@@ -1620,6 +1651,12 @@ def generate_targets_metadata(targets_directory, target_files, version,
     A targets metadata object, conformant to 'tuf.formats.TARGETS_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_targets_metadata()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate the targets metadata object. The targets in \'target_files\' must exist at the same path they should on the repo. \'target_files\' is a list of targets.  The \'custom\' field of the targets metadata is not currently supported.')))
+  # TODO: Until here
+
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -1681,6 +1718,10 @@ def generate_targets_metadata(targets_directory, target_files, version,
         if not os.path.exists(digest_target):
           logger.warning('Hard linking target file to ' + repr(digest_target))
           os.link(target_path, digest_target)
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning Targets Metadata schema with corresponding format')))
+  # TODO: Until here
 
   # Generate the targets metadata object.
   # Use generalized build_dict_conforming_to_schema func to produce a dict that
@@ -1767,6 +1808,12 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
     The snapshot metadata object, conformant to 'tuf.formats.SNAPSHOT_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_snapshot_metadata()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Create the snapshot metadata. The minimum metadata must exist (i.e., \'root.json\' and \'targets.json\'). This function searches \'metadata_directory\' and the resulting snapshot file will list all the delegated roles found there.')))
+  # TODO: Until here
+
   # Do the arguments have the correct format?
   # This check ensures arguments have the appropriate number of objects and
   # object types, and that all dict keys are properly named.
@@ -1821,6 +1868,10 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
           fileinfodict[metadata_name] = get_metadata_versioninfo(
               rolename, repository_name)
 
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning Snapshot Metadata schema with corresponding format')))
+  # TODO: Until here
+
   # Generate the Snapshot metadata object.
   # Use generalized build_dict_conforming_to_schema func to produce a dict that
   # contains all the appropriate information for snapshot metadata,
@@ -1873,6 +1924,12 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
     A timestamp metadata object, conformant to 'tuf.formats.TIMESTAMP_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_timestamp_metadata()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate the timestamp metadata object. The \'snapshot.json\' file must exist.')))
+  # TODO: Until here
+
   # Do the arguments have the correct format?
   # This check ensures arguments have the appropriate number of objects and
   # object types, and that all dict keys are properly named.
@@ -1887,6 +1944,10 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
   snapshot_version = get_metadata_versioninfo('snapshot', repository_name)
   snapshot_fileinfo[SNAPSHOT_FILENAME] = \
     tuf.formats.make_fileinfo(length, hashes, version=snapshot_version['version'])
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning Timestamp Metadata schema with corresponding format')))
+  # TODO: Until here
 
   # We previously saved the versioninfo of the compressed versions of
   # 'snapshot.json' in 'versioninfo'.  Since version numbers are now stored,
@@ -1947,6 +2008,12 @@ def sign_metadata(metadata_object, keyids, filename,
     A signable object conformant to 'tuf.formats.SIGNABLE_SCHEMA'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Signing metadata for:', metadata_object)))
+  #TODO: Until here
+
   # Do the arguments have the correct format?
   # This check ensures arguments have the appropriate number of objects and
   # object types, and that all dict keys are properly named.
@@ -1967,6 +2034,10 @@ def sign_metadata(metadata_object, keyids, filename,
     # Load the signing key.
     key = tuf.keydb.get_key(keyid, repository_name)
     # TODO logger.info('Signing ' + repr(filename) + ' with ' + key['keyid'])
+
+    # TODO: Print to be deleted
+    print (str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing: ', repr(filename), 'with key:', key['keyid'])))
+    # TODO: Until here
 
     # Create a new signature list.  If 'keyid' is encountered, do not add it
     # to the new list.

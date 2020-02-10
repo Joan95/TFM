@@ -301,17 +301,13 @@ class Repository(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Getting dirty roles...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Write all the JSON Metadata objects to their corresponding files. write() raises an exception if any of the role metadata to be written to disk is invalid, such as an insufficient threshold of signatures, missing private keys, etc.')))
     #TODO: Until here
 
 
     # Write the metadata files of all the Targets roles that are dirty (i.e.,
     # have been modified via roledb.update_roleinfo()).
     dirty_roles = tuf.roledb.get_dirty_roles(self.repository_name)
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'dirty_roles:', dirty_roles)))
-    #TODO: Until here
 
     filenames = {'root': os.path.join(self._metadata_directory, repo_lib.ROOT_FILENAME),
                  'targets': os.path.join(self._metadata_directory, repo_lib.TARGETS_FILENAME),
@@ -334,6 +330,11 @@ class Repository(object):
 
     for dirty_rolename in dirty_rolenames:
 
+      #TODO: Print to be deleted
+      print(str('%s %s %s' % (I_TO_PRINT, 'Inside-for-loop:', dirty_rolename)))
+      #TODO: Until here
+
+
       # Ignore top-level roles, they will be generated later in this method.
       if dirty_rolename in ['root', 'targets', 'snapshot', 'timestamp']:
         continue
@@ -341,15 +342,15 @@ class Repository(object):
       dirty_filename = os.path.join(self._metadata_directory,
                                     dirty_rolename + METADATA_EXTENSION)
 
-      #TODO: Print to be deleted
-      print(str('%s %s %s' % (I_TO_PRINT, 'generating and writing metadata for:', dirty_rolename)))
-      #TODO: Until here
-
 
       repo_lib._generate_and_write_metadata(dirty_rolename,
           dirty_filename, write_partial, self._targets_directory,
           self._metadata_directory, consistent_snapshot, filenames,
           repository_name=self.repository_name)
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'END-FOR-LOOP\n\n\n')))
+    #TODO: Until here
 
     # Metadata should be written in (delegated targets -> root ->
     # targets -> snapshot -> timestamp) order.
