@@ -189,6 +189,11 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
                                          roleinfo['delegations'],
                                          consistent_snapshot)
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Sign metadata:', metadata, TABULATE, 'roleinfo:', roleinfo['signing_keyids'], TABULATE, 'metadata_filename:', metadata_filename, TABULATE, 'repository_name:', repository_name)))
+  #TODO: Until here
+
   signable = sign_metadata(metadata, roleinfo['signing_keyids'],
       metadata_filename, repository_name=repository_name)
 
@@ -224,6 +229,10 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
           rolename, roleinfo, repository_name=repository_name)
       signable = sign_metadata(metadata, roleinfo['signing_keyids'],
           metadata_filename, repository_name=repository_name)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Write the metadata to file if it contains a threshold of signatures.')))
+  #TODO: Until here
 
   # Write the metadata to file if it contains a threshold of signatures.
   signable['signatures'].extend(roleinfo['signatures'])
