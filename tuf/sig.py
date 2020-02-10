@@ -28,7 +28,7 @@
   system must securely and efficiently verify the status of these signatures.
   For instance, a bunch of keys have recently expired. How many valid keys
   are now available to the Snapshot role?  This question can be answered by
-  get_signature_status(), which will return a full 'status report' of these 
+  get_signature_status(), which will return a full 'status report' of these
   'signable' dicts.  This module also provides a convenient verify() function
   that will determine if a role still has a sufficient number of valid keys.
   If a caller needs to update the signatures of a 'signable' object, there
@@ -116,6 +116,9 @@ def get_signature_status(signable, role=None, repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking format of: ', signable, TO_PRINT_END)))
@@ -134,17 +137,17 @@ def get_signature_status(signable, role=None, repository_name='default'):
 
   if role is not None:
     tuf.formats.ROLENAME_SCHEMA.check_match(role)
-  
+
   # The signature status dictionary returned.
   signature_status = {}
 
   # The fields of the signature_status dict.  A description of each field:
   # good_sigs = keys confirmed to have produced 'sig' and 'method' using
   # 'signed' and that are associated with 'role'; bad_sigs = negation of
-  # good_sigs; unknown_sigs = keys not found in the 'keydb' database; 
+  # good_sigs; unknown_sigs = keys not found in the 'keydb' database;
   # untrusted_sigs = keys that are not in the list of keyids associated
-  # with 'role'; unknown_method_sigs = keys found to have used an 
-  # unsupported method of generating signatures. 
+  # with 'role'; unknown_method_sigs = keys found to have used an
+  # unsupported method of generating signatures.
   good_sigs = []
   bad_sigs = []
   unknown_sigs = []
@@ -166,7 +169,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
     # Identify unrecognized key.
     try:
       key = tuf.keydb.get_key(keyid, repository_name)
-    
+
     except tuf.UnknownKeyError:
       unknown_sigs.append(keyid)
       continue
@@ -185,21 +188,21 @@ def get_signature_status(signable, role=None, repository_name='default'):
       unknown_method_sigs.append(keyid)
       continue
 
-    # We are now dealing with a valid key. 
+    # We are now dealing with a valid key.
     if valid_sig:
       if role is not None:
         try:
-          # Identify unauthorized key. 
+          # Identify unauthorized key.
           if keyid not in tuf.roledb.get_role_keyids(role, repository_name):
             untrusted_sigs.append(keyid)
             continue
-        
-        # Unknown role, re-raise exception. 
+
+        # Unknown role, re-raise exception.
         except tuf.UnknownRoleError:
           raise
       # Identify good/authorized key.
       good_sigs.append(keyid)
-    
+
     else:
       # Identify bad key.
       bad_sigs.append(keyid)
@@ -209,10 +212,10 @@ def get_signature_status(signable, role=None, repository_name='default'):
   if role is not None:
     try:
       threshold = tuf.roledb.get_role_threshold(role, repository_name)
-    
+
     except tuf.UnknownRoleError:
       raise
-  
+
   else:
     threshold = 0
 
@@ -237,7 +240,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
 
 def verify(signable, role, repository_name='default'):
   """
-  <Purpose> 
+  <Purpose>
     Verify whether the authorized signatures of 'signable' meet the minimum
     required by 'role'.  Authorized signatures are those with valid keys
     associated with 'role'.  'signable' must conform to SIGNABLE_SCHEMA
@@ -276,8 +279,13 @@ def verify(signable, role, repository_name='default'):
     False otherwise.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
   # Do the arguments have the correct format?  If not, raise 'tuf.FormatError'.
-  tuf.formats.SIGNABLE_SCHEMA.check_match(signable) 
+  tuf.formats.SIGNABLE_SCHEMA.check_match(signable)
   tuf.formats.ROLENAME_SCHEMA.check_match(role)
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
 
@@ -285,7 +293,7 @@ def verify(signable, role, repository_name='default'):
   # tuf.UnknownRoleError
   # tuf.FormatError
   status = get_signature_status(signable, role, repository_name)
-  
+
   # Retrieve the role's threshold and the authorized keys of 'status'
   threshold = status['threshold']
   good_sigs = status['good_sigs']
@@ -305,7 +313,7 @@ def verify(signable, role, repository_name='default'):
 
 def may_need_new_keys(signature_status):
   """
-  <Purpose> 
+  <Purpose>
     Return true iff downloading a new set of keys might tip this
     signature status over to valid.  This is determined by checking
     if either the number of unknown or untrused keys is > 0.
@@ -323,6 +331,11 @@ def may_need_new_keys(signature_status):
   <Returns>
     Boolean.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[may_need_new_keys()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   # Does 'signature_status' have the correct format?
   # This check will ensure 'signature_status' has the appropriate number
@@ -380,6 +393,10 @@ def generate_rsa_signature(signed, rsakey_dict):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_signature()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'Checking format of: ' + signed + TO_PRINT_END)
@@ -481,6 +498,11 @@ def sign_over_metadata(
      'sig': '...'}.
 
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_over_metadata()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
   # TODO: Check format of data, based on metadata_format.
@@ -595,6 +617,11 @@ def verify_signature_over_metadata(
   <Returns>
     Boolean.  True if the signature is valid, False otherwise.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature_over_metadata()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
   tuf.formats.SIGNATURE_SCHEMA.check_match(signature)

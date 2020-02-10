@@ -72,6 +72,13 @@ class TempFile(object):
 
   def _default_temporary_directory(self, prefix):
     """__init__ helper."""
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile._default_temporary_dictionary()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
+
     try:
       self.temporary_file = tempfile.NamedTemporaryFile(prefix=prefix)
 
@@ -96,6 +103,11 @@ class TempFile(object):
     <Return>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.__init__()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     self._compression = None
 
@@ -134,6 +146,11 @@ class TempFile(object):
       Nonnegative integer representing compressed file size.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.get_compressed_length()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Even if we read a compressed file with the gzip standard library module,
     # the original file will remain compressed.
     return os.stat(self.temporary_file.name).st_size
@@ -154,6 +171,12 @@ class TempFile(object):
     <Return>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.flush()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
 
     self.temporary_file.flush()
 
@@ -177,6 +200,11 @@ class TempFile(object):
     <Return>
       String of data.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.read()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     if size is None:
       self.temporary_file.seek(0)
@@ -215,6 +243,11 @@ class TempFile(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.write()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     self.temporary_file.write(data)
     if auto_flush:
       self.flush()
@@ -237,6 +270,11 @@ class TempFile(object):
     <Return>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.move()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     self.flush()
     self.seek(0)
@@ -269,6 +307,11 @@ class TempFile(object):
     <Return>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.seek()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     self.temporary_file.seek(*args)
 
@@ -312,6 +355,11 @@ class TempFile(object):
     <Return>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.decompress_temp_file_object()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Does 'compression' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
@@ -363,6 +411,12 @@ class TempFile(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.close_temp_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
+
     self.temporary_file.close()
     # If compression has been set, we need to explicitly close the original
     # file object.
@@ -394,6 +448,11 @@ def get_file_details(filepath, hash_algorithms=['sha256']):
   <Returns>
     A tuple (length, hashes) describing 'filepath'.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_file_details()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
   # 'tuf.FormatError' is raised on incorrect format.
@@ -450,6 +509,12 @@ def ensure_parent_dir(filename):
     None.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_parent_dir()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   # Ensure 'filename' corresponds to 'PATH_SCHEMA'.
   # Raise 'tuf.FormatError' on a mismatch.
   tuf.formats.PATH_SCHEMA.check_match(filename)
@@ -486,6 +551,12 @@ def file_in_confined_directories(filepath, confined_directories):
     Boolean.  True, if path is either the empty string
     or in 'confined_paths'; False, otherwise.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[file_in_confined_directories()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
 
   # Do the arguments have the correct format?
   # Raise 'tuf.FormatError' if there is a mismatch.
@@ -540,6 +611,12 @@ def find_delegated_role(roles, delegated_role):
     The unique index, an interger, in the list of roles.  if 'delegated_role'
     does not exist, 'None' is returned.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[find_delegated_role()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
 
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
@@ -642,6 +719,13 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_all_targets_allowed()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
 
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
@@ -747,6 +831,13 @@ def paths_are_consistent_with_hash_prefixes(paths, path_hash_prefixes):
     hash prefix.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[paths_are_consistent_with_hash_prefixies()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
+
   # Do the arguments have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -807,6 +898,12 @@ def get_target_hash(target_filepath):
     The hash of 'target_filepath'.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   # Does 'target_filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
@@ -849,6 +946,13 @@ def import_json():
     json module
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_json()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
+
   global _json_module
 
   if _json_module is not None:
@@ -889,6 +993,12 @@ def load_json_string(data):
   <Returns>
     Deserialized object.  For example, a dictionary.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
 
   deserialized_object = None
 
@@ -941,6 +1051,13 @@ def load_der_string(data):
     were over a DER object, they will remain that way, even though the 'signed'
     portion will no longer be in DER.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   try:
     return asn1_codec.convert_signed_der_to_dersigned_json(data)
   except Exception as e:
@@ -975,7 +1092,12 @@ def load_json_file(filepath):
     Deserialized object.  For example, a dictionary.
   """
 
+
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'Checking format of: ' + filepath + TO_PRINT_END)
@@ -1060,6 +1182,12 @@ def load_der_file(filepath):
     portion will no longer be in DER.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   # Making sure that the format of 'filepath' is a path string.
   # tuf.FormatError is raised on incorrect format.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
@@ -1102,6 +1230,12 @@ def load_file(filepath):
   those functions.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   if filepath.endswith('.der'):
     return load_der_file(filepath)
 
@@ -1140,6 +1274,13 @@ def load_string(data):
   A simple wrapper for load_der_string and load_json_string. Please see
   comments in those functions.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_string()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   if tuf.conf.METADATA_FORMAT == 'der':
     return load_der_string(data)
 
@@ -1178,6 +1319,12 @@ def digests_are_equal(digest1, digest2):
     Return True if 'digest1' is equal to 'digest2', False otherwise.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digests_are_equal()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   # Ensure the arguments have the appropriate number of objects and object
   # types, and that all dict keys are properly named.
   # Raise 'tuf.FormatError' if there is a mismatch.
@@ -1205,6 +1352,13 @@ def get_current_time():
   provide that.  Otherwise, provide the time in seconds (rounded down to an
   integer) since the epoch.
   '''
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_current_time()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   if tuf.conf.CLOCK_OVERRIDE is not None:
     tuf.formats.UNIX_TIMESTAMP_SCHEMA.check_match(tuf.conf.CLOCK_OVERRIDE)
     return tuf.conf.CLOCK_OVERRIDE

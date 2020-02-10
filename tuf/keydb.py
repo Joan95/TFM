@@ -354,6 +354,12 @@ def get_key(keyid, repository_name='default'):
     to 'tuf.formats.RSAKEY_SCHEMA' is returned.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_key()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting key for keyid: ', keyid)))
+  #TODO: Until here
+
   # Does 'keyid' have the correct format?
   # This check will ensure 'keyid' has the appropriate number of objects
   # and object types, and that all dict keys are properly named.

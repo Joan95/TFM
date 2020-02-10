@@ -49,10 +49,21 @@ else:
   PYASN1_EXISTS = True
 
 
-
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t--------> [tuf/asn1_codec.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TABULATE = '\n\t\t\t\t'
+TO_PRINT_END = '\n'
 
 
 def _ensure_valid_metadata_type_for_asn1(metadata_type):
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_ensure_valid_metadata_type_for_asn1()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   if metadata_type not in SUPPORTED_ASN1_METADATA_MODULES:
     # TODO: Choose/make better exception class.
     raise tuf.Error('This is not one of the metadata types configured for '
@@ -77,6 +88,11 @@ def convert_signed_der_to_dersigned_json(der_data):
   care.
 
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_der_to_dersigned_json()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
 
   if not PYASN1_EXISTS:
     raise tuf.Error('Request was made to load a DER file, but the required '
@@ -218,6 +234,13 @@ def convert_signed_metadata_to_der(
     'signed' entry in the signed_metadata dictionary.
 
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_metadata_to_der()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
+
   # Make sure that if and only if the re-sign ('resign') parameter is True, a
   # private_key has been provided.
   tuf.formats.BOOLEAN_SCHEMA.check_match(resign)
