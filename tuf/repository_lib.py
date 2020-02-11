@@ -109,8 +109,7 @@ METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TO_PRINT_END = '\n'
 
 
@@ -131,11 +130,7 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_and_write_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for:', rolename)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for rolename:', rolename)))
   #TODO: Until here
 
   metadata = None
@@ -194,7 +189,7 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
 
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Sign metadata:', metadata, TABULATE, 'roleinfo:', roleinfo['signing_keyids'], TABULATE, 'metadata_filename:', metadata_filename, TABULATE, 'repository_name:', repository_name)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Sign metadata:', metadata, 'roleinfo:', roleinfo['signing_keyids'], 'metadata_filename:', metadata_filename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   signable = sign_metadata(metadata, roleinfo['signing_keyids'],
@@ -1198,7 +1193,7 @@ def import_ed25519_publickey_from_file(filepath):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format for' + TABULATE + filepath + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format for' + filepath + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'filepath' have the correct format?
@@ -1208,8 +1203,7 @@ def import_ed25519_publickey_from_file(filepath):
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'ED25519 key objects are saved in .json and metadata format.' +
-        TABULATE + 'Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
+  print(I_TO_PRINT + 'ED25519 key objects are saved in .json and metadata format. Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
   #TODO: Until here
 
   # ED25519 key objects are saved in json and metadata format.  Return the
@@ -1218,17 +1212,17 @@ def import_ed25519_publickey_from_file(filepath):
   ed25519_key_metadata = tuf.util.load_json_file(filepath)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key_metadata: ', TABULATE, ed25519_key_metadata, TO_PRINT_END)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'ed25519_key_metadata: ', ed25519_key_metadata, TO_PRINT_END)))
   #TODO: Until here
 
   ed25519_key, junk = tuf.keys.format_metadata_to_key(ed25519_key_metadata)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'ed25519_key: ', TABULATE, ed25519_key, TO_PRINT_END)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'ed25519_key: ', ed25519_key, TO_PRINT_END)))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'junk == keyids: ', TABULATE, junk, TO_PRINT_END)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'junk == keyids: ', junk, TO_PRINT_END)))
   #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
@@ -1292,7 +1286,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format for' + TABULATE + filepath + TABULATE + 'Password? ' + password + TO_PRINT_END)
+  print(I_TO_PRINT + 'Checking format for' + filepath + 'Password? ' + password + TO_PRINT_END)
   #TODO: Until here
 
   # Does 'filepath' have the correct format?
@@ -1327,7 +1321,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     encrypted_key = file_object.read()
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Encrypted content of:', filepath, TABULATE, 'encrypted_key:', encrypted_key, TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s' % (I_TO_PRINT, 'Encrypted content of:', filepath, 'encrypted_key:', encrypted_key, TO_PRINT_END)))
   #TODO: Until here
 
   # Decrypt the loaded key file, calling the appropriate cryptography library

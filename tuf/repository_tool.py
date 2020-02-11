@@ -101,8 +101,7 @@ TIMESTAMP_EXPIRATION = 86400
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
+TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TO_PRINT_END = '\n'
 
 
@@ -925,14 +924,14 @@ class Metadata(object):
     except tuf.KeyAlreadyExistsError:
 
       #TODO: Print to be deleted
-      print(str('%s %s %s %s' % (I_TO_PRINT, 'EXCEPTION key already exists:', key, TO_PRINT_END)))
+      print(str('%s %s %s' % (I_TO_PRINT, 'EXCEPTION key already exists:', key)))
       #TODO: Until here
 
       tuf.keydb.remove_key(key['keyid'], repository_name=self.repository_name)
       tuf.keydb.add_key(key, repository_name=self.repository_name)
 
       #TODO: Print to be deleted
-      print(str('%s %s %s %s' % (I_TO_PRINT, 'END EXCEPTION key arleady added:', key, TO_PRINT_END)))
+      print(str('%s %s %s' % (I_TO_PRINT, 'END EXCEPTION key arleady added:', key)))
       #TODO: Until here
 
     # Update the role's 'signing_keys' field in 'tuf.roledb.py'.
