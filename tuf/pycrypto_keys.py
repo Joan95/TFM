@@ -854,7 +854,7 @@ def _generate_derived_key(password, salt=None, iterations=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_derived_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Generate a derived key by feeding password:', password, 'salt:', salt, 'iterations:', iterations)))
+  print(str('%s %s %s %s %s %s ?' % (I_TO_PRINT, 'Generate a derived key by feeding password:', password, 'salt:', salt, 'iterations:')))
   #TODO: Until here
 
   if salt is None:
