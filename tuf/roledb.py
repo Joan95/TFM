@@ -67,7 +67,7 @@ _dirty_roles['default'] = set()
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/roledb.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t--------> [tuf/roledb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -961,6 +961,10 @@ def get_role_paths(rolename, repository_name='default'):
       repository_name)
 
   roleinfo = _roledb_dict[repository_name][rolename]
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   # Paths won't exist for non-target roles.
   try:

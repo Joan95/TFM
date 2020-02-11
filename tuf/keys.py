@@ -160,7 +160,7 @@ _GENERAL_CRYPTO_LIBRARY = tuf.conf.GENERAL_CRYPTO_LIBRARY
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t-------- --------> [tuf/keys.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW_BG + '\t-------- --------> [tuf/keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TO_PRINT_END = '\n'
 TABULATE = '\n\t\t\t\t'
 
@@ -225,7 +225,7 @@ def generate_rsa_key(bits=_DEFAULT_RSA_KEY_BITS):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating public and private RSA keys')))
   #TODO: Until here
 
   # Does 'bits' have the correct format?
@@ -275,6 +275,10 @@ def generate_rsa_key(bits=_DEFAULT_RSA_KEY_BITS):
   rsakey_dict['keyid'] = keyid
   rsakey_dict['keyval'] = key_value
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
   return rsakey_dict
 
 
@@ -323,7 +327,7 @@ def generate_ed25519_key():
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_ed25519_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating public and private ed25519_key')))
   #TODO: Until here
 
   # Raise 'tuf.UnsupportedLibraryError' if the following libraries, specified
@@ -364,6 +368,10 @@ def generate_ed25519_key():
   ed25519_key['keytype'] = keytype
   ed25519_key['keyid'] = keyid
   ed25519_key['keyval'] = key_value
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return ed25519_key
 
@@ -430,11 +438,7 @@ def format_keyval_to_metadata(keytype, key_value, private=False):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[format_keyval_to_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'keytype:', keytype, TABULATE, 'key_value:', key_value, TABULATE, 'private:', private, TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Return a dictionary conformant to \'tuf.formats.KEY_SCHEMA\'keytype:', keytype, 'key_value:', key_value, 'private:', private)))
   #TODO: Until here
 
 
@@ -457,8 +461,9 @@ def format_keyval_to_metadata(keytype, key_value, private=False):
         ' from: ' + repr(key_value))
 
     else:
+
       #TODO: Print to be deleted
-      print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'keytype:', keytype, TABULATE, 'keyval:', key_value, TO_PRINT_END)))
+      print(str('%s %s ' % (I_TO_PRINT, 'returning')))
       #TODO: Until here
 
       return {'keytype': keytype, 'keyval': key_value}
@@ -467,7 +472,7 @@ def format_keyval_to_metadata(keytype, key_value, private=False):
     public_key_value = {'public': key_value['public']}
 
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'keytype:', keytype, TABULATE, 'keyid_hash_algorithms:', tuf.conf.REPOSITORY_HASH_ALGORITHMS, TABULATE, 'keyval:', public_key_value, TO_PRINT_END)))
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
     #TODO: Until here
 
     return {'keytype': keytype,
@@ -533,7 +538,7 @@ def format_metadata_to_key(key_metadata):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[format_metadata_to_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Constructing TUF key dictionary for key_metadata:', key_metadata)))
   #TODO: Until here
 
   # Does 'key_metadata' have the correct format?
@@ -547,37 +552,17 @@ def format_metadata_to_key(key_metadata):
   keytype = key_metadata['keytype']
   key_value = key_metadata['keyval']
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Convert \'key_value\' to \'tuf.formats.KEY_SCHEMA\' and generate its hash', TABULATE, 'ENTERED:', TABULATE, 'key_metadata:', key_metadata, TO_PRINT_END)))
-  #TODO: Until here
-
   # Convert 'key_value' to 'tuf.formats.KEY_SCHEMA' and generate its hash
   # The hash is in hexdigest form.
   default_keyid = _get_keyid(keytype, key_value)
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'default_keyid:', default_keyid, TO_PRINT_END)))
-  #TODO: Until here
-
   keyids = set()
   keyids.add(default_keyid)
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'keyids:', keyids, TO_PRINT_END)))
-  #TODO: Until here
-
   for hash_algorithm in tuf.conf.REPOSITORY_HASH_ALGORITHMS:
     keyid = _get_keyid(keytype, key_value, hash_algorithm)
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s %s' % (I_TO_PRINT, 'default_keyid:', default_keyid, TO_PRINT_END)))
-    #TODO: Until here
-
     keyids.add(keyid)
 
-    #TODO: Print to be deleted
-    print(str('%s %s %s %s' % (I_TO_PRINT, 'keyids:', keyids, TO_PRINT_END)))
-    #TODO: Until here
 
   # All the required key values gathered.  Build 'key_dict'.
   # 'keyid_hash_algorithms'
@@ -587,7 +572,7 @@ def format_metadata_to_key(key_metadata):
   key_dict['keyval'] = key_value
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Returning:', TABULATE, 'key_dict:', key_dict, TABULATE, 'keyids:', keyids, TO_PRINT_END)))
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
   return key_dict, keyids
@@ -601,12 +586,7 @@ def _get_keyid(keytype, key_value, hash_algorithm=_KEY_ID_HASH_ALGORITHM):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_keyid()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'keytype:', keytype, TABULATE, 'key_value:', key_value, TABULATE, 'hash_algorithm:', hash_algorithm, TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Getting keyid for keytype:', keytype, 'key_value:', key_value, 'hash_algorithm:', hash_algorithm)))
   #TODO: Until here
 
   # 'keyid' will be generated from an object conformant to KEY_SCHEMA,
@@ -628,7 +608,7 @@ def _get_keyid(keytype, key_value, hash_algorithm=_KEY_ID_HASH_ALGORITHM):
   keyid = digest_object.hexdigest()
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Returning keyid:', keyid, TO_PRINT_END)))
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
   return keyid
@@ -661,7 +641,7 @@ def check_crypto_libraries(required_libraries):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[check_crypto_libraries()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Checking crypto libraries required_libraries:', required_libraries)))
   #TODO: Until here
 
   # Does 'required_libraries' have the correct format?
@@ -718,7 +698,9 @@ def check_crypto_libraries(required_libraries):
       ' crypto library specified in "tuf.conf.GENERAL_CRYPTO_LIBRARY" could'
       ' not be imported.')
 
-
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -794,7 +776,7 @@ def create_signature(key_dict, data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_signature()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating signature for key_dict', key_dict, 'and data for create it:', data)))
   #TODO: Until here
 
   # Does 'key_dict' have the correct format?
@@ -857,6 +839,11 @@ def create_signature(key_dict, data):
   signature['keyid'] = keyid
   signature['method'] = method
   signature['sig'] = binascii.hexlify(sig).decode()
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return signature
 
@@ -934,7 +921,7 @@ def verify_signature(key_dict, signature, data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether the private key belonging to key_dict:', key_dict, 'produced signature:', signature, 'using data:', data)))
   #TODO: Until here
 
   # Does 'key_dict' have the correct format?
@@ -1020,6 +1007,11 @@ def verify_signature(key_dict, signature, data):
   else: # pragma: no cover
     raise TypeError('Unsupported key type.')
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
   return valid_signature
 
 
@@ -1076,7 +1068,7 @@ def import_rsakey_from_encrypted_pem(encrypted_pem, password):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_rsakey_from_encrypted_pem()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Importing the public and private RSA keys stored in encrypted_pem:', encrypted_pem, 'password:', password)))
   #TODO: Until here
 
   # Does 'encrypted_pem' have the correct format?
@@ -1133,6 +1125,12 @@ def import_rsakey_from_encrypted_pem(encrypted_pem, password):
   rsakey_dict['keyid'] = keyid
   rsakey_dict['keyval'] = key_value
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
+
   return rsakey_dict
 
 
@@ -1181,7 +1179,7 @@ def format_rsakey_from_pem(pem):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[format_rsakey_from_pem()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Generating an RSA key object from pem:', pem)))
   #TODO: Until here
 
   # Does 'pem' have the correct format?
@@ -1210,6 +1208,12 @@ def format_rsakey_from_pem(pem):
   rsakey_dict['keytype'] = keytype
   rsakey_dict['keyid'] = keyid
   rsakey_dict['keyval'] = key_value
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
   return rsakey_dict
 
@@ -1254,7 +1258,7 @@ def extract_pem(pem, private_pem=False):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[extract_pem()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Extracting only the portion of the pem that includes the header and footer from pem:', pem)))
   #TODO: Until here
 
   if private_pem:
@@ -1299,6 +1303,11 @@ def extract_pem(pem, private_pem=False):
   # Extract only the public portion of 'pem'.  Leading or trailing whitespace
   # is excluded.
   pem = pem[header_start:footer_start + len(pem_footer)]
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return pem
 
@@ -1363,7 +1372,7 @@ def encrypt_key(key_object, password):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[encrypt_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returns a string containing key_object:', key_object, 'in encrypted form, using password:', password)))
   #TODO: Until here
 
   # Does 'key_object' have the correct format?
@@ -1399,6 +1408,11 @@ def encrypt_key(key_object, password):
   else: # pragma: no cover
     raise tuf.UnsupportedLibraryError('Invalid crypto library:'
       ' ' + repr(_GENERAL_CRYPTO_LIBRARY) + '.')
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return encrypted_key
 
@@ -1469,14 +1483,10 @@ def decrypt_key(encrypted_key, passphrase):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[decrypt_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Return a string containing encrypted_key:', encrypted_key, 'in non-encrypted form, using passphrase:', passphrase)))
   #TODO: Until here
 
   encrypted_key, passphrase
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Data entered:', TABULATE, 'encrypted_key:', encrypted_key, TABULATE, 'passphrase:', passphrase, TO_PRINT_END)))
-  #TODO: Until here
 
   # Does 'encrypted_key' have the correct format?
   # This check ensures 'encrypted_key' has the appropriate number
@@ -1516,6 +1526,11 @@ def decrypt_key(encrypted_key, passphrase):
   # The corresponding encrypt_key() encrypts and stores key objects in
   # non-metadata format (i.e., original format of key object argument to
   # encrypt_key()) prior to returning.
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return key_object
 
@@ -1569,7 +1584,7 @@ def create_rsa_encrypted_pem(private_key, passphrase):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_encrypted_pem()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating a string in PEM format, where the private part of the RSA private_key:', private_key, 'is encrypted, using passphrase:', passphrase)))
   #TODO: Until here
 
   # Does 'private_key' have the correct format?
@@ -1604,6 +1619,11 @@ def create_rsa_encrypted_pem(private_key, passphrase):
   else: # pragma: no cover
     raise tuf.UnsupportedLibraryError('Invalid crypto library:'
       ' ' + repr(_RSA_CRYPTO_LIBRARY) + '.')
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return encrypted_pem
 

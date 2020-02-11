@@ -51,7 +51,7 @@ else:
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/asn1_codec.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t--------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -60,7 +60,7 @@ def _ensure_valid_metadata_type_for_asn1(metadata_type):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_ensure_valid_metadata_type_for_asn1()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Ensuring valid metadata type for asn1. metadata_type:', metadata_type)))
   #TODO: Until here
 
 
@@ -70,6 +70,10 @@ def _ensure_valid_metadata_type_for_asn1(metadata_type):
         'translation from JSON to DER-encoded ASN1. Type of given metadata: ' +
         repr(metadata_type) + '; types accepted: ' +
         repr(list(SUPPORTED_ASN1_METADATA_MODULES)))
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -91,7 +95,7 @@ def convert_signed_der_to_dersigned_json(der_data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_der_to_dersigned_json()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed der to dersigned json. der_data:', der_data)))
   #TODO: Until here
 
   if not PYASN1_EXISTS:
@@ -163,6 +167,11 @@ def convert_signed_der_to_dersigned_json(der_data):
         # that we don't have to do make this weird enum translation call?
         'method': asn_signature['method'].namedValues[asn_signature['method']._value],
         'sig': hex_from_octetstring(asn_signature['value'])})
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return {'signatures': json_signatures, 'signed': json_signed}
 
@@ -237,7 +246,7 @@ def convert_signed_metadata_to_der(
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_metadata_to_der()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed metadata to der. signed_metadata:', signed_metadata)))
   #TODO: Until here
 
 
@@ -361,6 +370,10 @@ def convert_signed_metadata_to_der(
   metadata['signed'] = asn_signed #considering using der_signed instead - requires changes
   metadata['signatures'] = asn_signatures_list # TODO: Support multiple sigs, or integrate with TUF.
   metadata['numberOfSignatures'] = len(asn_signatures_list)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   # Encode our new (py)ASN.1 object as DER (Distinguished Encoding Rules).
   return p_der_encoder.encode(metadata)

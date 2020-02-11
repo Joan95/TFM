@@ -123,7 +123,7 @@ _SUPPORTED_ED25519_SIGNING_METHODS = ['ed25519']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/ed25519_keys.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 
@@ -166,7 +166,7 @@ def generate_public_and_private():
   I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[generate_public_and_private()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Generate public and private keys ')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating a pair of ed25519 public and private keys with PyNaCl')))
   #TODO: Until here
 
   # Generate ed25519's seed key by calling os.urandom().  The random bytes
@@ -186,6 +186,10 @@ def generate_public_and_private():
   except NameError: # pragma: no cover
     message = 'The PyNaCl library and/or its dependencies unavailable.'
     raise tuf.UnsupportedLibraryError(message)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return public, seed
 
@@ -246,11 +250,7 @@ def create_signature(public_key, private_key, data):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[create_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Create signature. Entered data')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%spublic key: %s%sprivate key: %s%sdata: %s%s' % (I_TO_PRINT, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Creating signature with public_key:', public_key, 'private_key:', private_key, 'data:', data)))
   #TODO: Until here
 
 
@@ -286,6 +286,11 @@ def create_signature(public_key, private_key, data):
   except (ValueError, TypeError, nacl.exceptions.CryptoError) as e:
     message = 'An "ed25519" signature could not be created with PyNaCl.'
     raise tuf.CryptoError(message + str(e))
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return signature, method
 
@@ -352,11 +357,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[verify_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Verify signature. Entered data:')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%spublic key: %s%smethod: %s%ssignature:%s%sdata:%s%suse pynacl:%s%s' % (I_TO_PRINT, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TABULATE, 'IT CRASHES', TO_PRINT_END)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Determine whether the private key corresponding to public_key:', public_key, 'produced signature:', signature, 'over data:', data, 'using method:', method)))
   #TODO: Until here
 
 
@@ -382,10 +383,6 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   public = public_key
   valid_signature = False
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s%s %s' % (I_TO_PRINT, 'Checking if method: \'', method, '\' is supported', TO_PRINT_END)))
-  #TODO: Until here
-
   if method in _SUPPORTED_ED25519_SIGNING_METHODS:
     if use_pynacl:
       try:
@@ -403,11 +400,6 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     # Verify 'ed25519' signature with the pure Python implementation.
     else:
       try:
-
-        #TODO: Print to be deleted
-        print(str('%s %s %s' % (I_TO_PRINT, 'Verifying \'ed25519\' signature with the pure Python implementation', TO_PRINT_END)))
-        #TODO: Until here
-
         tuf._vendor.ed25519.ed25519.checkvalid(signature, data, public)
         valid_signature = True
 
@@ -420,6 +412,10 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     message = 'Unsupported ed25519 signing method: '+repr(method)+'.\n'+ \
       'Supported methods: '+repr(_SUPPORTED_ED25519_SIGNING_METHODS)+'.'
     raise tuf.UnknownMethodError(message)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return valid_signature
 

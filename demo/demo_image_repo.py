@@ -365,7 +365,7 @@ def write_to_live():
 
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Moving staged metadata to live metadata directory in: ' + TABULATION + demo.IMAGE_REPO_DIR)
+  print(I_TO_PRINT + 'Moving staged metadata to live metadata directory in: ' + demo.IMAGE_REPO_DIR)
   #TODO: Until here
 
   # Move staged metadata (from the write above) to live metadata directory.
@@ -462,7 +462,7 @@ def host():
   server_process = subprocess.Popen(command, stderr=subprocess.PIPE)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Beginning hosting the server process', TABULATION, server_process)))
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Beginning hosting the server process', server_process)))
   #TODO: Until here
 
   os.chdir(uptane.WORKING_DIR)
