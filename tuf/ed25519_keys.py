@@ -357,7 +357,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[verify_signature()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Determine whether the private key corresponding to public_key:', public_key, 'produced signature:', signature, 'over data:', '?', 'using method:', method)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Determine whether the private key corresponding to public_key:', public_key, 'produced signature:', '?', 'over data:', '?', 'using method:', method)))
   #TODO: Until here
 
 
