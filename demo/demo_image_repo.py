@@ -462,7 +462,7 @@ def host():
   server_process = subprocess.Popen(command, stderr=subprocess.PIPE)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Beginning hosting the server process', server_process)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Beginning hosting the server process', server_process)))
   #TODO: Until here
 
   os.chdir(uptane.WORKING_DIR)
