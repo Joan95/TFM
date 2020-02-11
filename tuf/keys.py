@@ -921,7 +921,7 @@ def verify_signature(key_dict, signature, data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether the private key belonging to key_dict:', key_dict, 'produced signature:', signature, 'using data:', data)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether the private key belonging to key_dict:', key_dict, 'produced signature:', signature, 'using data:', '?')))
   #TODO: Until here
 
   # Does 'key_dict' have the correct format?
