@@ -100,7 +100,7 @@ def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb_from_root_metadata()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_directory: ', repository_directory)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating keydb from metadata:', root_metadata, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'root_metadata' have the correct format?
@@ -149,6 +149,9 @@ def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
     else:
       logger.warning('Root Metadata file contains a key with an invalid keytype.')
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -178,7 +181,7 @@ def create_keydb(repository_name):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Create new keyDB for: ', repository_name)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Create new keyDB for repository_name:', repository_name)))
   #TODO: Until here
 
 
@@ -191,6 +194,10 @@ def create_keydb(repository_name):
 
   _keydb_dict[repository_name] = {}
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -221,7 +228,7 @@ def remove_keydb(repository_name):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_keydb()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Removing keyDB for: ', repository_name)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Removing keyDB for repository_name:', repository_name)))
   #TODO: Until here
 
 
@@ -238,6 +245,9 @@ def remove_keydb(repository_name):
 
   del _keydb_dict[repository_name]
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -286,7 +296,7 @@ def add_key(key_dict, keyid=None, repository_name='default'):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_key()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding key to keyDB for: ', repository_name, TABULATE, key_dict)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding key to keyDB for repository_name:', repository_name, 'key_dict:', key_dict, 'keyid:', keyid)))
   #TODO: Until here
 
   # Does 'key_dict' have the correct format?
@@ -320,6 +330,9 @@ def add_key(key_dict, keyid=None, repository_name='default'):
 
   _keydb_dict[repository_name][keyid] = copy.deepcopy(key_dict)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -357,7 +370,7 @@ def get_key(keyid, repository_name='default'):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_key()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Getting key for keyid: ', keyid)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting key for keyid: ', keyid, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'keyid' have the correct format?
@@ -373,13 +386,18 @@ def get_key(keyid, repository_name='default'):
     raise tuf.InvalidNameError('Repository name does not exist:'
       ' ' + repr(repository_name))
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
+
   # Return the key belonging to 'keyid', if found in the key database.
   try:
     return copy.deepcopy(_keydb_dict[repository_name][keyid])
 
   except KeyError:
     raise tuf.UnknownKeyError('Key: ' + keyid)
-
 
 
 
@@ -416,7 +434,7 @@ def remove_key(keyid, repository_name='default'):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_key()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Removing key from keyDB: ', keyid)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing key from keyDB: ', keyid, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'keyid' have the correct format?
@@ -440,6 +458,9 @@ def remove_key(keyid, repository_name='default'):
     raise tuf.UnknownKeyError('Key: ' + keyid)
 
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -473,7 +494,7 @@ def clear_keydb(repository_name='default', clear_all=False):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_keydb()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Clearing keyDB for repository: ', repository_name)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Clearing keyDB for repository_name:', repository_name, 'clear_all:', clear_all)))
   #TODO: Until here
 
   # Do the arguments have the correct format?  Raise 'tuf.FormatError' if
@@ -492,3 +513,7 @@ def clear_keydb(repository_name='default', clear_all=False):
       ' ' + repr(repository_name))
 
   _keydb_dict[repository_name] = {}
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here

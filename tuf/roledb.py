@@ -101,7 +101,7 @@ def create_roledb_from_root_metadata(root_metadata, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb_from_root_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating roledb from root metadata:', root_metadata, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'root_metadata' have the correct object format?
@@ -146,6 +146,10 @@ def create_roledb_from_root_metadata(root_metadata, repository_name='default'):
 
     add_role(rolename, roleinfo, repository_name)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
 
 
@@ -176,10 +180,6 @@ def create_roledb(repository_name):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Creating new roleDB for repository: ', repository_name)))
   #TODO: Until here
 
@@ -195,6 +195,10 @@ def create_roledb(repository_name):
 
   _roledb_dict[repository_name] = {}
   _dirty_roles[repository_name] = set()
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -225,7 +229,7 @@ def remove_roledb(repository_name):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_roledb()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'removing roledb from repository_name:', repository_name)))
   #TODO: Until here
 
   # Is 'repository_name' properly formatted?  If not, raise 'tuf.FormatError'.
@@ -245,6 +249,10 @@ def remove_roledb(repository_name):
 
   del _roledb_dict[repository_name]
   del _dirty_roles[repository_name]
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -296,11 +304,7 @@ def add_role(rolename, roleinfo, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_role()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Adding new Role: ', rolename)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding role:', rolename, 'with roleinfo:', roleinfo, 'with repository_name', repository_name)))
   #TODO: Until here
 
   # Does 'rolename' have the correct object format?
@@ -338,6 +342,10 @@ def add_role(rolename, roleinfo, repository_name='default'):
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Value for repository_name: ', repository_name)))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
 
@@ -401,11 +409,7 @@ def update_roleinfo(rolename, roleinfo, mark_role_as_dirty=True, repository_name
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_roleinfo()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Updating infor for Role: ', rolename, 'With roleinfo:', roleinfo)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Updating info for Role: ', rolename, 'With roleinfo:', roleinfo, 'Mark role as dirty:', mark_role_as_dirty, 'repository name:', repository_name)))
   #TODO: Until here
 
   # Does the arguments have the correct object format?
@@ -439,6 +443,10 @@ def update_roleinfo(rolename, roleinfo, mark_role_as_dirty=True, repository_name
   if mark_role_as_dirty:
     _dirty_roles[repository_name].add(rolename)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
 
 
@@ -470,7 +478,7 @@ def get_dirty_roles(repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_dirty_roles()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting dirty roles for repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'repository_name' have the correct format?  Raise 'tuf.FormatError'
@@ -484,7 +492,13 @@ def get_dirty_roles(repository_name='default'):
     raise tuf.InvalidNameError('Repository name does not' ' exist: ' +
       repository_name)
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
   return list(_dirty_roles[repository_name])
+
 
 
 
@@ -498,7 +512,7 @@ def mark_dirty(roles, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Mark_dirty roles:', roles, 'repository_name:', repository_name)))
   #TODO: Until here
 
   tuf.formats.NAMES_SCHEMA.check_match(roles)
@@ -513,6 +527,10 @@ def mark_dirty(roles, repository_name='default'):
 
   _dirty_roles[repository_name].update(roles)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
 
 
@@ -525,7 +543,7 @@ def unmark_dirty(roles, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[unmark_dirty()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'unmarking dirty roles:', roles, 'repository_name:', repository_name)))
   #TODO: Until here
 
   global _roledb_dict
@@ -542,6 +560,9 @@ def unmark_dirty(roles, repository_name='default'):
     except (KeyError, ValueError):
       logger.debug(repr(role) + ' is not dirty.')
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -575,7 +596,7 @@ def role_exists(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[role_exists()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Verifying if role exists. role:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Raise tuf.FormatError, tuf.InvalidNameError if the arguments are invalid.
@@ -587,6 +608,10 @@ def role_exists(rolename, repository_name='default'):
 
   except tuf.UnknownRoleError:
     return False
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return True
 
@@ -630,7 +655,7 @@ def remove_role(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_role()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing role with rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'repository_name' have the correct format?  Raise 'tuf.FormatError'
@@ -647,6 +672,9 @@ def remove_role(rolename, repository_name='default'):
   # Remove 'rolename' now.
   del _roledb_dict[repository_name][rolename]
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -676,7 +704,7 @@ def get_rolenames(repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_rolenames()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting rolenames for repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'repository_name' have the correct format?  Raise 'tuf.FormatError'
@@ -689,6 +717,11 @@ def get_rolenames(repository_name='default'):
   if repository_name not in _roledb_dict or repository_name not in _dirty_roles:
     raise tuf.InvalidNameError('Repository name does not' ' exist: ' +
       repository_name)
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return list(_roledb_dict[repository_name].keys())
 
@@ -738,7 +771,7 @@ def get_roleinfo(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_roleinfo()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting roleinfo of rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Is 'repository_name' properly formatted?  If not, raise 'tuf.FormatError'.
@@ -749,6 +782,10 @@ def get_roleinfo(rolename, repository_name='default'):
 
   global _roledb_dict
   global _dirty_roles
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return copy.deepcopy(_roledb_dict[repository_name][rolename])
 
@@ -791,7 +828,7 @@ def get_role_keyids(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_keyids()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role keyids for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Raise 'tuf.FormatError' if 'repository_name' is improperly formatted.
@@ -804,6 +841,12 @@ def get_role_keyids(rolename, repository_name='default'):
   global _dirty_roles
 
   roleinfo = _roledb_dict[repository_name][rolename]
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
   return roleinfo['keyids']
 
@@ -843,7 +886,7 @@ def get_role_threshold(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_threshold()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role threshold for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
 
@@ -857,6 +900,11 @@ def get_role_threshold(rolename, repository_name='default'):
   global _dirty_roles
 
   roleinfo = _roledb_dict[repository_name][rolename]
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return roleinfo['threshold']
 
@@ -895,7 +943,7 @@ def get_role_paths(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_paths()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role paths for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
 
@@ -959,7 +1007,7 @@ def get_delegated_rolenames(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_delegated_rolenames()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s ' % (I_TO_PRINT, 'Getting delegated rolenames for role:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
 
@@ -984,6 +1032,11 @@ def get_delegated_rolenames(rolename, repository_name='default'):
 
   for delegated_role in roleinfo['delegations']['roles']:
     delegated_roles.append(delegated_role['name'])
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return delegated_roles
 
@@ -1019,7 +1072,7 @@ def clear_roledb(repository_name='default', clear_all=False):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_roledb()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Clearing roledb for repository_name:', repository_name, 'clear_all', clear_all)))
   #TODO: Until here
 
   # Do the arguments have the correct format?  If not, raise 'tuf.FormatError'
@@ -1041,6 +1094,9 @@ def clear_roledb(repository_name='default', clear_all=False):
   _roledb_dict[repository_name] = {}
   _dirty_roles[repository_name] = set()
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -1055,7 +1111,7 @@ def _check_rolename(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_rolename()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Checking rolename for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'rolename' have the correct object format?
@@ -1079,6 +1135,9 @@ def _check_rolename(rolename, repository_name='default'):
   if rolename not in _roledb_dict[repository_name]:
     raise tuf.UnknownRoleError('Role name does not exist: ' + rolename)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -1092,7 +1151,7 @@ def _validate_rolename(rolename):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_validate_rolename()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Validating rolename for rolename:', rolename)))
   #TODO: Until here
 
 
@@ -1106,3 +1165,7 @@ def _validate_rolename(rolename):
   if rolename.startswith('/') or rolename.endswith('/'):
     raise tuf.InvalidNameError('Invalid rolename. Cannot start or end with a'
       ' "/": ' + rolename)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here

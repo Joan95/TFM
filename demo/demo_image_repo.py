@@ -406,7 +406,7 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format of: ' + target_fname)
+  print(I_TO_PRINT + 'Add target to image repo. Target: ' + target_fname + 'filepath_in_repo: ' + filepath_in_repo)
   #TODO: Until here
 
   tuf.formats.RELPATH_SCHEMA.check_match(target_fname)

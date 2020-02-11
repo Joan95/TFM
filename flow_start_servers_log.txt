@@ -2001,9 +2001,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2028,16 +2028,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2094,9 +2094,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2123,16 +2123,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2171,16 +2171,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -2422,9 +2422,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2449,16 +2449,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2515,9 +2515,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2544,16 +2544,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2592,16 +2592,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -2791,9 +2791,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2818,16 +2818,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2884,9 +2884,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -2913,16 +2913,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -2961,16 +2961,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -3110,9 +3110,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -3137,16 +3137,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -3203,9 +3203,9 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -3232,16 +3232,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -3280,16 +3280,16 @@ ImageRepo:Signing and hosting initial repository metadata
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -6674,9 +6674,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -6701,16 +6701,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -6767,9 +6767,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -6796,16 +6796,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -6844,16 +6844,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -7067,9 +7067,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7094,16 +7094,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7160,9 +7160,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7189,16 +7189,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7237,16 +7237,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -7416,9 +7416,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7443,16 +7443,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7509,9 +7509,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7538,16 +7538,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7586,16 +7586,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -7735,9 +7735,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7762,16 +7762,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7828,9 +7828,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -7857,16 +7857,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -7905,16 +7905,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -8303,9 +8303,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -8330,16 +8330,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -8396,9 +8396,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -8425,16 +8425,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -8473,16 +8473,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -8696,9 +8696,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -8723,16 +8723,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -8789,9 +8789,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -8818,16 +8818,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -8866,16 +8866,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -9045,9 +9045,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -9072,16 +9072,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -9138,9 +9138,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -9167,16 +9167,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -9215,16 +9215,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -9364,9 +9364,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -9391,16 +9391,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -9457,9 +9457,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -9486,16 +9486,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -9534,16 +9534,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -9932,9 +9932,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -9959,16 +9959,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10025,9 +10025,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -10054,16 +10054,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10102,16 +10102,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -10325,9 +10325,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -10352,16 +10352,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10418,9 +10418,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -10447,16 +10447,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10495,16 +10495,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -10674,9 +10674,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -10701,16 +10701,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10767,9 +10767,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -10796,16 +10796,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -10844,16 +10844,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -10993,9 +10993,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -11020,16 +11020,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -11086,9 +11086,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -11115,16 +11115,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -11163,16 +11163,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -11561,9 +11561,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -11588,16 +11588,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -11654,9 +11654,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -11683,16 +11683,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -11731,16 +11731,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -11954,9 +11954,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -11981,16 +11981,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12047,9 +12047,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -12076,16 +12076,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12124,16 +12124,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -12303,9 +12303,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -12330,16 +12330,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12396,9 +12396,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -12425,16 +12425,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12473,16 +12473,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -12622,9 +12622,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -12649,16 +12649,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12715,9 +12715,9 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
@@ -12744,16 +12744,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/roledb.py]
 			>>Function: [get_role_keyids()]: ...
@@ -12792,16 +12792,16 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	--------> [tuf/repository_lib.py]
 			>>Function: [write_metadata_file()]: ...
@@ -13177,64 +13177,64 @@ ImageRepo:Starting Image Repo Services Thread: will now listen on port 30309
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	-------- --------> [tuf/keys.py]
 			>>Function: [create_signature()]: ...
 	-------- --------> [tuf/keys.py]
 			>>Function: [check_crypto_libraries()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: Create signature. Entered data
+			>>Function: [create_signature()]: Create signature. Entered data
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[create_signature()]: public key: IT CRASHES
+			>>Function: [create_signature()]: public key: IT CRASHES
 				private key: IT CRASHES
 				data: IT CRASHES
 
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 	-------- --------> [tuf/keys.py]
 			>>Function: [verify_signature()]: ...
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Verify signature. Entered data:
+			>>Function: [verify_signature()]: Verify signature. Entered data:
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: public key: IT CRASHES
+			>>Function: [verify_signature()]: public key: IT CRASHES
 				method: IT CRASHES
 				signature:IT CRASHES
 				data:IT CRASHES
 				use pynacl:IT CRASHES
 
 	--------> [tuf/ed25519_keys.py]
-			>>Function: [43m[30m[verify_signature()]: Checking if method: ' ed25519' is supported 
+			>>Function: [verify_signature()]: Checking if method: ' ed25519' is supported 
 
 [47m[30mTimeserver:Timeserver will now listen on port 30601
 [46mDirector:Killing repository hosting process with pid: 2795
