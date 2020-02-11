@@ -814,7 +814,7 @@ def decrypt_key(encrypted_key, password):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[decrypt_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Decrypting encrypted_key:', encrypted_key, 'password:', password)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Decrypting encrypted_key:', encrypted_key, 'password:', password)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
