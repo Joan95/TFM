@@ -56,10 +56,7 @@ PRIMARY_SERVER_AVAILABLE_PORTS = [
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW + '\t-------->[demo/__init__.py]\n\t\t\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
-TABULATION = '\t\t\t\t'
-TO_PRINT_END = '\n'
-
+TO_PRINT = uptane.YELLOW + '\t-------->[demo/__init__.py]\t>>Action Perfomed: ' + uptane.ENDCOLORS + ' '
 
 
 
@@ -72,8 +69,9 @@ def generate_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_key()]: ' + ENDCOLORS
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Calling rt.generate_and_write_ed25519_keypair' + TO_PRINT_END)
+  print(str('%s %s %s' % (I_TO_PRINT, 'Generating key with keyname:', keyname)))
   #TODO: Until here
 
   rt.generate_and_write_ed25519_keypair(
@@ -91,8 +89,9 @@ def import_public_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_public_key()]: ' + ENDCOLORS
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Calling rt.import_ed25519_publickey_from_file' + TO_PRINT_END)
+  print(str('%s %s %s' % (I_TO_PRINT, 'Importing public key keyname:', keyname)))
   #TODO: Until here
 
   return rt.import_ed25519_publickey_from_file(
@@ -109,8 +108,9 @@ def import_private_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_private_key()]: ' + ENDCOLORS
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Calling rt.import_ed25519_privatekey_from_file' + TO_PRINT_END)
+  print(str('%s %s %s' % (I_TO_PRINT, 'Importing private key keyname:', keyname)))
   #TODO: Until here
 
   return rt.import_ed25519_privatekey_from_file(
@@ -124,8 +124,9 @@ def get_random_string(length):
   cryptographically reliable.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_random_string()]: ' + ENDCOLORS
   #TODO: Print to be deleted
-  print(TO_PRINT + 'Getting random string. NOT CRYPTOGRAPHICALLY RELIABLE!' + TO_PRINT_END)
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting random string with length:', length)))
   #TODO: Until here
 
   return ''.join(
