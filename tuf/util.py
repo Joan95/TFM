@@ -1012,16 +1012,8 @@ def load_json_string(data):
     message = 'Cannot deserialize to a Python object: ' + repr(data)
     raise tuf.Error(message)
 
-
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
-
-
   else:
     return deserialized_object
-
-
 
 
 
