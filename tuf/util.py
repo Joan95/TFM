@@ -995,7 +995,7 @@ def load_json_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
   #TODO: Until here
 
 
