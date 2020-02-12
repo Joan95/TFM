@@ -1230,7 +1230,7 @@ class Metadata(object):
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.rolename()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning rolename')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning rolename')))
     #TODO: Until here
 
 
@@ -1249,7 +1249,7 @@ class Metadata(object):
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.repository_name()]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning repository_name')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning repository_name')))
     #TODO: Until here
 
     return self._repository_name
@@ -1282,7 +1282,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning version')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning version')))
     #TODO: Until here
 
     return version
@@ -1370,7 +1370,7 @@ class Metadata(object):
     threshold = roleinfo['threshold']
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning threshold')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning threshold')))
     #TODO: Until here
 
 
@@ -1460,7 +1460,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning expiration')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning expiration')))
     #TODO: Until here
 
 
@@ -1562,7 +1562,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning the signing keys')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning the signing keys')))
     #TODO: Until here
 
 
@@ -1603,7 +1603,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning list of file compressions')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning list of file compressions')))
     #TODO: Until here
 
 
@@ -1704,19 +1704,11 @@ class Root(Metadata):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Initializating root')))
     #TODO: Until here
 
     self._rolename = 'root'
     self._repository_name = repository_name
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._rolename: ', self._rolename)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for self._repository_name: ', self._repository_name)))
-    #TODO: Until here
 
     # By default, 'snapshot' metadata is set to expire 1 week from the current
     # time.  The expiration may be modified.
@@ -2155,7 +2147,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning target_files')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning target_files')))
     #TODO: Until here
 
     return target_files
@@ -2540,7 +2532,7 @@ class Targets(Metadata):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.get_delegated_rolenames()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'returning delegated rolenames for rolename:', self.rolename)))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Getter. Returning delegated rolenames for rolename:', self.rolename)))
     #TODO: Until here
 
     return tuf.roledb.get_delegated_rolenames(
@@ -3315,7 +3307,7 @@ class Targets(Metadata):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegations()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Returning delegations for rolename:', self.rolename)))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Getter. Returning delegations for rolename:', self.rolename)))
     #TODO: Until here
 
     return list(self._delegated_roles.values())
