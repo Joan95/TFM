@@ -2371,7 +2371,7 @@ def _write_compressed_metadata(file_object, compressed_filename,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_write_compressed_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Writting compressed metadata for file_object:', file_object)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Writting compressed metadata for file_object:', file_object)))
   #TODO: Until here
 
   # If a consistent snapshot is unneeded, 'file_object' may be simply moved
