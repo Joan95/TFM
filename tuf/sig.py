@@ -53,9 +53,8 @@ import hashlib
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t-------- --------> [tuf/sig.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/sig.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATION = '\n\t\t\t\t'
-TO_PRINT_END = '\n'
 
 def get_signature_status(signable, role=None, repository_name='default'):
   """
@@ -117,16 +116,9 @@ def get_signature_status(signable, role=None, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Getting signatures marked as signable for role:', role, 'repository_name:', repository_name, 'signable:', signable)))
   #TODO: Until here
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking format of: ', signable, TO_PRINT_END)))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking format of: ', repository_name, TO_PRINT_END)))
-  #TODO: Until here
 
   # Do the arguments have the correct format?  This check will ensure that
   # arguments have the appropriate number of objects and object types, and that
@@ -228,8 +220,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
   signature_status['unknown_method_sigs'] = unknown_method_sigs
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Signature status returned'+ TO_PRINT_END)
-  print(str('%s%sThreshold:%s%sGood Sigs:%s%sBad Sigs:%s%sUnknown Sigs:%s%sUntrusted Sigs:%s%sUnknown Method Sigs:%s%s' % (I_TO_PRINT, TABULATION, threshold, TABULATION, good_sigs, TABULATION, bad_sigs, TABULATION, unknown_sigs, TABULATION, untrusted_sigs, TABULATION, unknown_method_sigs, TO_PRINT_END)))
+  print(I_TO_PRINT + 'returning')
   #TODO: Until here
 
   return signature_status
@@ -281,7 +272,7 @@ def verify(signable, role, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether role:', role, 'has rights for sign signable:', signable, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Do the arguments have the correct format?  If not, raise 'tuf.FormatError'.
@@ -305,6 +296,12 @@ def verify(signable, role, repository_name='default'):
   if threshold is None or threshold <= 0: #pragma: no cover
       raise tuf.Error("Invalid threshold: " + str(threshold))
 
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'returning')
+  #TODO: Until here
+
+
   return len(good_sigs) >= threshold
 
 
@@ -314,7 +311,7 @@ def verify(signable, role, repository_name='default'):
 def may_need_new_keys(signature_status):
   """
   <Purpose>
-    Return true iff downloading a new set of keys might tip this
+    Return true if downloading a new set of keys might tip this
     signature status over to valid.  This is determined by checking
     if either the number of unknown or untrused keys is > 0.
 
@@ -334,7 +331,7 @@ def may_need_new_keys(signature_status):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[may_need_new_keys()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Checking if needs to download a new set of keys for signature_status:', signature_status)))
   #TODO: Until here
 
   # Does 'signature_status' have the correct format?
@@ -345,6 +342,10 @@ def may_need_new_keys(signature_status):
 
   unknown = signature_status['unknown_sigs']
   untrusted = signature_status['untrusted_sigs']
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'returning')
+  #TODO: Until here
 
   return len(unknown) or len(untrusted)
 
@@ -394,28 +395,21 @@ def generate_rsa_signature(signed, rsakey_dict):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_signature()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating a new signature dict presumably to be added to the signatures field of signable')))
   #TODO: Until here
 
-
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format of: ' + signed + TO_PRINT_END)
-  #TODO: Until here
 
   # We need 'signed' in canonical JSON format to generate
   # the 'method' and 'sig' fields of the signature.
   signed = tuf.formats.encode_canonical(signed)
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Canonical JSON format to generate signature:', TABULATION, signed, TO_PRINT_END)))
-  #TODO: Until here
 
   # Generate the RSA signature.
   # Raises tuf.FormatError and TypeError.
   signature = tuf.keys.create_signature(rsakey_dict, signed)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Signature:', TABULATION, signature, TO_PRINT_END)))
+  print(I_TO_PRINT + 'returning')
   #TODO: Until here
 
   return signature
@@ -501,7 +495,7 @@ def sign_over_metadata(
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_over_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing data:', data, 'with key_dict:', key_dict)))
   #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
@@ -522,6 +516,9 @@ def sign_over_metadata(
   else:
     raise tuf.Error('Unsupported metadata format: ' + repr(metadata_format))
 
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'returning')
+  #TODO: Until here
 
   return tuf.keys.create_signature(key_dict, data)
 
@@ -620,7 +617,7 @@ def verify_signature_over_metadata(
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature_over_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether the private key belonging to key_dict:', key_dict, 'produced signature:', signature)))
   #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
@@ -641,6 +638,10 @@ def verify_signature_over_metadata(
 
   else:
     raise tuf.Error('Unsupported metadata format: ' + repr(metadata_format))
+
+  #TODO: Print to be deleted
+  print(I_TO_PRINT + 'returning')
+  #TODO: Until here
 
 
   return tuf.keys.verify_signature(key_dict, signature, data)
