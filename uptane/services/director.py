@@ -55,7 +55,6 @@ log.setLevel(uptane.logging.DEBUG)
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/director.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATION = '\t\t\t\t'
 
 class Director:
   """
@@ -100,49 +99,13 @@ class Director:
     """
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.__init__]: ' + ENDCOLORS
-
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for director_repos_dir: ', director_repos_dir)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_root_pri: ', key_root_pri)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_root_pub: ', key_root_pub)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_timestamp_pri: ', key_timestamp_pri)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_timestamp_pub: ', key_timestamp_pub)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_snapshot_pri: ', key_snapshot_pri)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_snapshot_pub: ', key_snapshot_pub)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_targets_pri: ', key_targets_pri)))
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Value for key_targets_pub: ', key_targets_pub)))
+    print(str('%s %s' %  (I_TO_PRINT, 'Initializating Director')))
     #TODO: Until here
 
 
     tuf.formats.RELPATH_SCHEMA.check_match(director_repos_dir)
 
-    #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Checking format of: ' + director_repos_dir)
-    #TODO: Until here
 
     for key in [
         key_root_pri, key_root_pub, key_timestamp_pri, key_timestamp_pub,
@@ -189,28 +152,13 @@ class Director:
     """
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_serial()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Set the expected public key for signed messages from the ECU with the given ecu_serial:', ecu_serial, 'ecu_key:', ecu_key, 'vin:', vin)))
+    #TODO: Until here
 
     uptane.formats.VIN_SCHEMA.check_match(vin)
-
-    #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Checking format of: ' + vin)
-    #TODO: Until here
-
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
-
-    #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Checking format of: ' + ecu_serial)
-    #TODO: Until here
-
     tuf.formats.ANYKEY_SCHEMA.check_match(ecu_key)
-
-    #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Checking format of: ' + ecu_key)
-    #TODO: Until here
-
-    #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Checking whether vin: \'' + vin + '\' has been registered previously')
-    #TODO: Until here
 
     inventory.check_vin_registered(vin)
 
@@ -223,6 +171,9 @@ class Director:
         'vehicle ' + repr(vin) + ' with ECU public key: ' + repr(ecu_key) +
         ENDCOLORS)
 
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
 
 
 
@@ -233,6 +184,12 @@ class Director:
       ecuid: uptane.formats.ECU_SERIAL_SCHEMA
       manifest: uptane.formats.SIGNABLE_ECU_VERSION_MANIFEST_SCHEMA
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.validate_ecu_manifest()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Validating ECU manifest for ecu_serial:', ecu_serial, 'signed_ecu_manifest:', signed_ecu_manifest)))
+    #TODO: Until here
+
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
     uptane.formats.SIGNABLE_ECU_VERSION_MANIFEST_SCHEMA.check_match(
         signed_ecu_manifest)
@@ -271,6 +228,10 @@ class Director:
           'ECU Manifest is unacceptable. If you see this persistently, it is '
           'possible that the Primary is compromised or that there is a man in '
           'the middle attack or misconfiguration.')
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
 
 
 
@@ -328,6 +289,12 @@ class Director:
           if the VIN provided is not known to this Director
 
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_vehicle_manifest()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'Saves the vehicle manifest in the InventoryDB, validating first the Primary\'s key on the full vehicle manifest, then each individual ECU Manifest\'s signature. primary_ecu_serial:', primary_ecu_serial, 'signed_vehicle_manifest:', signed_vehicle_manifest)))
+    #TODO: Until here
+
     uptane.formats.VIN_SCHEMA.check_match(vin)
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(primary_ecu_serial)
 
@@ -387,6 +354,10 @@ class Director:
               'from within an otherwise valid Vehicle Manifest. Error from '
               'validation attempt follows:\n' + ENDCOLORS + repr(e))
 
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
+
 
 
 
@@ -401,6 +372,12 @@ class Director:
     Raises an exception if there is an issue with the Primary's signature.
     No return value.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.validate_primary_certification_in_vehicle_manifest()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Validating certification in vehicle manifest for vehicle with vin:', vin, 'primary_ecu_serial:', primary_ecu_serial, 'vehicle_manifest:', vehicle_manifest)))
+    #TODO: Until here
+
     # If args don't match expectations, error out here.
     log.info('Beginning validate_primary_certification_in_vehicle_manifest')
     uptane.formats.VIN_SCHEMA.check_match(vin)
@@ -482,6 +459,9 @@ class Director:
           'persistently, it is possible that there is a man in the middle '
           'attack or misconfiguration.')
 
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
 
 
 
@@ -489,6 +469,13 @@ class Director:
   def register_ecu_manifest(self, vin, ecu_serial, signed_ecu_manifest):
     """
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_manifest()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'ecu_serial:', ecu_serial, 'signed_ecu_manifest:', signed_ecu_manifest)))
+    #TODO: Until here
+
+
     # Error out if the signature isn't valid and from the expected party.
     # Also checks argument format.
     self.validate_ecu_manifest(ecu_serial, signed_ecu_manifest)
@@ -506,6 +493,10 @@ class Director:
           signed_ecu_manifest['signed']['attacks_detected'] + ENDCOLORS)
 
 
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
+
 
 
 
@@ -518,6 +509,13 @@ class Director:
     public keys.
 
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.add_new_vehicle()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding new vehicle with vin:', vin, 'primary_ecu_serial:', primary_ecu_serial)))
+    #TODO: Until here
+
+
     # TODO: The VIN string is manipulated for create_director_repo_for_vehicle,
     # but the string is not manipulated for this addition to ecus_by_vin.
     # Treatment has to be made consistent. (In particular, things like slashes
@@ -525,6 +523,10 @@ class Director:
     inventory.register_vehicle(vin, primary_ecu_serial=primary_ecu_serial)
 
     self.create_director_repo_for_vehicle(vin)
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
 
 
 
@@ -560,6 +562,11 @@ class Director:
 
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.create_director_repo_for_vehicle()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Creating director repo for vehicle with vin:', vin)))
+    #TODO: Until here
+
     uptane.formats.VIN_SCHEMA.check_match(vin)
 
     # Repository Tool expects to use the current directory.
@@ -589,6 +596,11 @@ class Director:
     this_repo.targets.load_signing_key(self.key_dirtarg_pri)
 
 
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
+
+
 
 
 
@@ -602,6 +614,13 @@ class Director:
     be signed with the appropriate Director keys and written to disk when the
     "write" method is called on the vehicle repository.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.add_target_for_ecu()]: ' + ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding target to the repository for vehicle with vin:', vin, 'ecu_serial:', ecu_serial, 'target_filepath:', target_filepath)))
+    #TODO: Until here
+
+
     uptane.formats.VIN_SCHEMA.check_match(vin)
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
     tuf.formats.RELPATH_SCHEMA.check_match(target_filepath)
@@ -618,3 +637,8 @@ class Director:
 
     self.vehicle_repositories[vin].targets.add_target(
         target_filepath, custom={'ecu_serial': ecu_serial})
+
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here

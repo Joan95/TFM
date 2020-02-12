@@ -120,7 +120,6 @@ import uptane.formats
 import tuf
 
 TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/inventorydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATION = '\t\t\t\t'
 
 # Global dictionaries
 vehicle_manifests = {}
@@ -287,6 +286,9 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be removed
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering ECU with ecu_serial:', ecu_serial, 'for vehicle vin:', vin, 'is_primary:', is_primary, 'overwrite:', overwrite)))
+  #TODO: Until here
 
   tuf.formats.BOOLEAN_SCHEMA.check_match(is_primary)
   uptane.formats.VIN_SCHEMA.check_match(vin)
@@ -333,6 +335,10 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   # the ECU.
   ecu_manifests[ecu_serial] = []
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
 
 
@@ -340,6 +346,9 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
 def register_vehicle(vin, primary_ecu_serial=None, overwrite=True):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_vehicle()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be removed
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'primary_ecu_serial:', primary_ecu_serial, 'overwrite:', overwrite)))
+  #TODO: Until here
 
   _check_registration_is_sane(vin)
 
@@ -356,14 +365,16 @@ def register_vehicle(vin, primary_ecu_serial=None, overwrite=True):
   vehicle_manifests[vin] = []
   primary_ecus_by_vin[vin] = primary_ecu_serial
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
 
 
 
 
 def check_vin_registered(vin):
-
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[check_vin_registered()]: ' + uptane.ENDCOLORS
 
   _check_registration_is_sane(vin)
 
@@ -372,10 +383,6 @@ def check_vin_registered(vin):
     # throughout the reference implementation.
     raise uptane.UnknownVehicle('The given VIN, ' + repr(vin) + ', is not '
         'known.')
-
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'The given VIN: ' + vin + ' is known')
-  #TODO: Until here
 
 
 
@@ -386,12 +393,6 @@ def _check_registration_is_sane(vin):
   in all three of the relevant global dictionaries if it is registered, and in
   none of them if it is not.
   """
-
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_registration_is_sane()]: ' + uptane.ENDCOLORS
-
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format of vin: ' + vin)
-  #TODO: Until here
 
   uptane.formats.VIN_SCHEMA.check_match(vin)
 

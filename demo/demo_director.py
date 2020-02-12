@@ -63,8 +63,6 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
-TO_PRINT_END = '\n'
-TABULATION = '\t\t\t\t'
 
 KNOWN_VINS = ['111', '112', '113', 'democar']
 
@@ -73,19 +71,6 @@ KNOWN_VINS = ['111', '112', '113', 'democar']
 repo_server_process = None
 director_service_instance = None
 director_service_thread = None
-
-
-def print_key(dictionary, count=0):
-
-    for key in dictionary.keys():
-        if type(dictionary[key]) == dict:
-            print(TABULATION + str(' %s' % (key)))
-            print_key(dictionary[key], 1)
-        else:
-            print(TABULATION + str('%s %s %s' % (('\t'*count), key, dictionary[key])))
-
-    print(TO_PRINT_END)
-    pass
 
 
 def clean_slate(use_new_keys=False):
@@ -123,57 +108,49 @@ def clean_slate(use_new_keys=False):
   key_dirroot_pub = demo.import_public_key('directorroot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirroot_pub]')
-  print_key(key_dirroot_pub)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirroot_pub]:', key_dirroot_pub)))
   #TODO: Until here
 
   key_dirroot_pri = demo.import_private_key('directorroot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirroot_pri]')
-  print_key(key_dirroot_pri)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirroot_pri]:', key_dirroot_pri)))
   #TODO: Until here
 
   key_dirtime_pub = demo.import_public_key('directortimestamp')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirtime_pub]')
-  print_key(key_dirtime_pub)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirtime_pub]:', key_dirtime_pub)))
   #TODO: Until here
 
   key_dirtime_pri = demo.import_private_key('directortimestamp')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirtime_pri]')
-  print_key(key_dirtime_pri)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirtime_pri]:', key_dirtime_pri)))
   #TODO: Until here
 
   key_dirsnap_pub = demo.import_public_key('directorsnapshot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirsnap_pub]')
-  print_key(key_dirsnap_pub)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirsnap_pub]:', key_dirsnap_pub)))
   #TODO: Until here
 
   key_dirsnap_pri = demo.import_private_key('directorsnapshot')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirsnap_pri]')
-  print_key(key_dirsnap_pri)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirsnap_pri]:', key_dirsnap_pri)))
   #TODO: Until here
 
   key_dirtarg_pub = demo.import_public_key('director')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirtarg_pub]')
-  print_key(key_dirtarg_pub)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirtarg_pub]:', key_dirtarg_pub)))
   #TODO: Until here
 
   key_dirtarg_pri = demo.import_private_key('director')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'imported [key_dirtarg_pri]')
-  print_key(key_dirtarg_pri)
+  print(str('%s %s %s' % (I_TO_PRINT, 'imported [key_dirtarg_pri]:', key_dirtarg_pri)))
   #TODO: Until here
 
 
