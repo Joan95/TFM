@@ -69,7 +69,7 @@ def generate_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_key()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Generating key with keyname:', keyname)))
   #TODO: Until here
@@ -89,7 +89,7 @@ def import_public_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_public_key()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_public_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Importing public key keyname:', keyname)))
   #TODO: Until here
@@ -108,7 +108,7 @@ def import_private_key(keyname):
     Key location: DEMO_KEYS_DIR
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_private_key()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_private_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Importing private key keyname:', keyname)))
   #TODO: Until here
@@ -124,7 +124,7 @@ def get_random_string(length):
   cryptographically reliable.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_random_string()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_random_string()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Getting random string with length:', length)))
   #TODO: Until here
