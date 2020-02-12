@@ -110,7 +110,6 @@ METADATA_EXTENSIONS = ['.json', '.der']
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TO_PRINT_END = '\n'
 
 
 def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
@@ -1219,12 +1218,9 @@ def import_ed25519_publickey_from_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_publickey_from_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Importing ed25519 publickey from file with filepath:', filepath)))
   #TODO: Until here
 
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format for' + filepath + TO_PRINT_END)
-  #TODO: Until here
 
   # Does 'filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
@@ -1232,28 +1228,12 @@ def import_ed25519_publickey_from_file(filepath):
   # Raise 'tuf.FormatError' if there is a mismatch.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'ED25519 key objects are saved in .json and metadata format. Return the loaded key object in tuf.formats.ED25519KEY_SCHEMA format that also includes the keyid' + TO_PRINT_END)
-  #TODO: Until here
 
   # ED25519 key objects are saved in json and metadata format.  Return the
   # loaded key object in tuf.formats.ED25519KEY_SCHEMA' format that also
   # includes the keyid.
   ed25519_key_metadata = tuf.util.load_json_file(filepath)
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'ed25519_key_metadata: ', ed25519_key_metadata, TO_PRINT_END)))
-  #TODO: Until here
-
   ed25519_key, junk = tuf.keys.format_metadata_to_key(ed25519_key_metadata)
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'ed25519_key: ', ed25519_key, TO_PRINT_END)))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'junk == keyids: ', junk, TO_PRINT_END)))
-  #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
   # Redundant validation of 'keytype'.  'tuf.keys.format_metadata_to_key()'
@@ -1263,8 +1243,9 @@ def import_ed25519_publickey_from_file(filepath):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Returning the key: %s' % ed25519_key)
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
+
   return ed25519_key
 
 
@@ -1312,12 +1293,9 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_privatekey_from_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Importing ed25519 privatekey from file with filepath:', filepath, 'password:', password)))
   #TODO: Until here
 
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format for' + filepath + 'Password? ' + password + TO_PRINT_END)
-  #TODO: Until here
 
   # Does 'filepath' have the correct format?
   # Ensure the arguments have the appropriate number of objects and object
@@ -1332,9 +1310,6 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     message = 'Enter a password for the encrypted ED25519 key: '
     password = _get_password(message, confirm=False)
 
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking password: \'' + password + '\' have the correct format' + TO_PRINT_END)
-  #TODO: Until here
 
   # Does 'password' have the correct format?
   tuf.formats.PASSWORD_SCHEMA.check_match(password)
@@ -1344,15 +1319,12 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   encrypted_key = None
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Store the encrypted contents of \'' + filepath +'\' prior to calling the decryption routine' + TO_PRINT_END)
+  print(I_TO_PRINT + 'Store the encrypted contents of \'' + filepath +'\' prior to calling the decryption routine')
   #TODO: Until here
 
   with open(filepath, 'rb') as file_object:
     encrypted_key = file_object.read()
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s' % (I_TO_PRINT, 'Encrypted content of:', filepath, 'encrypted_key:', encrypted_key, TO_PRINT_END)))
-  #TODO: Until here
 
   # Decrypt the loaded key file, calling the appropriate cryptography library
   # (i.e., set by the user) and generating the derived encryption key from
@@ -1361,17 +1333,18 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
   key_object = tuf.keys.decrypt_key(encrypted_key, password)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s' % (I_TO_PRINT, 'Decrypted content of: \'', filepath, '\': ', key_object, TO_PRINT_END)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Decrypted content of: \'', filepath, '\': ', key_object)))
   #TODO: Until here
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Checking that \'keytype\' equals to \'ed25519\'', TO_PRINT_END)))
-  #TODO: Until here
 
   # Raise an exception if an unexpected key type is imported.
   if key_object['keytype'] != 'ed25519':
     message = 'Invalid key type loaded: ' + repr(key_object['keytype'])
     raise tuf.FormatError(message)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return key_object
 
@@ -1411,7 +1384,7 @@ def get_metadata_filenames(metadata_directory=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_filenames()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Returning metadata filenames for metadata_directory:', metadata_directory)))
   #TODO: Until here
 
   if metadata_directory is None:
@@ -1481,7 +1454,7 @@ def get_metadata_fileinfo(filename, custom=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_fileinfo()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning metadata fileinfo for filename:', filename, 'custom', custom)))
   #TODO: Until here
 
   # Does 'filename' and 'custom' have the correct format?
@@ -1540,7 +1513,7 @@ def get_metadata_versioninfo(rolename, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_versioninfo()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning metadata version info for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Does 'rolename' have the correct format?
@@ -1585,7 +1558,7 @@ def get_target_hash(target_filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
   #TODO: Until here
 
   return tuf.util.get_target_hash(target_filepath)
@@ -1637,12 +1610,8 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_root_metadata()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Create the root metadata.  \'tuf.roledb.py\' and \'tuf.keydb.py\' are read and the information returned by these modules is used to generate the root metadata object.')))
+  print(str('%s %s' % (I_TO_PRINT, 'Creating root metadata.  \'tuf.roledb.py\' and \'tuf.keydb.py\' are read and the information returned by these modules is used to generate the root metadata object.')))
   # TODO: Until here
 
   # Do the arguments have the correct format?
@@ -1720,9 +1689,9 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
   #       metadata, possibly rolling that upwards into the calling function.
   #       There are very few things that really need to be done differently.
 
-  # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning Root Metadata schema with corresponding format')))
-  # TODO: Until here
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return tuf.formats.build_dict_conforming_to_schema(
       tuf.formats.ROOT_SCHEMA,
@@ -1790,12 +1759,8 @@ def generate_targets_metadata(targets_directory, target_files, version,
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_targets_metadata()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Generate the targets metadata object. The targets in \'target_files\' must exist at the same path they should on the repo. \'target_files\' is a list of targets.  The \'custom\' field of the targets metadata is not currently supported.')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating targets metadata object. The targets in \'target_files\' must exist at the same path they should on the repo. \'target_files\' is a list of targets.  The \'custom\' field of the targets metadata is not currently supported.')))
   # TODO: Until here
 
   # Do the arguments have the correct format?
@@ -1860,9 +1825,9 @@ def generate_targets_metadata(targets_directory, target_files, version,
           logger.warning('Hard linking target file to ' + repr(digest_target))
           os.link(target_path, digest_target)
 
-  # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning Targets Metadata schema with corresponding format')))
-  # TODO: Until here
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   # Generate the targets metadata object.
   # Use generalized build_dict_conforming_to_schema func to produce a dict that
@@ -1950,12 +1915,8 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_snapshot_metadata()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Create the snapshot metadata. The minimum metadata must exist (i.e., \'root.json\' and \'targets.json\'). This function searches \'metadata_directory\' and the resulting snapshot file will list all the delegated roles found there.')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating snapshot metadata. The minimum metadata must exist (i.e., \'root.json\' and \'targets.json\'). This function searches \'metadata_directory\' and the resulting snapshot file will list all the delegated roles found there.')))
   # TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2012,9 +1973,9 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
           fileinfodict[metadata_name] = get_metadata_versioninfo(
               rolename, repository_name)
 
-  # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning Snapshot Metadata schema with corresponding format')))
-  # TODO: Until here
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   # Generate the Snapshot metadata object.
   # Use generalized build_dict_conforming_to_schema func to produce a dict that
@@ -2069,12 +2030,8 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_timestamp_metadata()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Generate the timestamp metadata object. The \'snapshot.json\' file must exist.')))
+  print(str('%s %s' % (I_TO_PRINT, 'Generating timestamp metadata object. The \'snapshot.json\' file must exist.')))
   # TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2110,6 +2067,12 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
   #       generate_root_metadata, etc. with one function that generates
   #       metadata, possibly rolling that upwards into the calling function.
   #       There are very few things that really need to be done differently.
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
+
   return tuf.formats.build_dict_conforming_to_schema(
       tuf.formats.TIMESTAMP_SCHEMA,
       _type='Timestamp',   # TODO: Normalize rolename capitalization across the code. -.-
@@ -2157,11 +2120,7 @@ def sign_metadata(metadata_object, keyids, filename,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Signing metadata for:', metadata_object)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Signing file:', filename, 'metadata_object:', metadata_object, 'with keyids:', keyids, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2217,6 +2176,11 @@ def sign_metadata(metadata_object, keyids, filename,
   # Raise 'tuf.FormatError' if the resulting 'signable' is not formatted
   # correctly.
   tuf.formats.check_signable_object_format(signable)
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   return signable
 
@@ -2275,7 +2239,7 @@ def write_metadata_file(metadata, filename, version_number,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_metadata_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Writting metadata file at filename:', filename)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2384,6 +2348,11 @@ def write_metadata_file(metadata, filename, version_number,
     # not changed.
     _write_compressed_metadata(file_object, compressed_filename,
                                write_new_metadata, consistent_snapshot, version_number)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
   return written_filename
 
 
@@ -2402,7 +2371,7 @@ def _write_compressed_metadata(file_object, compressed_filename,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_write_compressed_metadata()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Writting compressed metadata for file_object:', file_object)))
   #TODO: Until here
 
   # If a consistent snapshot is unneeded, 'file_object' may be simply moved
@@ -2455,7 +2424,9 @@ def _write_compressed_metadata(file_object, compressed_filename,
         logger.info('Linking ' + repr(consistent_filename))
         os.link(compressed_filename, consistent_filename)
 
-
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 
@@ -2611,7 +2582,7 @@ def create_tuf_client_directory(repository_directory, client_directory):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_tuf_client_directory()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating TUF client directory for repository_directory:', repository_directory, 'client_directory:', client_directory)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2658,6 +2629,9 @@ def create_tuf_client_directory(repository_directory, client_directory):
   shutil.copytree(metadata_directory, client_current)
   shutil.copytree(metadata_directory, client_previous)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
 
 def disable_console_log_messages():

@@ -54,8 +54,7 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
-TO_PRINT_END = '\n'
+TO_PRINT = uptane.RED + '\t-------- --------> [tuf/util.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 
@@ -73,10 +72,10 @@ class TempFile(object):
   def _default_temporary_directory(self, prefix):
     """__init__ helper."""
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile._default_temporary_dictionary()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile._default_temporary_dictionary()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, 'Initializating default temporary directory')))
+##    #TODO: Until here
 
 
     try:
@@ -104,10 +103,10 @@ class TempFile(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.__init__()]: ' + uptane.ENDCOLORS
-    #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
-    #TODO: Until here
+##    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[TempFile.__init__()]: ' + uptane.ENDCOLORS
+##    #TODO: Print to be deleted
+##    print(str('%s %s' % (I_TO_PRINT, '...')))
+##    #TODO: Until here
 
     self._compression = None
 
@@ -451,7 +450,7 @@ def get_file_details(filepath, hash_algorithms=['sha256']):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_file_details()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning file details for filepath:', filepath, 'hash_algorithms:', hash_algorithms)))
   #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
@@ -509,10 +508,10 @@ def ensure_parent_dir(filename):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_parent_dir()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_parent_dir()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
   # Ensure 'filename' corresponds to 'PATH_SCHEMA'.
@@ -552,10 +551,10 @@ def file_in_confined_directories(filepath, confined_directories):
     or in 'confined_paths'; False, otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[file_in_confined_directories()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[file_in_confined_directories()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
   # Do the arguments have the correct format?
@@ -614,7 +613,7 @@ def find_delegated_role(roles, delegated_role):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[find_delegated_role()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning the index of delegated role for roles:', roles, 'delegated_role:', delegated_role)))
   #TODO: Until here
 
 
@@ -720,10 +719,10 @@ def ensure_all_targets_allowed(rolename, list_of_targets, parent_delegations):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_all_targets_allowed()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[ensure_all_targets_allowed()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
 
@@ -831,10 +830,10 @@ def paths_are_consistent_with_hash_prefixes(paths, path_hash_prefixes):
     hash prefix.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[paths_are_consistent_with_hash_prefixies()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[paths_are_consistent_with_hash_prefixies()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
 
@@ -900,7 +899,7 @@ def get_target_hash(target_filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
   #TODO: Until here
 
 
@@ -948,7 +947,7 @@ def import_json():
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_json()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Importing JSON')))
   #TODO: Until here
 
 
@@ -996,7 +995,7 @@ def load_json_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
   #TODO: Until here
 
 
@@ -1012,6 +1011,12 @@ def load_json_string(data):
   except ValueError:
     message = 'Cannot deserialize to a Python object: ' + repr(data)
     raise tuf.Error(message)
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
   else:
     return deserialized_object
@@ -1054,9 +1059,12 @@ def load_der_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', data)))
   #TODO: Until here
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   try:
     return asn1_codec.convert_signed_der_to_dersigned_json(data)
@@ -1095,23 +1103,15 @@ def load_json_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON file for filepath:', filepath)))
   #TODO: Until here
 
-
-  #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Checking format of: ' + filepath + TO_PRINT_END)
-  #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
   # tuf.FormatError is raised on incorrect format.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
   deserialized_object = None
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Checking whether the file is mostly likely gzipped:', filepath.endswith('.gz'), TO_PRINT_END)))
-  #TODO: Until here
 
   # The file is mostly likely gzipped.
   if filepath.endswith('.gz'):
@@ -1122,23 +1122,19 @@ def load_json_file(filepath):
     logger.debug('open(' + str(filepath) + ')')
     fileobject = open(filepath)
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s' % (I_TO_PRINT, 'Loading:', fileobject, TO_PRINT_END)))
-  #TODO: Until here
-
   try:
     deserialized_object = json.load(fileobject)
-
-    #TODO: Print to be deleted
-    print(str('%s %s %s %s' % (I_TO_PRINT, 'Loaded json metadata:', deserialized_object, TO_PRINT_END)))
-    #TODO: Until here
 
 
   except (ValueError, TypeError):
     raise tuf.Error('Cannot deserialize to a Python object: ' + repr(filepath))
 
-
   else:
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    #TODO: Until here
+
     fileobject.close()
     return deserialized_object
 
@@ -1184,7 +1180,7 @@ def load_der_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER file for filepath:', filepath)))
   #TODO: Until here
 
 
@@ -1210,6 +1206,10 @@ def load_der_file(filepath):
   finally:
     der_fobj.close()
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
+
 
   # Decode the DER into an abstract ASN.1 representation of its data,
   # then convert that into a basic Python dictionary representation of the
@@ -1232,9 +1232,12 @@ def load_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading file for filepath:', filepath)))
   #TODO: Until here
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #TODO: Until here
 
   if filepath.endswith('.der'):
     return load_der_file(filepath)
@@ -1275,10 +1278,10 @@ def load_string(data):
   comments in those functions.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_string()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_string()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
   if tuf.conf.METADATA_FORMAT == 'der':
@@ -1319,10 +1322,10 @@ def digests_are_equal(digest1, digest2):
     Return True if 'digest1' is equal to 'digest2', False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digests_are_equal()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digests_are_equal()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
   # Ensure the arguments have the appropriate number of objects and object
@@ -1353,10 +1356,10 @@ def get_current_time():
   integer) since the epoch.
   '''
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_current_time()]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
-  #TODO: Until here
+##  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_current_time()]: ' + uptane.ENDCOLORS
+##  #TODO: Print to be deleted
+##  print(str('%s %s' % (I_TO_PRINT, '...')))
+##  #TODO: Until here
 
 
   if tuf.conf.CLOCK_OVERRIDE is not None:

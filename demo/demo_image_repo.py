@@ -49,8 +49,6 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
-TO_PRINT_END = '\n'
-TABULATION = '\t\t\t\t'
 
 target_files = {
                     'file1.txt' : "This is the content for file1",
@@ -189,7 +187,7 @@ def clean_slate(use_new_keys=False):
 
 
   #TODO: Print to be deleted
-  print(TO_PRINT_END + I_TO_PRINT + 'Adding top level keys to the main repository')
+  print(str('\n%s %s' % (I_TO_PRINT, 'Adding top level keys to the main repository')))
   #TODO: Until here
 
   # Add top level keys to the main repository.

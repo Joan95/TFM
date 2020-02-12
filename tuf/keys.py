@@ -161,8 +161,7 @@ _GENERAL_CRYPTO_LIBRARY = tuf.conf.GENERAL_CRYPTO_LIBRARY
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.YELLOW_BG + '\t-------- --------> [tuf/keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TO_PRINT_END = '\n'
-TABULATE = '\n\t\t\t\t'
+
 
 def generate_rsa_key(bits=_DEFAULT_RSA_KEY_BITS):
   """
