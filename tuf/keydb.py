@@ -57,7 +57,7 @@ _keydb_dict['default'] = {}
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.GREEN + '\t--------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 TABULATE = '\n\t\t\t\t'
 TO_PRINT_END = '\n'
 

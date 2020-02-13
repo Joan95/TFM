@@ -697,10 +697,6 @@ def check_crypto_libraries(required_libraries):
       ' crypto library specified in "tuf.conf.GENERAL_CRYPTO_LIBRARY" could'
       ' not be imported.')
 
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
-
 
 
 def create_signature(key_dict, data):
