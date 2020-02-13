@@ -70,6 +70,7 @@ def generate_key(keyname):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_key()]: ' + uptane.ENDCOLORS
+
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Generating key with keyname:', keyname)))
   #TODO: Until here
