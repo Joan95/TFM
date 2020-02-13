@@ -2182,6 +2182,10 @@ def sign_metadata(metadata_object, keyids, filename,
 
         signable['signatures'].append(signature)
 
+        #TODO: Print to be deleted
+        print(str('%s %s %s %s' % (I_TO_PRINT, 'signature:', signature, 'appended to METADATA in format SIGNABLE')))
+        #TODO: Until here
+
       else:
         logger.warning('Private key unset.  Skipping: ' + repr(keyid))
 

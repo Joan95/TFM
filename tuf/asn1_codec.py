@@ -71,10 +71,6 @@ def _ensure_valid_metadata_type_for_asn1(metadata_type):
         repr(metadata_type) + '; types accepted: ' +
         repr(list(SUPPORTED_ASN1_METADATA_MODULES)))
 
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
-
 
 
 
