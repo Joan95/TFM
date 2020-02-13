@@ -143,6 +143,10 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
     metadata = generate_root_metadata(roleinfo['version'], roleinfo['expires'],
       consistent_snapshot, compression_algorithms, repository_name)
 
+    #TODO: Print to be removed
+    print(str('%s %s %s' % (I_TO_PRINT, 'Root metadata received:', metadata)))
+    #TODO: Until here
+
     _log_warning_if_expires_soon(ROOT_FILENAME, roleinfo['expires'],
                                  ROOT_EXPIRES_WARN_SECONDS)
 
@@ -155,6 +159,9 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
         roleinfo['version'], roleinfo['expires'], root_filename,
         targets_filename, consistent_snapshot, repository_name)
 
+    #TODO: Print to be removed
+    print(str('%s %s %s' % (I_TO_PRINT, 'Snapshot metadata received:', metadata)))
+    #TODO: Until here
 
     _log_warning_if_expires_soon(SNAPSHOT_FILENAME, roleinfo['expires'],
                                  SNAPSHOT_EXPIRES_WARN_SECONDS)
@@ -163,6 +170,10 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
     snapshot_filename = filenames['snapshot']
     metadata = generate_timestamp_metadata(snapshot_filename,
         roleinfo['version'], roleinfo['expires'], repository_name)
+
+    #TODO: Print to be removed
+    print(str('%s %s %s' % (I_TO_PRINT, 'Timestamp metadata received:', metadata)))
+    #TODO: Until here
 
     _log_warning_if_expires_soon(TIMESTAMP_FILENAME, roleinfo['expires'],
                                  TIMESTAMP_EXPIRES_WARN_SECONDS)
@@ -181,6 +192,10 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
                                          roleinfo['expires'],
                                          roleinfo['delegations'],
                                          consistent_snapshot)
+
+    #TODO: Print to be removed
+    print(str('%s %s %s' % (I_TO_PRINT, 'Targets metadata received:', metadata)))
+    #TODO: Until here
 
 
   signable = sign_metadata(metadata, roleinfo['signing_keyids'],

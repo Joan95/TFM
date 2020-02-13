@@ -1139,10 +1139,6 @@ def _check_rolename(rolename, repository_name='default'):
   if rolename not in _roledb_dict[repository_name]:
     raise tuf.UnknownRoleError('Role name does not exist: ' + rolename)
 
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
-
 
 
 
@@ -1169,7 +1165,3 @@ def _validate_rolename(rolename):
   if rolename.startswith('/') or rolename.endswith('/'):
     raise tuf.InvalidNameError('Invalid rolename. Cannot start or end with a'
       ' "/": ' + rolename)
-
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
