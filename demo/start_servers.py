@@ -32,11 +32,11 @@ def main():
 
   # Start demo Director, including http server and xmlrpc listener (for
   # manifests, registrations, and webdemo)
-  #dd.clean_slate()
+  dd.clean_slate()
 
   # Start demo Timeserver, including xmlrpc listener (for requests from demo
   # Primary)
-  #dt.listen()
+  dt.listen()
 
 
 

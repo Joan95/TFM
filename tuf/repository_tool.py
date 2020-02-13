@@ -330,31 +330,67 @@ class Repository(object):
     # _generate_and_write_metadata() raises a 'tuf.Error' exception if the
     # metadata cannot be written.
     if 'root' in dirty_rolenames or consistent_snapshot:
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Root in dirty_rolenames')))
+      #TODO: Until here
+
       repo_lib._generate_and_write_metadata(
           'root', filenames['root'], write_partial,
           self._targets_directory, self._metadata_directory,
           consistent_snapshot, filenames, repository_name=self.repository_name)
 
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Already generated and wrote metadata for Root\n\n\n')))
+      #TODO: Until here
+
     # Generate the 'targets.json' metadata file.
     if 'targets' in dirty_rolenames:
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Targets in dirty_rolenames')))
+      #TODO: Until here
+
       repo_lib._generate_and_write_metadata(
           'targets', filenames['targets'], write_partial,
           self._targets_directory, self._metadata_directory,
           consistent_snapshot, repository_name=self.repository_name)
 
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Already generated and wrote metadata for Targets\n\n\n')))
+      #TODO: Until here
+
     # Generate the 'snapshot.json' metadata file.
     if 'snapshot' in dirty_rolenames:
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Snapshot in dirty_rolenames')))
+      #TODO: Until here
+
       snapshot_signable, junk = repo_lib._generate_and_write_metadata(
           'snapshot', filenames['snapshot'], write_partial,
           self._targets_directory, self._metadata_directory,
           consistent_snapshot, filenames, repository_name=self.repository_name)
 
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Already generated and wrote metadata for Snapshot\n\n\n')))
+      #TODO: Until here
+
     # Generate the 'timestamp.json' metadata file.
     if 'timestamp' in dirty_rolenames:
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Timestamp in dirty_rolenames')))
+      #TODO: Until here
+
       repo_lib._generate_and_write_metadata(
           'timestamp', filenames['timestamp'], write_partial,
           self._targets_directory, self._metadata_directory,
           consistent_snapshot, filenames, repository_name=self.repository_name)
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Already generated and wrote metadata for Timestamp\n\n\n')))
+      #TODO: Until here
 
     # Fixing bug in this version of TUF. This is handled in more recent versions
     # of TUF. (Bug results in many more role writes than necessary.)
