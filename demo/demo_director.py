@@ -99,6 +99,13 @@ def clean_slate(use_new_keys=False):
   print(I_TO_PRINT + 'Create keys and/or load keys into memory.\n\t\t[use_new_keys] = %s' % use_new_keys)
   #TODO: Until here
 
+
+  #TODO: Print to be deleted
+  #TODO: Force the creation of new keys
+  use_new_keys = True
+  print(str('%s %s %s' % ('\n\n\n', I_TO_PRINT, 'Forcing the creation of new keys by setting use_new_keys:', use_new_keys)))
+  #TODO: Until here
+
   if use_new_keys:
     demo.generate_key('directorroot')
     demo.generate_key('directortimestamp')
