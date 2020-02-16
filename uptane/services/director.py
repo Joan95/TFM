@@ -586,10 +586,19 @@ class Director:
         vin, repository_name=vin)
 
 
+    #TODO: Print to be deleted
+    print(str("%s %s" % (I_TO_PRINT, 'Adding verification keys for repos')))
+    #TODO: Until here
+
     this_repo.root.add_verification_key(self.key_dirroot_pub)
     this_repo.timestamp.add_verification_key(self.key_dirtime_pub)
     this_repo.snapshot.add_verification_key(self.key_dirsnap_pub)
     this_repo.targets.add_verification_key(self.key_dirtarg_pub)
+
+    #TODO: Print to be deleted
+    print(str("%s %s" % (I_TO_PRINT, 'Adding signing keys for repos')))
+    #TODO: Until here
+
     this_repo.root.load_signing_key(self.key_dirroot_pri)
     this_repo.timestamp.load_signing_key(self.key_dirtime_pri)
     this_repo.snapshot.load_signing_key(self.key_dirsnap_pri)

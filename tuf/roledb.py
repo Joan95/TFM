@@ -844,7 +844,7 @@ def get_role_keyids(rolename, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'returning roleinfo[\'keyids\']:', roleinfo['keyids'])))
   #TODO: Until here
 
 
