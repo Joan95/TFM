@@ -1159,6 +1159,10 @@ def generate_and_write_ed25519_keypair(filepath, password=None):
   # Raise 'tuf.FormatError' if there is a mismatch.
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'insert password if it empty')))
+  #TODO: Until here
+
   # If the caller does not provide a password argument, prompt for one.
   if password is None: # pragma: no cover
     message = 'Enter a password for the ED25519 key: '
@@ -1171,8 +1175,22 @@ def generate_and_write_ed25519_keypair(filepath, password=None):
   # used is determined by the user, or by default (set in
   # 'tuf.conf.ED25519_CRYPTO_LIBRARY').  Raise 'tuf.CryptoError' or
   # 'tuf.UnsupportedLibraryError', if 'ed25519_key' cannot be encrypted.
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate new ED25519 key')))
+  #TODO: Until here
+
   ed25519_key = tuf.keys.generate_ed25519_key()
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Encrypt this new ED25519 key: ', ed25519_key)))
+  #TODO: Until here
+
   encrypted_key = tuf.keys.encrypt_key(ed25519_key, password)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Encrypted ED25519 key', encrypted_key)))
+  #TODO: Until here
 
   # ed25519 public key file contents in metadata format (i.e., does not include
   # the keyid portion).
