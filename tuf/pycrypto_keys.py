@@ -739,7 +739,7 @@ def encrypt_key(key_object, password):
   salt, iterations, derived_key = _generate_derived_key(password)
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'salt:', salt, 'iterations:', iterations, 'derived_key:', derived_key)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'salt:', '?', 'iterations:', iterations, 'derived_key:', '?')))
   #TODO: Until here
 
   # Store the derived key info in a dictionary, the object expected
