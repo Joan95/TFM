@@ -24,12 +24,6 @@ from six.moves import xmlrpc_server
 import readline, rlcompleter # for tab completion in interactive Python shell
 
 
-#TODO: Impots to be removed
-import sys
-from kitchen.text.converters import getwriter
-UTF8Writer = getwriter('utf8')
-sys.stdout = UTF8Writer(sys.stdout)
-
 def main():
 
   # Start demo Image Repo, including http server and xmlrpc listener (for
