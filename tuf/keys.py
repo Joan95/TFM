@@ -162,6 +162,12 @@ _GENERAL_CRYPTO_LIBRARY = tuf.conf.GENERAL_CRYPTO_LIBRARY
 import uptane
 TO_PRINT = uptane.YELLOW_BG + '\t-------- --------> [tuf/keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
+#TODO: Impots to be removed
+import codecs
+import sys
+sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+
 
 def generate_rsa_key(bits=_DEFAULT_RSA_KEY_BITS):
   """
