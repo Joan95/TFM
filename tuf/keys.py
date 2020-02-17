@@ -350,7 +350,7 @@ def generate_ed25519_key():
       tuf.ed25519_keys.generate_public_and_private()
 
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'KEY public:', ''.join(i.decode('utf8') for i in public), 'KEY private:', ''.join(i.decode('utf8') for i in private))))
+    print(str('%s %s' % (I_TO_PRINT, 'INFO: public and private')))
     #TODO: Until here
 
   else: # pragma: no cover
