@@ -25,10 +25,10 @@ import readline, rlcompleter # for tab completion in interactive Python shell
 
 
 #TODO: Impots to be removed
-import codecs
 import sys
-sys.stdout = codecs.getwriter('utf8')(sys.stdout)
-sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+from kitchen.text.converters import getwriter
+UTF8Writer = getwriter('utf8')
+sys.stdout = UTF8Writer(sys.stdout)
 
 def main():
 
