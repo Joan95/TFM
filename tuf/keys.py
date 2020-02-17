@@ -349,9 +349,18 @@ def generate_ed25519_key():
     public, private = \
       tuf.ed25519_keys.generate_public_and_private()
 
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'KEY public:', public, 'KEY private:', private)))
+    #TODO: Until here
+
   else: # pragma: no cover
     raise tuf.UnsupportedLibraryError('The required PyNaCl library'
       ' is unavailable.')
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate the keyid of the Ed25519 key. \'key_value\' corresponds to the \'keyval\' entry of the \'Ed25519KEY_SCHEMA\' dictionary. The private key information is not included in the generation of the \'keyid\' identifier.')))
+  #TODO: Until here
 
   # Generate the keyid of the Ed25519 key.  'key_value' corresponds to the
   # 'keyval' entry of the 'Ed25519KEY_SCHEMA' dictionary.  The private key
@@ -359,6 +368,10 @@ def generate_ed25519_key():
   key_value = {'public': binascii.hexlify(public).decode(),
                'private': ''}
   keyid = _get_keyid(keytype, key_value)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'generated keyid:', keyid)))
+  #TODO: Until here
 
   # Build the 'ed25519_key' dictionary.  Update 'key_value' with the Ed25519
   # private key prior to adding 'key_value' to 'ed25519_key'.
@@ -369,7 +382,7 @@ def generate_ed25519_key():
   ed25519_key['keyval'] = key_value
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'returning ed25519_key dictionary')))
   #TODO: Until here
 
   return ed25519_key
@@ -1406,7 +1419,7 @@ def encrypt_key(key_object, password):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'returning encrypted_key')))
   #TODO: Until here
 
   return encrypted_key

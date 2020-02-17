@@ -711,7 +711,7 @@ def encrypt_key(key_object, password):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[encrypt_key()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Encrypting key_object:', key_object)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Encrypting key_object:', key_object, 'with password:', password)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -727,23 +727,36 @@ def encrypt_key(key_object, password):
   if not key_object['keyval']['private']:
     raise tuf.FormatError('Key object does not contain a private part.')
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Derivating the key, strenghten \'password\' with PBKDF2-HMAC-SHA256 with 100k iterations by default')))
+  #TODO: Until here
+
   # Derive a key (i.e., an appropriate encryption key and not the
   # user's password) from the given 'password'.  Strengthen 'password' with
   # PBKDF2-HMAC-SHA256 (100K iterations by default, but may be overriden in
   # 'tuf.conf.PBKDF2_ITERATIONS' by the user).
   salt, iterations, derived_key = _generate_derived_key(password)
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'salt:', salt, 'iterations:', iterations, 'derived_key:', derived_key)))
+  #TODO: Until here
+
   # Store the derived key info in a dictionary, the object expected
   # by the non-public _encrypt() routine.
   derived_key_information = {'salt': salt, 'iterations': iterations,
                              'derived_key': derived_key}
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Convert the key object:', key_object, 'to json string format and encrypt it with the derived key:', derived_key_information)))
+  #TODO: Until here
 
   # Convert the key object to json string format and encrypt it with the
   # derived key.
   encrypted_key = _encrypt(json.dumps(key_object), derived_key_information)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'returning encrypted_key')))
   #TODO: Until here
 
   return encrypted_key
@@ -877,6 +890,11 @@ def _generate_derived_key(password, salt=None, iterations=None):
 ##    #TODO: Until here
 
     return Crypto.Hash.HMAC.new(password, salt, Crypto.Hash.SHA256).digest()
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'INFO: \'dkLen\' is the desired key length (_AES_KEY_SIZE = 32).  \'count\' is the number of password iterations performed by PBKDF2.')))
+  #TODO: Until here
 
 
   # 'dkLen' is the desired key length.  'count' is the number of password
