@@ -76,6 +76,11 @@ listener_thread = None
 most_recent_signed_vehicle_manifest = None
 
 
+#TODO: To be removed
+LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
+
+
 def clean_slate(
     use_new_keys=False,
     # client_directory_name=None,
@@ -83,6 +88,12 @@ def clean_slate(
     ecu_serial=_ecu_serial):
   """
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'clean_slate()')))
+  #TODO: Until here
+
   global primary_ecu
   global CLIENT_DIRECTORY
   global _vin
@@ -167,6 +178,10 @@ def clean_slate(
   generate_signed_vehicle_manifest()
   submit_vehicle_manifest_to_director()
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
+
 
 
 
@@ -179,6 +194,12 @@ def create_primary_pinning_file():
 
   Returns the filename of the created file.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_primary_pinning_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Creating primary pinning file()')))
+  #TODO: Until here
+
   with open(demo.DEMO_PRIMARY_PINNING_FNAME, 'r') as fobj:
     pinnings = json.load(fobj)
 
@@ -199,6 +220,10 @@ def create_primary_pinning_file():
   with open(fname_to_create, 'wb') as fobj:
     fobj.write(canonicaljson.encode_canonical_json(pinnings))
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning fname_to_create')))
+  #TODO: Until here
+
   return fname_to_create
 
 
@@ -207,6 +232,11 @@ def create_primary_pinning_file():
 
 def load_or_generate_key(use_new_keys=False):
   """Load or generate an ECU's private key."""
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_or_generate_key()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading or generating keys with use_new_keys:', use_new_keys)))
+  #TODO: Until here
 
   global ecu_key
 
@@ -219,6 +249,10 @@ def load_or_generate_key(use_new_keys=False):
 
   ecu_key = uptane.common.canonical_key_from_pub_and_pri(key_pub, key_pri)
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
+
 
 
 
@@ -226,6 +260,11 @@ def load_or_generate_key(use_new_keys=False):
 def update_cycle():
   """
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_cycle()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Updating cycle')))
+  #TODO: Until here
 
   #
   # FIRST: TIME
@@ -314,6 +353,10 @@ def update_cycle():
   generate_signed_vehicle_manifest()
   submit_vehicle_manifest_to_director()
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
+
 
 
 
@@ -323,10 +366,19 @@ def generate_signed_vehicle_manifest():
 
   global most_recent_signed_vehicle_manifest
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_signed_vehicle_manifest()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generating signed vehicle manifest')))
+  #TODO: Until here
+
   # Generate and sign a manifest indicating that this ECU has a particular
   # version/hash/size of file2.txt as its firmware.
   most_recent_signed_vehicle_manifest = \
       primary_ecu.generate_signed_vehicle_manifest()
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
@@ -335,6 +387,11 @@ def generate_signed_vehicle_manifest():
 def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
 
   global most_recent_signed_vehicle_manifest
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[submit_vehicle_manifest_to_director()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', signed_vehicle_manifest)))
+  #TODO: Until here
 
   if signed_vehicle_manifest is None:
     signed_vehicle_manifest = most_recent_signed_vehicle_manifest
@@ -365,6 +422,10 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
 
   print(GREEN + 'Submission of Vehicle Manifest complete.' + ENDCOLORS)
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
+
 
 
 
@@ -373,6 +434,12 @@ def register_self_with_director():
   """
   Send the Director a message to register our ECU serial number and Public Key.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_self_with_director()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Registering self with director')))
+  #TODO: Until here
+
   # Connect to the Director
   server = xmlrpc_client.ServerProxy(
     'http://' + str(demo.DIRECTOR_SERVER_HOST) + ':' +
@@ -384,6 +451,11 @@ def register_self_with_director():
       uptane.common.public_key_from_canonical(primary_ecu.primary_key),
       _vin, True)
   print(GREEN + 'Primary has been registered with the Director.' + ENDCOLORS)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  print(str('%s %s' % (I_TO_PRINT, '# This wouldn\'t be how we\'d do it in practice. ECUs would probably be registered when put into a vehicle, directly rather than through the Primary. def register_secondaries_with_director(): \"\"\"For each of the Secondaries that this Primary is in charge of, send the Director a message registering that Secondary\'s ECU Serial and public key.\"\"\"')))
+  #TODO: Until here
 
 
 
@@ -403,6 +475,11 @@ def enforce_jail(fname, expected_containing_dir):
   """
   DO NOT ASSUME THAT THIS TEMPORARY FUNCTION IS SECURE.
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[enforce_jail()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Enforcing jail for fname:', fname, 'expected_containing_dir:', expected_containing_dir)))
+  #TODO: Until here
+
   # Make sure it's in the expected directory.
   #print('provided arguments: ' + repr(fname) + ' and ' + repr(expected_containing_dir))
   abs_fname = os.path.abspath(os.path.join(expected_containing_dir, fname))
@@ -412,6 +489,11 @@ def enforce_jail(fname, expected_containing_dir):
         ' to the given directory, the result was not in the given directory.')
 
   else:
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Returning abs_fname')))
+    #TODO: Until here
+
     return abs_fname
 
 
@@ -428,6 +510,11 @@ def get_image_for_ecu(ecu_serial):
        The filename provided is relative to the targets directory.
      - binary image data for that file in xmlrpc.Binary format
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_image_for_ecu()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting image for ecu with ecu_serial:', ecu_serial)))
+  #TODO: Until here
 
   # Ensure serial is correct format & registered
   primary_ecu._check_ecu_serial(ecu_serial)
@@ -450,6 +537,11 @@ def get_image_for_ecu(ecu_serial):
   # the Secondary.
   relative_fname = os.path.relpath(
       image_fname, os.path.join(primary_ecu.full_client_dir, 'targets'))
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning relative_fname, binary_data')))
+  #TODO: Until here
+
   return (relative_fname, binary_data)
 
 
@@ -487,6 +579,12 @@ def get_metadata_for_ecu(ecu_serial, force_partial_verification=False):
   <Exceptions>
     uptane.Error if there is no metadata to distribute
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_for_ecu()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting metadata for ecu with ecu_serial:', ecu_serial)))
+  #TODO: Until here
+
   # Ensure serial is correct format & registered
   primary_ecu._check_ecu_serial(ecu_serial)
 
@@ -514,6 +612,10 @@ def get_metadata_for_ecu(ecu_serial, force_partial_verification=False):
 
   binary_data = xmlrpc_client.Binary(open(fname, 'rb').read())
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning binary_data')))
+  #TODO: Until here
+
   return binary_data
 
 
@@ -523,6 +625,12 @@ def get_metadata_for_ecu(ecu_serial, force_partial_verification=False):
 def get_time_attestation_for_ecu(ecu_serial):
   """
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_time_attestation_for_ecu()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Getting time attestation for ecu with ecu_serial:', ecu_serial)))
+  #TODO: Until here
+
   # Ensure serial is correct format & registered
   primary_ecu._check_ecu_serial(ecu_serial)
 
@@ -532,6 +640,11 @@ def get_time_attestation_for_ecu(ecu_serial):
   # to transmit via XMLRPC, so we should wrap it appropriately:
   if tuf.conf.METADATA_FORMAT == 'der':
     attestation = xmlrpc_client.Binary(attestation)
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning attestation')))
+  #TODO: Until here
 
   return attestation
 
@@ -557,12 +670,22 @@ def register_ecu_manifest_wrapper(vin, ecu_serial, nonce, signed_ecu_manifest):
   be extracted before it is passed to the underlying primary.py (in the
   reference implementation), which doesn't know anything about XMLRPC.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu_manifest_wrapper()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering ecu manifest wrapper for vin:', vin, 'with ecu_serial:', ecu_serial, 'nonce:', nonce, 'signed_ecu_manifest:', signed_ecu_manifest)))
+  #TODO: Until here
+
   if tuf.conf.METADATA_FORMAT == 'der':
     primary_ecu.register_ecu_manifest(
         vin, ecu_serial, nonce, signed_ecu_manifest.data)
   else:
     primary_ecu.register_ecu_manifest(
         vin, ecu_serial, nonce, signed_ecu_manifest)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
@@ -573,6 +696,11 @@ def listen():
   Listens on an available port from list PRIMARY_SERVER_AVAILABLE_PORTS, for
   XML-RPC calls from demo Secondaries for Primary interface calls.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[listen()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Listening...')))
+  #TODO: Until here
 
   # Create server to listen for messages from Secondaries. In this
   # demonstration, an XMLRPC server is used and communications are sent in the
@@ -655,6 +783,10 @@ def listen():
   print('Primary will now listen on port ' + str(successful_port))
   server.serve_forever()
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
+
 
 
 
@@ -663,8 +795,18 @@ def clean_up_temp_file(filename):
   """
   Deletes the pinned file and temp directory created by the demo
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_up_temp_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Cleanning up temp file with filename:', filename)))
+  #TODO: Until here
+
   if os.path.isfile(filename):
     os.remove(filename)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
@@ -674,8 +816,18 @@ def clean_up_temp_folder():
   """
   Deletes the temp directory created by the demo
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_up_temp_folder()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Cleanning up temp folder')))
+  #TODO: Until here
+
   if os.path.isdir(CLIENT_DIRECTORY):
     shutil.rmtree(CLIENT_DIRECTORY)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
