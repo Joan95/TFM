@@ -102,8 +102,8 @@ def clean_slate(use_new_keys=False):
 
   #TODO: Print to be deleted
   #TODO: Force the creation of new keys
-  use_new_keys = True
-  print(str('%s %s %s %s' % ('\n\n\n', I_TO_PRINT, 'Forcing the creation of new keys by setting use_new_keys:', use_new_keys)))
+  #use_new_keys = True
+  #print(str('%s %s %s %s' % ('\n\n\n', I_TO_PRINT, 'Forcing the creation of new keys by setting use_new_keys:', use_new_keys)))
   #TODO: Until here
 
   if use_new_keys:
