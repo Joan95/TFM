@@ -1051,7 +1051,7 @@ def load_der_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', data)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', '?')))
   #TODO: Until here
 
   #TODO: Print to be deleted

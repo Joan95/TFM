@@ -28,7 +28,7 @@ def main():
 
   # Start demo Image Repo, including http server and xmlrpc listener (for
   # webdemo)
-  #di.clean_slate()
+  di.clean_slate()
 
   # Start demo Director, including http server and xmlrpc listener (for
   # manifests, registrations, and webdemo)
@@ -36,7 +36,7 @@ def main():
 
   # Start demo Timeserver, including xmlrpc listener (for requests from demo
   # Primary)
-  #dt.listen()
+  dt.listen()
 
 
 
