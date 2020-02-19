@@ -26,6 +26,9 @@ import uptane.formats
 # TODO: Ensure RSA support in ASN.1/DER conversion.
 SUPPORTED_KEY_TYPES = ['ed25519', 'rsa']
 
+#TODO: To be removed
+TO_PRINT = uptane.YELLOW + '\t[uptane/common.py]\t>>Function: ' + ENDCOLORS + ' '
+
 def sign_signable(
   signable, keys_to_sign_with, datatype,
   metadata_format=tuf.conf.METADATA_FORMAT):
@@ -94,6 +97,10 @@ def sign_signable(
 
 
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_signable()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Signs the given signable (e.g. an ECU manifest) with all the given keys.')))
+  #TODO: Until here
 
   # The below was partially modeled after tuf.repository_lib.sign_metadata()
 
@@ -135,6 +142,10 @@ def sign_signable(
     keyids_that_already_signed.append(signing_key['keyid'])
 
   uptane.formats.ANY_SIGNABLE_UPTANE_METADATA_SCHEMA.check_match(signable)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
@@ -250,6 +261,10 @@ def sign_over_metadata(
      'sig': '...'}.
 
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_over_metadata()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Given a key and data, returns a signature over that data.')))
+  #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
 
@@ -275,6 +290,10 @@ def sign_over_metadata(
     raise uptane.Error('Unsupported metadata format: ' + repr(metadata_format) +
         '; the supported formats are: "der" and "json".')
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning by calling create_signature method')))
+  #TODO: Until here
 
   return tuf.keys.create_signature(key_dict, data)
 
@@ -384,6 +403,10 @@ def verify_signature_over_metadata(
   <Returns>
     Boolean.  True if the signature is valid, False otherwise.
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature_over_metadata()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Determine whether the private key belonging to \'key_dict\' produced \'signature\'. tuf.keys.verify_signature() will use the public key found in \'key_dict\', the \'method\' and \'sig\' objects contained in \'signature\', and \'data\' to complete the verification.')))
+  #TODO: Until here
 
   tuf.formats.ANYKEY_SCHEMA.check_match(key_dict)
   tuf.formats.SIGNATURE_SCHEMA.check_match(signature)
@@ -406,6 +429,10 @@ def verify_signature_over_metadata(
         '; the supported formats are: "der" and "json".')
 
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning by calling verify_signature method')))
+  #TODO: Until here
+
   return tuf.keys.verify_signature(key_dict, signature, data)
 
 
@@ -426,6 +453,11 @@ def canonical_key_from_pub_and_pri(key_pub, key_pri):
     key['keyval']['public']
     key['keyval']['private']  (for key_pri)
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[canonical_key_from_pub_and_pri()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Turn both keys into canonical key matching tuf.formats.ANYKEY_SCHEMA. key_pub:', key_pub, 'key_pri:', key_pri)))
+  #TODO: Until here
+
   key = {
       'keytype': key_pub['keytype'],
       'keyid': key_pub['keyid'],
@@ -434,6 +466,14 @@ def canonical_key_from_pub_and_pri(key_pub, key_pri):
         'private': key_pri['keyval']['private']},
       'keyid_hash_algorithms': copy.deepcopy(key_pub['keyid_hash_algorithms'])}
   tuf.formats.ANYKEY_SCHEMA.check_match(key)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning unique key')))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning key')))
+  #TODO: Until here
 
   return key
 
@@ -447,11 +487,21 @@ def public_key_from_canonical(key_canonical):
   public key (assumed to be the canonical key with the 'private' component
   of the 'keyval' dictionary stripped).
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[public_key_from_canonical()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Given a key that includes all public and private key information, return public key. key_canonical:', key_canonical)))
+  #TODO: Until here
+
   tuf.formats.ANYKEY_SCHEMA.check_match(key_canonical)
 
   key_public = copy.deepcopy(key_canonical)
 
   del key_public['keyval']['private']
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning key_public')))
+  #TODO: Until here
 
   return key_public
 
@@ -490,6 +540,11 @@ def create_directory_structure_for_client(
 
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_directory_structure_for_client()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Creates a directory structure for a client, including current and previous metadata directories')))
+  #TODO: Until here
+
   # Read the pinning file here and create a list of repositories and
   # directories.
 
@@ -520,6 +575,10 @@ def create_directory_structure_for_client(
   # Configure tuf with the client's metadata directories (where it stores the
   # metadata it has collected from each repository, in subdirectories).
   tuf.conf.repository_directory = client_dir # TODO for TUF: This setting should probably be called client_directory instead, post-TAP4.
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  #TODO: Until here
 
 
 
