@@ -784,7 +784,7 @@ def create_signature(key_dict, data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_signature()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s ?' % (I_TO_PRINT, 'Creating signature for key_dict', key_dict, 'and data for create it:')))
+  print(str('%s %s %s %s ?' % (I_TO_PRINT, 'Creating signature for key_dict', '?', 'and data for create it:')))
   #TODO: Until here
 
   # Does 'key_dict' have the correct format?
