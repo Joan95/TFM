@@ -153,7 +153,7 @@ class Director:
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_serial()]: ' + ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Set the expected public key for signed messages from the ECU with the given ecu_serial:', ecu_serial, 'ecu_key:', ecu_key, 'vin:', vin)))
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Set the expected public key for signed messages from the ECU with the given ecu_serial:', ecu_serial, 'ecu_key:', '?', 'vin:', vin)))
     #TODO: Until here
 
     uptane.formats.VIN_SCHEMA.check_match(vin)
@@ -187,7 +187,7 @@ class Director:
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.validate_ecu_manifest()]: ' + ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Validating ECU manifest for ecu_serial:', ecu_serial, 'signed_ecu_manifest:', signed_ecu_manifest)))
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Validating ECU manifest for ecu_serial:', ecu_serial, 'signed_ecu_manifest:', '?')))
     #TODO: Until here
 
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
@@ -292,7 +292,7 @@ class Director:
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_vehicle_manifest()]: ' + ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'Saves the vehicle manifest in the InventoryDB, validating first the Primary\'s key on the full vehicle manifest, then each individual ECU Manifest\'s signature. primary_ecu_serial:', primary_ecu_serial, 'signed_vehicle_manifest:', signed_vehicle_manifest)))
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'Saves the vehicle manifest in the InventoryDB, validating first the Primary\'s key on the full vehicle manifest, then each individual ECU Manifest\'s signature. primary_ecu_serial:', primary_ecu_serial, 'signed_vehicle_manifest:', '?')))
     #TODO: Until here
 
     uptane.formats.VIN_SCHEMA.check_match(vin)
@@ -472,7 +472,7 @@ class Director:
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_manifest()]: ' + ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'ecu_serial:', ecu_serial, 'signed_ecu_manifest:', signed_ecu_manifest)))
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'ecu_serial:', ecu_serial, 'signed_ecu_manifest:', '?')))
     #TODO: Until here
 
 
