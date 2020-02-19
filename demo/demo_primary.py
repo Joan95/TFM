@@ -72,7 +72,6 @@ most_recent_signed_vehicle_manifest = None
 
 
 #TODO: To be removed
-LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '\t[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
 
 
@@ -109,6 +108,10 @@ def clean_slate(
   clock = tuf.formats.unix_timestamp_to_datetime(int(time.time()))
   clock = clock.isoformat() + 'Z'
   tuf.formats.ISO8601_DATETIME_SCHEMA.check_match(clock)
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Load or generate the Private key for this Primary ECU')))
+  #TODO: Until here
 
   # Load the private key for this Primary ECU.
   load_or_generate_key(use_new_keys)
