@@ -390,7 +390,7 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[submit_vehicle_manifest_to_director()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', signed_vehicle_manifest)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', '?')))
   #TODO: Until here
 
   if signed_vehicle_manifest is None:
