@@ -91,7 +91,7 @@ def convert_signed_der_to_dersigned_json(der_data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_der_to_dersigned_json()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed der to dersigned json. der_data:', der_data)))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed der to dersigned json. der_data:', '?')))
   #TODO: Until here
 
   if not PYASN1_EXISTS:
