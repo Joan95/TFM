@@ -104,6 +104,10 @@ def clean_slate(
   # Load the public timeserver key.
   key_timeserver_pub = demo.import_public_key('timeserver')
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate a trusted initial time for the Primary')))
+  #TODO: Until here
+
   # Generate a trusted initial time for the Primary.
   clock = tuf.formats.unix_timestamp_to_datetime(int(time.time()))
   clock = clock.isoformat() + 'Z'
@@ -138,7 +142,9 @@ def clean_slate(
   # metadata it has collected from each repository, in subdirectories).
   tuf.conf.repository_directory = CLIENT_DIRECTORY
 
-
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Initializating Primary ECU')))
+  #TODO: Until here
 
   # Initialize a Primary ECU, making a client directory and copying the root
   # file from the repositories.
