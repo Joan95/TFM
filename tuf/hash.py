@@ -86,6 +86,11 @@ if not _supported_libraries: # pragma: no cover
 _DEFAULT_HASH_ALGORITHM = 'sha256'
 _DEFAULT_HASH_LIBRARY = 'hashlib'
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.PLUM_BG + '\t-------- --------> [tuf/hash.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+
+
 
 
 
@@ -135,6 +140,11 @@ def digest(algorithm=_DEFAULT_HASH_ALGORITHM,
     Digest object (e.g., hashlib.new(algorithm) or 
     algorithm.new() # pycrypto).
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest()]: ' + uptane.ENDCOLORS
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.')))
+  #TODO: Until here
 
   # Was a hashlib digest object requested and is it supported?
   # If so, return the digest object.
@@ -207,6 +217,12 @@ def digest_fileobject(file_object, algorithm=_DEFAULT_HASH_ALGORITHM,
     algorithm.new() # pycrypto).
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest_fileobject()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object given a file object.  The new digest object is updated with the contents of \'file_object\' prior to returning the object to the caller.')))
+  # TODO: Until here
+
   # Digest object returned whose hash will be updated using 'file_object'.
   # digest() raises:
   # tuf.UnsupportedAlgorithmError
@@ -231,6 +247,10 @@ def digest_fileobject(file_object, algorithm=_DEFAULT_HASH_ALGORITHM,
     
     else:
       digest_object.update(data)
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  # TODO: Until here
 
   return digest_object
 
@@ -269,6 +289,12 @@ def digest_filename(filename, algorithm=_DEFAULT_HASH_ALGORITHM,
     algorithm.new() # pycrypto).
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest_filename()]: ' + uptane.ENDCOLORS
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.')))
+  # TODO: Until here
+
   # Open 'filename' in read+binary mode.
   file_object = open(filename, 'rb')
   
@@ -279,5 +305,9 @@ def digest_filename(filename, algorithm=_DEFAULT_HASH_ALGORITHM,
   digest_object = digest_fileobject(file_object, algorithm, hash_library)
   
   file_object.close()
-  
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  # TODO: Until here
+
   return digest_object

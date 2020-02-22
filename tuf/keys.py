@@ -564,6 +564,10 @@ def format_metadata_to_key(key_metadata):
   keytype = key_metadata['keytype']
   key_value = key_metadata['keyval']
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, "Converting \'key_value\' from \'key_metadata\' to \'tuf.formats.KEY_SCHEMA\' and generating its hash")))
+  #TODO: Until here
+
   # Convert 'key_value' to 'tuf.formats.KEY_SCHEMA' and generate its hash
   # The hash is in hexdigest form.
   default_keyid = _get_keyid(keytype, key_value)
@@ -572,6 +576,10 @@ def format_metadata_to_key(key_metadata):
   keyids.add(default_keyid)
 
   for hash_algorithm in tuf.conf.REPOSITORY_HASH_ALGORITHMS:
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, '[inside for loop] - for hash_algorithm:', hash_algorithm)))
+    #TODO: Until here
+
     keyid = _get_keyid(keytype, key_value, hash_algorithm)
     keyids.add(keyid)
 

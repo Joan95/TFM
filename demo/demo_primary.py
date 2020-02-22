@@ -101,6 +101,11 @@ def clean_slate(
   # else:
   CLIENT_DIRECTORY = os.path.join(
       uptane.WORKING_DIR, CLIENT_DIRECTORY_PREFIX + demo.get_random_string(5))
+
+  # TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Creating client directory:', CLIENT_DIRECTORY)))
+  # TODO: Until here
+
   # Load the public timeserver key.
   key_timeserver_pub = demo.import_public_key('timeserver')
 
@@ -119,6 +124,11 @@ def clean_slate(
 
   # Load the private key for this Primary ECU.
   load_or_generate_key(use_new_keys)
+
+  # TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Craft the directory structure for the client directory. Schecules deletion for temporary files')))
+  # TODO: Until here
+
   # Craft the directory structure for the client directory, including the
   # creation of repository metadata directories, current and previous, putting
   # the pinning.json file in place, etc. First, schedule the deletion of this
@@ -159,6 +169,10 @@ def clean_slate(
 
 
   if listener_thread is None:
+    # TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Creating listener_thread for Primary')))
+    # TODO: Until here
+
     listener_thread = threading.Thread(target=listen)
     listener_thread.setDaemon(True)
     listener_thread.start()
