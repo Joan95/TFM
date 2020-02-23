@@ -1031,17 +1031,31 @@ def _decrypt(file_contents, password):
   except ValueError:
     raise tuf.CryptoError('Invalid encrypted file.')
 
+
+  #TODO: Print to be deleted
+  print(str("%s %s" % (I_TO_PRINT, 'Extracting salt, iterations, hmac, iv and ciphertext from encrypted_key')))
+  #TODO: Until here
+
   # Ensure we have the expected raw data for the delimited cryptographic data.
   salt = binascii.unhexlify(salt.encode('utf-8'))
   iterations = int(iterations)
   iv = binascii.unhexlify(iv.encode('utf-8'))
   ciphertext = binascii.unhexlify(ciphertext.encode('utf-8'))
 
+
+  #TODO: Print to be deleted
+  print(str("%s %s" % (I_TO_PRINT, 'Regenerating the derived key from password using salt and iterations')))
+  #TODO: Until here
+
   # Generate derived key from 'password'.  The salt and iterations are specified
   # so that the expected derived key is regenerated correctly.  Discard the old
   # "salt" and "iterations" values, as we only need the old derived key.
   junk_old_salt, junk_old_iterations, derived_key = \
     _generate_derived_key(password, salt, iterations)
+
+  #TODO: Print to be deleted
+  print(str("%s %s" % (I_TO_PRINT, 'Checking that hmac extracted from file is equal to this generated_hmac_object calculated with reconstructed_key, ciphertext and SHA256')))
+  #TODO: Until here
 
   # Verify the hmac to ensure the ciphertext is valid and has not been altered.
   # See the encryption routine for why we use the encrypt-then-MAC approach.

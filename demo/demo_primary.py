@@ -157,7 +157,7 @@ def clean_slate(
   tuf.conf.repository_directory = CLIENT_DIRECTORY
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Initializating Primary ECU')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Initializating Primary ECU full_client_dir:', os.path.join(uptane.WORKING_DIR, CLIENT_DIRECTORY), 'vin:', vin, 'ecu_serial:', ecu_serial)))
   #TODO: Until here
 
   # Initialize a Primary ECU, making a client directory and copying the root

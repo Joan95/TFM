@@ -455,7 +455,7 @@ def canonical_key_from_pub_and_pri(key_pub, key_pri):
   """
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[canonical_key_from_pub_and_pri()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Turn both keys into canonical key matching tuf.formats.ANYKEY_SCHEMA. key_pub:', key_pub, 'key_pri:', key_pri)))
+  print(str('%s %s' % (I_TO_PRINT, 'Turn both keys into canonical key matching tuf.formats.ANYKEY_SCHEMA. key_pub and key_pri')))
   #TODO: Until here
 
   key = {
