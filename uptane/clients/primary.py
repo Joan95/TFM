@@ -328,11 +328,17 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     # support the case in which multiple manifests have come from that ECU.
     self.ecu_manifests = {}
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Everything initializated, despite of updater')))
 
     # Create a TUF-TAP-4-compliant updater object. This will read pinning.json
     # and create single-repository updaters within it to handle connections to
     # each repository.
     self.updater = tuf.client.updater.Updater('updater')
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Updater initializated')))
+    #TODO: Until here
 
     if director_repo_name not in self.updater.pinned_metadata['repositories']:
       raise uptane.Error('Given name for the Director repository is not a '

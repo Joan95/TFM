@@ -246,6 +246,10 @@ class Updater(object):
     # Set the path for the current set of metadata files.
     client_repositories_directory = tuf.conf.repository_directory
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'loading pinned.json required per TAP #4')))
+    #TODO: Until here
+
     # Load pinned.json, which is required per TAP #4 and determines which
     # which targets should be sought from which repository(/ies).
     self._load_pinned_metadata(os.path.join(
@@ -1047,6 +1051,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.__init__()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Constructor.  Instantiating an updater object causes all the metadata files for the top-level roles to be read from disk, including the key and role information for the delegated targets of \'targets\'. The actual metadata for delegated roles is not loaded in __init__.  The metadata for these delegated roles, including nested delegated roles, are loaded, updated, and saved to the \'self.metadata\' store by the target methods, like all_targets() and targets_of_role().')))
+    #TODO: Until here
 
     # Do the arguments have the correct format?
     # These checks ensure the arguments have the appropriate
