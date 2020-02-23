@@ -110,6 +110,10 @@ def clean_slate(
   key_timeserver_pub = demo.import_public_key('timeserver')
 
   #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'key_timeserver_pub:', key_timeserver_pub)))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generate a trusted initial time for the Primary')))
   #TODO: Until here
 
@@ -262,9 +266,22 @@ def load_or_generate_key(use_new_keys=False):
 
   # Load in from the generated files.
   key_pub = demo.import_public_key('primary')
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'primary_key_pub:', key_pub)))
+  #TODO: Until here
+
   key_pri = demo.import_private_key('primary')
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'primary_key_pri:', key_pri)))
+  #TODO: Until here
+
   ecu_key = uptane.common.canonical_key_from_pub_and_pri(key_pub, key_pri)
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'ecu_key:', ecu_key)))
+  #TODO: Until here
 
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
