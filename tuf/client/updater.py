@@ -224,7 +224,7 @@ class Updater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater.__init__()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Constructor.  Instantiating an updater object reads pinned.json into memory and instantiates a SingleRepoUpdater object for each repository entry in the pinned.json metadata. This causes all the metadata files for the files for the top- level roles to be read from disk, including the key and role information for the delegated targets of \'targets\'.  The actual metadata for delegated roles is not loaded in __init__.  The metadata for these delegated roles, including nested delegated roles, are loaded, updated, and saved to the \'self.metadata\' store by the target methods, like all_targets() and targets_of_role().')))
+    print(str('%s %s' % (I_TO_PRINT, 'Constructor. Instantiating an updater object reads pinned.json into memory and instantiates a SingleRepoUpdater object for each repository entry in the pinned.json metadata. This causes all the metadata files for the files for the top- level roles to be read from disk, including the key and role information for the delegated targets of \'targets\'.  The actual metadata for delegated roles is not loaded in __init__.  The metadata for these delegated roles, including nested delegated roles, are loaded, updated, and saved to the \'self.metadata\' store by the target methods, like all_targets() and targets_of_role().')))
     #TODO: Until here
 
     # Do the arguments have the correct format?
@@ -271,6 +271,12 @@ class Updater(object):
 
 
   def _load_pinned_metadata(self, pinned_metadata_fname):
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater._load_pinned_metadata()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Loading pinned metadata...')))
+    #TODO: Until here
+
     """
     Load pinned.json and add default values for unspecified properties
     (currently just 'terminating')
@@ -1054,7 +1060,7 @@ class SingleRepoUpdater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.__init__()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Constructor.  Instantiating an updater object causes all the metadata files for the top-level roles to be read from disk, including the key and role information for the delegated targets of \'targets\'. The actual metadata for delegated roles is not loaded in __init__.  The metadata for these delegated roles, including nested delegated roles, are loaded, updated, and saved to the \'self.metadata\' store by the target methods, like all_targets() and targets_of_role().')))
+    print(str('%s %s' % (I_TO_PRINT, 'Constructor. Instantiating an updater object causes all the metadata files for the top-level roles to be read from disk, including the key and role information for the delegated targets of \'targets\'. The actual metadata for delegated roles is not loaded in __init__.  The metadata for these delegated roles, including nested delegated roles, are loaded, updated, and saved to the \'self.metadata\' store by the target methods, like all_targets() and targets_of_role().')))
     #TODO: Until here
 
     # Do the arguments have the correct format?
@@ -1193,6 +1199,11 @@ class SingleRepoUpdater(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._load_metadata_from_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Non-public method that loads current or previous metadata if there is a local file. If the expected file belonging to \'metadata_role\' (e.g., \'root.json\') cannot be loaded, raise an exception. The extracted metadata object loaded from file is saved to the metadata store (i.e., self.metadata).')))
+    #TODO: Until here
+
     # Ensure we have a valid metadata set.
     validate_metadata_set(metadata_set)
 
@@ -1258,6 +1269,11 @@ class SingleRepoUpdater(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._rebuild_key_and_role_db()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Clobbering this means all delegated metadata files are rendered outdated
     # and will need to be reloaded.  However, reloading the delegated metadata
     # files is avoided here because fetching target information with methods
@@ -1298,6 +1314,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._import_delegations()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     current_parent_metadata = self.metadata['current'][parent_role]
 
@@ -1408,6 +1429,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.refresh()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Do the arguments have the correct format?
     # This check ensures the arguments have the appropriate
@@ -1573,6 +1599,11 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the target.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_target_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Define a callable function that is passed as an argument to _get_file()
     # and called.  The 'verify_target_file' function ensures the file length
     # and hashes of 'target_filepath' are strictly equal to the trusted values.
@@ -1639,6 +1670,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._verify_uncompressed_metadata_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     metadata = metadata_file_object.read()
     try:
@@ -1723,6 +1759,11 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._unsafely_get_metadata_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Store file length and hashes of the uncompressed version metadata.
     # The uncompressed version is always verified.
     uncompressed_file_length = uncompressed_fileinfo['length']
@@ -1804,6 +1845,11 @@ class SingleRepoUpdater(object):
     <Returns>
       A 'tuf.util.TempFile' file-like object containing the metadata.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_metadata_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     file_mirrors = tuf.mirrors.get_list_of_mirrors('meta', remote_filename,
                                                    self.mirrors)
@@ -1927,6 +1973,11 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._safely_get_metadata_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Store file length and hashes of the uncompressed version metadata.
     # The uncompressed version is always verified.
     uncompressed_file_length = uncompressed_fileinfo['length']
@@ -2022,6 +2073,12 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata or target.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_file()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
+
     file_mirrors = tuf.mirrors.get_list_of_mirrors(file_type, filepath,
                                                    self.mirrors)
     # file_mirror (URL): error (Exception)
@@ -2115,6 +2172,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_metadata()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     metadata_filename = metadata_role + '.' + tuf.conf.METADATA_FORMAT
 
@@ -2264,6 +2326,11 @@ class SingleRepoUpdater(object):
       <Returns>
         None.
       """
+
+      I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_metadata_via_fileinfo()]: ' + uptane.ENDCOLORS
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, '...')))
+      #TODO: Until here
 
       # Construct the metadata filename as expected by the download/mirror modules.
       metadata_filename = metadata_role + '.' + tuf.conf.METADATA_FORMAT
@@ -2439,6 +2506,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_metadata_if_changed()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     uncompressed_metadata_filename = metadata_role + '.' + tuf.conf.METADATA_FORMAT
     expected_versioninfo = None
@@ -2623,6 +2695,11 @@ class SingleRepoUpdater(object):
       Boolean.  True if the versioninfo has changed, False otherwise.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._versioninfo_has_been_updated()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # If there is no versioninfo currently stored for 'metadata_filename',
     # try to load the file, calculate the versioninfo, and store it.
     if metadata_filename not in self.versioninfo:
@@ -2674,6 +2751,11 @@ class SingleRepoUpdater(object):
     # In case we delayed loading the metadata and didn't do it in
     # __init__ (such as with delegated metadata), then get the version
     # info now.
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_versioninfo()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Save the path to the current metadata file for 'metadata_filename'.
     current_filepath = os.path.join(self.metadata_directory['current'],
@@ -2766,6 +2848,11 @@ class SingleRepoUpdater(object):
       Boolean.  True if the fileinfo has changed, false otherwise.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._fileinfo_has_changed()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     if new_fileinfo is not None:
       tuf.formats.FILEINFO_SCHEMA.check_match(new_fileinfo)
 
@@ -2833,6 +2920,11 @@ class SingleRepoUpdater(object):
     # __init__ (such as with delegated metadata), then get the file
     # info now.
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_fileinfo()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Save the path to the current metadata file for 'metadata_filename'.
     current_filepath = os.path.join(self.metadata_directory['current'],
                                     metadata_filename)
@@ -2874,6 +2966,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._move_current_to_previous()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Get the 'current' and 'previous' full file paths for 'metadata_role'
     metadata_filepath = metadata_role + '.' + tuf.conf.METADATA_FORMAT
@@ -2919,6 +3016,11 @@ class SingleRepoUpdater(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._delete_metadata()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # The root metadata role is never deleted without a replacement.
     if metadata_role == 'root':
       return
@@ -2960,6 +3062,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._ensure_not_expired()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Extract the expiration time.
     expires = metadata_object['expires']
@@ -3021,6 +3128,11 @@ class SingleRepoUpdater(object):
      A list of targets, conformant to 'tuf.formats.TARGETFILES_SCHEMA'.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.all_targets()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Load the most up-to-date targets of the 'targets' role and all
     # delegated roles.
     self._refresh_targets_metadata(refresh_all_delegated_roles=True)
@@ -3081,6 +3193,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._refresh_targets_metadata()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     roles_to_update = []
 
@@ -3158,6 +3275,11 @@ class SingleRepoUpdater(object):
       targets of 'rolename'.  Conformant to 'tuf.formats.TARGETFILES_SCHEMA'.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._targets_of_role()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     if targets is None:
       targets = []
 
@@ -3230,6 +3352,11 @@ class SingleRepoUpdater(object):
       A list of targets, conformant to 'tuf.formats.TARGETFILES_SCHEMA'.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.targets_of_role()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Does 'rolename' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
     tuf.formats.RELPATH_SCHEMA.check_match(rolename)
@@ -3272,6 +3399,11 @@ class SingleRepoUpdater(object):
       The target information for 'target_filepath', conformant to
       'tuf.formats.TARGETFILE_SCHEMA'.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.target()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Does 'target_filepath' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
@@ -3370,6 +3502,11 @@ class SingleRepoUpdater(object):
     # TODO: check argument delegation_info against tuf.formats.ROLE_SCHEMA or
     # tuf.formats.MULTI_ROLE_DELEGATION_SCHEMA
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._is_delegation_relevant_to_target()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     delegation_paths = delegation_info.get('paths')
     delegation_path_hash_prefixes = delegation_info.get('path_hash_prefixes')
     # A boolean indicator that tell us whether this delegation includeas the
@@ -3434,6 +3571,11 @@ class SingleRepoUpdater(object):
       (Replaces _preorder_depth_first_walk and _visit_child_role and handles
       multi-role delegations correctly.)
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._target()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     target = None
     role_metadata = self.metadata['current'][rolename]
@@ -3563,6 +3705,11 @@ class SingleRepoUpdater(object):
       'tuf.formats.TARGETFILE_SCHEMA'.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_target_from_targets_role()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     target = None
 
     # Does the current role name have our target?
@@ -3614,6 +3761,11 @@ class SingleRepoUpdater(object):
       The hash of 'target_filepath'.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_target_hash()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Calculate the hash of the filepath to determine which bin to find the
     # target.  The client currently assumes the repository (i.e., repository
     # tool) uses 'hash_function' to generate hashes and UTF-8.
@@ -3652,6 +3804,11 @@ class SingleRepoUpdater(object):
     <Returns>
       None.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.remove_obsolete_targets()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Does 'destination_directory' have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
@@ -3719,6 +3876,11 @@ class SingleRepoUpdater(object):
     <Returns>
       A list of targets, conformant to 'tuf.formats.TARGETFILES_SCHEMA'.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.updated_targets()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
 
     # Do the arguments have the correct format?
     # Raise 'tuf.FormatError' if there is a mismatch.
@@ -3806,6 +3968,11 @@ class SingleRepoUpdater(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.download_target()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, '...')))
+    #TODO: Until here
+
     # Do the arguments have the correct format?
     # This check ensures the arguments have the appropriate
     # number of objects and object types, and that all dict
@@ -3865,6 +4032,12 @@ def validate_metadata_set(metadata_set):
   The metadata dictionary that stores metadata information for the repository
   is separated into 'current' and 'previous' dictionaries.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[validate_metadata_set()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, '...')))
+  #TODO: Until here
+
   if metadata_set not in ['current', 'previous']:
     raise tuf.Error('Invalid metadata set: ' + repr(metadata_set))
 
@@ -3960,6 +4133,11 @@ def check_hashes(file_object, trusted_hashes, reset_fpointer=False):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[check_hashes()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Function that verifies multiple secure hashes of the downloaded file \'file_object\'. If any of these fail it raises an exception. This is to conform with the TUF spec, which support clients with different hashing algorithms. The \'hash.py\' module is used to compute the hashes of \'file_object\'.')))
+  #TODO: Until here
 
   # Verify each trusted hash of 'trusted_hashes'.  If all are valid, simply
   # return.
