@@ -474,6 +474,10 @@ def register_self_with_director():
   print(str('%s %s' % (I_TO_PRINT, 'Registering self with director')))
   #TODO: Until here
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connecting to the Director via http. Sending: ecu_serial:', primary_ecu.ecu_serial, 'public_key', '?', 'and vin:', _vin)))
+  #TODO: Until here
+
   # Connect to the Director
   server = xmlrpc_client.ServerProxy(
     'http://' + str(demo.DIRECTOR_SERVER_HOST) + ':' +
