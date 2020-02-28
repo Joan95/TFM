@@ -1252,11 +1252,19 @@ class SingleRepoUpdater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._load_metadata_from_file()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Non-public method that loads current or previous metadata if there is a local file. If the expected file belonging to \'metadata_role\' (e.g., \'root.json\') cannot be loaded, raise an exception. The extracted metadata object loaded from file is saved to the metadata store (i.e., self.metadata).')))
+    print(str('%s %s' % (I_TO_PRINT, 'Loading current or previous metadata from file if there is a local file. metadata_set:', metadata_set, 'metadata_role:', metadata_role)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Validating metadata...')))
     #TODO: Until here
 
     # Ensure we have a valid metadata set.
     validate_metadata_set(metadata_set)
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Saving and constructing the full metadata path')))
+    #TODO: Until here
 
     # Save and construct the full metadata path.
     metadata_directory = self.metadata_directory[metadata_set]
@@ -1271,8 +1279,16 @@ class SingleRepoUpdater(object):
 
       tuf.formats.check_signable_object_format(metadata_signable)
 
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Extracting the \'signed\' role object from \'metadata_signable\'')))
+      #TODO: Until here
+
       # Extract the 'signed' role object from 'metadata_signable'.
       metadata_object = metadata_signable['signed']
+
+      #TODO: Print to be deleted
+      print(str('%s %s' % (I_TO_PRINT, 'Saving it in metadata store')))
+      #TODO: Until here
 
       # Save the metadata object to the metadata store.
       self.metadata[metadata_set][metadata_role] = metadata_object
