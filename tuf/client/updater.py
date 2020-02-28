@@ -312,6 +312,11 @@ class Updater(object):
 
     self.pinned_metadata = pinned_metadata_w_defaults_added
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    #TODO: Until here
+
+
 
 
 
@@ -353,6 +358,11 @@ class Updater(object):
         self.repositories[repo_name].refresh(unsafely_update_root_if_necessary=
           unsafely_update_root_if_necessary)
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    #TODO: Until here
+
+
 
 
   def all_targets(self, repo_name=None):
@@ -365,7 +375,7 @@ class Updater(object):
     """
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater.all_targets()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Returns the output of all_targets() on the updater for the given repository name. If not provided a repository name, returns the combined output of all_targets() run on the updaters for all known repositories.')))
+    print(str('%s %s' % (I_TO_PRINT, 'Retruning the output of all_targets() on the updater for the given repository name. If not provided a repository name, returns the combined output of all_targets() run on the updaters for all known repositories.')))
     #TODO: Until here
 
     if repo_name is not None:
@@ -389,7 +399,7 @@ class Updater(object):
     """
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater.targets_of_role()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Returns the output of targets_of_role(rolename) run on the updater for the given repository.')))
+    print(str('%s %s' % (I_TO_PRINT, 'Returning the output of targets_of_role(rolename) run on the updater for the given repository.')))
     #TODO: Until here
 
     if repo_name is not None:
@@ -675,6 +685,11 @@ class Updater(object):
     assert target_info is None, 'Programming error.'
 
     raise tuf.UnknownTargetError(target_filepath + ' not found.')
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    #TODO: Until here
+
 
 
 
@@ -1238,6 +1253,10 @@ class SingleRepoUpdater(object):
           # TODO: Should we also remove the keys of the delegated roles?
           self._import_delegations(metadata_role)
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    #TODO: Until here
+
 
 
 
@@ -1271,7 +1290,7 @@ class SingleRepoUpdater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._rebuild_key_and_role_db()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Non-public method that rebuilds the key and role databases from the currently trusted \'root\' metadata object extracted from \'root.json\'. This private method is called when a new\/updated \'root\' metadata file is loaded. This method will only store the role information of the top-level roles (i.e., \'root\', \'targets\', \'snapshot\', \'timestamp\').')))
     #TODO: Until here
 
     # Clobbering this means all delegated metadata files are rendered outdated
@@ -4035,13 +4054,15 @@ def validate_metadata_set(metadata_set):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[validate_metadata_set()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Validating metadata_set:', metadata_set)))
   #TODO: Until here
 
   if metadata_set not in ['current', 'previous']:
     raise tuf.Error('Invalid metadata set: ' + repr(metadata_set))
 
-
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+  #TODO: Until here
 
 
 
