@@ -756,6 +756,12 @@ def listen():
       successful_port = port
       break
 
+
+  #TODO: Print to be deleted
+  print('Primary will now listen on port ' + str(successful_port))
+  #TODO: Until here
+
+
   if server is None: # All ports failed.
     assert last_error is not None, 'Programming error'
     raise last_error
