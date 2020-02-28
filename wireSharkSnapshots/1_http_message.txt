@@ -1,0 +1,75 @@
+0000   00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
+0010   04 84 96 55 40 00 40 06 a2 1c 7f 00 00 01 7f 00   ...U@.@.¢.......
+0020   00 01 cf 3a 77 25 59 e3 45 97 67 52 0d c5 80 18   ..Ï:w%YãE.gR.Å..
+0030   01 56 02 79 00 00 01 01 08 0a 00 15 d3 c5 00 15   .V.y........ÓÅ..
+0040   d3 c5 50 4f 53 54 20 2f 52 50 43 32 20 48 54 54   ÓÅPOST /RPC2 HTT
+0050   50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 30 2e 30   P/1.1..Host: 0.0
+0060   2e 30 2e 30 3a 33 30 35 30 31 0d 0a 41 63 63 65   .0.0:30501..Acce
+0070   70 74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69   pt-Encoding: gzi
+0080   70 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 78   p..User-Agent: x
+0090   6d 6c 72 70 63 6c 69 62 2e 70 79 2f 31 2e 30 2e   mlrpclib.py/1.0.
+00a0   31 20 28 62 79 20 77 77 77 2e 70 79 74 68 6f 6e   1 (by www.python
+00b0   77 61 72 65 2e 63 6f 6d 29 0d 0a 43 6f 6e 74 65   ware.com)..Conte
+00c0   6e 74 2d 54 79 70 65 3a 20 74 65 78 74 2f 78 6d   nt-Type: text/xm
+00d0   6c 0d 0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74   l..Content-Lengt
+00e0   68 3a 20 39 33 36 0d 0a 0d 0a 3c 3f 78 6d 6c 20   h: 936....<?xml 
+00f0   76 65 72 73 69 6f 6e 3d 27 31 2e 30 27 3f 3e 0a   version='1.0'?>.
+0100   3c 6d 65 74 68 6f 64 43 61 6c 6c 3e 0a 3c 6d 65   <methodCall>.<me
+0110   74 68 6f 64 4e 61 6d 65 3e 72 65 67 69 73 74 65   thodName>registe
+0120   72 5f 65 63 75 5f 73 65 72 69 61 6c 3c 2f 6d 65   r_ecu_serial</me
+0130   74 68 6f 64 4e 61 6d 65 3e 0a 3c 70 61 72 61 6d   thodName>.<param
+0140   73 3e 0a 3c 70 61 72 61 6d 3e 0a 3c 76 61 6c 75   s>.<param>.<valu
+0150   65 3e 3c 73 74 72 69 6e 67 3e 49 4e 46 4f 64 65   e><string>INFOde
+0160   6d 6f 63 61 72 3c 2f 73 74 72 69 6e 67 3e 3c 2f   mocar</string></
+0170   76 61 6c 75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a   value>.</param>.
+0180   3c 70 61 72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c   <param>.<value><
+0190   73 74 72 75 63 74 3e 0a 3c 6d 65 6d 62 65 72 3e   struct>.<member>
+01a0   0a 3c 6e 61 6d 65 3e 6b 65 79 74 79 70 65 3c 2f   .<name>keytype</
+01b0   6e 61 6d 65 3e 0a 3c 76 61 6c 75 65 3e 3c 73 74   name>.<value><st
+01c0   72 69 6e 67 3e 65 64 32 35 35 31 39 3c 2f 73 74   ring>ed25519</st
+01d0   72 69 6e 67 3e 3c 2f 76 61 6c 75 65 3e 0a 3c 2f   ring></value>.</
+01e0   6d 65 6d 62 65 72 3e 0a 3c 6d 65 6d 62 65 72 3e   member>.<member>
+01f0   0a 3c 6e 61 6d 65 3e 6b 65 79 69 64 3c 2f 6e 61   .<name>keyid</na
+0200   6d 65 3e 0a 3c 76 61 6c 75 65 3e 3c 73 74 72 69   me>.<value><stri
+0210   6e 67 3e 39 61 34 30 36 64 39 39 65 33 36 32 65   ng>9a406d99e362e
+0220   37 63 39 33 65 37 61 63 66 65 31 65 34 64 36 35   7c93e7acfe1e4d65
+0230   38 35 32 32 31 33 31 35 62 65 38 31 37 66 33 35   85221315be817f35
+0240   30 63 30 32 36 62 62 65 65 38 34 61 64 61 32 36   0c026bbee84ada26
+0250   30 64 61 3c 2f 73 74 72 69 6e 67 3e 3c 2f 76 61   0da</string></va
+0260   6c 75 65 3e 0a 3c 2f 6d 65 6d 62 65 72 3e 0a 3c   lue>.</member>.<
+0270   6d 65 6d 62 65 72 3e 0a 3c 6e 61 6d 65 3e 6b 65   member>.<name>ke
+0280   79 76 61 6c 3c 2f 6e 61 6d 65 3e 0a 3c 76 61 6c   yval</name>.<val
+0290   75 65 3e 3c 73 74 72 75 63 74 3e 0a 3c 6d 65 6d   ue><struct>.<mem
+02a0   62 65 72 3e 0a 3c 6e 61 6d 65 3e 70 75 62 6c 69   ber>.<name>publi
+02b0   63 3c 2f 6e 61 6d 65 3e 0a 3c 76 61 6c 75 65 3e   c</name>.<value>
+02c0   3c 73 74 72 69 6e 67 3e 61 31 32 39 33 34 32 36   <string>a1293426
+02d0   66 63 66 34 63 65 36 66 33 38 31 33 35 65 62 37   fcf4ce6f38135eb7
+02e0   32 62 66 38 39 66 65 64 66 64 63 62 61 31 62 37   2bf89fedfdcba1b7
+02f0   33 32 37 37 39 36 38 33 62 39 35 31 64 37 31 61   32779683b951d71a
+0300   30 62 39 65 38 39 61 32 3c 2f 73 74 72 69 6e 67   0b9e89a2</string
+0310   3e 3c 2f 76 61 6c 75 65 3e 0a 3c 2f 6d 65 6d 62   ></value>.</memb
+0320   65 72 3e 0a 3c 2f 73 74 72 75 63 74 3e 3c 2f 76   er>.</struct></v
+0330   61 6c 75 65 3e 0a 3c 2f 6d 65 6d 62 65 72 3e 0a   alue>.</member>.
+0340   3c 6d 65 6d 62 65 72 3e 0a 3c 6e 61 6d 65 3e 6b   <member>.<name>k
+0350   65 79 69 64 5f 68 61 73 68 5f 61 6c 67 6f 72 69   eyid_hash_algori
+0360   74 68 6d 73 3c 2f 6e 61 6d 65 3e 0a 3c 76 61 6c   thms</name>.<val
+0370   75 65 3e 3c 61 72 72 61 79 3e 3c 64 61 74 61 3e   ue><array><data>
+0380   0a 3c 76 61 6c 75 65 3e 3c 73 74 72 69 6e 67 3e   .<value><string>
+0390   73 68 61 32 35 36 3c 2f 73 74 72 69 6e 67 3e 3c   sha256</string><
+03a0   2f 76 61 6c 75 65 3e 0a 3c 76 61 6c 75 65 3e 3c   /value>.<value><
+03b0   73 74 72 69 6e 67 3e 73 68 61 35 31 32 3c 2f 73   string>sha512</s
+03c0   74 72 69 6e 67 3e 3c 2f 76 61 6c 75 65 3e 0a 3c   tring></value>.<
+03d0   2f 64 61 74 61 3e 3c 2f 61 72 72 61 79 3e 3c 2f   /data></array></
+03e0   76 61 6c 75 65 3e 0a 3c 2f 6d 65 6d 62 65 72 3e   value>.</member>
+03f0   0a 3c 2f 73 74 72 75 63 74 3e 3c 2f 76 61 6c 75   .</struct></valu
+0400   65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 70 61 72   e>.</param>.<par
+0410   61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c 73 74 72 69   am>.<value><stri
+0420   6e 67 3e 64 65 6d 6f 63 61 72 3c 2f 73 74 72 69   ng>democar</stri
+0430   6e 67 3e 3c 2f 76 61 6c 75 65 3e 0a 3c 2f 70 61   ng></value>.</pa
+0440   72 61 6d 3e 0a 3c 70 61 72 61 6d 3e 0a 3c 76 61   ram>.<param>.<va
+0450   6c 75 65 3e 3c 62 6f 6f 6c 65 61 6e 3e 31 3c 2f   lue><boolean>1</
+0460   62 6f 6f 6c 65 61 6e 3e 3c 2f 76 61 6c 75 65 3e   boolean></value>
+0470   0a 3c 2f 70 61 72 61 6d 3e 0a 3c 2f 70 61 72 61   .</param>.</para
+0480   6d 73 3e 0a 3c 2f 6d 65 74 68 6f 64 43 61 6c 6c   ms>.</methodCall
+0490   3e 0a                                             >.
+

@@ -1,0 +1,46 @@
+0000   00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
+0010   02 bd 9e 9b 40 00 40 06 9b 9d 7f 00 00 01 7f 00   .½..@.@.........
+0020   00 01 cf 3c 77 25 7d 27 4d 60 9a 2e f0 f5 80 18   ..Ï<w%}'M`..ðõ..
+0030   01 56 00 b2 00 00 01 01 08 0a 00 15 d3 c6 00 15   .V.²........ÓÆ..
+0040   d3 c6 50 4f 53 54 20 2f 52 50 43 32 20 48 54 54   ÓÆPOST /RPC2 HTT
+0050   50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 30 2e 30   P/1.1..Host: 0.0
+0060   2e 30 2e 30 3a 33 30 35 30 31 0d 0a 41 63 63 65   .0.0:30501..Acce
+0070   70 74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69   pt-Encoding: gzi
+0080   70 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 78   p..User-Agent: x
+0090   6d 6c 72 70 63 6c 69 62 2e 70 79 2f 31 2e 30 2e   mlrpclib.py/1.0.
+00a0   31 20 28 62 79 20 77 77 77 2e 70 79 74 68 6f 6e   1 (by www.python
+00b0   77 61 72 65 2e 63 6f 6d 29 0d 0a 43 6f 6e 74 65   ware.com)..Conte
+00c0   6e 74 2d 54 79 70 65 3a 20 74 65 78 74 2f 78 6d   nt-Type: text/xm
+00d0   6c 0d 0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74   l..Content-Lengt
+00e0   68 3a 20 34 38 31 0d 0a 0d 0a 3c 3f 78 6d 6c 20   h: 481....<?xml 
+00f0   76 65 72 73 69 6f 6e 3d 27 31 2e 30 27 3f 3e 0a   version='1.0'?>.
+0100   3c 6d 65 74 68 6f 64 43 61 6c 6c 3e 0a 3c 6d 65   <methodCall>.<me
+0110   74 68 6f 64 4e 61 6d 65 3e 73 75 62 6d 69 74 5f   thodName>submit_
+0120   76 65 68 69 63 6c 65 5f 6d 61 6e 69 66 65 73 74   vehicle_manifest
+0130   3c 2f 6d 65 74 68 6f 64 4e 61 6d 65 3e 0a 3c 70   </methodName>.<p
+0140   61 72 61 6d 73 3e 0a 3c 70 61 72 61 6d 3e 0a 3c   arams>.<param>.<
+0150   76 61 6c 75 65 3e 3c 73 74 72 69 6e 67 3e 64 65   value><string>de
+0160   6d 6f 63 61 72 3c 2f 73 74 72 69 6e 67 3e 3c 2f   mocar</string></
+0170   76 61 6c 75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a   value>.</param>.
+0180   3c 70 61 72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c   <param>.<value><
+0190   73 74 72 69 6e 67 3e 49 4e 46 4f 64 65 6d 6f 63   string>INFOdemoc
+01a0   61 72 3c 2f 73 74 72 69 6e 67 3e 3c 2f 76 61 6c   ar</string></val
+01b0   75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 70 61   ue>.</param>.<pa
+01c0   72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c 62 61 73   ram>.<value><bas
+01d0   65 36 34 3e 0a 4d 49 47 4c 4d 42 73 61 42 32 52   e64>.MIGLMBsaB2R
+01e0   6c 62 57 39 6a 59 58 49 61 43 30 6c 4f 52 6b 39   lbW9jYXIaC0lORk9
+01f0   6b 5a 57 31 76 59 32 46 79 41 67 45 41 4d 41 41   kZW1vY2FyAgEAMAA
+0200   43 41 51 45 77 61 54 42 6e 42 43 43 61 51 47 32   CAQEwaTBnBCCaQG2
+0210   5a 34 32 4c 6e 79 54 35 36 7a 2b 48 6b 31 6c 68   Z42LnyT56z+Hk1lh
+0220   53 0a 49 54 46 62 36 42 66 7a 55 4d 41 6d 75 2b   S.ITFb6BfzUMAmu+
+0230   36 45 72 61 4a 67 32 67 6f 42 41 51 52 41 56 35   6EraJg2goBAQRAV5
+0240   74 57 4f 56 4c 35 2b 6e 42 2f 35 59 33 42 39 48   tWOVL5+nB/5Y3B9H
+0250   76 48 46 4d 65 45 72 44 55 32 4d 64 6e 68 48 39   vHFMeErDU2MdnhH9
+0260   4f 4a 49 76 57 50 4b 2b 66 54 47 2b 32 46 0a 56   OJIvWPK+fTG+2F.V
+0270   78 33 79 74 52 52 49 68 5a 58 4c 49 5a 44 71 35   x3ytRRIhZXLIZDq5
+0280   56 6b 74 35 62 4c 31 55 67 63 66 65 55 7a 72 7a   Vkt5bL1UgcfeUzrz
+0290   6e 4f 5a 41 77 3d 3d 0a 3c 2f 62 61 73 65 36 34   nOZAw==.</base64
+02a0   3e 3c 2f 76 61 6c 75 65 3e 0a 3c 2f 70 61 72 61   ></value>.</para
+02b0   6d 3e 0a 3c 2f 70 61 72 61 6d 73 3e 0a 3c 2f 6d   m>.</params>.</m
+02c0   65 74 68 6f 64 43 61 6c 6c 3e 0a                  ethodCall>.
+
