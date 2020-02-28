@@ -1252,7 +1252,7 @@ class SingleRepoUpdater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._load_metadata_from_file()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Loading current or previous metadata from file if there is a local file. metadata_set:', metadata_set, 'metadata_role:', metadata_role)))
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading current or previous metadata from file if there is a local file. metadata_set:', metadata_set, 'metadata_role:', metadata_role)))
     #TODO: Until here
 
     #TODO: Print to be deleted
