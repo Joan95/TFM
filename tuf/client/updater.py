@@ -1086,9 +1086,18 @@ class SingleRepoUpdater(object):
     tuf.formats.NAME_SCHEMA.check_match(repository_name)
     tuf.formats.ALT_MIRRORLIST_SCHEMA.check_match(repository_mirrors)
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Saving the validated arguments: repository_name:', repository_name, 'and repository_mirrors:', repository_mirrors)))
+    #TODO: Until here
+
     # Save the validated arguments.
     self.repository_name = repository_name
     self.mirrors = repository_mirrors
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Storing the trusted metadata read from disk: current and previous')))
+    #TODO: Until here
 
     # Store the trusted metadata read from disk.
     self.metadata = {}
@@ -1126,6 +1135,12 @@ class SingleRepoUpdater(object):
         " directory containing the client's local repository files."
         "  'tuf.conf.repository_directory' MUST be set.")
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Setting the path for the current set of metadata files')))
+    #TODO: Until here
+
+
     # Set the path for the current set of metadata files.
     client_repositories_directory = tuf.conf.repository_directory
     current_path = os.path.join(client_repositories_directory, 'metadata',
@@ -1139,6 +1154,12 @@ class SingleRepoUpdater(object):
 
     self.metadata_directory['current'] = current_path
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Setting the path for the previous set of metadata files')))
+    #TODO: Until here
+
+
     # Set the path for the previous set of metadata files.
     previous_path = os.path.join(client_repositories_directory, 'metadata',
         repository_name, 'previous')
@@ -1150,10 +1171,22 @@ class SingleRepoUpdater(object):
 
     self.metadata_directory['previous'] = previous_path
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Loading current and previous metadata')))
+    #TODO: Until here
+
+
     # Load current and previous metadata.
     for metadata_set in ['current', 'previous']:
       for metadata_role in ['root', 'targets', 'snapshot', 'timestamp']:
         self._load_metadata_from_file(metadata_set, metadata_role)
+
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Current and previous metadata loaded')))
+    #TODO: Until here
+
 
     # Raise an exception if the repository is missing the required 'root'
     # metadata.
@@ -1164,6 +1197,9 @@ class SingleRepoUpdater(object):
         self.metadata_directory['current'])
 
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Returning from __init__...')))
+    #TODO: Until here
 
 
 
