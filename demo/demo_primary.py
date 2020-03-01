@@ -706,7 +706,7 @@ def register_ecu_manifest_wrapper(vin, ecu_serial, nonce, signed_ecu_manifest):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu_manifest_wrapper()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering ecu manifest wrapper for vin:', vin, 'with ecu_serial:', ecu_serial, 'nonce:', nonce, 'signed_ecu_manifest:', signed_ecu_manifest)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering ecu manifest wrapper for vin:', vin, 'with ecu_serial:', ecu_serial, 'nonce:', '?', 'signed_ecu_manifest:', '?')))
   #TODO: Until here
 
   if tuf.conf.METADATA_FORMAT == 'der':
