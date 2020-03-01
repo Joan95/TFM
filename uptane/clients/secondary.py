@@ -53,6 +53,10 @@ log.addHandler(uptane.console_handler)
 log.setLevel(uptane.logging.DEBUG)
 
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.RED + '\t--------> [uptane/clients/secondary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+
 
 class Secondary(object):
 
@@ -229,6 +233,11 @@ class Secondary(object):
       None.
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.__init__()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'This class contains the necessary code to perform Uptane validation of images and metadata, and core functionality supporting distribution of metadata and images to Secondary ECUs, combining ECU Manifests into a Vehicle Manifest and signing it, combining tokens for a Timeserver request, validating the response, etc.')))
+    #TODO: Until here
+
     # Check arguments:
     tuf.formats.PATH_SCHEMA.check_match(full_client_dir)
     tuf.formats.PATH_SCHEMA.check_match(director_repo_name)
@@ -334,6 +343,11 @@ class Secondary(object):
     the ECU Manifest will include that in the ECU Manifest (attacks_detected).
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.generate_signed_vehicle_manifest()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Returns a signed ECU manifest indicating self.firmware_fileinfo. If the optional description_of_attacks_observed argument is provided, the ECU Manifest will include that in the ECU Manifest (attacks_detected).')))
+    #TODO: Until here
+
     uptane.formats.DESCRIPTION_OF_ATTACKS_SCHEMA.check_match(
         description_of_attacks_observed)
 
@@ -400,6 +414,12 @@ class Secondary(object):
 
     If verification is successful, switch to a new nonce for next time.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.update_time()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'The function attemps to verify the time attestation from the Time Server, distributed to us by the Primary. If timeserver_attestation is correctly signed by the expected Timeserver key, and it lists the nonce we expected it to list (the one we last used in a request for the time), then this Secondary\'s time is updated. The new time will be used by this client (via TUF) in in place of system time when checking metadata for expiration.')))
+    #TODO: Until here
+
     # If we're using ASN.1/DER format, convert the attestation into something
     # comprehensible (JSON-compatible dictionary) instead.
     if tuf.conf.METADATA_FORMAT == 'der':
@@ -488,6 +508,11 @@ class Secondary(object):
       - tuf.NoWorkingMirrorError:
           if we could not obtain and verify all necessary metadata
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.refesh_toplevel_metadata()]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Refreshes client\'s metadata for the top-level roles: root, targets, snapshot, and timestamp')))
+    #TODO: Until here
 
     # Refresh the Director first, per the Uptane Standard.
     self.updater.refresh(repo_name=self.director_repo_name)

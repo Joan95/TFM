@@ -107,10 +107,10 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
   if use_new_keys:
-    demo.generate_key('joanroot')
-    demo.generate_key('joantimestamp')
-    demo.generate_key('joansnapshot')
-    demo.generate_key('joantargets') # targets
+    demo.generate_key('directorroot')
+    demo.generate_key('directortimestamp')
+    demo.generate_key('directorsnapshot')
+    demo.generate_key('director') # targets
 
   key_dirroot_pub = demo.import_public_key('directorroot')
 
