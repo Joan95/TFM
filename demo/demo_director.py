@@ -82,7 +82,7 @@ def clean_slate(use_new_keys=False):
   director_dir = os.path.join(uptane.WORKING_DIR, 'director')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Adding: ' + director_dir + 'to os.path')
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'Adding: ', director_dir, 'to os.path')))
   #TODO: Until here
 
   # Create a directory for the Director's files.
