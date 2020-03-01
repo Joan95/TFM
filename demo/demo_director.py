@@ -165,7 +165,7 @@ def clean_slate(use_new_keys=False):
   print(LOG_PREFIX + 'Initializing vehicle repositories')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Creating demo Director instance')
+  print(str('%s %s' % (I_TO_PRINT, 'Creating demo Director instance')))
   #TODO: Until here
 
   # Create the demo Director instance.
@@ -183,7 +183,7 @@ def clean_slate(use_new_keys=False):
 
   for vin in KNOWN_VINS:
     #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Adding new vehicle to director instance with vin: ' + vin)
+    print(str('%s %s %s' % (I_TO_PRINT, 'Adding new vehicle to director instance with vin: ', vin)))
     #TODO: Until here
 
     director_service_instance.add_new_vehicle(vin)
