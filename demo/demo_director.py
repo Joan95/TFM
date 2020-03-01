@@ -96,7 +96,7 @@ def clean_slate(use_new_keys=False):
   print(LOG_PREFIX + 'Loading all keys')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Create keys and/or load keys into memory.\n\t\t[use_new_keys]:', use_new_keys)
+  print(str('%s %s %s' % (I_TO_PRINT, 'Create keys and/or load keys into memory.\n\t\t[use_new_keys]:', use_new_keys)))
   #TODO: Until here
 
 
