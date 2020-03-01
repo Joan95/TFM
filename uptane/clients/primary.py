@@ -973,7 +973,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     """
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.generate_signed_vehicle_manifest()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Put ECU manifests into a vehicle manifest and sign it. Support multiple manifests from the same ECU. Output will comply with uptane.formats.VEHICLE_VERSION_MANIFEST_SCHEMA.')))
+    print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Put ECU manifests into a vehicle manifest and sign it. Vin:', self.vin, 'primary_ecu_serial:', self.ecu_serial 'ecu_version_manifests:', self.ecu_manifests)))
     #TODO: Until here
 
     # Create the vv manifest:
