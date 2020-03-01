@@ -428,6 +428,12 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
   if signed_vehicle_manifest is None:
     signed_vehicle_manifest = most_recent_signed_vehicle_manifest
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', signed_vehicle_manifest)))
+  #TODO: Until here
+
+
   if tuf.conf.METADATA_FORMAT == 'der':
     # If we're working with DER ECU Manifests, check that the manifest to send
     # is a byte array, and encapsulate it in a Binary() object for XMLRPC
@@ -438,11 +444,6 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
   else:
     uptane.formats.SIGNABLE_VEHICLE_VERSION_MANIFEST_SCHEMA.check_match(
         signed_vehicle_manifest)
-
-
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', signed_vehicle_manifest)))
-  #TODO: Until here
 
 
   server = xmlrpc_client.ServerProxy(
