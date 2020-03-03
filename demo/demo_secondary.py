@@ -73,6 +73,10 @@ attacks_detected = ''
 most_recent_signed_ecu_manifest = None
 
 
+#TODO: To be removed
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_secondary.py]\t>>Function: ' + ENDCOLORS + ' '
+
+
 def clean_slate(
     use_new_keys=False,
     #client_directory_name=None,
@@ -82,6 +86,11 @@ def clean_slate(
     primary_port=None):
   """
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate(use_new_keys, vin, ecu_serial, primary_host, primary_port)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'clean_slate()')))
+  #TODO: Until here
 
   global secondary_ecu
   global _vin
@@ -107,6 +116,10 @@ def clean_slate(
   # Load the public timeserver key.
   key_timeserver_pub = demo.import_public_key('timeserver')
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'loading key_timeserver_pub:', key_timeserver_pub)))
+  #TODO: Until here
+
   # Set starting firmware fileinfo (that this ECU had coming from the factory)
   factory_firmware_fileinfo = {
       'filepath': '/secondary_firmware.txt',
@@ -116,8 +129,25 @@ def clean_slate(
               'sha256': '6b9f987226610bfed08b824c93bf8b2f59521fce9a2adef80c495f363c1c9c44'},
           'length': 37}}
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Creating FACTORY ECU FIRMWARE:', factory_firmware_fileinfo)))
+  #TODO: Until here
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Load or generate the Private key for this SECONDARY ECU')))
+  #TODO: Until here
+
+
   # Prepare this ECU's key.
   load_or_generate_key(use_new_keys)
+
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generate a trusted initial time for the Primary')))
+  #TODO: Until here
+
 
   # Generate a trusted initial time for the Secondary.
   clock = tuf.formats.unix_timestamp_to_datetime(int(time.time()))
@@ -192,6 +222,12 @@ def create_secondary_pinning_file():
 
   Returns the filename of the created file.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_secondary_pinning_file()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Load the template pinned.json file and save a filled in version that points to the client\'s own directory')))
+  #TODO: Until here
+
   pinnings = json.load(
       open(demo.DEMO_SECONDARY_PINNING_FNAME, 'r', encoding='utf-8'))
 
@@ -219,6 +255,11 @@ def create_secondary_pinning_file():
 
 
 def submit_ecu_manifest_to_primary(signed_ecu_manifest=None):
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[submit_ecu_manifest_to_primary(signed_ecu_manifest)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting ECU manifest to primary. signed_ecu_manifest:', signed_ecu_manifest)))
+  #TODO: Until here
 
   global most_recent_signed_ecu_manifest
   if signed_ecu_manifest is None:
@@ -262,6 +303,11 @@ def submit_ecu_manifest_to_primary(signed_ecu_manifest=None):
 def load_or_generate_key(use_new_keys=False):
   """Load or generate an ECU's private key."""
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_or_generate_key(use_new_keys)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading or generating keys with use_new_keys:', use_new_keys)))
+  #TODO: Until here
+
   global ecu_key
 
   if use_new_keys:
@@ -281,6 +327,11 @@ def update_cycle():
   Updates our metadata and images from the Primary. Raises the appropriate
   tuf and uptane errors if metadata or the image don't validate.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_cycle()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Updating our metadata and images from the Primary')))
+  #TODO: Until here
 
   global secondary_ecu
   global current_firmware_fileinfo
@@ -525,6 +576,12 @@ def update_cycle():
 
 def generate_signed_ecu_manifest():
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_signed_ecu_manifest()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Generating signed ecu manifest')))
+  #TODO: Until here
+
+
   global secondary_ecu
   global most_recent_signed_ecu_manifest
   global attacks_detected
@@ -578,6 +635,13 @@ def register_self_with_director():
   into the vehicle during assembly, not through the Secondary or Primary
   themselves.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_self_with_director()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Send the Director a message to register our ECU serial number and Public Key.')))
+  #TODO: Until here
+
+
   # Connect to the Director
   server = xmlrpc_client.ServerProxy(
     'http://' + str(demo.DIRECTOR_SERVER_HOST) + ':' +
