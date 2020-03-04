@@ -1,0 +1,13 @@
+dp.clean_slate already done... 
+>>> 
+>>> 
+>>> 
+>>> 		[uptane/services/director.py]	>>Function:  [Director.register_ecu_serial()]:  Set the expected public key for signed messages from the ECU with the given ecu_serial: TCUdemocar ecu_key: ? vin: democar
+		[uptane/services/inventorydb.py]	>>Function:  [register_ecu()]:  Registering ECU with ecu_serial: TCUdemocar for vehicle vin: democar is_primary: False overwrite: False
+		[uptane/services/inventorydb.py]	>>Function:  [register_ecu()]:  returning 
+[2020.03.04 20:16:34UTC] [director] INFO [director.py:register_ecu_serial():172]
+Registered a new ECU, 'TCUdemocar' in vehicle 'democar' with ECU public key: {'keytype': 'ed25519', 'keyid': '49309f114b857e4b29bfbff1c1c75df59f154fbc45539b2eb30c8a867843b2cb', 'keyval': {'public': '6b3ce84f9de678c1c4555607055398ebb2369c84800742773165c5854660c433'}, 'keyid_hash_algorithms': ['sha256', 'sha512']}
+
+		[uptane/services/director.py]	>>Function:  [Director.register_ecu_serial()]:  returning 
+127.0.0.1 - - [04/Mar/2020 21:16:34] "POST /RPC2 HTTP/1.1" 200 -
+

@@ -1,0 +1,27 @@
+>>> 
+>>> 	[demo/demo_primary.py]	>>Function:  [get_time_attestation_for_ecu()]:  Getting time attestation for ecu with ecu_serial: TCUdemocar
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary._check_ecu_serial(self, ecu_serial)]:  Checking ecu_serial: TCUdemocar
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_last_timeserver_attestation(self)]:  Returns the most recent validated timeserver attestation. If the Primary has never received a valid timeserver attestation, this returns None.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_last_timeserver_attestation(self)]:  Returning attestation
+	[demo/demo_primary.py]	>>Function:  [get_time_attestation_for_ecu()]:  Returning attestation
+127.0.0.1 - - [04/Mar/2020 21:28:56] "POST /RPC2 HTTP/1.1" 200 -
+	[demo/demo_primary.py]	>>Function:  [get_metadata_for_ecu()]:  Getting metadata for ecu with ecu_serial: TCUdemocar
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary._check_ecu_serial(self, ecu_serial)]:  Checking ecu_serial: TCUdemocar
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_full_metadata_archive_fname(self)]:  Returns the absolute-path filename of an archive file (currently zip) containing all metadata from repositories necessary for a Full-Verification Secondary ECU to validate target files.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_full_metadata_archive_fname(self)]:  Returning self.distributable_full_metadata_archive_fname
+Distributing metadata file /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/full_metadata_archive.zip to ECU 'TCUdemocar'
+	[demo/demo_primary.py]	>>Function:  [get_metadata_for_ecu()]:  Returning binary_data
+127.0.0.1 - - [04/Mar/2020 21:28:56] "POST /RPC2 HTTP/1.1" 200 -
+
+>>> 
+>>> 
+>>> 	[demo/demo_primary.py]	>>Function:  [register_ecu_manifest_wrapper()]:  Registering ecu manifest wrapper for vin: democar with ecu_serial: TCUdemocar nonce: ? signed_ecu_manifest: ?
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.register_ecu_manifest(self, vin, ecu_serial, nonce, signed_ecu_manifest, force_pydict)]:  Called by Secondaries (in the demo, this is via an XMLRPC interface, or through another interface and passed through the XMLRPC interface). The Primary need not track ECU keys, so calling this doesn't result in a verification of the ECU's signature on the ECU manifest. This information is bundled together in a single vehicle report to the Director service.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary._check_ecu_serial(self, ecu_serial)]:  Checking ecu_serial: TCUdemocar
+[2020.03.04 20:29:08UTC] [primary] DEBUG [primary.py:register_ecu_manifest():1216]
+ Primary received an ECU manifest from ECU 'TCUdemocar', along with nonce 1536394018
+
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.register_ecu_manifest(self, vin, ecu_serial, nonce, signed_ecu_manifest, force_pydict)]:  Returning...
+	[demo/demo_primary.py]	>>Function:  [register_ecu_manifest_wrapper()]:  Returning...
+127.0.0.1 - - [04/Mar/2020 21:29:08] "POST /RPC2 HTTP/1.1" 200 -
+

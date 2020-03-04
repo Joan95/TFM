@@ -1,0 +1,31 @@
+Timeserver: Timeserver will now listen on port 30601
+>>> 
+>>> 
+>>> 
+>>> 		[uptane/services/director.py]	>>Function:  [Director.register_ecu_serial()]:  Set the expected public key for signed messages from the ECU with the given ecu_serial: INFOdemocar ecu_key: ? vin: democar
+		[uptane/services/inventorydb.py]	>>Function:  [register_ecu()]:  Registering ECU with ecu_serial: INFOdemocar for vehicle vin: democar is_primary: True overwrite: False
+		[uptane/services/inventorydb.py]	>>Function:  [register_ecu()]:  returning 
+[2020.03.04 20:11:50UTC] [director] INFO [director.py:register_ecu_serial():172]
+Registered a new ECU, 'INFOdemocar' in vehicle 'democar' with ECU public key: {'keytype': 'ed25519', 'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', 'keyval': {'public': 'a1293426fcf4ce6f38135eb72bf89fedfdcba1b732779683b951d71a0b9e89a2'}, 'keyid_hash_algorithms': ['sha256', 'sha512']}
+
+		[uptane/services/director.py]	>>Function:  [Director.register_ecu_serial()]:  returning 
+127.0.0.1 - - [04/Mar/2020 21:11:50] "POST /RPC2 HTTP/1.1" 200 -
+	[demo/demo_director.py]	>>Function:  [register_vehicle_manifest_wrapper(vin, primary_ecu_serial, signed_vehicle_manifest)]:  Wrapper previous to registering vehicle manifest for vin: democar primary_ecu_serial: INFOdemocar signed_vehicle_manifest: ?
+		[uptane/services/director.py]	>>Function:  [Director.register_vehicle_manifest()]:  Registering vehicle with vin: democar Saves the vehicle manifest in the InventoryDB, validating first the Primary's key on the full vehicle manifest, then each individual ECU Manifest's signature. primary_ecu_serial: INFOdemocar signed_vehicle_manifest: ?
+		[uptane/services/director.py]	>>Function:  [Director.validate_primary_certification_in_vehicle_manifest()]:  Validating certification in vehicle manifest for vehicle with vin: democar primary_ecu_serial: INFOdemocar vehicle_manifest: {u'signatures': [{u'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', u'sig': '579b563952f9fa707fe58dc1f47bc714c784ac353631d9e11fd38922f58f2be7d31bed85571df2b514488595cb2190eae5592de5b2f552071f794cebce739903', u'method': 'ed25519'}], u'signed': {u'ecu_version_manifests': {}, u'primary_ecu_serial': 'INFOdemocar', u'vin': 'democar'}}
+[2020.03.04 20:11:50UTC] [director] INFO [director.py:validate_primary_certification_in_vehicle_manifest():382]
+Beginning validate_primary_certification_in_vehicle_manifest
+
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Determine whether the private key belonging to 'key_dict' produced 'signature'. tuf.keys.verify_signature() will use the public key found in 'key_dict', the 'method' and 'sig' objects contained in 'signature', and 'data' to complete the verification.
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Returning by calling verify_signature method
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {'keytype': 'ed25519', 'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', 'keyval': {'public': 'a1293426fcf4ce6f38135eb72bf89fedfdcba1b732779683b951d71a0b9e89a2'}, 'keyid_hash_algorithms': ['sha256', 'sha512']} produced signature: {u'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', u'sig': '579b563952f9fa707fe58dc1f47bc714c784ac353631d9e11fd38922f58f2be7d31bed85571df2b514488595cb2190eae5592de5b2f552071f794cebce739903', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+		[uptane/services/director.py]	>>Function:  [Director.validate_primary_certification_in_vehicle_manifest()]:  returning 
+[2020.03.04 20:11:50UTC] [director] INFO [director.py:register_vehicle_manifest():325]
+ Received a Vehicle Manifest from Primary ECU 'INFOdemocar', with a valid signature from that ECU.
+
+		[uptane/services/director.py]	>>Function:  [Director.register_vehicle_manifest()]:  returning 
+127.0.0.1 - - [04/Mar/2020 21:11:50] "POST /RPC2 HTTP/1.1" 200 -
+

@@ -1,0 +1,52 @@
+	
+	
+	MORE STUFF I COULDN''T GET
+	
+	
+	
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Extracting the 'signed' role object from 'metadata_signable'
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Saving it in metadata store
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._versioninfo_has_been_updated()]:  ...
+u'targets.der' up-to-date.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._targets_of_role()]:  ...
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  Verifying if role exists. role: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  returning 
+
+                                                                                                                             
+                            #    #  ####                                                                                     
+                            # #  # #    #                                       .ssSSSSss.                                   
+                            #  # # #    #                                     .ER'      `AM.                                 
+                            #   ## #    #                                   .ST'          `CS.                               
+                            #    #  ####                                   .E'              `S.                              
+                                                                          .L'                `S.                             
+                            #    # #####  #####    ##   ##### ######      S'                  `S                             
+                            #    # #    # #    #  #  #    #   #           S                    S                             
+                            #    # #####  #    # ######   #   #####       S                    S                             
+                            #    # #      #    # #    #   #   #           S.                   S                             
+                             ####  #      #####  #    #   #   ######      `S.                 S'                             
+                                                                           `S.              .S'                              
+                                                                            `SS.          .SS'                               
+                                                                              `SS.      .SS'                                 
+                                                                                `SSssssSS'                                   
+                                                                                                                             
+           No validated targets were found. Either the Director did not instruct this ECU to install anything, or            
+                                the target info the Director provided could not be validated.                                
+	[demo/demo_secondary.py]	>>Function:  [generate_signed_ecu_manifest()]:  Generating signed ecu manifest
+	--------> [uptane/clients/secondary.py]	>>Function:  [Secondary.generate_signed_vehicle_manifest(self, description_of_attacks_observed)]:  Returns a signed ECU manifest indicating self.firmware_fileinfo. If the optional description_of_attacks_observed argument is provided, the ECU Manifest will include that in the ECU Manifest (attacks_detected).
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  Creating signature for key_dict ? and data for create it: ?
+	-------- --------> [tuf/keys.py]	>>Function:  [check_crypto_libraries()]:  Checking crypto libraries required_libraries: [u'ed25519']
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  Creating signature with public_key: ? private_key: ? data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  returning 
+	[demo/demo_secondary.py]	>>Function:  [submit_ecu_manifest_to_primary(signed_ecu_manifest)]:  Submitting ECU manifest to primary. signed_ecu_manifest: None
+>>> 

@@ -1,0 +1,50 @@
+>>> dp.update_cycle()
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 	[demo/demo_secondary.py]	>>Function:  [get_signed_time_der_wrapper(nonces)]:  Encapsulates the binary data of the DER encoding of the timeserver attestation in an XMLPRC Binary Object, for delivery via XMLRPC within the demo.
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  Creating signature for key_dict ? and data for create it: ?
+	-------- --------> [tuf/keys.py]	>>Function:  [check_crypto_libraries()]:  Checking crypto libraries required_libraries: [u'ed25519']
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  Creating signature with public_key: ? private_key: ? data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  returning 
+127.0.0.1 - - [04/Mar/2020 21:20:50] "POST /RPC2 HTTP/1.1" 200 -
+
+>>> 	
+>>> After having finished the download process... 
+>>>
+		[demo/demo_director.py]	>>Function:  [register_vehicle_manifest_wrapper(vin, primary_ecu_serial, signed_vehicle_manifest)]:  Wrapper previous to registering vehicle manifest for vin: democar primary_ecu_serial: INFOdemocar signed_vehicle_manifest: ?
+		[uptane/services/director.py]	>>Function:  [Director.register_vehicle_manifest()]:  Registering vehicle with vin: democar Saves the vehicle manifest in the InventoryDB, validating first the Primary's key on the full vehicle manifest, then each individual ECU Manifest's signature. primary_ecu_serial: INFOdemocar signed_vehicle_manifest: ?
+		[uptane/services/director.py]	>>Function:  [Director.validate_primary_certification_in_vehicle_manifest()]:  Validating certification in vehicle manifest for vehicle with vin: democar primary_ecu_serial: INFOdemocar vehicle_manifest: {u'signatures': [{u'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', u'sig': '50ee121186156ad4cca7c742cff0f0b8079e5e67a8015bfd1e7ba89019ad6a1c8ca91940e0c3135ddd267ea1e74dfd29cdce78765b3a40541a219ae3ff40c50b', u'method': 'ed25519'}], u'signed': {u'ecu_version_manifests': {'TCUdemocar': [{u'signatures': [{u'keyid': '49309f114b857e4b29bfbff1c1c75df59f154fbc45539b2eb30c8a867843b2cb', u'sig': 'eab0b6175f625a6c716e4570f784d30beca0e8d45a5d645a3a83099a71da6d3b48f43a228a602e2f9483e0279d4dda259488c02d91d2e74174248f268c8d7204', u'method': 'ed25519'}], u'signed': {u'previous_timeserver_time': u'2020-03-04T20:16:34Z', u'timeserver_time': u'2020-03-04T20:16:34Z', u'ecu_serial': 'TCUdemocar', u'installed_image': {u'fileinfo': {u'length': 37, u'hashes': {u'sha256': '6b9f987226610bfed08b824c93bf8b2f59521fce9a2adef80c495f363c1c9c44', u'sha512': '706c283972c5ae69864b199e1cdd9b4b8babc14f5a454d0fd4d3b35396a04ca0b40af731671b74020a738b5108a78deb032332c36d6ae9f31fae2f8a70f7e1ce'}}, u'filepath': '/secondary_firmware.txt'}, u'attacks_detected': u''}}]}, u'primary_ecu_serial': 'INFOdemocar', u'vin': 'democar'}}
+[2020.03.04 20:21:02UTC] [director] INFO [director.py:validate_primary_certification_in_vehicle_manifest():382]
+Beginning validate_primary_certification_in_vehicle_manifest
+
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Determine whether the private key belonging to 'key_dict' produced 'signature'. tuf.keys.verify_signature() will use the public key found in 'key_dict', the 'method' and 'sig' objects contained in 'signature', and 'data' to complete the verification.
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Returning by calling verify_signature method
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {'keytype': 'ed25519', 'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', 'keyval': {'public': 'a1293426fcf4ce6f38135eb72bf89fedfdcba1b732779683b951d71a0b9e89a2'}, 'keyid_hash_algorithms': ['sha256', 'sha512']} produced signature: {u'keyid': '9a406d99e362e7c93e7acfe1e4d6585221315be817f350c026bbee84ada260da', u'sig': '50ee121186156ad4cca7c742cff0f0b8079e5e67a8015bfd1e7ba89019ad6a1c8ca91940e0c3135ddd267ea1e74dfd29cdce78765b3a40541a219ae3ff40c50b', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+		[uptane/services/director.py]	>>Function:  [Director.validate_primary_certification_in_vehicle_manifest()]:  returning 
+[2020.03.04 20:21:02UTC] [director] INFO [director.py:register_vehicle_manifest():325]
+ Received a Vehicle Manifest from Primary ECU 'INFOdemocar', with a valid signature from that ECU.
+
+		[uptane/services/director.py]	>>Function:  [Director.register_ecu_manifest()]:  Registering vehicle with vin: democar ecu_serial: TCUdemocar signed_ecu_manifest: ?
+		[uptane/services/director.py]	>>Function:  [Director.validate_ecu_manifest()]:  Validating ECU manifest for ecu_serial: TCUdemocar signed_ecu_manifest: ?
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Determine whether the private key belonging to 'key_dict' produced 'signature'. tuf.keys.verify_signature() will use the public key found in 'key_dict', the 'method' and 'sig' objects contained in 'signature', and 'data' to complete the verification.
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Returning by calling verify_signature method
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {'keytype': 'ed25519', 'keyid': '49309f114b857e4b29bfbff1c1c75df59f154fbc45539b2eb30c8a867843b2cb', 'keyval': {'public': '6b3ce84f9de678c1c4555607055398ebb2369c84800742773165c5854660c433'}, 'keyid_hash_algorithms': ['sha256', 'sha512']} produced signature: {u'keyid': '49309f114b857e4b29bfbff1c1c75df59f154fbc45539b2eb30c8a867843b2cb', u'sig': 'eab0b6175f625a6c716e4570f784d30beca0e8d45a5d645a3a83099a71da6d3b48f43a228a602e2f9483e0279d4dda259488c02d91d2e74174248f268c8d7204', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+		[uptane/services/director.py]	>>Function:  [Director.validate_ecu_manifest()]:  returning 
+[2020.03.04 20:21:02UTC] [director] DEBUG [director.py:register_ecu_manifest():486]
+Stored a valid ECU manifest from ECU 'TCUdemocar'
+
+		[uptane/services/director.py]	>>Function:  [Director.register_ecu_manifest()]:  returning 
+		[uptane/services/director.py]	>>Function:  [Director.register_vehicle_manifest()]:  returning 
+127.0.0.1 - - [04/Mar/2020 21:21:02] "POST /RPC2 HTTP/1.1" 200 -
+

@@ -1,0 +1,789 @@
+>>> dp.update_cycle()
+	[demo/demo_primary.py]	>>Function:  [update_cycle()]:  Updating cycle
+	[demo/demo_primary.py]	>>Function:  [update_cycle()]:  First, we'll send the Timeserver a request for a signed time, with the nonces Secondaries have sent us since last time.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_nonces_to_send_and_rotate(self)]:  This should be called once when it is time to make a request for a signed attestation from the Timeserver.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_nonces_to_send_and_rotate(self)]:  Returning nonces_sent
+Submitting a request for a signed time to the Timeserver.
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.update_time(self, timeserver_attestation)]:  This should be called after get_nonces_to_send_and_rotate has been called and the nonces returned from that have been sent in a request for a time attestation from the Timeserver.
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Determine whether the private key belonging to 'key_dict' produced 'signature'. tuf.keys.verify_signature() will use the public key found in 'key_dict', the 'method' and 'sig' objects contained in 'signature', and 'data' to complete the verification.
+	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Returning by calling verify_signature method
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keyval': {u'public': u'5d7750b208dfc7ade8f6106b9c3fa25162d5a184f302161e429f19a79e66a908'}, u'keytype': u'ed25519', u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', u'sig': '83f4c09545226c21cda1fc14f1285ab491801061a5cf7952e2032981536c5cac636fb6e49c6bc525ec0d9338a29527187411732c1f67e09a5f7d9ea0cf760508', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.update_time(self, timeserver_attestation)]:  Returning...
+Time attestation validated. New time registered.
+
+
+ Now updating top-level metadata from the Director and Image Repositories
+    (timestamp, snapshot, root, targets)
+
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.primary_update_cycle(self)]:  Download fresh metadata and images for this vehicle, as instructed by the Director and validated by the Image Repository. Begin by obtaining trustworthy target file metadata from the repositories, then instruct TUF to download matching files. Assign the target files to ECUs and keep that mapping in memory for later distribution.
+[2020.03.04 20:20:50UTC] [primary] DEBUG [primary.py:primary_update_cycle():562]
+Refreshing top level metadata from all repositories.
+
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.refesh_toplevel_metadata(self)]:  Refreshes client's metadata for the top-level roles: root, targets, snapshot, and timestamp
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater.refresh()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._rebuild_key_and_role_db()]:  Non-public method that rebuilds the key and role databases from the currently trusted 'root' metadata object extracted from 'root.json'. This private method is called when a new\/updated 'root' metadata file is loaded. This method will only store the role information of the top-level roles (i.e., 'root', 'targets', 'snapshot', 'timestamp').
+	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  Creating keydb from metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, u'keys': {u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, u'expires': u'2021-03-05T01:58:08Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: director
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}, u'keytype': u'ed25519', u'keyid': '630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}, u'keytype': u'ed25519', u'keyid': '333d003373875f2e32c1ebc85c69e3b5a5281ab4da222486a095afdb7ed1be0b528948609b59172c68f6a4f707c1ce7a893d13a2243925a28923d315a5f33386', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}, u'keytype': u'ed25519', u'keyid': '422aee4485e7f3357a04516cff9b61192da81547e4d43998a31a7b77f0ef20b5e41f47a3cdc6259b849d8ba6d89001f4dfddfc7605fd51b2309369bc14bafafe', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}, u'keytype': u'ed25519', u'keyid': 'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}, u'keytype': u'ed25519', u'keyid': 'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}, u'keytype': u'ed25519', u'keyid': 'fb89d7b68f2baee108b95cfe4f13fb87237012ee787a4d18b1a24550f8969ca8034289fe2ffd22d7fcb2a51f537568e5437b25d2c4c41dca6b05499f02c622f4', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}, u'keytype': u'ed25519', u'keyid': '833224784cbc56f947436c990c127770bd7fddeb8346bade602320542dc260cb059102ad210dba36a2fa5baacd81c89198a0f41db04c961512ce8be78c5251e2', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}, u'keytype': u'ed25519', u'keyid': 'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [create_roledb_from_root_metadata()]:  Creating roledb from root metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, u'keys': {u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, u'expires': u'2021-03-05T01:58:08Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: root with roleinfo: {u'signatures': [], u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2'], u'expires': u'2021-03-05T01:58:08Z', u'partial_loaded': False, u'version': 1, u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: root
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  root
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2'], u'expires': u'2021-03-05T01:58:08Z', u'partial_loaded': False, u'version': 1, u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  director
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: snapshot with roleinfo: {u'signatures': [], u'partial_loaded': False, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  snapshot
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'partial_loaded': False, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  director
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: targets with roleinfo: {u'paths': {}, u'signatures': [], u'partial_loaded': False, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6'], u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'threshold': 1, u'signing_keyids': []} with repository_name director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  targets
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'paths': {}, u'signatures': [], u'partial_loaded': False, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6'], u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  director
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: timestamp with roleinfo: {u'signatures': [], u'partial_loaded': False, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  timestamp
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'partial_loaded': False, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  director
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [create_roledb_from_root_metadata()]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata()]:  ...
+Verifying u'timestamp'.  Requesting version: None
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_metadata_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [unsafe_download(url, required_length)]:  Unsafe Downloading from url: http://localhost:30401/democar/metadata/timestamp.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30401/democar/metadata/timestamp.der
+Downloading: u'http://localhost:30401/democar/metadata/timestamp.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30401/democar/metadata/timestamp.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 196 bytes out of an upper limit of 16384 bytes.
+Not decompressing http://localhost:30401/democar/metadata/timestamp.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+metadata_role: u'timestamp'
+timestamp not available locally.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: timestamp has rights for sign signable: {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'4948f0e92251241425ee471977395523155efde18b53b655366ebbd3b6d683909520ec8456eceb3efdee4ecb3916262eaf44695f827119cdd0739bd727f98906', u'method': 'ed25519'}], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:48Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'180d2ef36f618c50c6b79de1d580ca49d9bec4e5862cae4ad71a4ed769793453'}, u'version': 1, u'length': 217}}, u'version': 1}} repository_name: director
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: timestamp repository_name: director signable: {u'signatures': [{u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'4948f0e92251241425ee471977395523155efde18b53b655366ebbd3b6d683909520ec8456eceb3efdee4ecb3916262eaf44695f827119cdd0739bd727f98906', u'method': 'ed25519'}], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:48Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'180d2ef36f618c50c6b79de1d580ca49d9bec4e5862cae4ad71a4ed769793453'}, u'version': 1, u'length': 217}}, u'version': 1}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc repository_name: director
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'4948f0e92251241425ee471977395523155efde18b53b655366ebbd3b6d683909520ec8456eceb3efdee4ecb3916262eaf44695f827119cdd0739bd727f98906', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:48Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'180d2ef36f618c50c6b79de1d580ca49d9bec4e5862cae4ad71a4ed769793453'}, u'version': 1, u'length': 217}}, u'version': 1}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc', u'sig': u'4948f0e92251241425ee471977395523155efde18b53b655366ebbd3b6d683909520ec8456eceb3efdee4ecb3916262eaf44695f827119cdd0739bd727f98906', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: timestamp repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: timestamp repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: timestamp repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: timestamp repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._fileinfo_has_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_via_fileinfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._safely_get_metadata_file()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [safe_download(url, required_length)]:  Safe Downloading from url: http://localhost:30401/democar/metadata/snapshot.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30401/democar/metadata/snapshot.der
+Downloading: u'http://localhost:30401/democar/metadata/snapshot.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30401/democar/metadata/snapshot.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 217 bytes out of the expected 217 bytes.
+Not decompressing http://localhost:30401/democar/metadata/snapshot.der
+	--------> [tuf/client/updater.py]	>>Function:  [check_hashes()]:  Function that verifies multiple secure hashes of the downloaded file 'file_object'. If any of these fail it raises an exception. This is to conform with the TUF spec, which support clients with different hashing algorithms. The 'hash.py' module is used to compute the hashes of 'file_object'.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+The file's u'sha256' hash is correct: u'180d2ef36f618c50c6b79de1d580ca49d9bec4e5862cae4ad71a4ed769793453'
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: snapshot has rights for sign signable: {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'5de0ab516a877aa65fd1531cf8588152af70be146e0fd1d5dfbe0476d3eced2c6aad90b47455b70ee8e77b80cbf8dbb7270d6da596e48e501f0ae2ced87f4101', u'method': 'ed25519'}], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:48Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'670dbe58d7369d3c12ad38a9ee59a4c4812910bf049b890e0180da0675395c1b'}}}, u'version': 1}} repository_name: director
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: snapshot repository_name: director signable: {u'signatures': [{u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'5de0ab516a877aa65fd1531cf8588152af70be146e0fd1d5dfbe0476d3eced2c6aad90b47455b70ee8e77b80cbf8dbb7270d6da596e48e501f0ae2ced87f4101', u'method': 'ed25519'}], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:48Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'670dbe58d7369d3c12ad38a9ee59a4c4812910bf049b890e0180da0675395c1b'}}}, u'version': 1}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97 repository_name: director
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'5de0ab516a877aa65fd1531cf8588152af70be146e0fd1d5dfbe0476d3eced2c6aad90b47455b70ee8e77b80cbf8dbb7270d6da596e48e501f0ae2ced87f4101', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:48Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'670dbe58d7369d3c12ad38a9ee59a4c4812910bf049b890e0180da0675395c1b'}}}, u'version': 1}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97', u'sig': u'5de0ab516a877aa65fd1531cf8588152af70be146e0fd1d5dfbe0476d3eced2c6aad90b47455b70ee8e77b80cbf8dbb7270d6da596e48e501f0ae2ced87f4101', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: snapshot repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: snapshot repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: snapshot repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: snapshot repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [get_file_details()]:  Returning file details for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/director/current/snapshot.der hash_algorithms: [u'sha256']
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Generate a digest object given a file object.  The new digest object is updated with the contents of 'file_object' prior to returning the object to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Returning...
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._fileinfo_has_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [get_file_details()]:  Returning file details for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/director/current/root.der hash_algorithms: [u'sha256']
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Generate a digest object given a file object.  The new digest object is updated with the contents of 'file_object' prior to returning the object to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Returning...
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Returning...
+u'root.der' up-to-date.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._versioninfo_has_been_updated()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata()]:  ...
+Verifying u'targets'.  Requesting version: 1
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_metadata_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [unsafe_download(url, required_length)]:  Unsafe Downloading from url: http://localhost:30401/democar/metadata/targets.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30401/democar/metadata/targets.der
+Downloading: u'http://localhost:30401/democar/metadata/targets.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30401/democar/metadata/targets.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 136 bytes out of an upper limit of 5000000 bytes.
+Not decompressing http://localhost:30401/democar/metadata/targets.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: targets has rights for sign signable: {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'82908ab660d73ed81ff34b0d1a8fc4bdb7d65a37014b2ba19cfc06fd1ccd1b97f632f10afddb48e926a15d87ed8cc7e7e0bdd2f46cc8f4c82bce07bd59871b0a', u'method': 'ed25519'}], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:58Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {}}} repository_name: director
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: targets repository_name: director signable: {u'signatures': [{u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'82908ab660d73ed81ff34b0d1a8fc4bdb7d65a37014b2ba19cfc06fd1ccd1b97f632f10afddb48e926a15d87ed8cc7e7e0bdd2f46cc8f4c82bce07bd59871b0a', u'method': 'ed25519'}], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:58Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {}}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6 repository_name: director
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': '630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'82908ab660d73ed81ff34b0d1a8fc4bdb7d65a37014b2ba19cfc06fd1ccd1b97f632f10afddb48e926a15d87ed8cc7e7e0bdd2f46cc8f4c82bce07bd59871b0a', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:58Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {}}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': '630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6', u'sig': u'82908ab660d73ed81ff34b0d1a8fc4bdb7d65a37014b2ba19cfc06fd1ccd1b97f632f10afddb48e926a15d87ed8cc7e7e0bdd2f46cc8f4c82bce07bd59871b0a', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater.refresh()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._rebuild_key_and_role_db()]:  Non-public method that rebuilds the key and role databases from the currently trusted 'root' metadata object extracted from 'root.json'. This private method is called when a new\/updated 'root' metadata file is loaded. This method will only store the role information of the top-level roles (i.e., 'root', 'targets', 'snapshot', 'timestamp').
+	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  Creating keydb from metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']}, u'root': {u'threshold': 1, u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']}, u'targets': {u'threshold': 1, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']}, u'timestamp': {u'threshold': 1, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']}}, u'keys': {u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}}, u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}}, u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}}, u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}}}, u'expires': u'2021-03-05T01:57:53Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: imagerepo
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}, u'keytype': u'ed25519', u'keyid': '94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}, u'keytype': u'ed25519', u'keyid': '0b8c67edcf307f5bdc30ebc441086fe58f9320f4b5e04f2cefbfa8998868d32d85a17da47691db4e6fb2f3440ca9a03b69d07588a32c5f555f769c0a21351648', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}, u'keytype': u'ed25519', u'keyid': '6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}, u'keytype': u'ed25519', u'keyid': 'deb7ea2937f68b7f4067593fedf0004858c48c44f7195a72da7239fe558b32f824ef4db756cefe8be61ae483fa2c4d6dcb0286f0dd9edc7a7f8f496a5999e2d1', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}, u'keytype': u'ed25519', u'keyid': 'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}, u'keytype': u'ed25519', u'keyid': '43aee7e76e88246ea88931fd9df636c3e0851b448860bb1b3d8f4e066641e2523d3e46c1074226d6f9877c57024a9f3ff05bf3cc8c7377933078e1a6c0bf027c', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} hash_algorithm: sha256
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  [inside for loop] - for hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} hash_algorithm: sha512
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'} private: False
+	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  returning 
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}, u'keytype': u'ed25519', u'keyid': 'af583431e6fd4ea9e8c0743aa7d8132d6a8f5c0a9dc44e60766d0dd7e3691055635b78065b4821a01f8a02d58fc24202ebaa3c3a9e3bc2acaf12b7301b214756', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: imagerepo key_dict: {u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}, u'keytype': u'ed25519', u'keyid': 'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
+	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [create_roledb_from_root_metadata()]:  Creating roledb from root metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']}, u'root': {u'threshold': 1, u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290']}, u'targets': {u'threshold': 1, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']}, u'timestamp': {u'threshold': 1, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']}}, u'keys': {u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f4ac8d95cfdf65a4ccaee072ba5a48e8ad6a0c30be6ffd525aec6bc078211033'}}, u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}}, u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}}, u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}}}, u'expires': u'2021-03-05T01:57:53Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: root with roleinfo: {u'signatures': [], u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290'], u'expires': u'2021-03-05T01:57:53Z', u'partial_loaded': False, u'version': 1, u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: root
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  root
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'keyids': [u'94c836f0c45168f0a437eef0e487b910f58db4d462ae457b5730a4487130f290'], u'expires': u'2021-03-05T01:57:53Z', u'partial_loaded': False, u'version': 1, u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: snapshot with roleinfo: {u'signatures': [], u'partial_loaded': False, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  snapshot
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'partial_loaded': False, u'keyids': [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: targets with roleinfo: {u'paths': {}, u'signatures': [], u'partial_loaded': False, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596'], u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'threshold': 1, u'signing_keyids': []} with repository_name imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  targets
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'paths': {}, u'signatures': [], u'partial_loaded': False, u'keyids': [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596'], u'compressions': [u''], u'delegations': {u'keys': {}, u'roles': []}, u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: timestamp with roleinfo: {u'signatures': [], u'partial_loaded': False, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for rolename:  timestamp
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for roleinfo:  {u'signatures': [], u'partial_loaded': False, u'keyids': [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a'], u'compressions': [u''], u'threshold': 1, u'signing_keyids': []}
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Value for repository_name:  imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [create_roledb_from_root_metadata()]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata()]:  ...
+Verifying u'timestamp'.  Requesting version: None
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_metadata_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [unsafe_download(url, required_length)]:  Unsafe Downloading from url: http://localhost:30301/metadata/timestamp.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30301/metadata/timestamp.der
+Downloading: u'http://localhost:30301/metadata/timestamp.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30301/metadata/timestamp.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 196 bytes out of an upper limit of 16384 bytes.
+Not decompressing http://localhost:30301/metadata/timestamp.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+metadata_role: u'timestamp'
+timestamp not available locally.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: timestamp has rights for sign signable: {u'signatures': [{u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'794e6c167a69fec44029d2d68e22703a022e4d44e52127062393a7625d52b895dfb6a634ea97b551a795f331a4c73595e0d62aec625b7efc87519c6a79ea7403', u'method': 'ed25519'}], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:33Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'388126907349a09fbebca5583d14e57b712f8f078713545f0d8cc3a1d6d3202a'}, u'version': 1, u'length': 217}}, u'version': 1}} repository_name: imagerepo
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: timestamp repository_name: imagerepo signable: {u'signatures': [{u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'794e6c167a69fec44029d2d68e22703a022e4d44e52127062393a7625d52b895dfb6a634ea97b551a795f331a4c73595e0d62aec625b7efc87519c6a79ea7403', u'method': 'ed25519'}], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:33Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'388126907349a09fbebca5583d14e57b712f8f078713545f0d8cc3a1d6d3202a'}, u'version': 1, u'length': 217}}, u'version': 1}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a repository_name: imagerepo
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': '6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'794e6c167a69fec44029d2d68e22703a022e4d44e52127062393a7625d52b895dfb6a634ea97b551a795f331a4c73595e0d62aec625b7efc87519c6a79ea7403', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Timestamp', u'expires': u'2020-03-05T20:09:33Z', u'meta': {'snapshot.der': {u'hashes': {u'sha256': u'388126907349a09fbebca5583d14e57b712f8f078713545f0d8cc3a1d6d3202a'}, u'version': 1, u'length': 217}}, u'version': 1}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': '6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'keyval': {u'public': u'97c1112bbd9047b1fdb50dd638bfed6d0639e0dff2c1443f5593fea40e30f654'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a', u'sig': u'794e6c167a69fec44029d2d68e22703a022e4d44e52127062393a7625d52b895dfb6a634ea97b551a795f331a4c73595e0d62aec625b7efc87519c6a79ea7403', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: timestamp repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: timestamp repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'6fcd9a928358ad8ca7e946325f57ec71d50cb5977a8d02c5ab0de6765fef040a']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: timestamp repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: timestamp repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: timestamp
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: timestamp
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._fileinfo_has_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_via_fileinfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._safely_get_metadata_file()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [safe_download(url, required_length)]:  Safe Downloading from url: http://localhost:30301/metadata/snapshot.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30301/metadata/snapshot.der
+Downloading: u'http://localhost:30301/metadata/snapshot.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30301/metadata/snapshot.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 217 bytes out of the expected 217 bytes.
+Not decompressing http://localhost:30301/metadata/snapshot.der
+	--------> [tuf/client/updater.py]	>>Function:  [check_hashes()]:  Function that verifies multiple secure hashes of the downloaded file 'file_object'. If any of these fail it raises an exception. This is to conform with the TUF spec, which support clients with different hashing algorithms. The 'hash.py' module is used to compute the hashes of 'file_object'.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+The file's u'sha256' hash is correct: u'388126907349a09fbebca5583d14e57b712f8f078713545f0d8cc3a1d6d3202a'
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: snapshot has rights for sign signable: {u'signatures': [{u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'31d22a870d75c9791d16b0e1c65b0dcdbb91102561603ddb428aabf4a7ead39444b2fff0d175733ff50822997856ac9b477f6a59272bad15f27b091cb8a94702', u'method': 'ed25519'}], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:33Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'18e4eabe883cd63dc71b343ff6b7a07e3c71ae54c7cfcae6f1df80b125a9e037'}}}, u'version': 1}} repository_name: imagerepo
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: snapshot repository_name: imagerepo signable: {u'signatures': [{u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'31d22a870d75c9791d16b0e1c65b0dcdbb91102561603ddb428aabf4a7ead39444b2fff0d175733ff50822997856ac9b477f6a59272bad15f27b091cb8a94702', u'method': 'ed25519'}], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:33Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'18e4eabe883cd63dc71b343ff6b7a07e3c71ae54c7cfcae6f1df80b125a9e037'}}}, u'version': 1}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99 repository_name: imagerepo
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'31d22a870d75c9791d16b0e1c65b0dcdbb91102561603ddb428aabf4a7ead39444b2fff0d175733ff50822997856ac9b477f6a59272bad15f27b091cb8a94702', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Snapshot', u'expires': u'2020-03-11T20:09:33Z', u'meta': {'targets.der': {u'version': 1}, 'root.der': {u'length': 631, u'version': 1, u'hashes': {'sha256': u'18e4eabe883cd63dc71b343ff6b7a07e3c71ae54c7cfcae6f1df80b125a9e037'}}}, u'version': 1}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'keyval': {u'public': u'497f62d80e5b892718da8788bb549bcf8369a1460ec23d6d67d0ca099a8e8f83'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99', u'sig': u'31d22a870d75c9791d16b0e1c65b0dcdbb91102561603ddb428aabf4a7ead39444b2fff0d175733ff50822997856ac9b477f6a59272bad15f27b091cb8a94702', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: snapshot repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: snapshot repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'aaf05f8d054f8068bf6cb46beed7c824e2560802df462fc8681677586582ca99']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: snapshot repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: snapshot repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: snapshot
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: snapshot
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [get_file_details()]:  Returning file details for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/imagerepo/current/snapshot.der hash_algorithms: [u'sha256']
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Generate a digest object given a file object.  The new digest object is updated with the contents of 'file_object' prior to returning the object to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Returning...
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._fileinfo_has_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_fileinfo()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [get_file_details()]:  Returning file details for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/imagerepo/current/root.der hash_algorithms: [u'sha256']
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Generate a digest object given a file object.  The new digest object is updated with the contents of 'file_object' prior to returning the object to the caller.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest()]:  Provide the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_fileobject()]:  Returning...
+	-------- --------> [tuf/hash.py]	>>Function:  [digest_filename()]:  Returning...
+u'root.der' up-to-date.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._versioninfo_has_been_updated()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata()]:  ...
+Verifying u'targets'.  Requesting version: 1
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._get_metadata_file()]:  ...
+	--------> [tuf/download.py]
+			>>Function:  [unsafe_download(url, required_length)]:  Unsafe Downloading from url: http://localhost:30301/metadata/targets.der
+	--------> [tuf/download.py]
+			>>Function:  [_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]:  Opening connection against url: http://localhost:30301/metadata/targets.der
+Downloading: u'http://localhost:30301/metadata/targets.der'
+	--------> [tuf/download.py]
+			>>Function:  [_open_connection(url)]:  Openning connection with url: http://localhost:30301/metadata/targets.der
+	--------> [tuf/download.py]
+			>>Function:  [_get_opener(scheme)]:  Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to 'https'
+	--------> [tuf/download.py]
+			>>Function:  [_get_request(url)]:  Wrapping the URL to retrieve to protect against 'creative' interpretation of the RFC
+	--------> [tuf/download.py]
+			>>Function:  [_get_content_length(connection)]:  Getting the length content
+	--------> [tuf/download.py]
+			>>Function:  [_check_content_length(reported_length, required_length, strict_length)]:  Checking length of content
+	--------> [tuf/download.py]
+			>>Function:  [_download_fixed_amount_of_data(connection, temp_file, required_length)]:  Helper function, where the download really happens. Downloading...
+	--------> [tuf/download.py]
+			>>Function:  [_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]:  Checking length of downloaded content
+Downloaded 1105 bytes out of an upper limit of 5000000 bytes.
+Not decompressing http://localhost:30301/metadata/targets.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._verify_uncompressed_metadata_file()]:  ...
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]:  Verifying whether role: targets has rights for sign signable: {u'signatures': [{u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'8fad067e9791c5381b060fa8d5fdb42a8c6b2c8b15b0dfd726d7f86e152efb75b1fd696c6d04679ff87628f96143cc79fa0f67a53db92d645af65c9faa760807', u'method': 'ed25519'}], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:43Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {'/TCU1.0.txt': {u'length': 16, u'hashes': {u'sha256': u'c0f997636d40ef418697e85add2e3e6f994592de0c4d90ffe0f86e177281b0dc', u'sha512': u'87e3d4f40b43f457e507c81e0caa306893ecf4eb65c28a8ef4a5e5e66323c460c500a7cb9489221eb8bcd2eb5b7e848dcf8c631518289fa07e629c4ffcf8e686'}}, '/TCU1.2.txt': {u'length': 17, u'hashes': {u'sha256': u'fbc8fa01df33f30833428be0fb20edfaafa444ed23d020e3cbc9c60cff167288', u'sha512': u'c7c3924d33804eca1d691c5fe61bb965646bf9b6225ce1f040dcde81ce0fc26f4be323f4995e0dee35a847fdbb6efe5a8c8e248e07d1728af0b4cc6fb3179d38'}}, '/BCU1.2.txt': {u'length': 18, u'hashes': {u'sha256': u'42914dc1509923fc83b6945cbaaec193a22077ae3bb799e84b900570715fcb5a', u'sha512': u'f213f63b79b05e3ea2045ffe198ab75a993ca5b2709a2e1eac5f18a1a6be1b5eb6af9964b78d388b404414e296b046228f9b68eb75db684eed75b509518a77a5'}}, '/BCU1.0.txt': {u'length': 15, u'hashes': {u'sha256': u'fb0aa5699a4e7b68009fed6b094ecb00c3ad5670921be1b902b72a23cd4675b1', u'sha512': u'0b0bb00bccf7bdad519d0a0af2794c945bd51ebdbc79f9616f0e3903b32f4ce2d5b250ab1bc2d34194bacf720b4f0aed361ef8d59ac72b1bc19e3a223a5e87cd'}}, '/TCU1.1.txt': {u'length': 17, u'hashes': {u'sha256': u'56d7cd56a85e34e40d005e1f79c0e95d6937d5528ac0b301dbe68d57e03a5c21', u'sha512': u'94d7419b8606103f363aa17feb875575a978df8e88038ea284ff88d90e534eaa7218040384b19992cc7866f5eca803e1654c9ccdf3b250d6198b3c4731216db4'}}, '/BCU1.1.txt': {u'length': 18, u'hashes': {u'sha256': u'1eb6fa5c6bb606c5326d6ef0ff05f5fcefde4e50c7daea530978090778b38bf4', u'sha512': u'9727058c2ba828fdd2fc5ae02f52c10e47404283f92df3539989e2ada3cf7e85a9772faed1bd0bad3fc2bd8f6e5d15b976b8e832dd46874be72b994bc57a62a0'}}, '/INFO1.0.txt': {u'length': 18, u'hashes': {u'sha256': u'e116d4ef5a2f2dbba9a61970a25cab3e6695418e3dbfa71071e4d07aebb1f083', u'sha512': u'7cfa230b2ad2290d38d0da9f0320c1de0dcc9acc40a74154d8f6461c9acb63e7a41a34034b6d84fed6220e1a42afbaa0846efcfc85e1d83c5174f1f8d88d2694'}}}}} repository_name: imagerepo
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]:  Getting signatures marked as signable for role: targets repository_name: imagerepo signable: {u'signatures': [{u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'8fad067e9791c5381b060fa8d5fdb42a8c6b2c8b15b0dfd726d7f86e152efb75b1fd696c6d04679ff87628f96143cc79fa0f67a53db92d645af65c9faa760807', u'method': 'ed25519'}], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:43Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {'/TCU1.0.txt': {u'length': 16, u'hashes': {u'sha256': u'c0f997636d40ef418697e85add2e3e6f994592de0c4d90ffe0f86e177281b0dc', u'sha512': u'87e3d4f40b43f457e507c81e0caa306893ecf4eb65c28a8ef4a5e5e66323c460c500a7cb9489221eb8bcd2eb5b7e848dcf8c631518289fa07e629c4ffcf8e686'}}, '/TCU1.2.txt': {u'length': 17, u'hashes': {u'sha256': u'fbc8fa01df33f30833428be0fb20edfaafa444ed23d020e3cbc9c60cff167288', u'sha512': u'c7c3924d33804eca1d691c5fe61bb965646bf9b6225ce1f040dcde81ce0fc26f4be323f4995e0dee35a847fdbb6efe5a8c8e248e07d1728af0b4cc6fb3179d38'}}, '/BCU1.2.txt': {u'length': 18, u'hashes': {u'sha256': u'42914dc1509923fc83b6945cbaaec193a22077ae3bb799e84b900570715fcb5a', u'sha512': u'f213f63b79b05e3ea2045ffe198ab75a993ca5b2709a2e1eac5f18a1a6be1b5eb6af9964b78d388b404414e296b046228f9b68eb75db684eed75b509518a77a5'}}, '/BCU1.0.txt': {u'length': 15, u'hashes': {u'sha256': u'fb0aa5699a4e7b68009fed6b094ecb00c3ad5670921be1b902b72a23cd4675b1', u'sha512': u'0b0bb00bccf7bdad519d0a0af2794c945bd51ebdbc79f9616f0e3903b32f4ce2d5b250ab1bc2d34194bacf720b4f0aed361ef8d59ac72b1bc19e3a223a5e87cd'}}, '/TCU1.1.txt': {u'length': 17, u'hashes': {u'sha256': u'56d7cd56a85e34e40d005e1f79c0e95d6937d5528ac0b301dbe68d57e03a5c21', u'sha512': u'94d7419b8606103f363aa17feb875575a978df8e88038ea284ff88d90e534eaa7218040384b19992cc7866f5eca803e1654c9ccdf3b250d6198b3c4731216db4'}}, '/BCU1.1.txt': {u'length': 18, u'hashes': {u'sha256': u'1eb6fa5c6bb606c5326d6ef0ff05f5fcefde4e50c7daea530978090778b38bf4', u'sha512': u'9727058c2ba828fdd2fc5ae02f52c10e47404283f92df3539989e2ada3cf7e85a9772faed1bd0bad3fc2bd8f6e5d15b976b8e832dd46874be72b994bc57a62a0'}}, '/INFO1.0.txt': {u'length': 18, u'hashes': {u'sha256': u'e116d4ef5a2f2dbba9a61970a25cab3e6695418e3dbfa71071e4d07aebb1f083', u'sha512': u'7cfa230b2ad2290d38d0da9f0320c1de0dcc9acc40a74154d8f6461c9acb63e7a41a34034b6d84fed6220e1a42afbaa0846efcfc85e1d83c5174f1f8d88d2694'}}}}}
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  Getting key for keyid:  c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596 repository_name: imagerepo
+	--------> [tuf/keydb.py]	>>Function:  [get_key(keyid, repository_name)]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'8fad067e9791c5381b060fa8d5fdb42a8c6b2c8b15b0dfd726d7f86e152efb75b1fd696c6d04679ff87628f96143cc79fa0f67a53db92d645af65c9faa760807', u'method': 'ed25519'}
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]:  Converting signed metadata to der. signed_metadata: {u'signatures': [], u'signed': {u'_type': u'Targets', u'expires': u'2020-06-04T03:36:43Z', u'version': 1, u'delegations': {u'keys': {}, u'roles': []}, u'targets': {'/TCU1.0.txt': {u'length': 16, u'hashes': {u'sha256': u'c0f997636d40ef418697e85add2e3e6f994592de0c4d90ffe0f86e177281b0dc', u'sha512': u'87e3d4f40b43f457e507c81e0caa306893ecf4eb65c28a8ef4a5e5e66323c460c500a7cb9489221eb8bcd2eb5b7e848dcf8c631518289fa07e629c4ffcf8e686'}}, '/TCU1.2.txt': {u'length': 17, u'hashes': {u'sha256': u'fbc8fa01df33f30833428be0fb20edfaafa444ed23d020e3cbc9c60cff167288', u'sha512': u'c7c3924d33804eca1d691c5fe61bb965646bf9b6225ce1f040dcde81ce0fc26f4be323f4995e0dee35a847fdbb6efe5a8c8e248e07d1728af0b4cc6fb3179d38'}}, '/BCU1.2.txt': {u'length': 18, u'hashes': {u'sha256': u'42914dc1509923fc83b6945cbaaec193a22077ae3bb799e84b900570715fcb5a', u'sha512': u'f213f63b79b05e3ea2045ffe198ab75a993ca5b2709a2e1eac5f18a1a6be1b5eb6af9964b78d388b404414e296b046228f9b68eb75db684eed75b509518a77a5'}}, '/BCU1.0.txt': {u'length': 15, u'hashes': {u'sha256': u'fb0aa5699a4e7b68009fed6b094ecb00c3ad5670921be1b902b72a23cd4675b1', u'sha512': u'0b0bb00bccf7bdad519d0a0af2794c945bd51ebdbc79f9616f0e3903b32f4ce2d5b250ab1bc2d34194bacf720b4f0aed361ef8d59ac72b1bc19e3a223a5e87cd'}}, '/TCU1.1.txt': {u'length': 17, u'hashes': {u'sha256': u'56d7cd56a85e34e40d005e1f79c0e95d6937d5528ac0b301dbe68d57e03a5c21', u'sha512': u'94d7419b8606103f363aa17feb875575a978df8e88038ea284ff88d90e534eaa7218040384b19992cc7866f5eca803e1654c9ccdf3b250d6198b3c4731216db4'}}, '/BCU1.1.txt': {u'length': 18, u'hashes': {u'sha256': u'1eb6fa5c6bb606c5326d6ef0ff05f5fcefde4e50c7daea530978090778b38bf4', u'sha512': u'9727058c2ba828fdd2fc5ae02f52c10e47404283f92df3539989e2ada3cf7e85a9772faed1bd0bad3fc2bd8f6e5d15b976b8e832dd46874be72b994bc57a62a0'}}, '/INFO1.0.txt': {u'length': 18, u'hashes': {u'sha256': u'e116d4ef5a2f2dbba9a61970a25cab3e6695418e3dbfa71071e4d07aebb1f083', u'sha512': u'7cfa230b2ad2290d38d0da9f0320c1de0dcc9acc40a74154d8f6461c9acb63e7a41a34034b6d84fed6220e1a42afbaa0846efcfc85e1d83c5174f1f8d88d2694'}}}}}
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	-------- --------> [tuf/sig.py]	>>Function:  [verify_signature_over_metadata()]: returning
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keytype': u'ed25519', u'keyid': 'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'keyval': {u'public': u'729d9cb5f74688ef8e9a22fae1516f33ff98c7910b64bf3b66e6cfc51559840e'}, u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596', u'sig': u'8fad067e9791c5381b060fa8d5fdb42a8c6b2c8b15b0dfd726d7f86e152efb75b1fd696c6d04679ff87628f96143cc79fa0f67a53db92d645af65c9faa760807', u'method': 'ed25519'} using data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  Getting role keyids for rolename: targets repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [get_role_keyids()]:  returning roleinfo['keyids']: [u'c24b457b2ca4b3c2f415efdbbebb914a0d05c5345b9889bda044362589d6f596']
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  Getting role threshold for rolename: targets repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: imagerepo
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [get_role_threshold()]:  returning 
+	-------- --------> [tuf/sig.py]	>>Function:  [get_signature_status()]: returning
+	-------- --------> [tuf/sig.py]	>>Function:  [verify()]: returning
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  returning...
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.refesh_toplevel_metadata(self)]:  Returning...
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_target_list_from_director(self)]:  Extracting Director's instructions from the targets role in the Director repository's metadata. These must still be validated against the Image repository further calls.
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.targets_of_role()]:  Returning the output of targets_of_role(rolename) run on the updater for the given repository.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater.targets_of_role()]:  ...
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  Verifying if role exists. role: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._refresh_targets_metadata()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Loading current or previous metadata from file if there is a local file. metadata_set: previous metadata_role: targets
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Validating metadata...
+	--------> [tuf/client/updater.py]	>>Function:  [validate_metadata_set()]:  Validating metadata_set: previous
+	--------> [tuf/client/updater.py]	>>Function:  [validate_metadata_set()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Saving and constructing the full metadata path
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Loading current or previous metadata from file if there is a local file. metadata_set: current metadata_role: targets
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Validating metadata...
+	--------> [tuf/client/updater.py]	>>Function:  [validate_metadata_set()]:  Validating metadata_set: current
+	--------> [tuf/client/updater.py]	>>Function:  [validate_metadata_set()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Saving and constructing the full metadata path
+	-------- --------> [tuf/util.py]	>>Function:  [load_file()]:  Loading file for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/director/current/targets.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_file()]:  returning 
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_file()]:  Loading DER file for filepath: /home/joan/Escriptori/TFM/TFM/temp_primary5D3gG/metadata/director/current/targets.der
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_file()]:  returning 
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  Loading DER string for data: ?
+	-------- --------> [tuf/util.py]	>>Function:  [load_der_string()]:  returning 
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  Converting signed der to dersigned json. der_data: ?
+	--------> [tuf/asn1_codec.py]	>>Function:  [_ensure_valid_metadata_type_for_asn1(metadata_type)]:  Ensuring valid metadata type for asn1. metadata_type: targets
+	--------> [tuf/asn1_codec.py]	>>Function:  [convert_signed_der_to_dersigned_json(der_data)]:  returning 
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Extracting the 'signed' role object from 'metadata_signable'
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  Saving it in metadata store
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._load_metadata_from_file()]:  returning...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_metadata_if_changed()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._versioninfo_has_been_updated()]:  ...
+u'targets.der' up-to-date.
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
+	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._targets_of_role()]:  ...
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  Verifying if role exists. role: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_check_rolename()]:  Checking rolename for rolename: targets repository_name: director
+	--------> [tuf/roledb.py]	>>Function:  [_validate_rolename()]:  Validating rolename for rolename: targets
+	--------> [tuf/roledb.py]	>>Function:  [role_exists()]:  returning 
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_target_list_from_director(self)]:  Returning directed_targets
+[2020.03.04 20:21:02UTC] [primary] INFO [primary.py:primary_update_cycle():571]
+A correctly signed statement from the Director indicates that this vehicle has NO updates to install.
+
+[2020.03.04 20:21:02UTC] [primary] DEBUG [primary.py:primary_update_cycle():579]
+Retrieving validated image file metadata from Image and Director Repositories.
+
+[2020.03.04 20:21:02UTC] [primary] INFO [primary.py:primary_update_cycle():642]
+Metadata for the following Targets has been validated by both the Director and the Image repository. They will now be downloaded:[]
+
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.save_distributable_metadata_files(self)]:  Generates two metadata files, all validated by this Primary, placing them in the expected locations available for distribution to Secondaries
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.save_distributable_metadata_files(self)]:  Returning...
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.primary_update_cycle(self)]:  Returning...
+	[demo/demo_primary.py]	>>Function:  [generate_signed_vehicle_manifest()]:  Generating signed vehicle manifest
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.generate_signed_vehicle_manifest(self)]:  Put ECU manifests into a vehicle manifest and sign it. Vin: democar primary_ecu_serial: INFOdemocar ecu_version_manifests: {'TCUdemocar': [{u'signatures': [{u'keyid': '49309f114b857e4b29bfbff1c1c75df59f154fbc45539b2eb30c8a867843b2cb', u'sig': 'eab0b6175f625a6c716e4570f784d30beca0e8d45a5d645a3a83099a71da6d3b48f43a228a602e2f9483e0279d4dda259488c02d91d2e74174248f268c8d7204', u'method': 'ed25519'}], u'signed': {u'previous_timeserver_time': u'2020-03-04T20:16:34Z', u'timeserver_time': u'2020-03-04T20:16:34Z', u'ecu_serial': 'TCUdemocar', u'installed_image': {u'fileinfo': {u'length': 37, u'hashes': {u'sha256': '6b9f987226610bfed08b824c93bf8b2f59521fce9a2adef80c495f363c1c9c44', u'sha512': '706c283972c5ae69864b199e1cdd9b4b8babc14f5a454d0fd4d3b35396a04ca0b40af731671b74020a738b5108a78deb032332c36d6ae9f31fae2f8a70f7e1ce'}}, u'filepath': '/secondary_firmware.txt'}, u'attacks_detected': u''}}]}
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  Creating signature for key_dict ? and data for create it: ?
+	-------- --------> [tuf/keys.py]	>>Function:  [check_crypto_libraries()]:  Checking crypto libraries required_libraries: [u'ed25519']
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  Creating signature with public_key: ? private_key: ? data: ?
+	--------> [tuf/ed25519_keys.py]	>>Function:  [create_signature(public_key, private_key, data)]:  returning 
+	-------- --------> [tuf/keys.py]	>>Function:  [create_signature()]:  returning 
+	--------> [uptane/clients/primary.py]	>>Function:  [Primary.generate_signed_vehicle_manifest(self)]:  Returning signable_vehicle_manifest
+	[demo/demo_primary.py]	>>Function:  [generate_signed_vehicle_manifest()]:  Returning...
+	[demo/demo_primary.py]	>>Function:  [submit_vehicle_manifest_to_director()]:  Submitting vehicle manifest to director for signed_vehicle_manifest: ?
+Submitting the Primary's manifest to the Director.
+Submission of Vehicle Manifest complete.
+	[demo/demo_primary.py]	>>Function:  [submit_vehicle_manifest_to_director()]:  Returning...
+	[demo/demo_primary.py]	>>Function:  [update_cycle()]:  Returning...
+>>> 
