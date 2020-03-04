@@ -46,7 +46,7 @@ uptane.DEMO_MODE = True
 LOG_PREFIX = uptane.WHITE + 'Timeserver:' + uptane.ENDCOLORS + ' '
 
 #TODO: To be removed
-TO_PRINT = uptane.YELLOW + '\t[demo/demo_secondary.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_secondary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 timeserver_listener_thread = None
 
