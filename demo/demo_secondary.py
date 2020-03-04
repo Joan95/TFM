@@ -89,7 +89,7 @@ def clean_slate(
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate(use_new_keys, vin, ecu_serial, primary_host, primary_port)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'clean_slate()')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Cleaning slate for vin:', vin, 'ecu_serial:', ecu_serial, 'primary_host:', primary_host)))
   #TODO: Until here
 
   global secondary_ecu
@@ -664,6 +664,12 @@ def register_self_with_primary():
   In practice, this would probably be done out of band, when the ECU is put
   into the vehicle during assembly, not by the Secondary itself.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_self_with_primary()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Send the Primary a message to register our ECU serial number', secondary_ecu.ecu_serial)))
+  #TODO: Until here
+
   # Connect to the Primary
   server = xmlrpc_client.ServerProxy(
     'http://' + str(_primary_host) + ':' + str(_primary_port))

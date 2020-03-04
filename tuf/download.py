@@ -58,8 +58,6 @@ logger = logging.getLogger('tuf.download')
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/download.py]\n\t\t\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
-TO_PRINT_END = '\n'
 
 
 def safe_download(url, required_length):
@@ -101,9 +99,9 @@ def safe_download(url, required_length):
     A 'tuf.util.TempFile' file-like object that points to the contents of 'url'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[safe_download()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[safe_download(url, required_length)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Safe Downloading from url:', url)))
   #TODO: Until here
 
   # Do all of the arguments have the appropriate format?
@@ -170,9 +168,9 @@ def unsafe_download(url, required_length):
     A 'tuf.util.TempFile' file-like object that points to the contents of 'url'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[unsafe_download()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[unsafe_download(url, required_length)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Unsafe Downloading from url:', url)))
   #TODO: Until here
 
   # Do all of the arguments have the appropriate format?
@@ -239,9 +237,9 @@ def _download_file(url, required_length, STRICT_REQUIRED_LENGTH=True):
     A 'tuf.util.TempFile' file-like object that points to the contents of 'url'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_download_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Opening connection against url:', url)))
   #TODO: Until here
 
   # Do all of the arguments have the appropriate format?
@@ -325,9 +323,9 @@ def _download_fixed_amount_of_data(connection, temp_file, required_length):
       The total number of bytes downloaded for the desired file.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_download_fixed_amount_of_data()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_download_fixed_amount_of_data(connection, temp_file, required_length)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Helper function, where the download really happens. Downloading...')))
   #TODO: Until here
 
   # Tolerate servers with a slow start by ignoring their delivery speed for
@@ -419,9 +417,9 @@ def _get_request(url):
   https://github.com/pypa/pip/blob/d0fa66ecc03ab20b7411b35f7c7b423f31f77761/pip/download.py#L147
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_request()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_request(url)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Wrapping the URL to retrieve to protect against \'creative\' interpretation of the RFC')))
   #TODO: Until here
 
   return six.moves.urllib.request.Request(url, headers={'Accept-encoding': 'identity'})
@@ -437,9 +435,9 @@ def _get_opener(scheme=None):
   https://github.com/pypa/pip/blob/d0fa66ecc03ab20b7411b35f7c7b423f31f77761/pip/download.py#L178
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_opener()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_opener(scheme)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to \'https\'')))
   #TODO: Until here
 
   if scheme == "https":
@@ -490,9 +488,9 @@ def _open_connection(url):
     File-like object.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_open_connection()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_open_connection(url)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Openning connection with url:', url)))
   #TODO: Until here
 
   # urllib2.Request produces a Request object that allows for a finer control
@@ -535,9 +533,9 @@ def _get_content_length(connection):
       return None; otherwise we would return a nonnegative integer.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_content_length()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_content_length(connection)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Getting the length content')))
   #TODO: Until here
 
   try:
@@ -590,9 +588,9 @@ def _check_content_length(reported_length, required_length, strict_length=True):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_content_length()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_content_length(reported_length, required_length, strict_length)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Checking length of content')))
   #TODO: Until here
 
   logger.debug('The server reported a length of '+repr(reported_length)+' bytes.')
@@ -656,9 +654,9 @@ def _check_downloaded_length(total_downloaded, required_length,
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_downloaded_length()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_downloaded_length(total_downloaded, required_length, STRICT_REQUIRED_LENGTH)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Checking length of downloaded content')))
   #TODO: Until here
 
   if total_downloaded == required_length:
@@ -703,7 +701,7 @@ class VerifiedHTTPSConnection(six.moves.http_client.HTTPSConnection):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSConnection.connect()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Verifying HTTPS Connection')))
     #TODO: Until here
 
     self.connection_kwargs = {}
@@ -752,7 +750,7 @@ class VerifiedHTTPSHandler(six.moves.urllib.request.HTTPSHandler):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.__init__()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Initializating')))
     #TODO: Until here
 
 
@@ -763,7 +761,7 @@ class VerifiedHTTPSHandler(six.moves.urllib.request.HTTPSHandler):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.https_open()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Opening HTTPS request')))
     #TODO: Until here
 
 

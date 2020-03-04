@@ -124,8 +124,6 @@ _SUPPORTED_ED25519_SIGNING_METHODS = ['ed25519']
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
-TO_PRINT_END = '\n'
 
 
 def generate_public_and_private():
@@ -247,7 +245,7 @@ def create_signature(public_key, private_key, data):
     stored in the dictionary returned.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[create_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[create_signature(public_key, private_key, data)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s ?' % (I_TO_PRINT, 'Creating signature with public_key:', '?', 'private_key:', '?', 'data:')))
@@ -354,7 +352,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     Boolean.  True if the signature is valid, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[verify_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW_BG + '[verify_signature(public_key, method, signature, data, use_pynacl)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Determine whether the private key corresponding to public_key:', '?', 'produced signature:', '?', 'over data:', '?', 'using method:', '?')))

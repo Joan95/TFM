@@ -65,6 +65,9 @@ def clean_slate(use_new_keys=False):
   global repo
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Cleaning slate with use_new_keys:', use_new_keys)))
+  #TODO: Until here
 
   print(LOG_PREFIX + 'Initializing repository')
 
@@ -295,6 +298,10 @@ def write_to_live():
   global repo
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Writing to live')))
+  #TODO: Until here
+
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'timestamp and snapshot marked as dirty')
@@ -349,10 +356,9 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   """
   global repo
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live()]: ' + ENDCOLORS
-
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live(target_fname, filepath_in_repo)]: ' + ENDCOLORS
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Add target to image repo. Target: ' + target_fname + 'filepath_in_repo: ' + filepath_in_repo)
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding target to image repo. Target:',  target_fname, 'filepath_in_repo:', filepath_in_repo)))
   #TODO: Until here
 
   tuf.formats.RELPATH_SCHEMA.check_match(target_fname)
@@ -379,6 +385,9 @@ def host():
   global server_process
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'hosting...')))
+  #TODO: Until here
 
   #TODO: Print to be deleted
   print(I_TO_PRINT + 'Attempting to start server process...')
@@ -455,10 +464,12 @@ def listen():
   http.
   """
 
-  global xmlrpc_service_thread
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[listen()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'listening')))
+  #TODO: Until here
 
-  global TO_PRINT
-  TO_PRINT = TO_PRINT + uptane.YELLOW + '[listen()]: ' + ENDCOLORS
+  global xmlrpc_service_thread
 
   if xmlrpc_service_thread is not None:
     print(LOG_PREFIX + 'Sorry: there is already a listening Image Repository '
@@ -660,6 +671,11 @@ def add_target_and_write_to_live(filename, file_content):
   file, and writes the changes to the live repository.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_target_and_write_to_live(filename, file_content)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding target and writing to live for filename:', filename, 'file_content:', file_content)))
+  #TODO: Until here
+
   # Create 'filename' in the current working directory, but it should
   # ideally be to a temporary destination.  The demo code will eventually
   # be modified to use temporary directories (which will cleaned up after
@@ -694,6 +710,11 @@ def revoke_compromised_keys():
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[revoke_compromised_keys()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Revoking comporimised keys')))
+  #TODO: Until here
 
   global repo
 

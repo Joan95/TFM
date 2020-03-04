@@ -45,6 +45,9 @@ uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.WHITE + 'Timeserver:' + uptane.ENDCOLORS + ' '
 
+#TODO: To be removed
+TO_PRINT = uptane.YELLOW + '\t[demo/demo_secondary.py]\t>>Function: ' + ENDCOLORS + ' '
+
 timeserver_listener_thread = None
 
 # Restrict director requests to a particular path.
@@ -57,6 +60,12 @@ class RequestHandler(xmlrpc_server.SimpleXMLRPCRequestHandler):
 
 
 def load_timeserver_key(use_new_keys=False):
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_timeserver_key(use_new_keys)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Loading timeserver key with use_new_keys:', use_new_keys)))
+  #TODO: Until here
+
   if use_new_keys:
     demo.generate_key('timeserver')
   # Load in from the generated files (whether new or old).
@@ -78,6 +87,11 @@ def get_signed_time_der_wrapper(nonces):
   Uptane Python dictionary format.
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signed_time_der_wrapper(nonces)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Encapsulates the binary data of the DER encoding of the timeserver attestation in an XMLPRC Binary Object, for delivery via XMLRPC within the demo.')))
+  #TODO: Until here
+
   der_attestation = timeserver.get_signed_time_der(nonces)
 
   return xmlrpc_client.Binary(der_attestation)
@@ -91,6 +105,10 @@ def listen(use_new_keys=False):
   Listens on TIMESERVER_PORT for xml-rpc calls to functions:
    - get_signed_time(nonces)
   """
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[listen(use_new_keys)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Listening on TIMESERVER_PORT for xml-rpc calls with use_new_keys:', use_new_keys)))
+  #TODO: Until here
 
   global timeserver_listener_thread
 
@@ -135,6 +153,12 @@ def test_demo_timeserver():
   Test the demo timeserver.
   # TODO: Consider moving these tests into a demo integration test module.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[test_demo_timeserver()]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Testing the Demo Timeserver')))
+  #TODO: Until here
+
   # Prepare to validate signatures.
   timeserver_key_pub = demo.import_public_key('timeserver')
   tuf.formats.ANYKEY_SCHEMA.check_match(timeserver_key_pub)

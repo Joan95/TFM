@@ -77,7 +77,10 @@ def clean_slate(use_new_keys=False):
 
   global director_service_instance
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate(use_new_keys)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'cleaning slate with use_new_keys:', use_new_keys)))
+  #TODO: Until here
 
   director_dir = os.path.join(uptane.WORKING_DIR, 'director')
 
@@ -225,6 +228,12 @@ def clean_slate(use_new_keys=False):
 def write_to_live(vin_to_update=None):
   # Release updated metadata.
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live(vin_to_update)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Writing to live with vin_to_update:', vin_to_update)))
+  #TODO: Until here
+
+
   # For each vehicle repository:
   #   - write metadata.staged
   #   - copy metadata.staged to the live metadata directory
@@ -292,6 +301,13 @@ def backup_repositories(vin=None):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[backup_repositories(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s' % (I_TO_PRINT, 'backuping repositories for vin:', vin, 'Metadata is copied from \{repo_dir}\/metadata.staged\' to \'{repo_dir}\/metadata.backup\'')))
+  #TODO: Until here
+
+
   if vin is None:
     repos_to_backup = director_service_instance.vehicle_repositories.keys()
   else:
@@ -338,6 +354,12 @@ def restore_repositories(vin=None):
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[restore_repositories(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Restoring repositories for vin:', vin)))
+  #TODO: Until here
+
   if vin is None:
     repos_to_restore = director_service_instance.vehicle_repositories.keys()
   else:
@@ -419,6 +441,11 @@ def revoke_compromised_keys():
   <Returns>
     None.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[revoke_compromised_keys()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Revoke the current Timestamp, Snapshots, and Targets keys for all vehicles, and generate a new key for each role. This is a high-level version of the common function to update a role key. The director service instance is also updated with the key changes.')))
+  #TODO: Until here
 
   global director_service_instance
 
@@ -684,6 +711,12 @@ def add_target_to_director(target_fname, filepath_in_repo, vin, ecu_serial):
       Complies with uptane.formats.ECU_SERIAL_SCHEMA
 
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[adding_target_to_director(target_fname, filepath_in_repo, vin, ecu_serial)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding target to director with target_fname:', target_fname, 'filepath_in_repo:', filepath_in_repo, 'vin:', vin, 'ecu_serial:', ecu_serial)))
+  #TODO: Until here
+
   uptane.formats.VIN_SCHEMA.check_match(vin)
   uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
   tuf.formats.RELPATH_SCHEMA.check_match(target_fname)
@@ -725,6 +758,11 @@ def host():
   If this module already started a server process to host the repo, nothing will
   be done.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[host()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Hosting')))
+  #TODO: Until here
 
 
   global repo_server_process
@@ -801,6 +839,12 @@ def register_vehicle_manifest_wrapper(
       along to the director module.
 
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_vehicle_manifest_wrapper(vin, primary_ecu_serial, signed_vehicle_manifest)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Wrapper previous to registering vehicle manifest for vin:', vin, 'primary_ecu_serial:', primary_ecu_serial, 'signed_vehicle_manifest:', '?')))
+  #TODO: Until here
+
   if tuf.conf.METADATA_FORMAT == 'der':
     director_service_instance.register_vehicle_manifest(
         vin, primary_ecu_serial, signed_vehicle_manifest.data)
@@ -820,6 +864,11 @@ def listen():
   Note that you must also run host() in order to serve the metadata files via
   http.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[listening()]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Listening ...')))
+  #TODO: Until here
 
   global director_service_thread
 
@@ -1021,6 +1070,11 @@ def backup_timestamp(vin):
   >>> dd.backup_timestamp('111')
   """
 
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[backup_timestamp(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Backuping timestamp for vin:', vin)))
+  #TODO: Until here
+
   timestamp_filename = 'timestamp.' + tuf.conf.METADATA_FORMAT
   timestamp_path = os.path.join(demo.DIRECTOR_REPO_DIR, vin, 'metadata',
       timestamp_filename)
@@ -1048,6 +1102,11 @@ def replay_timestamp(vin):
   >>> dd.backup_timestamp('111')
   >>> dd.replay_timestamp()
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[replay_timestamp(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Moving \'backup_timestamp.der\' to \'timestamp.der\' for vin:', vin)))
+  #TODO: Until here
 
   timestamp_filename = 'timestamp.' + tuf.conf.METADATA_FORMAT
   backup_timestamp_path = os.path.join(demo.DIRECTOR_REPO_DIR, vin,
@@ -1084,6 +1143,11 @@ def restore_timestamp(vin):
   >>> dd.replay_timestamp()
   >>> dd.restore_timestamp()
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[restore_timestamp(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Restoring timestamp for vin:', vin)))
+  #TODO: Until here
 
   timestamp_filename = 'timestamp.' + tuf.conf.METADATA_FORMAT
   current_timestamp_backup = os.path.join(demo.DIRECTOR_REPO_DIR, vin,
@@ -1252,6 +1316,12 @@ def clear_vehicle_targets(vin):
   TODO: In the future, adding a target assignment to the Director for a given
   ECU should replace any other target assignment for that ECU.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_vehicle_targets(vin)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Clearing vehicle targets for vin:', vin)))
+  #TODO: Until here
+
   print(LOG_PREFIX + 'CLEARING VEHICLE TARGETS for VIN ' + repr(vin))
   director_service_instance.vehicle_repositories[vin].targets.clear_targets()
 
@@ -1264,6 +1334,11 @@ def add_target_and_write_to_live(filename, file_content, vin, ecu_serial):
   High-level version of add_target_to_director() that creates 'filename'
   and writes the changes to the live directory repository.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_target_and_write_to_live(filename, file_content, vin, ecu_serial)]: ' + ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding target and writing to live for filename:', filename, 'file_content:', file_content, 'vin:', vin, 'ecu_serial:', ecu_serial)))
+  #TODO: Until here
 
   # Create 'filename' in the current working directory, but it should
   # ideally be to a temporary destination.  The demo code will eventually

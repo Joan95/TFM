@@ -52,13 +52,11 @@ else:
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.RED + '\t--------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
-TO_PRINT_END = '\n'
 
 
 def _ensure_valid_metadata_type_for_asn1(metadata_type):
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_ensure_valid_metadata_type_for_asn1()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_ensure_valid_metadata_type_for_asn1(metadata_type)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Ensuring valid metadata type for asn1. metadata_type:', metadata_type)))
   #TODO: Until here
@@ -89,7 +87,7 @@ def convert_signed_der_to_dersigned_json(der_data):
 
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_der_to_dersigned_json()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_der_to_dersigned_json(der_data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed der to dersigned json. der_data:', '?')))
   #TODO: Until here
@@ -240,7 +238,7 @@ def convert_signed_metadata_to_der(
 
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_metadata_to_der()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[convert_signed_metadata_to_der(signed_metadata, private_key, resign, only_signed)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Converting signed metadata to der. signed_metadata:', signed_metadata)))
   #TODO: Until here

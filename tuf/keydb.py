@@ -58,8 +58,6 @@ _keydb_dict['default'] = {}
 # TODO: To be deleted
 import uptane
 TO_PRINT = uptane.GREEN + '\t--------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATE = '\n\t\t\t\t'
-TO_PRINT_END = '\n'
 
 
 def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
@@ -97,7 +95,7 @@ def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb_from_root_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb_from_root_metadata(root_metadata, repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating keydb from metadata:', root_metadata, 'repository_name:', repository_name)))
@@ -178,7 +176,7 @@ def create_keydb(repository_name):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_keydb(repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Create new keyDB for repository_name:', repository_name)))
@@ -225,7 +223,7 @@ def remove_keydb(repository_name):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_keydb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_keydb(repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Removing keyDB for repository_name:', repository_name)))
@@ -293,7 +291,7 @@ def add_key(key_dict, keyid=None, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_key(key_dict, keyid, repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding key to keyDB for repository_name:', repository_name, 'key_dict:', key_dict, 'keyid:', keyid)))
@@ -367,7 +365,7 @@ def get_key(keyid, repository_name='default'):
     to 'tuf.formats.RSAKEY_SCHEMA' is returned.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_key(keyid, repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting key for keyid: ', keyid, 'repository_name:', repository_name)))
@@ -431,7 +429,7 @@ def remove_key(keyid, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_key(keyid, repository_name)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing key from keyDB: ', keyid, 'repository_name:', repository_name)))
@@ -491,7 +489,7 @@ def clear_keydb(repository_name='default', clear_all=False):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_keydb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_keydb(repository_name, clear_all)]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Clearing keyDB for repository_name:', repository_name, 'clear_all:', clear_all)))
