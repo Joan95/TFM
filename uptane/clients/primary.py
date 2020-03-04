@@ -275,7 +275,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.__init__(self, full_client_dir, director_repo_name, vin, ecu_serial, primary_key, time, timeserver_public_key, my_secondaries)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'This class contains the necessary code to perform Uptane validation of images and metadata, and core functionality supporting distribution of metadata and images to Secondary ECUs, combining ECU Manifests into a Vehicle Manifest and signing it, combining tokens for a Timeserver request, validating the response, etc.')))
     #TODO: Until here
@@ -367,7 +367,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
           if we could not obtain and verify all necessary metadata
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.refesh_toplevel_metadata()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.refesh_toplevel_metadata(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Refreshes client\'s metadata for the top-level roles: root, targets, snapshot, and timestamp')))
     #TODO: Until here
@@ -395,7 +395,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     the Director repository's metadata. These must still be validated against
     the Image Repository in further calls.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_target_list_from_director()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_target_list_from_director(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Extracting Director\'s instructions from the targets role in the Director repository\'s metadata. These must still be validated against the Image repository further calls.')))
     #TODO: Until here
@@ -469,7 +469,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
 
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_validated_target_info()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_validated_target_info(self, target_filepath)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns trustworthy target information for the given target file (specified by its file path), from the Director, validated against the Image Repository (or whichever repositories are required per the pinned.json file).')))
     #TODO: Until here
@@ -554,7 +554,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
           file of type tuf.conf.METADATA_FORMAT.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.primary_update_cycle()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.primary_update_cycle(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Download fresh metadata and images for this vehicle, as instructed by the Director and validated by the Image Repository. Begin by obtaining trustworthy target file metadata from the repositories, then instruct TUF to download matching files. Assign the target files to ECUs and keep that mapping in memory for later distribution.')))
     #TODO: Until here
@@ -785,7 +785,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
       - Else, a filename for the image file to distribute to that ECU
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_image_fname_for_ecu()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_image_fname_for_ecu(self, ecu_serial)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Getting the filename for the image file to ditribute to ECU with ecu_serial:', ecu_serial)))
     #TODO: Until here
@@ -827,7 +827,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     maintaining the interfaces with TUF and demonstration code to do this with
     an archive file.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_full_metadata_archive_fname()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_full_metadata_archive_fname(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns the absolute-path filename of an archive file (currently zip) containing all metadata from repositories necessary for a Full-Verification Secondary ECU to validate target files.')))
     #TODO: Until here
@@ -854,7 +854,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     file is completely written. If this Primary has never completed an update
     cycle, it will not exist yet.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_partial_metadata_fname()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_partial_metadata_fname(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns the absolute-path filename of the Director\'s targets.json metadata file, necessary for performing partial validation of target files (as a weak - \"partial validation\" - Secondary ECU would.')))
     #TODO: Until here
@@ -886,7 +886,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
       Ensures that ecu_serial has the right format.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.update_exists_for_ecu()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.update_exists_for_ecu(self, ecu_serial)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns True if the Director has sent us instructions for the Secondary ECU specified, else returns False.')))
     #TODO: Until here
@@ -923,7 +923,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     If the Primary has never received a valid timeserver attestation, this
     returns None.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_last_timeserver_attestation()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_last_timeserver_attestation(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns the most recent validated timeserver attestation. If the Primary has never received a valid timeserver attestation, this returns None.')))
     #TODO: Until here
@@ -971,7 +971,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     Support multiple manifests from the same ECU.
     Output will comply with uptane.formats.VEHICLE_VERSION_MANIFEST_SCHEMA.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.generate_signed_vehicle_manifest()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.generate_signed_vehicle_manifest(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Put ECU manifests into a vehicle manifest and sign it. Vin:', self.vin, 'primary_ecu_serial:', self.ecu_serial, 'ecu_version_manifests:', self.ecu_manifests)))
     #TODO: Until here
@@ -1034,7 +1034,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     through some other mechanism when a new Secondary ECU is installed in the
     vehicle.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.register_new_secondary()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.register_new_secondary(self, ecu_serial)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Currently called by Secondaries, but one would expect that this would happen through some other mechanism when a new Secondary ECU is installed in the vehicle.')))
     #TODO: Until here
@@ -1071,6 +1071,12 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
         if the given ecu_serial is not registered with this Primary
 
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary._check_ecu_serial(self, ecu_serial)]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Checking ecu_serial:', ecu_serial)))
+    #TODO: Until here
+
     # Check argument format.
     uptane.formats.ECU_SERIAL_SCHEMA.check_match(ecu_serial)
 
@@ -1157,7 +1163,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
       nonce will be added to self.nonces_to_send
 
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.register_ecu_manifest()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.register_ecu_manifest(self, vin, ecu_serial, nonce, signed_ecu_manifest, force_pydict)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Called by Secondaries (in the demo, this is via an XMLRPC interface, or through another interface and passed through the XMLRPC interface). The Primary need not track ECU keys, so calling this doesn\'t result in a verification of the ECU\'s signature on the ECU manifest. This information is bundled together in a single vehicle report to the Director service.')))
     #TODO: Until here
@@ -1233,7 +1239,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
      - empties self.nonces_to_send, to be populated from new messages from
        Secondaries.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_nonces_to_send_and_rotate()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.get_nonces_to_send_and_rotate(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'This should be called once when it is time to make a request for a signed attestation from the Timeserver.')))
     #TODO: Until here
@@ -1272,7 +1278,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     conforms to uptane.formats.SIGNABLE_TIMESERVER_ATTESTATION_SCHEMA.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.update_time()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.update_time(self, timeserver_attestation)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'This should be called after get_nonces_to_send_and_rotate has been called and the nonces returned from that have been sent in a request for a time attestation from the Timeserver.')))
     #TODO: Until here
@@ -1366,7 +1372,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     conditions.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.save_distributable_metadata_files()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.save_distributable_metadata_files(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Generates two metadata files, all validated by this Primary, placing them in the expected locations available for distribution to Secondaries')))
     #TODO: Until here

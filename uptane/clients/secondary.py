@@ -343,7 +343,7 @@ class Secondary(object):
     the ECU Manifest will include that in the ECU Manifest (attacks_detected).
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.generate_signed_vehicle_manifest()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.generate_signed_vehicle_manifest(self, description_of_attacks_observed)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returns a signed ECU manifest indicating self.firmware_fileinfo. If the optional description_of_attacks_observed argument is provided, the ECU Manifest will include that in the ECU Manifest (attacks_detected).')))
     #TODO: Until here
@@ -415,7 +415,7 @@ class Secondary(object):
     If verification is successful, switch to a new nonce for next time.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.update_time()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.update_time(self, timeserver_attestation)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'The function attemps to verify the time attestation from the Time Server, distributed to us by the Primary. If timeserver_attestation is correctly signed by the expected Timeserver key, and it lists the nonce we expected it to list (the one we last used in a request for the time), then this Secondary\'s time is updated. The new time will be used by this client (via TUF) in in place of system time when checking metadata for expiration.')))
     #TODO: Until here
@@ -509,7 +509,7 @@ class Secondary(object):
           if we could not obtain and verify all necessary metadata
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.refesh_toplevel_metadata()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.refesh_toplevel_metadata(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Refreshes client\'s metadata for the top-level roles: root, targets, snapshot, and timestamp')))
     #TODO: Until here
@@ -562,6 +562,11 @@ class Secondary(object):
 
     """
 
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.fully_validate_metadata(self)]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Treats the unvalidated metadata obtained from the Primary (which the Secondary does not fully trust) like a set of local TUF repositories, validating it against the older metadata this Secondary already has and already validated.')))
+    #TODO: Until here
+
     # Refresh the top-level metadata first (all repositories).
     self.refresh_toplevel_metadata()
 
@@ -597,6 +602,12 @@ class Secondary(object):
 
 
   def get_validated_target_info(self, target_filepath):
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.get_validated_target_info(self, target_filepath)]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Getting validated target info')))
+    #TODO: Until here
+
     """
     COPIED EXACTLY, MINUS COMMENTS, from primary.py.
     # TODO: Refactor later.
@@ -626,6 +637,12 @@ class Secondary(object):
 
 
   def process_metadata(self, metadata_archive_fname):
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.process_metadata(self, metadata_archive_fname)]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Processing metadata for metadata_archive_fname:', metadata_archive_fname)))
+    #TODO: Until here
+
     """
     Expand the metadata archive using _expand_metadata_archive()
     Validate metadata files using fully_validate_metadata()
@@ -658,6 +675,12 @@ class Secondary(object):
     susceptible to slow retrieval, and not introduce vulnerabilities in the
     face of a malicious Primary.
     """
+
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Secondary.process_metadata(self, metadata_archive_fname)]: ' + uptane.ENDCOLORS
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Processing metadata for metadata_archive_fname:', metadata_archive_fname)))
+    #TODO: Until here
+
     tuf.formats.RELPATH_SCHEMA.check_match(metadata_archive_fname)
     if not os.path.exists(metadata_archive_fname):
       raise uptane.Error('Indicated metadata archive does not exist. '

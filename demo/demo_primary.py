@@ -304,6 +304,8 @@ def update_cycle():
   # FIRST: TIME
   #
 
+  print(str('%s %s' % (I_TO_PRINT, 'First, we\'ll send the Timeserver a request for a signed time, with the nonces Secondaries have sent us since last time.')))
+
   # First, we'll send the Timeserver a request for a signed time, with the
   # nonces Secondaries have sent us since last time. (This also saves these
   # nonces as "sent" and empties the Primary's list of nonces to send.)
