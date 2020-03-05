@@ -1929,9 +1929,9 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_metadata_file()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_metadata_file(self, metadata_role, remote_filename, upperbound_filelength, expected_version, compression_algorithm)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Trying to download information for metadata_role:', metadata_role)))
     #TODO: Until here
 
     file_mirrors = tuf.mirrors.get_list_of_mirrors('meta', remote_filename,
@@ -2256,9 +2256,9 @@ class SingleRepoUpdater(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_metadata()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._update_metadata(self, metadata_role, upperbound_filelength, version, compression_algorithm)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Update metadata and install it for metadata_role:', metadata_role)))
     #TODO: Until here
 
     metadata_filename = metadata_role + '.' + tuf.conf.METADATA_FORMAT
