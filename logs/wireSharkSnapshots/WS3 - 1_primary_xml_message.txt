@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<methodCall>
+    <methodName>get_signed_time_der</methodName>
+    <params>
+        <param>
+            <value>
+                <array>
+                    <data>
+                        <value>
+                            <int>1498130772</int>
+                        </value>
+                    </data>
+                </array>
+            </value>
+        </param>
+    </params>
+</methodCall>
