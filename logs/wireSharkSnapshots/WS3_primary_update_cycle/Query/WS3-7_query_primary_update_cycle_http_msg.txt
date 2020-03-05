@@ -1,0 +1,70 @@
+0000   00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
+0010   04 46 29 c1 40 00 40 06 0e ef 7f 00 00 01 7f 00   .F).@.@.........
+0020   00 01 c3 82 77 25 03 6b 2b e7 6b cc eb 0f 80 18   ....w%.k+.k.....
+0030   01 56 02 3b 00 00 01 01 08 0a 00 20 6b e6 00 20   .V.;....... k.. 
+0040   6b e6 50 4f 53 54 20 2f 52 50 43 32 20 48 54 54   k.POST /RPC2 HTT
+0050   50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 30 2e 30   P/1.1..Host: 0.0
+0060   2e 30 2e 30 3a 33 30 35 30 31 0d 0a 41 63 63 65   .0.0:30501..Acce
+0070   70 74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69   pt-Encoding: gzi
+0080   70 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 78   p..User-Agent: x
+0090   6d 6c 72 70 63 6c 69 62 2e 70 79 2f 31 2e 30 2e   mlrpclib.py/1.0.
+00a0   31 20 28 62 79 20 77 77 77 2e 70 79 74 68 6f 6e   1 (by www.python
+00b0   77 61 72 65 2e 63 6f 6d 29 0d 0a 43 6f 6e 74 65   ware.com)..Conte
+00c0   6e 74 2d 54 79 70 65 3a 20 74 65 78 74 2f 78 6d   nt-Type: text/xm
+00d0   6c 0d 0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74   l..Content-Lengt
+00e0   68 3a 20 38 37 34 0d 0a 0d 0a 3c 3f 78 6d 6c 20   h: 874....<?xml 
+00f0   76 65 72 73 69 6f 6e 3d 27 31 2e 30 27 3f 3e 0a   version='1.0'?>.
+0100   3c 6d 65 74 68 6f 64 43 61 6c 6c 3e 0a 3c 6d 65   <methodCall>.<me
+0110   74 68 6f 64 4e 61 6d 65 3e 73 75 62 6d 69 74 5f   thodName>submit_
+0120   76 65 68 69 63 6c 65 5f 6d 61 6e 69 66 65 73 74   vehicle_manifest
+0130   3c 2f 6d 65 74 68 6f 64 4e 61 6d 65 3e 0a 3c 70   </methodName>.<p
+0140   61 72 61 6d 73 3e 0a 3c 70 61 72 61 6d 3e 0a 3c   arams>.<param>.<
+0150   76 61 6c 75 65 3e 3c 73 74 72 69 6e 67 3e 64 65   value><string>de
+0160   6d 6f 63 61 72 3c 2f 73 74 72 69 6e 67 3e 3c 2f   mocar</string></
+0170   76 61 6c 75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a   value>.</param>.
+0180   3c 70 61 72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c   <param>.<value><
+0190   73 74 72 69 6e 67 3e 49 4e 46 4f 64 65 6d 6f 63   string>INFOdemoc
+01a0   61 72 3c 2f 73 74 72 69 6e 67 3e 3c 2f 76 61 6c   ar</string></val
+01b0   75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 70 61   ue>.</param>.<pa
+01c0   72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c 62 61 73   ram>.<value><bas
+01d0   65 36 34 3e 0a 4d 49 49 42 72 6a 43 43 41 54 77   e64>.MIIBrjCCATw
+01e0   61 42 32 52 6c 62 57 39 6a 59 58 49 61 43 30 6c   aB2RlbW9jYXIaC0l
+01f0   4f 52 6b 39 6b 5a 57 31 76 59 32 46 79 41 67 45   ORk9kZW1vY2FyAgE
+0200   42 4d 49 49 42 48 7a 43 43 41 52 73 77 67 61 6f   BMIIBHzCCARswgao
+0210   61 43 6c 52 44 56 57 52 6c 62 57 39 6a 59 58 49   aClRDVWRlbW9jYXI
+0220   43 0a 42 46 35 67 44 4b 49 43 42 46 35 67 44 4b   C.BF5gDKICBF5gDK
+0230   49 77 67 59 38 61 46 79 39 7a 5a 57 4e 76 62 6d   IwgY8aFy9zZWNvbm
+0240   52 68 63 6e 6c 66 5a 6d 6c 79 62 58 64 68 63 6d   RhcnlfZmlybXdhcm
+0250   55 75 64 48 68 30 41 67 45 6c 41 67 45 43 4d 47   UudHh0AgElAgECMG
+0260   34 77 4a 51 6f 42 41 51 51 67 61 35 2b 59 0a 63   4wJQoBAQQga5+Y.c
+0270   69 5a 68 43 2f 37 51 69 34 4a 4d 6b 37 2b 4c 4c   iZhC/7Qi4JMk7+LL
+0280   31 6c 53 48 38 36 61 4b 74 37 34 44 45 6c 66 4e   1lSH86aKt74DElfN
+0290   6a 77 63 6e 45 51 77 52 51 6f 42 41 77 52 41 63   jwcnEQwRQoBAwRAc
+02a0   47 77 6f 4f 58 4c 46 72 6d 6d 47 53 78 6d 65 48   GwoOXLFrmmGSxmeH
+02b0   4e 32 62 53 34 75 72 77 55 39 61 0a 52 55 30 50   N2bS4urwU9a.RU0P
+02c0   31 4e 4f 7a 55 35 61 67 54 4b 43 30 43 76 63 78   1NOzU5agTKC0Cvcx
+02d0   5a 78 74 30 41 67 70 7a 69 31 45 49 70 34 33 72   Zxt0Agpzi1EIp43r
+02e0   41 79 4d 79 77 32 31 71 36 66 4d 66 72 69 2b 4b   AyMyw21q6fMfri+K
+02f0   63 50 66 68 7a 67 49 42 41 54 42 70 4d 47 63 45   cPfhzgIBATBpMGcE
+0300   49 45 6b 77 6e 78 46 4c 0a 68 58 35 4c 4b 62 2b   IEkwnxFL.hX5LKb+
+0310   2f 38 63 48 48 58 66 57 66 46 55 2b 38 52 56 4f   /8cHHXfWfFU+8RVO
+0320   62 4c 72 4d 4d 69 6f 5a 34 51 37 4c 4c 43 67 45   bLrMMioZ4Q7LLCgE
+0330   42 42 45 44 71 73 4c 59 58 58 32 4a 61 62 48 46   BBEDqsLYXX2JabHF
+0340   75 52 58 44 33 68 4e 4d 4c 37 4b 44 6f 31 46 70   uRXD3hNML7KDo1Fp
+0350   64 5a 46 6f 36 0a 67 77 6d 61 63 64 70 74 4f 30   dZFo6.gwmacdptO0
+0360   6a 30 4f 69 4b 4b 59 43 34 76 6c 49 50 67 4a 35   j0OiKKYC4vlIPgJ5
+0370   31 4e 32 69 57 55 69 4d 41 74 6b 64 4c 6e 51 58   1N2iWUiMAtkdLnQX
+0380   51 6b 6a 79 61 4d 6a 58 49 45 41 67 45 42 4d 47   QkjyaMjXIEAgEBMG
+0390   6b 77 5a 77 51 67 6d 6b 42 74 6d 65 4e 69 35 38   kwZwQgmkBtmeNi58
+03a0   6b 2b 0a 65 73 2f 68 35 4e 5a 59 55 69 45 78 57   k+.es/h5NZYUiExW
+03b0   2b 67 58 38 31 44 41 4a 72 76 75 68 4b 32 69 59   +gX81DAJrvuhK2iY
+03c0   4e 6f 4b 41 51 45 45 51 46 44 75 45 68 47 47 46   NoKAQEEQFDuEhGGF
+03d0   57 72 55 7a 4b 66 48 51 73 2f 77 38 4c 67 48 6e   WrUzKfHQs/w8LgHn
+03e0   6c 35 6e 71 41 46 62 2f 52 35 37 71 4a 41 5a 0a   l5nqAFb/R57qJAZ.
+03f0   72 57 6f 63 6a 4b 6b 5a 51 4f 44 44 45 31 33 64   rWocjKkZQODDE13d
+0400   4a 6e 36 68 35 30 33 39 4b 63 33 4f 65 48 5a 62   Jn6h5039Kc3OeHZb
+0410   4f 6b 42 55 47 69 47 61 34 2f 39 41 78 51 73 3d   OkBUGiGa4/9AxQs=
+0420   0a 3c 2f 62 61 73 65 36 34 3e 3c 2f 76 61 6c 75   .</base64></valu
+0430   65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 2f 70 61   e>.</param>.</pa
+0440   72 61 6d 73 3e 0a 3c 2f 6d 65 74 68 6f 64 43 61   rams>.</methodCa
+0450   6c 6c 3e 0a                                       ll>.

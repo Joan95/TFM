@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<methodCall>
+    <methodName>submit_vehicle_manifest</methodName>
+    <params>
+        <param>
+            <value>
+                <string>democar</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <string>INFOdemocar</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <base64>MIIBrjCCATwaB2RlbW9jYXIaC0lORk9kZW1vY2FyAgEBMIIBHzCCARswgaoaClRDVWRlbW9jYXICBF5gDKICBF5gDKIwgY8aFy9zZWNvbmRhcnlfZmlybXdhcmUudHh0AgElAgECMG4wJQoBAQQga5+YciZhC/7Qi4JMk7+LL1lSH86aKt74DElfNjwcnEQwRQoBAwRAcGwoOXLFrmmGSxmeHN2bS4urwU9aRU0P1NOzU5agTKC0CvcxZxt0Agpzi1EIp43rAyMyw21q6fMfri+KcPfhzgIBATBpMGcEIEkwnxFLhX5LKb+/8cHHXfWfFU+8RVObLrMMioZ4Q7LLCgEBBEDqsLYXX2JabHFuRXD3hNML7KDo1FpdZFo6gwmacdptO0j0OiKKYC4vlIPgJ51N2iWUiMAtkdLnQXQkjyaMjXIEAgEBMGkwZwQgmkBtmeNi58k+es/h5NZYUiExW+gX81DAJrvuhK2iYNoKAQEEQFDuEhGGFWrUzKfHQs/w8LgHnl5nqAFb/R57qJAZrWocjKkZQODDE13dJn6h5039Kc3OeHZbOkBUGiGa4/9AxQs=</base64>
+            </value>
+        </param>
+    </params>
+</methodCall>

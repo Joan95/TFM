@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<methodCall>
+	<methodName>register_new_secondary</methodName>
+	<params>
+		<param>
+			<value>
+				<string>TCUdemocar</string>
+			</value>
+		</param>
+	</params>
+</methodCall>

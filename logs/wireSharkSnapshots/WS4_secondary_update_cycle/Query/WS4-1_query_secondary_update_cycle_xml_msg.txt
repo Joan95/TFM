@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<methodCall>
+    <methodName>get_time_attestation_for_ecu</methodName>
+    <params>
+        <param>
+            <value>
+                <string>TCUdemocar</string>
+            </value>
+        </param>
+    </params>
+</methodCall>

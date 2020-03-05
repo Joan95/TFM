@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<methodResponse>
+    <params>
+        <param>
+            <value>
+                <base64>MIGBMBECAQEwBgIEWUupVAIEXmANogIBATBpMGcEIHnHltfoc4nR660E7c5J+u9hHROe5B6p+xkxcyr7+qwuCgEBBECD9MCVRSJsIc2h/BTxKFq0kYAQYaXPeVLiAymBU2xcrGNvtuSca8Ul7A2TOKKVJxh0EXMsH2fgml99nqDPdgUI</base64>
+            </value>
+        </param>
+    </params>
+</methodResponse>

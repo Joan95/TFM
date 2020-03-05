@@ -1,0 +1,60 @@
+0000   00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
+0010   03 b0 d3 a6 40 00 40 06 65 9f 7f 00 00 01 7f 00   .°Ó¦@.@.e.......
+0020   00 01 c8 d6 77 ed 3c 67 42 4b db f5 bd e4 80 18   ..ÈÖwí<gBKÛõ½ä..
+0030   01 56 01 a5 00 00 01 01 08 0a 00 09 67 7e 00 09   .V.¥........g~..
+0040   67 7e 50 4f 53 54 20 2f 52 50 43 32 20 48 54 54   g~POST /RPC2 HTT
+0050   50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 30 2e 30   P/1.1..Host: 0.0
+0060   2e 30 2e 30 3a 33 30 37 30 31 0d 0a 41 63 63 65   .0.0:30701..Acce
+0070   70 74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69   pt-Encoding: gzi
+0080   70 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 78   p..User-Agent: x
+0090   6d 6c 72 70 63 6c 69 62 2e 70 79 2f 31 2e 30 2e   mlrpclib.py/1.0.
+00a0   31 20 28 62 79 20 77 77 77 2e 70 79 74 68 6f 6e   1 (by www.python
+00b0   77 61 72 65 2e 63 6f 6d 29 0d 0a 43 6f 6e 74 65   ware.com)..Conte
+00c0   6e 74 2d 54 79 70 65 3a 20 74 65 78 74 2f 78 6d   nt-Type: text/xm
+00d0   6c 0d 0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74   l..Content-Lengt
+00e0   68 3a 20 37 32 34 0d 0a 0d 0a 3c 3f 78 6d 6c 20   h: 724....<?xml 
+00f0   76 65 72 73 69 6f 6e 3d 27 31 2e 30 27 3f 3e 0a   version='1.0'?>.
+0100   3c 6d 65 74 68 6f 64 43 61 6c 6c 3e 0a 3c 6d 65   <methodCall>.<me
+0110   74 68 6f 64 4e 61 6d 65 3e 73 75 62 6d 69 74 5f   thodName>submit_
+0120   65 63 75 5f 6d 61 6e 69 66 65 73 74 3c 2f 6d 65   ecu_manifest</me
+0130   74 68 6f 64 4e 61 6d 65 3e 0a 3c 70 61 72 61 6d   thodName>.<param
+0140   73 3e 0a 3c 70 61 72 61 6d 3e 0a 3c 76 61 6c 75   s>.<param>.<valu
+0150   65 3e 3c 73 74 72 69 6e 67 3e 64 65 6d 6f 63 61   e><string>democa
+0160   72 3c 2f 73 74 72 69 6e 67 3e 3c 2f 76 61 6c 75   r</string></valu
+0170   65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 70 61 72   e>.</param>.<par
+0180   61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c 73 74 72 69   am>.<value><stri
+0190   6e 67 3e 54 43 55 64 65 6d 6f 63 61 72 3c 2f 73   ng>TCUdemocar</s
+01a0   74 72 69 6e 67 3e 3c 2f 76 61 6c 75 65 3e 0a 3c   tring></value>.<
+01b0   2f 70 61 72 61 6d 3e 0a 3c 70 61 72 61 6d 3e 0a   /param>.<param>.
+01c0   3c 76 61 6c 75 65 3e 3c 69 6e 74 3e 31 37 33 38   <value><int>1738
+01d0   39 36 39 31 33 3c 2f 69 6e 74 3e 3c 2f 76 61 6c   96913</int></val
+01e0   75 65 3e 0a 3c 2f 70 61 72 61 6d 3e 0a 3c 70 61   ue>.</param>.<pa
+01f0   72 61 6d 3e 0a 3c 76 61 6c 75 65 3e 3c 62 61 73   ram>.<value><bas
+0200   65 36 34 3e 0a 4d 49 49 42 47 7a 43 42 71 68 6f   e64>.MIIBGzCBqho
+0210   4b 56 45 4e 56 5a 47 56 74 62 32 4e 68 63 67 49   KVENVZGVtb2NhcgI
+0220   45 58 6c 77 58 73 41 49 45 58 6c 77 58 73 44 43   EXlwXsAIEXlwXsDC
+0230   42 6a 78 6f 58 4c 33 4e 6c 59 32 39 75 5a 47 46   BjxoXL3NlY29uZGF
+0240   79 65 56 39 6d 61 58 4a 74 64 32 46 79 5a 53 35   yeV9maXJtd2FyZS5
+0250   30 0a 65 48 51 43 41 53 55 43 41 51 49 77 62 6a   0.eHQCASUCAQIwbj
+0260   41 6c 43 67 45 42 42 43 42 72 6e 35 68 79 4a 6d   AlCgEBBCBrn5hyJm
+0270   45 4c 2f 74 43 4c 67 6b 79 54 76 34 73 76 57 56   EL/tCLgkyTv4svWV
+0280   49 66 7a 70 6f 71 33 76 67 4d 53 56 38 32 50 42   Ifzpoq3vgMSV82PB
+0290   79 63 52 44 42 46 43 67 45 44 42 45 42 77 0a 62   ycRDBFCgEDBEBw.b
+02a0   43 67 35 63 73 57 75 61 59 5a 4c 47 5a 34 63 33   Cg5csWuaYZLGZ4c3
+02b0   5a 74 4c 69 36 76 42 54 31 70 46 54 51 2f 55 30   ZtLi6vBT1pFTQ/U0
+02c0   37 4e 54 6c 71 42 4d 6f 4c 51 4b 39 7a 46 6e 47   7NTlqBMoLQK9zFnG
+02d0   33 51 43 43 6e 4f 4c 55 51 69 6e 6a 65 73 44 49   3QCCnOLUQinjesDI
+02e0   7a 4c 44 62 57 72 70 38 78 2b 75 0a 4c 34 70 77   zLDbWrp8x+u.L4pw
+02f0   39 2b 48 4f 41 67 45 42 4d 47 6b 77 5a 77 51 67   9+HOAgEBMGkwZwQg
+0300   53 54 43 66 45 55 75 46 66 6b 73 70 76 37 2f 78   STCfEUuFfkspv7/x
+0310   77 63 64 64 39 5a 38 56 54 37 78 46 55 35 73 75   wcdd9Z8VT7xFU5su
+0320   73 77 79 4b 68 6e 68 44 73 73 73 4b 41 51 45 45   swyKhnhDsssKAQEE
+0330   51 4e 6e 64 56 4d 2b 77 0a 49 59 69 6e 6e 4f 69   QNndVM+w.IYinnOi
+0340   6a 61 5a 36 53 46 6e 6b 6a 6c 62 57 6c 73 79 63   jaZ6SFnkjlbWlsyc
+0350   49 4c 6e 64 32 6b 61 7a 67 65 32 4c 42 6e 53 70   ILnd2kazge2LBnSp
+0360   61 33 44 72 54 73 62 50 44 2f 74 31 39 42 4b 76   a3DrTsbPD/t19BKv
+0370   7a 4e 75 46 4f 42 77 49 63 37 36 6b 54 44 4d 77   zNuFOBwIc76kTDMw
+0380   53 77 67 69 47 0a 44 67 41 3d 0a 3c 2f 62 61 73   SwgiG.DgA=.</bas
+0390   65 36 34 3e 3c 2f 76 61 6c 75 65 3e 0a 3c 2f 70   e64></value>.</p
+03a0   61 72 61 6d 3e 0a 3c 2f 70 61 72 61 6d 73 3e 0a   aram>.</params>.
+03b0   3c 2f 6d 65 74 68 6f 64 43 61 6c 6c 3e 0a         </methodCall>.
