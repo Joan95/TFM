@@ -319,6 +319,10 @@ def update_cycle():
   print('Submitting a request for a signed time to the Timeserver.')
 
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Sending GET get_signed_time_der/get_signed_time request to TIMESERVER in port:', demo.TIMESERVER_PORT)))
+  #TOOD: Until here
+
   if tuf.conf.METADATA_FORMAT == 'der': # TODO: Should check setting in Uptane.
     time_attestation = tserver.get_signed_time_der(nonces_to_send).data
 

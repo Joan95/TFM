@@ -344,9 +344,9 @@ class Updater(object):
 
     TODO: Docstring this without reproducing the entire string from below. /:
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater.refresh()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Updater.refresh(self, unsafely_update_root_if_necessary, repo_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).')))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Runs refresh() on the SingleRepoUpdater corresponding to repo_name:', repo_name, 'If not provided, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).')))
     #TODO: Until here
 
     if repo_name is not None:
@@ -1501,9 +1501,9 @@ class SingleRepoUpdater(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.refresh()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater.refresh(self, unsafely_update_root_if_necessary)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Update the latest copies of the metadata for the top-level roles. The update request process follows a specific order to ensure the metadata files are securely updated: timestamp -> snapshot -> root (if necessary) -> targets.')))
     #TODO: Until here
 
     # Do the arguments have the correct format?
@@ -1529,6 +1529,10 @@ class SingleRepoUpdater(object):
     # _update_metadata() calls below do NOT perform an update if there
     # is insufficient trusted signatures for the specified metadata.
     # Raise 'tuf.NoWorkingMirrorError' if an update fails.
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Is the Root role expired? When the top-level roles are initially loaded from disk, their expiration is not checked to allow their updating when requested (and give the updater the chance to continue, rather than always failing with an expired metadata error.)')))
+    #TODO: Until here
 
     # TODO: Rather than this only-try-updating-root-"unsafely"-if-it's-expired
     #       stuff, just always update root first.  (TAP 5-related change, but
@@ -1557,12 +1561,20 @@ class SingleRepoUpdater(object):
         logger.info('An expired Root metadata was loaded and must be updated.')
         raise
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Trying again. If after trying to update Root, our currently-trusted Root metadata is *still* expired, then we must abort.')))
+    #TODO: Until here
 
     # If after trying to update Root, our currently-trusted Root metadata is
     # *still* expired, then we must abort.
     # We must not use expired Root metadata to verify other top-level roles.
     # Hold out for a non-expired Root.
     self._ensure_not_expired(self.metadata['current']['root'], 'root')
+
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Ensure that the role and key information of the top-level roles is the latest. We do this whether or not Root needed to be updated, in order to ensure that, e.g., the entries in roledb for top-level roles are populated with expected keyid info so that roles can be validated.')))
+    #TODO: Until here
 
 
     # Ensure that the role and key information of the top-level roles is the
@@ -3136,7 +3148,7 @@ class SingleRepoUpdater(object):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._ensure_not_expired()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Ensuring metadata has not expired for metadata_rolename:', metadata_rolename)))
     #TODO: Until here
 
     # Extract the expiration time.
@@ -3163,6 +3175,9 @@ class SingleRepoUpdater(object):
       raise tuf.ExpiredMetadataError(message)
 
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Retruning ...')))
+    #TODO: Until here
 
 
 

@@ -372,8 +372,17 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     print(str('%s %s' % (I_TO_PRINT, 'Refreshes client\'s metadata for the top-level roles: root, targets, snapshot, and timestamp')))
     #TODO: Until here
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Refresh the Director first, per the Uptane Standard.')))
+    #TODO: Until here
+
     # Refresh the Director first, per the Uptane Standard.
     self.updater.refresh(repo_name=self.director_repo_name)
+
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Now that we\'ve dealt with the Director repository, deal with any and all other repositories, presumably Image Repositories.')))
+    #TODO: Until here
 
     # Now that we've dealt with the Director repository, deal with any and all
     # other repositories, presumably Image Repositories.

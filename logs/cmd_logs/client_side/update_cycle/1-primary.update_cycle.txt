@@ -7,7 +7,11 @@ Submitting a request for a signed time to the Timeserver.
 	--------> [uptane/clients/primary.py]	>>Function:  [Primary.update_time(self, timeserver_attestation)]:  This should be called after get_nonces_to_send_and_rotate has been called and the nonces returned from that have been sent in a request for a time attestation from the Timeserver.
 	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Determine whether the private key belonging to 'key_dict' produced 'signature'. tuf.keys.verify_signature() will use the public key found in 'key_dict', the 'method' and 'sig' objects contained in 'signature', and 'data' to complete the verification.
 	[uptane/common.py]	>>Function:  [verify_signature_over_metadata()]:  Returning by calling verify_signature method
-	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to key_dict: {u'keyval': {u'public': u'5d7750b208dfc7ade8f6106b9c3fa25162d5a184f302161e429f19a79e66a908'}, u'keytype': u'ed25519', u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', u'sig': '83f4c09545226c21cda1fc14f1285ab491801061a5cf7952e2032981536c5cac636fb6e49c6bc525ec0d9338a29527187411732c1f67e09a5f7d9ea0cf760508', u'method': 'ed25519'} using data: ?
+	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  Verifying whether the private key belonging to 
+                        key_dict: {u'keyval': {u'public': u'5d7750b208dfc7ade8f6106b9c3fa25162d5a184f302161e429f19a79e66a908'}, 
+                        u'keytype': u'ed25519', u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', 
+                        u'keyid_hash_algorithms': [u'sha256', u'sha512']} produced signature: {u'keyid': '79c796d7e87389d1ebad04edce49faef611d139ee41ea9fb1931732afbfaac2e', 
+                        u'sig': '83f4c09545226c21cda1fc14f1285ab491801061a5cf7952e2032981536c5cac636fb6e49c6bc525ec0d9338a29527187411732c1f67e09a5f7d9ea0cf760508', u'method': 'ed25519'} using data: ?
 	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  Determine whether the private key corresponding to public_key: ? produced signature: ? over data: ? using method: ?
 	--------> [tuf/ed25519_keys.py]	>>Function:  [verify_signature(public_key, method, signature, data, use_pynacl)]:  returning 
 	-------- --------> [tuf/keys.py]	>>Function:  [verify_signature()]:  returning 
@@ -23,13 +27,32 @@ Time attestation validated. New time registered.
 Refreshing top level metadata from all repositories.
 
 	--------> [uptane/clients/primary.py]	>>Function:  [Primary.refesh_toplevel_metadata(self)]:  Refreshes client's metadata for the top-level roles: root, targets, snapshot, and timestamp
-	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).
+    
+    
+    
+	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. 
+                                            If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater.refresh()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._rebuild_key_and_role_db()]:  Non-public method that rebuilds the key and role databases from the currently trusted 'root' metadata object extracted from 'root.json'. This private method is called when a new\/updated 'root' metadata file is loaded. This method will only store the role information of the top-level roles (i.e., 'root', 'targets', 'snapshot', 'timestamp').
-	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  Creating keydb from metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, u'keys': {u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, u'expires': u'2021-03-05T01:58:08Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: director
-	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}
+	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  Creating keydb from metadata: {u'_type': u'Root', 
+                                u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, 
+                                           u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, 
+                                           u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, 
+                                           u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, 
+                                u'keys': {u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': 
+                                                    {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, 
+                                                    u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], 
+                                                    u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, 
+                                                    u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', 
+                                                    u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, 
+                                                    u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], 
+                                                    u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, 
+                                u'expires': u'2021-03-05T01:58:08Z', u'version': 1, 
+                                    u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: director
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: 
+                        {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}
 	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
 	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} hash_algorithm: sha256
 	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'} private: False
@@ -53,7 +76,8 @@ Refreshing top level metadata from all repositories.
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}, u'keytype': u'ed25519', u'keyid': '333d003373875f2e32c1ebc85c69e3b5a5281ab4da222486a095afdb7ed1be0b528948609b59172c68f6a4f707c1ce7a893d13a2243925a28923d315a5f33386', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
-	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}
+	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Constructing TUF key dictionary for key_metadata: 
+                        {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}
 	-------- --------> [tuf/keys.py]	>>Function:  [format_metadata_to_key()]:  Converting 'key_value' from 'key_metadata' to 'tuf.formats.KEY_SCHEMA' and generating its hash
 	-------- --------> [tuf/keys.py]	>>Function:  [_get_keyid()]:  Getting keyid for keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} hash_algorithm: sha256
 	-------- --------> [tuf/keys.py]	>>Function:  [format_keyval_to_metadata()]:  Return a dictionary conformant to 'tuf.formats.KEY_SCHEMA'keytype: ed25519 key_value: {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'} private: False
@@ -125,6 +149,7 @@ Refreshing top level metadata from all repositories.
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  Adding key to keyDB for repository_name: director key_dict: {u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}, u'keytype': u'ed25519', u'keyid': 'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2', u'keyid_hash_algorithms': [u'sha256', u'sha512']} keyid: None
 	--------> [tuf/keydb.py]	>>Function:  [add_key(key_dict, keyid, repository_name)]:  returning 
+    
 	--------> [tuf/keydb.py]	>>Function:  [create_keydb_from_root_metadata(root_metadata, repository_name)]:  returning 
 	--------> [tuf/roledb.py]	>>Function:  [create_roledb_from_root_metadata()]:  Creating roledb from root metadata: {u'_type': u'Root', u'roles': {u'snapshot': {u'threshold': 1, u'keyids': [u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97']}, u'root': {u'threshold': 1, u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2']}, u'targets': {u'threshold': 1, u'keyids': [u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6']}, u'timestamp': {u'threshold': 1, u'keyids': [u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc']}}, u'keys': {u'630cf584f392430b2119a4395e39624e86f5e5c5374507a789be5cf35bf090d6': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'99ef8790687ca252c4677a80a34e401efb7e17ccdf9b0fcb5f1bc3260c432cb9'}}, u'da9c65c96c5c4072f6984f7aa81216d776aca6664d49cb4dfafbc7119320d9cc': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'd1ab5126fd6f0e30944910e81c0448044dfe9d5a39f478212b2afa913bb7ca7c'}}, u'f93cfcf33d335ff43654ec6047e0a18dd5595ee3de53136b94c9c756788a0f97': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'228342cc8b78a65b8840ef5691a693d8c368e053a7e8e8f85faf7c83eff1e1d2'}}, u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2': {u'keytype': u'ed25519', u'keyid_hash_algorithms': [u'sha256', u'sha512'], u'keyval': {u'public': u'f3b4c231520580eca92e17ae1581a708f606f72d43cc200af493afeec22a5e79'}}}, u'expires': u'2021-03-05T01:58:08Z', u'version': 1, u'consistent_snapshot': False, u'compression_algorithms': [u'gz']} repository_name: director
 	--------> [tuf/roledb.py]	>>Function:  [add_role()]:  Adding role: root with roleinfo: {u'signatures': [], u'keyids': [u'fdba7eaa358fa5a8113a789f60c4a6ce29c4478d8d8eff3e27d1d77416696ab2'], u'expires': u'2021-03-05T01:58:08Z', u'partial_loaded': False, u'version': 1, u'compressions': [u''], u'threshold': 1, u'signing_keyids': []} with repository_name director
@@ -370,6 +395,9 @@ Not decompressing http://localhost:30401/democar/metadata/targets.der
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  returning...
+    
+    
+    
 	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  Runs refresh() on the SingleRepoUpdater corresponding to the given repository name. If not provided a repository name, runs refresh() on every SingleRepoUpdater (the updaters for every known repository).
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater.refresh()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._ensure_not_expired()]:  ...
@@ -717,6 +745,9 @@ Not decompressing http://localhost:30301/metadata/targets.der
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._update_versioninfo()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [SingleRepoUpdater._import_delegations()]:  ...
 	--------> [tuf/client/updater.py]	>>Function:  [Updater.refresh()]:  returning...
+    
+    
+    
 	--------> [uptane/clients/primary.py]	>>Function:  [Primary.refesh_toplevel_metadata(self)]:  Returning...
 	--------> [uptane/clients/primary.py]	>>Function:  [Primary.get_target_list_from_director(self)]:  Extracting Director's instructions from the targets role in the Director repository's metadata. These must still be validated against the Image repository further calls.
 	--------> [tuf/client/updater.py]	>>Function:  [Updater.targets_of_role()]:  Returning the output of targets_of_role(rolename) run on the updater for the given repository.
