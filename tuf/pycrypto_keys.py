@@ -154,7 +154,7 @@ _PBKDF2_ITERATIONS = tuf.conf.PBKDF2_ITERATIONS
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/pycrypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.YELLOW_BG + '-------> [tuf/pycrypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def generate_rsa_public_and_private(bits=_DEFAULT_RSA_KEY_BITS):
@@ -201,7 +201,7 @@ def generate_rsa_public_and_private(bits=_DEFAULT_RSA_KEY_BITS):
     A (public, private) tuple containing the RSA keys in PEM format.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_public_and_private()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_public_and_private(bits)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generating RSA public and private')))
   #TODO: Until here
@@ -226,7 +226,7 @@ def generate_rsa_public_and_private(bits=_DEFAULT_RSA_KEY_BITS):
   public = rsa_pubkey.exportKey(format='PEM')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning public.decode() and private.decode()')))
   #TODO: Until here
 
   return public.decode(), private.decode()
@@ -279,7 +279,7 @@ def create_rsa_signature(private_key, data):
     is 'RSASSA-PSS'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_signature(private_key, data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Generating an RSASSA-PSS signature with private_key:', private_key, 'data:', data)))
   #TODO: Until here
@@ -337,9 +337,8 @@ def create_rsa_signature(private_key, data):
   else:
     raise TypeError('The required private key is unset.')
 
-
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning signature and method')))
   #TODO: Until here
 
   return signature, method
@@ -393,7 +392,7 @@ def verify_rsa_signature(signature, signature_method, public_key, data):
     Boolean.  True if the signature is valid, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_rsa_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_rsa_signature(signature, signature_method, public_key, data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying RSA public_key:', public_key, 'has generate signature:', signature, 'signature_method:', signature_method, 'data:', data)))
   #TODO: Until here
@@ -433,7 +432,7 @@ def verify_rsa_signature(signature, signature_method, public_key, data):
     raise tuf.UnknownMethodError(signature_method)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning valid_signature')))
   #TODO: Until here
 
   return valid_signature
@@ -485,9 +484,9 @@ def create_rsa_encrypted_pem(private_key, passphrase):
     Conforms to 'tuf.formats.PEMRSA_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_encrypted_pem()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_encrypted_pem(private_key, passphrase)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, '...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Return a string in PEM format, where the private part of the RSA key is encrypted. The private part of the RSA key is encrypted by the Triple Data Encryption Algorithm (3DES) and Cipher-block chaining (CBC) for the mode of operation. Password-Based Key Derivation Function 1 (PBKF1) + MD5 is used to strengthen \'passphrase\'.')))
   #TODO: Until here
 
   # Does 'private_key' have the correct format?
@@ -522,7 +521,7 @@ def create_rsa_encrypted_pem(private_key, passphrase):
     raise TypeError('The required private key is unset.')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning encrypted_pem.decode()')))
   #TODO: Until here
 
   return encrypted_pem.decode()
@@ -593,7 +592,7 @@ def create_rsa_public_and_private_from_encrypted_pem(encrypted_pem, passphrase):
     A (public, private) tuple containing the RSA keys in PEM format.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_public_and_private_from_encrypted_pem()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_rsa_public_and_private_from_encrypted_pem(encrypted_pem, passphrase)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating RSA public and private keys from encrypted_pem:', encrypted_pem, 'passphrase:', passphrase)))
   #TODO: Until here
@@ -640,7 +639,7 @@ def create_rsa_public_and_private_from_encrypted_pem(encrypted_pem, passphrase):
       ' in PEM format.')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning public.decode(), private.decode()')))
   #TODO: Until here
 
   return public.decode(), private.decode()
@@ -707,7 +706,7 @@ def encrypt_key(key_object, password):
     An encrypted string in 'tuf.formats.ENCRYPTEDKEY_SCHEMA' format.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[encrypt_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[encrypt_key(key_object, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Encrypting key_object:', key_object, 'with password:', password)))
   #TODO: Until here
@@ -754,7 +753,7 @@ def encrypt_key(key_object, password):
   encrypted_key = _encrypt(json.dumps(key_object), derived_key_information)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning encrypted_key')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning encrypted_key')))
   #TODO: Until here
 
   return encrypted_key
@@ -823,7 +822,7 @@ def decrypt_key(encrypted_key, password):
     The decrypted key object in 'tuf.formats.ANYKEY_SCHEMA' format.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[decrypt_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[decrypt_key(encrypted_key, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Decrypting encrypted_key:', encrypted_key, 'password:', password)))
   #TODO: Until here
@@ -846,7 +845,7 @@ def decrypt_key(encrypted_key, password):
   key_object = tuf.util.load_json_string(json_data.decode())
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning key_object')))
   #TODO: Until here
 
   return key_object
@@ -863,9 +862,9 @@ def _generate_derived_key(password, salt=None, iterations=None):
   may be regenerated.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_derived_key()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_derived_key(password, salt, iterations)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s ? %s ?' % (I_TO_PRINT, 'Generate a derived key by feeding password:', password, 'salt:', 'iterations:')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Generate a derived key by feeding password:', password, 'salt:', '?', 'iterations:', '?')))
   #TODO: Until here
 
   if salt is None:
@@ -904,7 +903,7 @@ def _generate_derived_key(password, salt=None, iterations=None):
                                            prf=pseudorandom_function)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning salt, iterations, derived_key')))
   #TODO: Until here
 
   return salt, iterations, derived_key
@@ -935,7 +934,7 @@ def _encrypt(key_data, derived_key_information):
   'tuf.CryptoError' raised if the encryption fails.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_encrypt()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_encrypt(key_data, derived_key_information)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Encrypting key_data:', key_data, 'by using the Advanced Encryption Standard (AES-256) algorithm. Deriverd_key_information:', derived_key_information)))
   #TODO: Until here
@@ -983,11 +982,9 @@ def _encrypt(key_data, derived_key_information):
   # The pbkdf2 iterations are allowed to vary for the keys loaded and saved.
   iterations = derived_key_information['iterations']
 
-
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning: SALT @@@@ ITERATIONS @@@@ HMAC @@@@ IV @@@@ CIPHERTEXT')))
   #TODO: Until here
-
 
   # Return the salt, iterations, hmac, initialization vector, and ciphertext
   # as a single string.  These five values are delimited by
@@ -1011,7 +1008,7 @@ def _decrypt(file_contents, password):
   'tuf.CryptoError' raised if the decryption fails.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_decrypt()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_decrypt(file_contents, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Decrypting file_contents:', file_contents, 'password:', password)))
   #TODO: Until here
@@ -1085,7 +1082,7 @@ def _decrypt(file_contents, password):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning key_plaintext')))
   #TODO: Until here
 
   return key_plaintext

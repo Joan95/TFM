@@ -124,3 +124,7 @@ YELLOW_BG = '\033[43m\033[30m'
 
 ENDCOLORS = '\033[0m'
 
+
+# Custom Variable
+TABULATION = '\t'
+TABULATED = ''

@@ -109,7 +109,7 @@ METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.RED + '---> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
@@ -127,7 +127,7 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
       partially written, and a write_partial is not needed.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_and_write_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_and_write_metadata(rolename, metadata_filename, write_partial, targets_directory, metadata_directory, consistent_snapshot, filenames, compression_algorithms, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for rolename:', rolename, 'metadata_filename:', metadata_filename, 'write_partial:', write_partial, 'targets_directory:', targets_directory, 'metadata_directory:', metadata_directory)))
   #TODO: Until here
@@ -277,8 +277,6 @@ def _prompt(message, result_type=str):
     caller.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_prompt()]: ' + uptane.ENDCOLORS
-
   return result_type(six.moves.input(message))
 
 
@@ -292,7 +290,7 @@ def _get_password(prompt='Password: ', confirm=False):
     password once again.  If they match, the password is returned to the caller.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_password()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_password(prompt, confirm)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Getting password:')))
   #TODO: Until here
@@ -313,7 +311,7 @@ def _get_password(prompt='Password: ', confirm=False):
       print('Mismatch; try again.')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -335,7 +333,7 @@ def _metadata_is_partially_loaded(
   is called.  Return True if 'rolename' was partially loaded, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_metadata_is_partially_loaded()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_metadata_is_partially_loaded(rolename, signable, roleinfo, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Checking if metadata is partially loaded for rolename:', rolename, 'signable:', signable, 'roleinfo:', roleinfo, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -345,7 +343,7 @@ def _metadata_is_partially_loaded(
   status = tuf.sig.get_signature_status(signable, rolename, repository_name)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
   if len(status['good_sigs']) < status['threshold'] and \
@@ -383,7 +381,7 @@ def _check_directory(directory):
     The normalized absolutized path of 'directory'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_directory()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_directory(directory)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Checking if directory is valid. directory:', directory)))
   #TODO: Until here
@@ -399,7 +397,7 @@ def _check_directory(directory):
   directory = os.path.abspath(directory)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
   return directory
@@ -415,7 +413,7 @@ def _check_role_keys(rolename, repository_name='default'):
   'rolename' is the full rolename (e.g., 'targets/unclaimed/django').
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_role_keys()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_role_keys(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Checking public and private keys for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -441,7 +439,7 @@ def _check_role_keys(rolename, repository_name='default'):
     raise tuf.InsufficientKeysError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -456,7 +454,7 @@ def _remove_invalid_and_duplicate_signatures(
     or duplicate signatures, are removed from 'signable'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_remove_invalid_and_duplicate_signatures()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_remove_invalid_and_duplicate_signatures(signable, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing invalid or duplicated signatures for signable:', signable, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -499,7 +497,7 @@ def _remove_invalid_and_duplicate_signatures(
         signature_keyids.append(keyid)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -516,7 +514,7 @@ def _delete_obsolete_metadata(metadata_directory, snapshot_metadata,
   metadata that have not been written yet.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_delete_obsolete_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_delete_obsolete_metadata(metadata_directory, snapshot_metadata, consistent_snapshot, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Deleting obsolete metadata for metadata_directory:', metadata_directory, 'snapshot_metadata:', snapshot_metadata, 'consistent_snapshot:', consistent_snapshot, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -579,7 +577,7 @@ def _delete_obsolete_metadata(metadata_directory, snapshot_metadata,
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -590,7 +588,7 @@ def _get_written_metadata(metadata_signable):
   Non-public function that returns the actual content of written metadata.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_written_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_written_metadata(metadata_signable)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Returning actual content of metadata_signable:', metadata_signable)))
   #TODO: Until here
@@ -623,7 +621,7 @@ def _strip_version_number(metadata_filename, consistent_snapshot):
   number is prepended to 'metadata_filename'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_strip_version_number()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_strip_version_number(metadata_filename, consistent_snapshot)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Returning version number from metadata_filename:', metadata_filename)))
   #TODO: Until here
@@ -650,7 +648,7 @@ def _load_top_level_metadata(
   minimum, the Root role must exist and successfully load.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_load_top_level_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_load_top_level_metadata(repository, top_level_filenames, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Loading metadata for repository:', repository, 'top_level_filenames:', top_level_filenames, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -841,7 +839,7 @@ def _load_top_level_metadata(
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning \'repository\' and \'consistent_snapshot\'')))
   #TODO: Until here
 
 
@@ -857,7 +855,7 @@ def _log_warning_if_expires_soon(rolename, expires_iso8601_timestamp,
   'seconds_remaining_to_warn' seconds, or less.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_log_warning_if_expires_soon()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_log_warning_if_expires_soon(rolename, expires_iso8601_timestamp, seconds_remaining_to_warn)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, '...')))
   #TODO: Until here
@@ -916,7 +914,7 @@ def generate_and_write_rsa_keypair(filepath, bits=DEFAULT_RSA_KEY_BITS,
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_and_write_rsa_keypair()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_and_write_rsa_keypair(filepath, bits, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Generating and writing keypair, storing them in filepath:', filepath, 'password:', password)))
   #TODO: Until here
@@ -966,7 +964,7 @@ def generate_and_write_rsa_keypair(filepath, bits=DEFAULT_RSA_KEY_BITS,
   file_object.move(filepath)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -1006,7 +1004,7 @@ def import_rsa_privatekey_from_file(filepath, password=None):
     An RSA key object, conformant to 'tuf.formats.RSAKEY_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_rsa_privatekey_from_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_rsa_privatekey_from_file(filepath, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Importing RSA file in filepath:', filepath, 'password:', password)))
   #TODO: Until here
@@ -1038,7 +1036,7 @@ def import_rsa_privatekey_from_file(filepath, password=None):
   rsa_key = tuf.keys.import_rsakey_from_encrypted_pem(encrypted_pem, password)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning rsa_key')))
   #TODO: Until here
 
   return rsa_key
@@ -1076,7 +1074,7 @@ def import_rsa_publickey_from_file(filepath):
     An RSA key object conformant to 'tuf.formats.RSAKEY_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_rsa_publickey_from_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_rsa_publickey_from_file(filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Importing RSA public key from filepath:', filepath)))
   #TODO: Until here
@@ -1101,7 +1099,7 @@ def import_rsa_publickey_from_file(filepath):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning rsakey_dict')))
   #TODO: Until here
 
   return rsakey_dict
@@ -1148,7 +1146,7 @@ def generate_and_write_ed25519_keypair(filepath, password=None):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_and_write_ed25519_keypair()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_and_write_ed25519_keypair(filepath, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Generating and writting ed25519 keypair using password:', password, 'storing at filepath:', filepath)))
   #TODO: Until here
@@ -1160,7 +1158,7 @@ def generate_and_write_ed25519_keypair(filepath, password=None):
   tuf.formats.PATH_SCHEMA.check_match(filepath)
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'insert password if it empty')))
+  print(str('%s %s' % (I_TO_PRINT, 'insert password if it is empty')))
   #TODO: Until here
 
   # If the caller does not provide a password argument, prompt for one.
@@ -1218,7 +1216,7 @@ def generate_and_write_ed25519_keypair(filepath, password=None):
   file_object.move(filepath)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -1249,7 +1247,7 @@ def import_ed25519_publickey_from_file(filepath):
     An ED25519 key object conformant to 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_publickey_from_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_publickey_from_file(filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Importing ed25519 publickey from file with filepath:', filepath)))
   #TODO: Until here
@@ -1276,7 +1274,7 @@ def import_ed25519_publickey_from_file(filepath):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ed25519_key')))
   #TODO: Until here
 
   return ed25519_key
@@ -1324,7 +1322,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     An ed25519 key object of the form: 'tuf.formats.ED25519KEY_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_privatekey_from_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_ed25519_privatekey_from_file(filepath, password)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Importing ed25519 privatekey from file with filepath:', filepath, 'password:', password)))
   #TODO: Until here
@@ -1376,7 +1374,7 @@ def import_ed25519_privatekey_from_file(filepath, password=None):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning key_object')))
   #TODO: Until here
 
   return key_object
@@ -1415,7 +1413,7 @@ def get_metadata_filenames(metadata_directory=None):
     metadata files, such as 'root.json' and 'snapshot.json'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_filenames()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_filenames(metadata_directory)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Returning metadata filenames for metadata_directory:', metadata_directory)))
   #TODO: Until here
@@ -1485,7 +1483,7 @@ def get_metadata_fileinfo(filename, custom=None):
     'filename' metadata file.  SHA256 hashes are generated by default.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_fileinfo()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_fileinfo(filename, custom)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning metadata fileinfo for filename:', filename, 'custom', custom)))
   #TODO: Until here
@@ -1544,7 +1542,7 @@ def get_metadata_versioninfo(rolename, repository_name='default'):
     dictionary contains the version  number of 'rolename'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_versioninfo()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_metadata_versioninfo(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning metadata version info for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -1589,7 +1587,7 @@ def get_target_hash(target_filepath):
     The hash of 'target_filepath'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash(target_filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
   #TODO: Until here
@@ -1642,7 +1640,7 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
     A root metadata object, conformant to 'tuf.formats.ROOT_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_root_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_root_metadata(version, expiration_date, consistent_snapshot, compression_algorithms, repository_name)]: ' + uptane.ENDCOLORS
   # TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Creating root metadata.  \'tuf.roledb.py\' and \'tuf.keydb.py\' are read and the information returned by these modules is used to generate the root metadata object.')))
   # TODO: Until here
@@ -1723,7 +1721,7 @@ def generate_root_metadata(version, expiration_date, consistent_snapshot,
   #       There are very few things that really need to be done differently.
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning dictionary')))
   #TODO: Until here
 
   return tuf.formats.build_dict_conforming_to_schema(
@@ -1791,7 +1789,7 @@ def generate_targets_metadata(targets_directory, target_files, version,
     A targets metadata object, conformant to 'tuf.formats.TARGETS_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_targets_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_targets_metadata(targets_directory, target_files, version, expiration_date, delegations, write_consistent_targets)]: ' + uptane.ENDCOLORS
   # TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generating targets metadata object. The targets in \'target_files\' must exist at the same path they should on the repo. \'target_files\' is a list of targets.  The \'custom\' field of the targets metadata is not currently supported.')))
   # TODO: Until here
@@ -1859,7 +1857,7 @@ def generate_targets_metadata(targets_directory, target_files, version,
           os.link(target_path, digest_target)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning Targets metadata object')))
   #TODO: Until here
 
   # Generate the targets metadata object.
@@ -1947,7 +1945,7 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
     The snapshot metadata object, conformant to 'tuf.formats.SNAPSHOT_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_snapshot_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_snapshot_metadata(metadata_directory, version, expiration_date, root_filename, targets_filename, consistent_snapshot, repository_name)]: ' + uptane.ENDCOLORS
   # TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generating snapshot metadata. The minimum metadata must exist (i.e., \'root.json\' and \'targets.json\'). This function searches \'metadata_directory\' and the resulting snapshot file will list all the delegated roles found there.')))
   # TODO: Until here
@@ -2007,7 +2005,7 @@ def generate_snapshot_metadata(metadata_directory, version, expiration_date,
               rolename, repository_name)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning Snapshot metadata object')))
   #TODO: Until here
 
   # Generate the Snapshot metadata object.
@@ -2083,7 +2081,7 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
     tuf.formats.make_fileinfo(length, hashes, version=snapshot_version['version'])
 
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning Timestamp Metadata schema with corresponding format')))
+  print(str('%s %s' % (I_TO_PRINT, 'Returning Timestamp metadata object')))
   # TODO: Until here
 
   # We previously saved the versioninfo of the compressed versions of
@@ -2100,12 +2098,6 @@ def generate_timestamp_metadata(snapshot_filename, version, expiration_date,
   #       generate_root_metadata, etc. with one function that generates
   #       metadata, possibly rolling that upwards into the calling function.
   #       There are very few things that really need to be done differently.
-
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
-  #TODO: Until here
-
-
   return tuf.formats.build_dict_conforming_to_schema(
       tuf.formats.TIMESTAMP_SCHEMA,
       _type='Timestamp',   # TODO: Normalize rolename capitalization across the code. -.-
@@ -2151,7 +2143,7 @@ def sign_metadata(metadata_object, keyids, filename,
     A signable object conformant to 'tuf.formats.SIGNABLE_SCHEMA'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata(metadata_object, keyids, filename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Signing file:', filename, 'metadata_object:', metadata_object, 'with keyids:', keyids, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -2216,7 +2208,7 @@ def sign_metadata(metadata_object, keyids, filename,
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning signable object')))
   #TODO: Until here
 
   return signable
@@ -2274,7 +2266,7 @@ def write_metadata_file(metadata, filename, version_number,
     The filename of the written file.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_metadata_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_metadata_file(metadata, filename, version_number, compression_algorithms, consistent_snapshot)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Writting metadata file at filename:', filename)))
   #TODO: Until here
@@ -2387,7 +2379,7 @@ def write_metadata_file(metadata, filename, version_number,
                                write_new_metadata, consistent_snapshot, version_number)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning written_filename')))
   #TODO: Until here
 
   return written_filename
@@ -2406,7 +2398,7 @@ def _write_compressed_metadata(file_object, compressed_filename,
   moved to their destinations.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_write_compressed_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_write_compressed_metadata(file_object, compressed_filename, write_new_metadata, consistent_snapshot, version_number)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Writting compressed metadata for file_object:', file_object)))
   #TODO: Until here
@@ -2462,7 +2454,7 @@ def _write_compressed_metadata(file_object, compressed_filename,
         os.link(compressed_filename, consistent_filename)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -2617,7 +2609,7 @@ def create_tuf_client_directory(repository_directory, client_directory):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_tuf_client_directory()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_tuf_client_directory(repository_directory, client_directory)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating TUF client directory for repository_directory:', repository_directory, 'client_directory:', client_directory)))
   #TODO: Until here
@@ -2667,7 +2659,7 @@ def create_tuf_client_directory(repository_directory, client_directory):
   shutil.copytree(metadata_directory, client_previous)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 

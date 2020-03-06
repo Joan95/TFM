@@ -57,7 +57,7 @@ _keydb_dict['default'] = {}
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.GREEN + '\t--------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.GREEN + '-------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
@@ -148,7 +148,7 @@ def create_keydb_from_root_metadata(root_metadata, repository_name='default'):
       logger.warning('Root Metadata file contains a key with an invalid keytype.')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -194,7 +194,7 @@ def create_keydb(repository_name):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -244,7 +244,7 @@ def remove_keydb(repository_name):
   del _keydb_dict[repository_name]
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -329,7 +329,7 @@ def add_key(key_dict, keyid=None, repository_name='default'):
   _keydb_dict[repository_name][keyid] = copy.deepcopy(key_dict)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -386,7 +386,7 @@ def get_key(keyid, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning copy of _keydb_dict()')))
   #TODO: Until here
 
 
@@ -457,7 +457,7 @@ def remove_key(keyid, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -513,5 +513,5 @@ def clear_keydb(repository_name='default', clear_all=False):
   _keydb_dict[repository_name] = {}
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here

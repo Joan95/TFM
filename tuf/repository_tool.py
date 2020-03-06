@@ -101,7 +101,7 @@ TIMESTAMP_EXPIRATION = 86400
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/repository_tool.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.RED + '---> [tuf/repository_tool.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 try:
@@ -178,7 +178,7 @@ class Repository(object):
     tuf.formats.PATH_SCHEMA.check_match(metadata_directory)
     tuf.formats.PATH_SCHEMA.check_match(targets_directory)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.__init__(self, repository_directory, metadata_directory, targets_directory, repository_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Initializating repository_directory:', repository_directory, 'metadata_directory:', metadata_directory, 'targets_directory:', targets_directory, 'repository_name:', repository_name)))
     #TODO: Until here
@@ -264,9 +264,9 @@ class Repository(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.write()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.write(self, write_partial, consistent_snapshot, compression_algorithms)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Write all the JSON Metadata objects to their corresponding files. write() raises an exception if any of the role metadata to be written to disk is invalid, such as an insufficient threshold of signatures, missing private keys, etc.')))
+    print(str('%s %s' % (I_TO_PRINT, 'Write all the JSON Metadata objects to their corresponding files.')))
     #TODO: Until here
 
     # Does 'write_partial' have the correct format?
@@ -409,7 +409,7 @@ class Repository(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -433,7 +433,7 @@ class Repository(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.write_partial()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.write_partial(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Write all the JSON metadata to their corresponding files, but allow metadata files to contain an invalid threshold of signatures.')))
     #TODO: Until here
@@ -441,7 +441,7 @@ class Repository(object):
     self.write(write_partial=True)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -471,9 +471,9 @@ class Repository(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.status()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.status(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Determine the status of the top-level roles, including those delegated by the Targets role.  status() checks if each role provides sufficient public and private keys, signatures, and that a valid metadata file is generated if write() were to be called.  Metadata files are temporarily written so that file hashes and lengths may be verified, determine if delegated role trust is fully obeyed, and target paths valid according to parent roles. status() does not do a simple check for number of threshold keys and signatures.')))
+    print(str('%s %s' % (I_TO_PRINT, 'Determine the status of the top-level roles, including those delegated by the Targets role. status() checks if each role provides sufficient public and private keys, signatures, and that a valid metadata file is generated if write() were to be called.  Metadata files are temporarily written so that file hashes and lengths may be verified, determine if delegated role trust is fully obeyed, and target paths valid according to parent roles. status() does not do a simple check for number of threshold keys and signatures.')))
     #TODO: Until here
 
     temp_repository_directory = None
@@ -544,7 +544,7 @@ class Repository(object):
       shutil.rmtree(temp_repository_directory, ignore_errors=True)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -572,7 +572,7 @@ class Repository(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.dirty_roles()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.dirty_roles(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Print/log the roles that have been modified.  For example, if some role\'s version number is changed (repository.timestamp.version = 2), it is considered dirty and will be included in the list of dirty roles printed/logged here.  Unlike status(), signatures, public keys, targets, etc. are not verified.  status() should be called instead if the caller would like to verify if a valid role file is generated if write() were to be called.')))
     #TODO: Until here
@@ -581,7 +581,7 @@ class Repository(object):
         str(tuf.roledb.get_dirty_roles(self.repository_name)))
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -591,7 +591,7 @@ class Repository(object):
     # This code is excerpted from more recent TUF versions.
     # TODO: When merging, mind this.
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.mark_dirty()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.mark_dirty(self, roles)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Marking dirty roles: ', roles)))
     #TODO: Until here
@@ -599,7 +599,7 @@ class Repository(object):
     tuf.roledb.mark_dirty(roles, self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -609,7 +609,7 @@ class Repository(object):
     # This code is excerpted from more recent TUF versions.
     # TODO: When merging, mind this.
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.unmark_dirty()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.unmark_dirty(self, roles)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Unmarking dirty roles:', roles)))
     #TODO: Until here
@@ -617,7 +617,7 @@ class Repository(object):
     tuf.roledb.unmark_dirty(roles, self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -653,7 +653,7 @@ class Repository(object):
       A list of absolute paths to target files in the given 'files_directory'.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.get_filepaths_in_directory()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Repository.get_filepaths_in_directory(files_directory, recursive_walk, followlinks)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Getting filepaths in files_directory:', files_directory)))
     #TODO: Until here
@@ -689,7 +689,7 @@ class Repository(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning targets')))
     #TODO: Until here
 
     return targets
@@ -725,7 +725,7 @@ class Metadata(object):
     self._rolename = None
     self._repository_name = None
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.__init__(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating metadata')))
     #TODO: Until here
@@ -768,7 +768,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_verification_key()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_verification_key(self, key, expires)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding verification key for rolename:', self.rolename, 'Value for key: ', key, 'Value for expires:', expires)))
     #TODO: Until here
@@ -844,7 +844,7 @@ class Metadata(object):
           self.rolename, roleinfo, repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -877,7 +877,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.remove_verification_key()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.remove_verification_key(self, key)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing verification key for rolename:', self.rolename, 'key:', key)))
     #TODO: Until here
@@ -901,7 +901,7 @@ class Metadata(object):
       raise tuf.Error('Verification key not found.')
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -935,7 +935,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.load_signing_key()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.load_signing_key(self, key)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading signing key for rolename:', self.rolename, 'key:', key)))
     #TODO: Until here
@@ -979,7 +979,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1010,7 +1010,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.unload_signing_key()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.unload_signing_key(self, key)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Unloading signing key for rolename:', self.rolename, 'key:', key)))
     #TODO: Until here
@@ -1035,7 +1035,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1077,7 +1077,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_signature()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.add_signature(self, signature, mark_role_as_dirty)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding signature for rolename:', self.rolename, 'signature:', signature)))
     #TODO: Until here
@@ -1104,7 +1104,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1135,7 +1135,7 @@ class Metadata(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.remove_signature()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.remove_signature(self, signature)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing signature for rolename:', self.rolename, 'signature:', signature)))
     #TODO: Until here
@@ -1159,7 +1159,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1186,7 +1186,7 @@ class Metadata(object):
       A list of signatures, conformant to 'tuf.formats.SIGNATURES_SCHEMA'.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.signatures()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.signatures(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Getting signatures for role:', self.rolename)))
     #TODO: Until here
@@ -1194,11 +1194,9 @@ class Metadata(object):
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     signatures = roleinfo['signatures']
 
-
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning signatures')))
     #TODO: Until here
-
 
     return signatures
 
@@ -1225,7 +1223,7 @@ class Metadata(object):
       A list of the role's keyids (i.e., keyids of the keys).
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.keys()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.keys(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Getting keys for rolename:', self.rolename)))
     #TODO: Until here
@@ -1235,7 +1233,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning keyids')))
     #TODO: Until here
 
     return keyids
@@ -1263,12 +1261,11 @@ class Metadata(object):
       Examples: 'root', 'timestamp', 'targets/unclaimed/django'.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.rolename()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.rolename(self)]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning rolename')))
     #TODO: Until here
-
 
     return self._rolename
 
@@ -1282,7 +1279,7 @@ class Metadata(object):
     a getter and not a setter, makes it harder to mistakenly overwrite by later
     editors of this code.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.repository_name()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.repository_name(self)]: ' + uptane.ENDCOLORS
 
     #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning repository_name')))
@@ -1311,11 +1308,10 @@ class Metadata(object):
     <Returns>
       The role's version number, conformant to 'tuf.formats.VERSION_SCHEMA'.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.version()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.version(self)]: ' + uptane.ENDCOLORS
 
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     version = roleinfo['version']
-
 
     #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning version')))
@@ -1358,7 +1354,7 @@ class Metadata(object):
     <Returns>
       None.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.version.setter()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.version.setter(self, version)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Setting version for rolename:', self.rolename)))
     #TODO: Until here
@@ -1377,7 +1373,7 @@ class Metadata(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1400,7 +1396,7 @@ class Metadata(object):
     <Returns>
       The role's threshold value, conformant to 'tuf.formats.THRESHOLD_SCHEMA'.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.threshold()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.threshold(self)]: ' + uptane.ENDCOLORS
 
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     threshold = roleinfo['threshold']
@@ -1408,7 +1404,6 @@ class Metadata(object):
     #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning threshold')))
     #TODO: Until here
-
 
     return threshold
 
@@ -1442,7 +1437,7 @@ class Metadata(object):
     <Returns>
       None.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.threshold.setter()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.threshold.setter(self, threshold)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Setting threshold for rolename:', self.rolename)))
     #TODO: Until here
@@ -1459,9 +1454,8 @@ class Metadata(object):
     tuf.roledb.update_roleinfo(
         self.rolename, roleinfo, repository_name=self.repository_name)
 
-
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1487,18 +1481,16 @@ class Metadata(object):
     <Returns>
       The role's expiration datetime, a datetime.datetime() object.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.expiration()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.expiration(self)]: ' + uptane.ENDCOLORS
 
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     expires = roleinfo['expires']
 
     expires_datetime_object = iso8601.parse_date(expires)
 
-
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning expiration')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning expiration_datetime_object')))
     #TODO: Until here
-
 
     return expires_datetime_object
 
@@ -1532,7 +1524,7 @@ class Metadata(object):
     <Returns>
       None.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.expiration.setter()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.expiration.setter(self, datetime_object)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Setting expiration for rolename:', self.rolename)))
     #TODO: Until here
@@ -1563,7 +1555,7 @@ class Metadata(object):
         self.rolename, roleinfo, repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1591,16 +1583,14 @@ class Metadata(object):
       A list of keyids of the role's signing keys, conformant to
       'tuf.formats.KEYIDS_SCHEMA'.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.signing_keys()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.signing_keys(self)]: ' + uptane.ENDCOLORS
 
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     signing_keyids = roleinfo['signing_keyids']
 
-
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning the signing keys')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning signing_keyids')))
     #TODO: Until here
-
 
     return signing_keyids
 
@@ -1632,16 +1622,14 @@ class Metadata(object):
       A list of compression algorithms, conformant to
       'tuf.formats.COMPRESSIONS_SCHEMA'.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.compression()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.compression(self)]: ' + uptane.ENDCOLORS
 
     roleinfo = tuf.roledb.get_roleinfo(self.rolename, self.repository_name)
     compressions = roleinfo['compressions']
 
-
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning list of file compressions')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Getter. Returning compressions')))
     #TODO: Until here
-
 
     return compressions
 
@@ -1673,7 +1661,7 @@ class Metadata(object):
     <Returns>
       None.
     """
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.compressions()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Metadata.compressions(self, compression_list)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Setting file compression for rolename:', self.rolename)))
     #TODO: Until here
@@ -1696,7 +1684,7 @@ class Metadata(object):
         self.rolename, roleinfo, repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -1738,7 +1726,7 @@ class Root(Metadata):
 
     super(Root, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Root.__init__(self, repository_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating root')))
     #TODO: Until here
@@ -1813,7 +1801,7 @@ class Timestamp(Metadata):
 
     super(Timestamp, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Timestamp.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Timestamp.__init__(self, repository_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating Timestamp')))
     #TODO: Until here
@@ -1885,7 +1873,7 @@ class Snapshot(Metadata):
 
     super(Snapshot, self).__init__()
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Snapshot.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Snapshot.__init__(self, repository_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating Snapshot')))
     #TODO: Until here
@@ -1982,7 +1970,7 @@ class Targets(Metadata):
     tuf.formats.ROLENAME_SCHEMA.check_match(rolename)
     tuf.formats.REPOSITORY_NAME_SCHEMA.check_match(repository_name)
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__init__(self, repository_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating Targets')))
     #TODO: Until here
@@ -2076,7 +2064,7 @@ class Targets(Metadata):
       The Targets object of 'rolename'.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__call__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.__call__(self, rolename)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Allow callable Targets object so that delegated roles may be referenced by their string rolenames. Rolenames may include characters like \'-\' and are not restricted to Python identifiers.')))
     #TODO: Until here
@@ -2127,7 +2115,7 @@ class Targets(Metadata):
       The Targets object of 'rolename'.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_delegated_role()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_delegated_role(self, rolename, targets_object)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding delegated roles for rolename:', rolename, 'targets_objects:', targets_object)))
     #TODO: Until here
@@ -2176,7 +2164,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.target_files()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.target_files(self)]: ' + uptane.ENDCOLORS
 
     target_files = tuf.roledb.get_roleinfo(
         self.rolename, self.repository_name)['paths']
@@ -2224,7 +2212,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_restricted_paths()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_restricted_paths(self, restricted_paths, child_rolename)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding restricted paths for rolename:', self.rolename, 'restricted_paths:', restricted_paths, 'child_rolename:', child_rolename)))
     #TODO: Until here
@@ -2272,7 +2260,7 @@ class Targets(Metadata):
         self.rolename, roleinfo, repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2311,7 +2299,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_target()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_target(self, filepath, custom)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding target for rolename:', self.rolename, 'filepath:', filepath, 'custom:', custom)))
     #TODO: Until here
@@ -2354,7 +2342,7 @@ class Targets(Metadata):
       raise tuf.Error(repr(filepath) + ' is not a valid file.')
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2387,7 +2375,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_targets()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_targets(self, list_of_targets)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding targets for rolename:', self.rolename, 'list_of_targets:', list_of_targets)))
     #TODO: Until here
@@ -2435,7 +2423,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2467,7 +2455,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.remove_target()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.remove_target(self, filepath)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing targets for rolename:', self.rolename, 'filepath:', filepath)))
     #TODO: Until here
@@ -2501,7 +2489,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2527,7 +2515,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.clear_targets()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.clear_targets(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Clearing targets for rolename:', self.rolename)))
     #TODO: Until here
@@ -2539,7 +2527,7 @@ class Targets(Metadata):
         self.rolename, roleinfo, repository_name=self.repository_name)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2566,9 +2554,9 @@ class Targets(Metadata):
      A list of rolenames.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.get_delegated_rolenames()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.get_delegated_rolenames(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Getter. Returning delegated rolenames for rolename:', self.rolename)))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Getter. Returning delegated rolenames for rolename:', self.rolename, 'by calling roledb.get_delegated_rolenames()')))
     #TODO: Until here
 
     return tuf.roledb.get_delegated_rolenames(
@@ -2647,7 +2635,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegate()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegate(self, rolename, public_keys, list_of_targets, threshold, backtrack, restricted_paths, path_hash_prefixes)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Creating a new delegationf for rolename:', self.rolename, 'where rolename delegation:', rolename, 'public_keys:', public_keys, 'list_of_targets:', list_of_targets)))
     #TODO: Until here
@@ -2764,7 +2752,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2781,7 +2769,7 @@ class Targets(Metadata):
     set of paths.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.multi_role_delegate()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.multi_role_delegate(self, restricted_paths, required_roles, backtrack, abort_on_disagreement)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Mapping set of required roles to a set of paths')))
     #TODO: Until here
@@ -2827,7 +2815,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2841,9 +2829,9 @@ class Targets(Metadata):
       restricted paths does not fall under the repository's targets directory.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets._relativize_and_validate_restricted_paths()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets._relativize_and_validate_restricted_paths(self, restricted_paths)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Generates a list of relative paths from the given paths. These are relative to repository\'s targets directory.')))
     #TODO: Until here
 
     targets_directory_length = len(self._targets_directory)
@@ -2866,6 +2854,10 @@ class Targets(Metadata):
       #path = os.path.join(path, '') # Append a trailing path separator with os.path.join(path, '').
 
       relative_restricted_paths.append(path[targets_directory_length:])
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning relative_restricted_paths')))
+    #TODO: Until here
 
     return relative_restricted_paths
 
@@ -2904,7 +2896,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.revoke()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.revoke(self, rolename)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Revoking for rolename:', self.rolename, 'rolename:', rolename)))
     #TODO: Until here
@@ -2934,7 +2926,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -2996,7 +2988,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegate_hashed_bins()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegate_hashed_bins(self, list_of_targets, keys_of_hashed_bins, number_of_bins)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, '...')))
     #TODO: Until here
@@ -3107,7 +3099,7 @@ class Targets(Metadata):
       logger.debug('Delegated from ' + repr(self.rolename) + ' to ' + repr(bin_rolename))
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -3143,7 +3135,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_target_to_bin()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.add_target_to_bin(self, target_filepath)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding target to bind for rolename:', self.rolename, 'target_filepath:', target_filepath)))
     #TODO: Until here
@@ -3156,7 +3148,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning by calling self._locate_and_update_target_in_bin()')))
     #TODO: Until here
 
 
@@ -3196,7 +3188,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.remove_target_from_bin()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.remove_target_from_bin(self, target_filepath)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing target from bin for rolename:', self.rolename, 'target_filepath:', target_filepath)))
     #TODO: Until here
@@ -3209,7 +3201,7 @@ class Targets(Metadata):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning by calling self._locate_and_update_target_in_bin()')))
     #TODO: Until here
 
 
@@ -3250,7 +3242,7 @@ class Targets(Metadata):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets._locate_and_update_target_in_bin()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets._locate_and_update_target_in_bin(self, target_filepath, method_name)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, '...')))
     #TODO: Until here
@@ -3343,7 +3335,7 @@ class Targets(Metadata):
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Targets.delegations()]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Getter. Returning delegations for rolename:', self.rolename)))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'Getter. Returning delegations for rolename:', self.rolename, 'by calling self._delegated_roles.values()')))
     #TODO: Until here
 
     return list(self._delegated_roles.values())
@@ -3378,7 +3370,7 @@ def create_new_repository(repository_directory, repository_name='default'):
     A 'tuf.repository_tool.Repository' object.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_new_repository()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_new_repository(repository_directory, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating new repository_directory:', repository_directory, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -3457,7 +3449,7 @@ def create_new_repository(repository_directory, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning respository')))
   #TODO: Until here
 
   return repository
@@ -3495,7 +3487,7 @@ def load_repository(repository_directory, repository_name='default'):
     repository_tool.Repository object.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_repository()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_repository(repository_directory, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading repository_directory:', repository_directory, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -3638,7 +3630,7 @@ def load_repository(repository_directory, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning repository')))
   #TODO: Until here
 
   return repository

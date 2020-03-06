@@ -51,7 +51,7 @@ else:
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.RED + '-------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def _ensure_valid_metadata_type_for_asn1(metadata_type):
@@ -164,7 +164,7 @@ def convert_signed_der_to_dersigned_json(der_data):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning dictionary with fields \'signatures\' and \'signed\'')))
   #TODO: Until here
 
   return {'signatures': json_signatures, 'signed': json_signed}
@@ -366,7 +366,7 @@ def convert_signed_metadata_to_der(
   metadata['numberOfSignatures'] = len(asn_signatures_list)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning by calling p_der_encoder.encode() which will encode our object to DER (Distinguished Encoding Rules)')))
   #TODO: Until here
 
   # Encode our new (py)ASN.1 object as DER (Distinguished Encoding Rules).

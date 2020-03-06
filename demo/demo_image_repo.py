@@ -48,7 +48,7 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
-TO_PRINT = uptane.YELLOW + '\t[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.YELLOW + '[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
 
 target_files = {
                     'file1.txt' : "This is the content for file1",
@@ -125,7 +125,7 @@ def clean_slate(use_new_keys=False):
     demo.generate_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Loading keys...')
+  print(I_TO_PRINT + 'Loading keys for TOP-LEVEL roles: root, timestamp, snapshots, targets, role1')
   #TODO: Until here
 
   key_root_pub = demo.import_public_key('mainroot')
@@ -190,7 +190,7 @@ def clean_slate(use_new_keys=False):
 
 
   #TODO: Print to be deleted
-  print(str('\n%s %s' % (I_TO_PRINT, 'Adding top level keys to the main repository')))
+  print(str('\n%s %s' % (I_TO_PRINT, 'Adding TOP-LEVEL keys to the main repository')))
   #TODO: Until here
 
   # Add top level keys to the main repository.

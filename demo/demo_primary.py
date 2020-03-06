@@ -72,7 +72,7 @@ most_recent_signed_vehicle_manifest = None
 
 
 #TODO: To be removed
-TO_PRINT = uptane.YELLOW + '\t[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.YELLOW + '[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
 
 
 def clean_slate(

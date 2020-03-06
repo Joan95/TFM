@@ -123,7 +123,7 @@ _SUPPORTED_ED25519_SIGNING_METHODS = ['ed25519']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.YELLOW_BG + '\t--------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.YELLOW_BG + '-------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def generate_public_and_private():
@@ -186,7 +186,7 @@ def generate_public_and_private():
     raise tuf.UnsupportedLibraryError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning public and seed')))
   #TODO: Until here
 
   return public, seed
@@ -287,7 +287,7 @@ def create_signature(public_key, private_key, data):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning signature and method')))
   #TODO: Until here
 
   return signature, method
@@ -412,7 +412,7 @@ def verify_signature(public_key, method, signature, data, use_pynacl=False):
     raise tuf.UnknownMethodError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning valid_signature')))
   #TODO: Until here
 
   return valid_signature

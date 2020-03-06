@@ -74,7 +74,7 @@ most_recent_signed_ecu_manifest = None
 
 
 #TODO: To be removed
-TO_PRINT = uptane.YELLOW + '\t[demo/demo_secondary.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.YELLOW + '[demo/demo_secondary.py]\t>>Function: ' + ENDCOLORS + ' '
 
 
 def clean_slate(

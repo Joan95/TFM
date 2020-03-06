@@ -53,8 +53,8 @@ import hashlib
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t-------- --------> [tuf/sig.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
-TABULATION = '\n\t\t\t\t'
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.RED + '-------> [tuf/sig.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+
 
 def get_signature_status(signable, role=None, repository_name='default'):
   """
@@ -114,7 +114,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
     Conformant to tuf.formats.SIGNATURESTATUS_SCHEMA.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status(signable, role=None, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Getting signatures marked as signable for role:', role, 'repository_name:', repository_name, 'signable:', signable)))
   #TODO: Until here
@@ -220,7 +220,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
   signature_status['unknown_method_sigs'] = unknown_method_sigs
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning signature_status')
   #TODO: Until here
 
   return signature_status
@@ -270,7 +270,7 @@ def verify(signable, role, repository_name='default'):
     False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify(signable, role, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether role:', role, 'has rights for sign signable:', signable, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -298,7 +298,7 @@ def verify(signable, role, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning boolean')
   #TODO: Until here
 
 
@@ -329,7 +329,7 @@ def may_need_new_keys(signature_status):
     Boolean.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[may_need_new_keys()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[may_need_new_keys(signature_status)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Checking if needs to download a new set of keys for signature_status:', signature_status)))
   #TODO: Until here
@@ -344,7 +344,7 @@ def may_need_new_keys(signature_status):
   untrusted = signature_status['untrusted_sigs']
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning boolean')
   #TODO: Until here
 
   return len(unknown) or len(untrusted)
@@ -393,7 +393,7 @@ def generate_rsa_signature(signed, rsakey_dict):
     {'keyid': keyid, 'method': 'evp', 'sig': sig}
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_signature()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[generate_rsa_signature(signed, rsakey_dict)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Generating a new signature dict presumably to be added to the signatures field of signable')))
   #TODO: Until here
@@ -409,7 +409,7 @@ def generate_rsa_signature(signed, rsakey_dict):
   signature = tuf.keys.create_signature(rsakey_dict, signed)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning signature')
   #TODO: Until here
 
   return signature
@@ -493,7 +493,7 @@ def sign_over_metadata(
 
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_over_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_over_metadata(key_dict, data, metadata_format)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing data:', data, 'with key_dict:', key_dict)))
   #TODO: Until here
@@ -517,7 +517,7 @@ def sign_over_metadata(
     raise tuf.Error('Unsupported metadata format: ' + repr(metadata_format))
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning by calling keys.create_signature()')
   #TODO: Until here
 
   return tuf.keys.create_signature(key_dict, data)
@@ -615,7 +615,7 @@ def verify_signature_over_metadata(
     Boolean.  True if the signature is valid, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature_over_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[verify_signature_over_metadata(key_dict, signature, data, metadata_format)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Verifying whether the private key belonging to key_dict:', key_dict, 'produced signature:', signature)))
   #TODO: Until here
@@ -640,7 +640,7 @@ def verify_signature_over_metadata(
     raise tuf.Error('Unsupported metadata format: ' + repr(metadata_format))
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'returning')
+  print(I_TO_PRINT + 'Returning by calling keys.verify_signature()')
   #TODO: Until here
 
 

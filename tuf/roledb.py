@@ -67,7 +67,8 @@ _dirty_roles['default'] = set()
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.GREEN + '\t--------> [tuf/roledb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.GREEN + '-------> [tuf/roledb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+
 
 def create_roledb_from_root_metadata(root_metadata, repository_name='default'):
   """
@@ -97,7 +98,7 @@ def create_roledb_from_root_metadata(root_metadata, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb_from_root_metadata()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb_from_root_metadata(root_metadata, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Creating roledb from root metadata:', root_metadata, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -145,7 +146,7 @@ def create_roledb_from_root_metadata(root_metadata, repository_name='default'):
     add_role(rolename, roleinfo, repository_name)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -176,7 +177,7 @@ def create_roledb(repository_name):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[create_roledb(repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Creating new roleDB for repository: ', repository_name)))
   #TODO: Until here
@@ -195,7 +196,7 @@ def create_roledb(repository_name):
   _dirty_roles[repository_name] = set()
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -225,7 +226,7 @@ def remove_roledb(repository_name):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_roledb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_roledb(repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'removing roledb from repository_name:', repository_name)))
   #TODO: Until here
@@ -249,7 +250,7 @@ def remove_roledb(repository_name):
   del _dirty_roles[repository_name]
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -300,7 +301,7 @@ def add_role(rolename, roleinfo, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_role()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_role(rolename, roleinfo, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Adding role:', rolename, 'with roleinfo:', roleinfo, 'with repository_name', repository_name)))
   #TODO: Until here
@@ -343,7 +344,7 @@ def add_role(rolename, roleinfo, repository_name='default'):
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -405,7 +406,7 @@ def update_roleinfo(rolename, roleinfo, mark_role_as_dirty=True, repository_name
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_roleinfo()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[update_roleinfo(rolename, roleinfo, mark_role_as_dirty, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Updating info for Role: ', rolename, 'With roleinfo:', roleinfo, 'Mark role as dirty:', mark_role_as_dirty, 'repository name:', repository_name)))
   #TODO: Until here
@@ -442,7 +443,7 @@ def update_roleinfo(rolename, roleinfo, mark_role_as_dirty=True, repository_name
     _dirty_roles[repository_name].add(rolename)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -474,7 +475,7 @@ def get_dirty_roles(repository_name='default'):
     A list of the roles that have been modified.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_dirty_roles()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_dirty_roles(repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Getting dirty roles for repository_name:', repository_name)))
   #TODO: Until here
@@ -492,7 +493,7 @@ def get_dirty_roles(repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning list of _dirty_roles()')))
   #TODO: Until here
 
   return list(_dirty_roles[repository_name])
@@ -508,7 +509,7 @@ def mark_dirty(roles, repository_name='default'):
   # This code is excerpted from more recent TUF versions.
   # TODO: When merging, mind this.
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[mark_dirty(roles, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Mark_dirty roles:', roles, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -526,7 +527,7 @@ def mark_dirty(roles, repository_name='default'):
   _dirty_roles[repository_name].update(roles)
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -539,7 +540,7 @@ def unmark_dirty(roles, repository_name='default'):
   # This code is excerpted from more recent TUF versions.
   # TODO: When merging, mind this.
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[unmark_dirty()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[unmark_dirty(roles, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'unmarking dirty roles:', roles, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -559,7 +560,7 @@ def unmark_dirty(roles, repository_name='default'):
       logger.debug(repr(role) + ' is not dirty.')
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -592,7 +593,7 @@ def role_exists(rolename, repository_name='default'):
     Boolean.  True if 'rolename' is found in the role database, False otherwise.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[role_exists()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[role_exists(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Verifying if role exists. role:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -608,7 +609,7 @@ def role_exists(rolename, repository_name='default'):
     return False
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning boolean TRUE')))
   #TODO: Until here
 
   return True
@@ -651,7 +652,7 @@ def remove_role(rolename, repository_name='default'):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_role()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[remove_role(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Removing role with rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -671,7 +672,7 @@ def remove_role(rolename, repository_name='default'):
   del _roledb_dict[repository_name][rolename]
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -700,7 +701,7 @@ def get_rolenames(repository_name='default'):
     A list of rolenames.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_rolenames()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_rolenames(repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Getting rolenames for repository_name:', repository_name)))
   #TODO: Until here
@@ -718,7 +719,7 @@ def get_rolenames(repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning list of _roledb_dict().keys()')))
   #TODO: Until here
 
   return list(_roledb_dict[repository_name].keys())
@@ -767,7 +768,7 @@ def get_roleinfo(rolename, repository_name='default'):
     The roleinfo of 'rolename'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_roleinfo()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_roleinfo(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting roleinfo of rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -782,7 +783,7 @@ def get_roleinfo(rolename, repository_name='default'):
   global _dirty_roles
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning copy of _roledb_dict()')))
   #TODO: Until here
 
   return copy.deepcopy(_roledb_dict[repository_name][rolename])
@@ -824,7 +825,7 @@ def get_role_keyids(rolename, repository_name='default'):
     A list of keyids.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_keyids()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_keyids(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role keyids for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -840,11 +841,9 @@ def get_role_keyids(rolename, repository_name='default'):
 
   roleinfo = _roledb_dict[repository_name][rolename]
 
-
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'returning roleinfo[\'keyids\']:', roleinfo['keyids'])))
   #TODO: Until here
-
 
   return roleinfo['keyids']
 
@@ -882,7 +881,7 @@ def get_role_threshold(rolename, repository_name='default'):
     A threshold integer value.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_threshold()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_threshold(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role threshold for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -901,7 +900,7 @@ def get_role_threshold(rolename, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning roleinfo[\'threshold\']')))
   #TODO: Until here
 
   return roleinfo['threshold']
@@ -939,7 +938,7 @@ def get_role_paths(rolename, repository_name='default'):
     A list of paths.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_paths()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_paths(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role paths for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -961,7 +960,7 @@ def get_role_paths(rolename, repository_name='default'):
   roleinfo = _roledb_dict[repository_name][rolename]
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning roleinfo[\'paths\']')))
   #TODO: Until here
 
   # Paths won't exist for non-target roles.
@@ -1007,7 +1006,7 @@ def get_delegated_rolenames(rolename, repository_name='default'):
     delegation.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_delegated_rolenames()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_delegated_rolenames(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s ' % (I_TO_PRINT, 'Getting delegated rolenames for role:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -1037,7 +1036,7 @@ def get_delegated_rolenames(rolename, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning delegated_roles')))
   #TODO: Until here
 
   return delegated_roles
@@ -1072,7 +1071,7 @@ def clear_roledb(repository_name='default', clear_all=False):
     None.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_roledb()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clear_roledb(repository_name, clear_all)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Clearing roledb for repository_name:', repository_name, 'clear_all', clear_all)))
   #TODO: Until here
@@ -1097,7 +1096,7 @@ def clear_roledb(repository_name='default', clear_all=False):
   _dirty_roles[repository_name] = set()
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
@@ -1111,7 +1110,7 @@ def _check_rolename(rolename, repository_name='default'):
   does not exist in the role database.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_rolename()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_rolename(rolename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Checking rolename for rolename:', rolename, 'repository_name:', repository_name)))
   #TODO: Until here
@@ -1147,7 +1146,7 @@ def _validate_rolename(rolename):
   prior to calling this function.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_validate_rolename()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_validate_rolename(rolename)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Validating rolename for rolename:', rolename)))
   #TODO: Until here

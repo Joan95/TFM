@@ -57,7 +57,7 @@ logger = logging.getLogger('tuf.download')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [tuf/download.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.RED + '-------> [tuf/download.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def safe_download(url, required_length):
@@ -122,6 +122,10 @@ def safe_download(url, required_length):
       repr(url) + ' specifies an unsupported URI scheme.  Supported ' + \
       ' URI Schemes: ' + repr(tuf.conf.SUPPORTED_URI_SCHEMES)
     raise tuf.FormatError(message)
+
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning by calling _download_file()')))
+  #TODO: Until here
 
   return _download_file(url, required_length, STRICT_REQUIRED_LENGTH=True)
 
@@ -193,7 +197,7 @@ def unsafe_download(url, required_length):
     raise tuf.FormatError(message)
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
+  print(str('%s %s' % (I_TO_PRINT, 'Returning by calling _download_file()')))
   #TODO: Until here
 
   return _download_file(url, required_length, STRICT_REQUIRED_LENGTH=False)
@@ -288,6 +292,11 @@ def _download_file(url, required_length, STRICT_REQUIRED_LENGTH=True):
     raise
 
   else:
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning temp_file')))
+    #TODO: Until here
+
     return temp_file
 
 
@@ -403,6 +412,11 @@ def _download_fixed_amount_of_data(connection, temp_file, required_length):
     # This else block returns and skips closing the connection in the finally
     # block, so close the connection here.
     connection.close()
+
+    #TODO: Print to be deleted
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning number_of_bytes_received')))
+    #TODO: Until here
+
     return number_of_bytes_received
 
   finally:
@@ -441,7 +455,7 @@ def _get_opener(scheme=None):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_opener(scheme)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to \'https\'')))
+  print(str('%s %s' % (I_TO_PRINT, 'Getting opener by building a urllib2 opener based on whether the user now wants SSL, only will happen if scheme is equal to \'https\'')))
   #TODO: Until here
 
   if scheme == "https":
@@ -509,6 +523,10 @@ def _open_connection(url):
   opener = _get_opener(scheme=parsed_url.scheme)
   request = _get_request(url)
 
+  #TODO: Print to be deleted
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning by calling opener.open()')))
+  #TODO: Until here
+
   return opener.open(request, timeout = tuf.conf.SOCKET_TIMEOUT)
 
 
@@ -539,7 +557,7 @@ def _get_content_length(connection):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_get_content_length(connection)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Getting the length content')))
+  print(str('%s %s' % (I_TO_PRINT, 'Getting reported_length')))
   #TODO: Until here
 
   try:
@@ -703,7 +721,7 @@ class VerifiedHTTPSConnection(six.moves.http_client.HTTPSConnection):
 
   def connect(self):
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSConnection.connect()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSConnection.connect(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Verifying HTTPS Connection')))
     #TODO: Until here
@@ -752,7 +770,7 @@ class VerifiedHTTPSHandler(six.moves.urllib.request.HTTPSHandler):
 
   def __init__(self, connection_class = VerifiedHTTPSConnection):
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.__init__()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.__init__(self, connection_class)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Initializating')))
     #TODO: Until here
@@ -763,7 +781,7 @@ class VerifiedHTTPSHandler(six.moves.urllib.request.HTTPSHandler):
 
   def https_open(self, req):
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.https_open()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[VerifiedHTTPSHandler.https_open(self, req)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Opening HTTPS request')))
     #TODO: Until here
