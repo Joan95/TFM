@@ -54,7 +54,7 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.WHITE + '\t-------- --------> [tuf/util.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.WHITE + '-------> [tuf/util.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 
@@ -448,7 +448,7 @@ def get_file_details(filepath, hash_algorithms=['sha256']):
     A tuple (length, hashes) describing 'filepath'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_file_details()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_file_details(filepath, hash_algorithms)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning file details for filepath:', filepath, 'hash_algorithms:', hash_algorithms)))
   #TODO: Until here
@@ -611,7 +611,7 @@ def find_delegated_role(roles, delegated_role):
     does not exist, 'None' is returned.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[find_delegated_role()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[find_delegated_role(roles, delegated_role)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning the index of delegated role for roles:', roles, 'delegated_role:', delegated_role)))
   #TODO: Until here
@@ -897,7 +897,7 @@ def get_target_hash(target_filepath):
     The hash of 'target_filepath'.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash(target_filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
   #TODO: Until here
@@ -993,7 +993,7 @@ def load_json_string(data):
     Deserialized object.  For example, a dictionary.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string(data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
   #TODO: Until here
@@ -1049,7 +1049,7 @@ def load_der_string(data):
     portion will no longer be in DER.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string(data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', '?')))
   #TODO: Until here
@@ -1093,7 +1093,7 @@ def load_json_file(filepath):
   """
 
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file(filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON file for filepath:', filepath)))
   #TODO: Until here
