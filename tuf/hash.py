@@ -143,7 +143,7 @@ def digest(algorithm=_DEFAULT_HASH_ALGORITHM,
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest()]: ' + uptane.ENDCOLORS
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Providing the caller with the ability to create digest objects without having to worry about hash library availability or which library to use. The caller also has the option of specifying which hash algorithm and/or library to use.')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Providing the caller with algorithm:', algorithm, 'and hash_library:', hash_library)))
   #TODO: Until here
 
   # Was a hashlib digest object requested and is it supported?
