@@ -57,7 +57,7 @@ CLIENT_DIRECTORY_PREFIX = 'temp_primary'
 CLIENT_DIRECTORY = None
 #_client_directory_name = 'temp_primary' # name for this Primary's directory
 _vin = 'democar'
-_ecu_serial = 'INFOdemocar2'
+_ecu_serial = 'INFOFakeDemocar'
 # firmware_filename = 'infotainment_firmware.txt'
 
 
