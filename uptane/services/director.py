@@ -172,7 +172,7 @@ class Director:
         ENDCOLORS)
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -230,7 +230,7 @@ class Director:
           'the middle attack or misconfiguration.')
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 
@@ -460,7 +460,7 @@ class Director:
           'attack or misconfiguration.')
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 

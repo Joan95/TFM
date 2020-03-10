@@ -119,7 +119,7 @@ import uptane # Import before TUF modules; may change tuf.conf values.
 import uptane.formats
 import tuf
 
-TO_PRINT = uptane.TABULATION2 + uptane.YELLOW + '-------> [uptane/services/inventorydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.YELLOW + '-------> [uptane/services/inventorydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 # Global dictionaries
 vehicle_manifests = {}
@@ -336,7 +336,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   ecu_manifests[ecu_serial] = []
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 

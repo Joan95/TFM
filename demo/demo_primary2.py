@@ -508,13 +508,17 @@ def register_self_with_director():
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connecting to the Director via http. Sending: ecu_serial:', primary_ecu.ecu_serial, 'public_key', '?', 'and vin:', _vin)))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connecting to the Director at port:', demo.DIRECTOR_SERVER_PORT, 'via http. Sending: ecu_serial:', primary_ecu.ecu_serial, 'public_key from canonical and vin:', _vin)))
   #TODO: Until here
 
   # Connect to the Director
   server = xmlrpc_client.ServerProxy(
     'http://' + str(demo.DIRECTOR_SERVER_HOST) + ':' +
     str(demo.DIRECTOR_SERVER_PORT))
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Connection already done. Sending information...')))
+  #TODO: Until here
 
   print('Registering Primary ECU Serial and Key with Director.')
   server.register_ecu_serial(
@@ -525,7 +529,6 @@ def register_self_with_director():
 
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
-  print(str('%s %s' % (I_TO_PRINT, '# This wouldn\'t be how we\'d do it in practice. ECUs would probably be registered when put into a vehicle, directly rather than through the Primary. def register_secondaries_with_director(): \"\"\"For each of the Secondaries that this Primary is in charge of, send the Director a message registering that Secondary\'s ECU Serial and public key.\"\"\"')))
   #TODO: Until here
 
 
