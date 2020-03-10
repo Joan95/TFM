@@ -303,14 +303,14 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
 
 
     #TODO: TO BE ENTIRELY DELETED, MY CHECKINGS!
-    if not vin in primary_ecus_by_vin and is_primary:
-        print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] Vin:', vin, 'not in primary_ecus_by_vin:', primary_ecus_by_vin))
+    if vin in primary_ecus_by_vin and is_primary:
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] Vin:', vin, 'in primary_ecus_by_vin:', primary_ecus_by_vin))
     else:
-        print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] Vin:', vin, 'in primary_ecus_by_vin:', primary_ecus_by_vin))
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] Vin:', vin, 'not in primary_ecus_by_vin:', primary_ecus_by_vin))
     if not ecu_serial in ecu_public_keys:
-        print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] ecu_serial:', ecu_serial, 'not in ecu_public_keys:', ecu_public_keys))
+        print('%s %s %s %s %s %s' % (I_TO_PRINT, '[OK] ecu_serial:', ecu_serial, 'not in ecu_public_keys:', ecu_public_keys, 'no registered yet to public key'))
     else:
-        print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] ecu_serial:', ecu_serial, 'in ecu_public_keys:', ecu_public_keys))
+        print('%s %s %s %s %s %s' % (I_TO_PRINT, '[NOK] ecu_serial:', ecu_serial, 'in ecu_public_keys:', ecu_public_keys, 'already registered to public key'))
 
 
     # If we aren't supposed to be overwriting public keys or Primary
