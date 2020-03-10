@@ -54,7 +54,7 @@ log.addHandler(uptane.console_handler)
 log.setLevel(uptane.logging.DEBUG)
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
-TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/director.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.YELLOW + '-------> [uptane/services/director.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 class Director:
   """

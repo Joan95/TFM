@@ -53,7 +53,7 @@ import hashlib
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.RED + '-------> [tuf/sig.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.RED + '-------> [tuf/sig.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def get_signature_status(signable, role=None, repository_name='default'):

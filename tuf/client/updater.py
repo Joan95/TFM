@@ -359,7 +359,7 @@ class Updater(object):
           unsafely_update_root_if_necessary)
 
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
     #TODO: Until here
 
 

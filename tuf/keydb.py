@@ -57,7 +57,7 @@ _keydb_dict['default'] = {}
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.GREEN + '-------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.GREEN + '-------> [tuf/keydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def create_keydb_from_root_metadata(root_metadata, repository_name='default'):

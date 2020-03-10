@@ -173,7 +173,7 @@ _PBKDF2_ITERATIONS = tuf.conf.PBKDF2_ITERATIONS
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.YELLOW_BG + '-------> [tuf/pyca_crypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.YELLOW_BG + '-------> [tuf/pyca_crypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 

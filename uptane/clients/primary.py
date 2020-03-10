@@ -61,7 +61,7 @@ log.setLevel(uptane.logging.DEBUG)
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [uptane/clients/primary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.RED + '-------> [uptane/clients/primary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 
@@ -566,6 +566,10 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.primary_update_cycle(self)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Download fresh metadata and images for this vehicle, as instructed by the Director and validated by the Image Repository. Begin by obtaining trustworthy target file metadata from the repositories, then instruct TUF to download matching files. Assign the target files to ECUs and keep that mapping in memory for later distribution.')))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Refreshing top level metadata from all repositories.')))
     #TODO: Until here
 
     log.debug('Refreshing top level metadata from all repositories.')
@@ -1302,11 +1306,18 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     uptane.formats.SIGNABLE_TIMESERVER_ATTESTATION_SCHEMA.check_match(
         timeserver_attestation)
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Assuming that there is only one signature for TimeServer')))
+    #TODO: Until here
 
     # Assume there's only one signature. This assumption is made for simplicity
     # in this reference implementation. If the Timeserver needs to sign with
     # multiple keys for some reason, that can be accomodated.
     assert len(timeserver_attestation['signatures']) == 1
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Verifiying signature over metadata of timeserver_attestatin using self.timeserver_public_key and checking nonces')))
+    #TODO: Until here
 
     valid = uptane.common.verify_signature_over_metadata(
         self.timeserver_public_key,
@@ -1314,10 +1325,18 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
         timeserver_attestation['signed'],
         DATATYPE_TIME_ATTESTATION)
 
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, '1 - Result of verification is, valid:', valid)))
+    #TODO: Until here
+
     if not valid:
       raise tuf.BadSignatureError('Timeserver returned an invalid signature. '
           'Time is questionable, so not saved. If you see this persistently, '
           'it is possible that there is a Man in the Middle attack underway.')
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s %s' % (I_TO_PRINT, '2 - Going over the list of nonces send with self.nonces_sent:', self.nonces_sent, 'they must be inside of timeserver_attestation[\'signed\'][\'nonces\']')))
+    #TODO: Until here
 
     for nonce in self.nonces_sent:
       if nonce not in timeserver_attestation['signed']['nonces']:
@@ -1332,6 +1351,10 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
             'attack underway.')
 
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Extracting actual time from the timeserver\'s signed attestation')))
+    #TOOD: Until here
+
     # Extract actual time from the timeserver's signed attestation.
     new_timeserver_time = timeserver_attestation['signed']['time']
 
@@ -1341,8 +1364,16 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
         iso8601.parse_date(new_timeserver_time)))
     tuf.formats.UNIX_TIMESTAMP_SCHEMA.check_match(new_timeserver_time_unix)
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Saving valid timeserver time')))
+    #TOOD: Until here
+
     # Save validated time.
     self.all_valid_timeserver_times.append(new_timeserver_time)
+
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Saving the attestation itself as well, to provide to Secondaries')))
+    #TOOD: Until here
 
     # Save the attestation itself as well, to provide to Secondaries (who need
     # not trust us).

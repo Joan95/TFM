@@ -51,7 +51,7 @@ else:
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.RED + '-------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.RED + '-------> [tuf/asn1_codec.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def _ensure_valid_metadata_type_for_asn1(metadata_type):

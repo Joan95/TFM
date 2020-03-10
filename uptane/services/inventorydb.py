@@ -119,7 +119,7 @@ import uptane # Import before TUF modules; may change tuf.conf values.
 import uptane.formats
 import tuf
 
-TO_PRINT = uptane.YELLOW + '\t\t[uptane/services/inventorydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.YELLOW + '-------> [uptane/services/inventorydb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 # Global dictionaries
 vehicle_manifests = {}

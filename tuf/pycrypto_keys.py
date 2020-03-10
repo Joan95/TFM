@@ -154,7 +154,7 @@ _PBKDF2_ITERATIONS = tuf.conf.PBKDF2_ITERATIONS
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.YELLOW_BG + '-------> [tuf/pycrypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.YELLOW_BG + '-------> [tuf/pycrypto_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def generate_rsa_public_and_private(bits=_DEFAULT_RSA_KEY_BITS):

@@ -27,7 +27,7 @@ import uptane.formats
 SUPPORTED_KEY_TYPES = ['ed25519', 'rsa']
 
 #TODO: To be removed
-TO_PRINT = uptane.YELLOW + '\t[uptane/common.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.YELLOW + '\t[uptane/common.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 def sign_signable(
   signable, keys_to_sign_with, datatype,

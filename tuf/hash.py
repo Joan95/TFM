@@ -88,7 +88,7 @@ _DEFAULT_HASH_LIBRARY = 'hashlib'
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.PLUM_BG + '-------> [tuf/hash.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.PLUM_BG + '-------> [tuf/hash.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 

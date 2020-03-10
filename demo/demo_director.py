@@ -62,7 +62,7 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
-TO_PRINT = uptane.TABULATION + uptane.YELLOW + '[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
 
 KNOWN_VINS = ['111', '112', '113', 'democar']
 

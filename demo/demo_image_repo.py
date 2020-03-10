@@ -48,7 +48,7 @@ import atexit # to kill server process on exit()
 uptane.DEMO_MODE = True
 
 LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
-TO_PRINT = uptane.TABULATED + uptane.YELLOW + '[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
 
 target_files = {
                     'file1.txt' : "This is the content for file1",

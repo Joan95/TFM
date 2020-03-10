@@ -72,7 +72,7 @@ most_recent_signed_vehicle_manifest = None
 
 
 #TODO: To be removed
-TO_PRINT = uptane.TABULATION + uptane.YELLOW + '[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
+TO_PRINT = uptane.YELLOW + '[demo/demo_primary.py]\t>>Function: ' + ENDCOLORS + ' '
 
 
 def clean_slate(
@@ -83,7 +83,7 @@ def clean_slate(
   """
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate(use_new_keys, vin, ecu_serial)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'clean_slate()')))
   #TODO: Until here
@@ -123,7 +123,7 @@ def clean_slate(
   tuf.formats.ISO8601_DATETIME_SCHEMA.check_match(clock)
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Load or generate the Private key for this Primary ECU')))
+  print(str('%s %s' % (I_TO_PRINT, 'Loading or generating the Private key for this Primary ECU')))
   #TODO: Until here
 
   # Load the private key for this Primary ECU.
@@ -197,7 +197,17 @@ def clean_slate(
   print("Generating this Primary's first Vehicle Version Manifest and sending "
       "it to the Director.")
 
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Trying to generate signed vehicle manifest')))
+  #TODO: Until here
+
   generate_signed_vehicle_manifest()
+
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Trying to submit vehicle manifest to director')))
+  #TODO: Until here
+
   submit_vehicle_manifest_to_director()
 
   #TODO: Print to be deleted
@@ -332,15 +342,26 @@ def update_cycle():
   # At this point, time_attestation might be a simple Python dictionary or
   # a DER-encoded ASN.1 representation of one.
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Updating time for Primary_ECU with time_attestation recieved from server')))
+  #TOOD: Until here
+
   # This validates the attestation and also saves the time therein (if the
   # attestation was valid), causing this client to use that time for future
   # metadata expiration checks. Secondaries can request this from the Primary
   # at will.
   primary_ecu.update_time(time_attestation)
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Time attestation validated. New time registered.')))
+  #TOOD: Until here
+
   print('Time attestation validated. New time registered.')
 
 
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Starting DOWNLOADING METADATA AND IMAGES PROCESS')))
+  #TOOD: Until here
 
   #
   # SECOND: DOWNLOAD METADATA AND IMAGES

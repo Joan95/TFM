@@ -33,7 +33,7 @@
   Example:
 
   rsa_key = {'keytype': 'rsa'
-             'keyid': 34892fc465ac76bc3232fab 
+             'keyid': 34892fc465ac76bc3232fab
              'keyval': {'public': 'public_key',
                         'private': 'private_key'}
 
@@ -46,8 +46,8 @@
 
   The second section contains miscellaneous functions related to the format of
   TUF objects.
-  Example: 
-  
+  Example:
+
   signable_object = make_signable(unsigned_object)
 """
 
@@ -161,7 +161,7 @@ BOOLEAN_SCHEMA = SCHEMA.Boolean()
 # Must be 1 and greater.
 THRESHOLD_SCHEMA = SCHEMA.Integer(lo=1)
 
-# A string representing a role's name. 
+# A string representing a role's name.
 ROLENAME_SCHEMA = SCHEMA.AnyString()
 
 # The minimum number of bits for an RSA key.  Must be 2048 bits, or greater
@@ -174,7 +174,7 @@ RSAKEYBITS_SCHEMA = SCHEMA.Integer(lo=2048)
 # The number of hashed bins, or the number of delegated roles.  See
 # delegate_hashed_bins() in 'repository_tool.py' for an example.  Note:
 # Tools may require further restrictions on the number of bins, such
-# as requiring them to be a power of 2. 
+# as requiring them to be a power of 2.
 NUMBINS_SCHEMA = SCHEMA.Integer(lo=1)
 
 # A PyCrypto signature.
@@ -200,7 +200,7 @@ KEYVAL_SCHEMA = SCHEMA.Object(
   public = SCHEMA.AnyString(),
   private = SCHEMA.Optional(SCHEMA.AnyString()))
 
-# Supported TUF key types. 
+# Supported TUF key types.
 KEYTYPE_SCHEMA = SCHEMA.OneOf(
   [SCHEMA.String('rsa'), SCHEMA.String('ed25519')])
 
@@ -236,10 +236,10 @@ RSAKEY_SCHEMA = SCHEMA.Object(
 # An ED25519 raw public key, which must be 32 bytes.
 ED25519PUBLIC_SCHEMA = SCHEMA.LengthBytes(32)
 
-# An ED25519 raw seed key, which must be 32 bytes.  
+# An ED25519 raw seed key, which must be 32 bytes.
 ED25519SEED_SCHEMA = SCHEMA.LengthBytes(32)
 
-# An ED25519 raw signature, which must be 64 bytes.  
+# An ED25519 raw signature, which must be 64 bytes.
 ED25519SIGNATURE_SCHEMA = SCHEMA.LengthBytes(64)
 
 # Required installation libraries expected by the repository tools and other
@@ -270,7 +270,7 @@ FILEINFO_SCHEMA = SCHEMA.Object(
 # the snapshot role, but was switched to this object format to reduce the
 # amount of metadata that needs to be downloaded.  Listing version numbers in
 # "snapshot.json" also prevents rollback attacks for roles that clients have
-# not downloaded. 
+# not downloaded.
 VERSIONINFO_SCHEMA = SCHEMA.Object(
   object_name = 'VERSIONINFO_SCHEMA',
   version = METADATAVERSION_SCHEMA)
@@ -382,7 +382,7 @@ RECEIVECONFIG_SCHEMA = SCHEMA.Object(
     repository_directory = PATH_SCHEMA,
     metadata_directory = PATH_SCHEMA,
     targets_directory = PATH_SCHEMA,
-    backup_directory = PATH_SCHEMA)) 
+    backup_directory = PATH_SCHEMA))
 
 # A path hash prefix is a hexadecimal string.
 PATH_HASH_PREFIX_SCHEMA = HEX_SCHEMA
@@ -404,7 +404,7 @@ ROLE_SCHEMA = SCHEMA.Object(
   paths = SCHEMA.Optional(RELPATHS_SCHEMA),
   path_hash_prefixes = SCHEMA.Optional(PATH_HASH_PREFIXES_SCHEMA))
 
-# A dict of roles where the dict keys are role names and the dict values holding 
+# A dict of roles where the dict keys are role names and the dict values holding
 # the role data/information.
 ROLEDICT_SCHEMA = SCHEMA.DictOf(
   key_schema = ROLENAME_SCHEMA,
@@ -598,6 +598,9 @@ ANYROLE_SCHEMA = SCHEMA.OneOf([ROOT_SCHEMA, TARGETS_SCHEMA, SNAPSHOT_SCHEMA,
                                TIMESTAMP_SCHEMA, MIRROR_SCHEMA])
 
 
+# TODO: To be deleted
+import uptane
+TO_PRINT = uptane.TABULATION3 + uptane.RED + '\t--------> [tuf/formats.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 
@@ -615,7 +618,7 @@ class MetaFile(object):
 
   def __eq__(self, other):
     return isinstance(other, MetaFile) and self.info == other.info
-  
+
   __hash__ = None
 
   def __ne__(self, other):
@@ -628,10 +631,10 @@ class MetaFile(object):
       referred to directly without the info dict. The info dict is just
       to be able to do the __eq__ comparison generically.
     """
-   
+
     if name in self.info:
       return self.info[name]
-    
+
     else:
       raise AttributeError(name)
 
@@ -700,7 +703,7 @@ def datetime_to_unix_timestamp(datetime_object):
 
     >>> datetime_object = datetime.datetime(1985, 10, 26, 1, 22)
     >>> timestamp = datetime_to_unix_timestamp(datetime_object)
-    >>> timestamp 
+    >>> timestamp
     499137720
 
   <Arguments>
@@ -716,15 +719,15 @@ def datetime_to_unix_timestamp(datetime_object):
   <Returns>
     A unix (posix) timestamp (e.g., 499137660).
   """
-  
+
   # Is 'datetime_object' a datetime.datetime() object?
   # Raise 'tuf.FormatError' if not.
   if not isinstance(datetime_object, datetime.datetime):
     message = repr(datetime_object) + ' is not a datetime.datetime() object.'
-    raise tuf.FormatError(message) 
-   
+    raise tuf.FormatError(message)
+
   unix_timestamp = calendar.timegm(datetime_object.timetuple())
-  
+
   return unix_timestamp
 
 
@@ -737,9 +740,9 @@ def unix_timestamp_to_datetime(unix_timestamp):
     Convert 'unix_timestamp' (i.e., POSIX time, in UNIX_TIMESTAMP_SCHEMA format)
     to a datetime.datetime() object.  'unix_timestamp' is the number of seconds
     since the epoch (January 1, 1970.)
-   
+
     >>> datetime_object = unix_timestamp_to_datetime(1445455680)
-    >>> datetime_object 
+    >>> datetime_object
     datetime.datetime(2015, 10, 21, 19, 28)
 
   <Arguments>
@@ -756,7 +759,7 @@ def unix_timestamp_to_datetime(unix_timestamp):
   <Returns>
     A datetime.datetime() object corresponding to 'unix_timestamp'.
   """
-  
+
   # Is 'unix_timestamp' properly formatted?
   # Raise 'tuf.FormatError' if there is a mismatch.
   UNIX_TIMESTAMP_SCHEMA.check_match(unix_timestamp)
@@ -766,7 +769,7 @@ def unix_timestamp_to_datetime(unix_timestamp):
   # used because it returns a local datetime.
   struct_time = time.gmtime(unix_timestamp)
 
-  # Extract the (year, month, day, hour, minutes, seconds) arguments for the 
+  # Extract the (year, month, day, hour, minutes, seconds) arguments for the
   # datetime object to be returned.
   datetime_object = datetime.datetime(*struct_time[:6])
 
@@ -795,10 +798,10 @@ def format_base64(data):
   <Returns>
     A base64-encoded string.
   """
-  
+
   try:
     return binascii.b2a_base64(data).decode('utf-8').rstrip('=\n ')
-  
+
   except (TypeError, binascii.Error) as e:
     raise tuf.FormatError('Invalid base64 encoding: ' + str(e))
 
@@ -810,7 +813,7 @@ def parse_base64(base64_string):
   """
   <Purpose>
     Parse a base64 encoding with whitespace and '=' signs omitted.
-  
+
   <Arguments>
     base64_string:
       A string holding a base64 value.
@@ -838,7 +841,7 @@ def parse_base64(base64_string):
 
   try:
     return binascii.a2b_base64(base64_string.encode('utf-8'))
-  
+
   except (TypeError, binascii.Error) as e:
     raise tuf.FormatError('Invalid base64 encoding: ' + str(e))
 
@@ -860,7 +863,7 @@ def make_signable(object):
 
   <Arguments>
     object:
-      A role schema dict (e.g., 'ROOT_SCHEMA', 'SNAPSHOT_SCHEMA'). 
+      A role schema dict (e.g., 'ROOT_SCHEMA', 'SNAPSHOT_SCHEMA').
 
   <Exceptions>
     None.
@@ -871,6 +874,11 @@ def make_signable(object):
   <Returns>
     A dict in 'SIGNABLE_SCHEMA' format.
   """
+
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[make_signable(object)]: ' + uptane.ENDCOLORS
+  #TODO: Print to be deleted
+  print(str('%s %s' % (I_TO_PRINT, 'Making object signable by adding field \'signed\' and \'signatures\'')))
+  #TODO: Until here
 
   if not isinstance(object, dict) or 'signed' not in object:
     return { 'signed' : object, 'signatures' : [] }
@@ -918,7 +926,7 @@ def make_fileinfo(length, hashes, version=None, custom=None):
   fileinfo = {'length' : length, 'hashes' : hashes}
 
   if version is not None:
-    fileinfo['version'] = version 
+    fileinfo['version'] = version
 
   if custom is not None:
     fileinfo['custom'] = custom
@@ -959,12 +967,12 @@ def make_versioninfo(version_number):
   versioninfo = {'version': version_number}
 
   # Raise 'tuf.FormatError' if 'versioninfo' is improperly formatted.
-  try: 
+  try:
     VERSIONINFO_SCHEMA.check_match(versioninfo)
-  
+
   except:
     raise
-  
+
   else:
     return versioninfo
 
@@ -1005,7 +1013,7 @@ def make_role_metadata(keyids, threshold, name=None, paths=None,
     formatted incorrectly.
 
   <Side Effects>
-    If any of the arguments do not have a proper format, a 
+    If any of the arguments do not have a proper format, a
     tuf.formats exception is raised when the 'ROLE_SCHEMA' dict
     is created.
 
@@ -1070,13 +1078,13 @@ def expected_meta_rolename(meta_rolename):
   <Returns>
     A string (e.g., 'Root', 'Targets').
   """
-   
+
   # Does 'meta_rolename' have the correct type?
   # This check ensures 'meta_rolename' conforms to
   # 'tuf.formats.NAME_SCHEMA'.
   # Raise 'tuf.FormatError' if there is a mismatch.
   NAME_SCHEMA.check_match(meta_rolename)
-  
+
   return string.capwords(meta_rolename)
 
 
@@ -1097,7 +1105,7 @@ def check_signable_object_format(object):
 
   <Arguments>
     object:
-     The object compare against 'SIGNABLE.SCHEMA'. 
+     The object compare against 'SIGNABLE.SCHEMA'.
 
   <Exceptions>
     tuf.FormatError, if 'object' does not have the correct format.
@@ -1109,7 +1117,7 @@ def check_signable_object_format(object):
     A string representing the signing role (e.g., 'root', 'targets').
     The role string is returned with characters all lower case.
   """
-  
+
   # Does 'object' have the correct type?
   # This check ensures 'object' conforms to
   # 'tuf.formats.SIGNABLE_SCHEMA'.
@@ -1117,16 +1125,16 @@ def check_signable_object_format(object):
 
   try:
     role_type = object['signed']['_type']
-  
+
   except (KeyError, TypeError):
     raise tuf.FormatError('Untyped object')
-  
+
   try:
     schema = SCHEMAS_BY_TYPE[role_type]
-  
+
   except KeyError:
     raise tuf.FormatError('Unrecognized type ' + repr(role_type))
-  
+
   # 'tuf.FormatError' raised if 'object' does not have a properly
   # formatted role schema.
   schema.check_match(object['signed'])
@@ -1141,7 +1149,7 @@ def _canonical_string_encoder(string):
   """
   <Purpose>
     Encode 'string' to canonical string format.
-    
+
   <Arguments>
     string:
       The string to encode.
@@ -1157,7 +1165,7 @@ def _canonical_string_encoder(string):
   """
 
   string = '"%s"' % re.sub(r'(["\\])', r'\\\1', string)
- 
+
   return string
 
 
@@ -1237,7 +1245,7 @@ def encode_canonical(object, output_function=None):
     '{"A":[99]}'
     >>> encode_canonical({"x" : 3, "y" : 2})
     '{"x":3,"y":2}'
-  
+
   <Arguments>
     object:
       The object to be encoded.
@@ -1251,7 +1259,7 @@ def encode_canonical(object, output_function=None):
     is not callable.
 
   <Side Effects>
-    The results are fed to 'output_function()' if 'output_function' is set.  
+    The results are fed to 'output_function()' if 'output_function' is set.
 
   <Returns>
     A string representing the 'object' encoded in canonical JSON form.
@@ -1266,7 +1274,7 @@ def encode_canonical(object, output_function=None):
 
   try:
     _encode_canonical(object, output_function)
-  
+
   except (TypeError, tuf.FormatError) as  e:
     message = 'Could not encode ' + repr(object) + ': ' + str(e)
     raise tuf.FormatError(message)

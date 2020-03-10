@@ -127,4 +127,5 @@ ENDCOLORS = '\033[0m'
 
 # Custom Variable
 TABULATION = '\t'
-TABULATED = ''
+TABULATION2 = '\t\t'
+TABULATION3 = '\t\t\t'

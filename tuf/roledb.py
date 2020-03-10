@@ -67,7 +67,7 @@ _dirty_roles['default'] = set()
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATED + uptane.TABULATION + uptane.TABULATION + uptane.GREEN + '-------> [tuf/roledb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.GREEN + '-------> [tuf/roledb.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def create_roledb_from_root_metadata(root_metadata, repository_name='default'):

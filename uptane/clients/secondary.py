@@ -55,7 +55,7 @@ log.setLevel(uptane.logging.DEBUG)
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.RED + '\t--------> [uptane/clients/secondary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION2 + uptane.RED + '-------> [uptane/clients/secondary.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 class Secondary(object):
