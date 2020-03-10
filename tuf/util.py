@@ -54,7 +54,7 @@ logger = logging.getLogger('tuf.util')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATION2 + uptane.WHITE + '-------> [tuf/util.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.WHITE + '-------> [tuf/util.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 

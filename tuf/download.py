@@ -57,7 +57,7 @@ logger = logging.getLogger('tuf.download')
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATION2 + uptane.RED + '-------> [tuf/download.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.RED + '-------> [tuf/download.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def safe_download(url, required_length):

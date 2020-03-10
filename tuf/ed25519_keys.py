@@ -123,7 +123,7 @@ _SUPPORTED_ED25519_SIGNING_METHODS = ['ed25519']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATION2 + uptane.YELLOW_BG + '-------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.YELLOW_BG + '-------> [tuf/ed25519_keys.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def generate_public_and_private():

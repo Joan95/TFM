@@ -109,7 +109,7 @@ METADATA_EXTENSIONS = ['.json', '.der']
 
 # TODO: To be deleted
 import uptane
-TO_PRINT = uptane.TABULATION + uptane.RED + '---> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
+TO_PRINT = uptane.TABULATION + uptane.RED + '-------> [tuf/repository_lib.py]\t>>Function: ' + uptane.ENDCOLORS + ' '
 
 
 def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
