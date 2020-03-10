@@ -285,7 +285,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   (ecus_by_vin[vin]) twice.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu()]: ' + uptane.ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[register_ecu(is_primary, vin, ecu_serial, public_key, overwrite)]: ' + uptane.ENDCOLORS
   #TODO: Print to be removed
   print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering ECU with ecu_serial:', ecu_serial, 'for vehicle vin:', vin, 'is_primary:', is_primary, 'overwrite:', overwrite)))
   #TODO: Until here
@@ -300,6 +300,18 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
       'Programming error: ECU registration is not consistent.'
 
   if not overwrite:
+
+
+    #TODO: TO BE ENTIRELY DELETED, MY CHECKINGS!
+    if not vin in primary_ecus_by_vin and is_primary:
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] Vin:', vin, 'not in primary_ecus_by_vin:', primary_ecus_by_vin))
+    else:
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] Vin:', vin, 'in primary_ecus_by_vin:', primary_ecus_by_vin))
+    if not ecu_serial in ecu_public_keys:
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] ecu_serial:', ecu_serial, 'not in ecu_public_keys:', ecu_public_keys))
+    else:
+        print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] ecu_serial:', ecu_serial, 'in ecu_public_keys:', ecu_public_keys))
+
 
     # If we aren't supposed to be overwriting public keys or Primary
     # associations, make sure we don't.
