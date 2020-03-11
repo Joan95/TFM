@@ -151,7 +151,7 @@ class Director:
         if the arguments do not fit the correct format.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_serial()]: ' + ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_ecu_serial(self, ecu_serial, ecu_key, vin, is_primary)]: ' + ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Set the expected public key for signed messages from the ECU with the given ecu_serial:', ecu_serial, 'ecu_key:', '?', 'vin:', vin)))
     #TODO: Until here
