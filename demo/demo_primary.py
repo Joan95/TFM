@@ -473,7 +473,7 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
       str(demo.DIRECTOR_SERVER_PORT))
 
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connection already done. Submitting vehicle manifest to director with primary_ecu.vin:', primary_ecu.vin, 'primary_ecu.ecu_serial:', primary_ecu.serial, 'signed_vehicle_manifest:', '?')))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connection already done. Submitting vehicle manifest to director with primary_ecu.vin:', primary_ecu.vin, 'primary_ecu.ecu_serial:', primary_ecu.ecu_serial, 'signed_vehicle_manifest:', '?')))
   #TODO: Until here
 
   print("Submitting the Primary's manifest to the Director.")
