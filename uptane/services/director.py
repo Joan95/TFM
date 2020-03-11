@@ -290,7 +290,7 @@ class Director:
 
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_vehicle_manifest()]: ' + ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Director.register_vehicle_manifest(self, vin, primary_ecu_serial, signed_vehicle_manifest)]: ' + ENDCOLORS
     #TODO: Print to be deleted
     print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Registering vehicle with vin:', vin, 'Saves the vehicle manifest in the InventoryDB, validating first the Primary\'s key on the full vehicle manifest, then each individual ECU Manifest\'s signature. primary_ecu_serial:', primary_ecu_serial, 'signed_vehicle_manifest:', '?')))
     #TODO: Until here
@@ -355,7 +355,7 @@ class Director:
               'validation attempt follows:\n' + ENDCOLORS + repr(e))
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
     #TODO: Until here
 
 

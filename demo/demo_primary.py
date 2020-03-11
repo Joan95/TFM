@@ -456,11 +456,6 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
     signed_vehicle_manifest = most_recent_signed_vehicle_manifest
 
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Submitting vehicle manifest to director for signed_vehicle_manifest:', '?')))
-  #TODO: Until here
-
-
   if tuf.conf.METADATA_FORMAT == 'der':
     # If we're working with DER ECU Manifests, check that the manifest to send
     # is a byte array, and encapsulate it in a Binary() object for XMLRPC
@@ -476,6 +471,10 @@ def submit_vehicle_manifest_to_director(signed_vehicle_manifest=None):
   server = xmlrpc_client.ServerProxy(
       'http://' + str(demo.DIRECTOR_SERVER_HOST) + ':' +
       str(demo.DIRECTOR_SERVER_PORT))
+
+  #TODO: Print to be deleted
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Connection already done. Submitting vehicle manifest to director with primary_ecu.vin:', primary_ecu.vin, 'primary_ecu.ecu_serial:', primary_ecu.serial, 'signed_vehicle_manifest:', '?')))
+  #TODO: Until here
 
   print("Submitting the Primary's manifest to the Director.")
 

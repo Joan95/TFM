@@ -305,8 +305,6 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
     #TODO: TO BE ENTIRELY DELETED, MY CHECKINGS!
     if vin in primary_ecus_by_vin and is_primary:
         print('%s %s %s %s %s' % (I_TO_PRINT, '[OK] Vin:', vin, 'in primary_ecus_by_vin:', primary_ecus_by_vin))
-        print('\nvehicle_manifests: %s\necu_manifests: %s\nprimary_ecus_by_vin: %s\necus_by_vin: %s\necu_public_keys: %s\n' % (vehicle_manifests, ecu_manifests, primary_ecus_by_vin, ecus_by_vin, ecu_public_keys))
-
     else:
         print('%s %s %s %s %s' % (I_TO_PRINT, '[NOK] Vin:', vin, 'not in primary_ecus_by_vin:', primary_ecus_by_vin))
     if not ecu_serial in ecu_public_keys:
@@ -350,6 +348,10 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   ecu_manifests[ecu_serial] = []
 
   #TODO: Print to be deleted
+  print('\nvehicle_manifests: %s\necu_manifests: %s\nprimary_ecus_by_vin: %s\necus_by_vin: %s\necu_public_keys: %s\n' % (vehicle_manifests, ecu_manifests, primary_ecus_by_vin, ecus_by_vin, ecu_public_keys))
+  #TODO: Until here
+
+  #TODO: Print to be deleted
   print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
@@ -380,7 +382,7 @@ def register_vehicle(vin, primary_ecu_serial=None, overwrite=True):
   primary_ecus_by_vin[vin] = primary_ecu_serial
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
   #TODO: Until here
 
 
