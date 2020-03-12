@@ -247,7 +247,7 @@ def _download_file(url, required_length, STRICT_REQUIRED_LENGTH=True):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_download_file(url, required_length, STRICT_REQUIRED_LENGTH)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Opening connection against url:', url)))
+  print(str('%s %s' % (I_TO_PRINT, 'This function opens a connection to \'url\' and downloads the file while ensuring its length and hashes match \'required_hashes\' and \'required_length\'')))
   #TODO: Until here
 
   # Do all of the arguments have the appropriate format?
@@ -266,6 +266,9 @@ def _download_file(url, required_length, STRICT_REQUIRED_LENGTH=True):
   temp_file = tuf.util.TempFile()
 
   try:
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Stablishing connection against URL:', url)))
+    #TODO: Until here
     # Open the connection to the remote file.
     connection = _open_connection(url)
 
