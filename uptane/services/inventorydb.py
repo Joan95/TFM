@@ -334,6 +334,11 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   if ecu_serial not in ecus_by_vin[vin]:
     ecus_by_vin[vin].append(ecu_serial)
 
+  else:
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, "[!] - ecu_serial is already in ecus_by_vin[vin], vin:", vin)))
+
+
   if is_primary:
     # Set the ECU as the vehicle's Primary ECU.
     primary_ecus_by_vin[vin] = ecu_serial
