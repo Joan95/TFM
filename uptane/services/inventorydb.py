@@ -320,7 +320,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
         primary_ecus_by_vin[vin] is not None:
 
         #TODO: Print to be deleted
-        print(str('%s %s' % (I_TO_PRINT, "ERROR!")))
+        print(str('%s %s' % (I_TO_PRINT, "ERROR! primary_ecus_by_vin[vin] is not NONE!")))
         #TODO: Until here
 
         raise uptane.Spoofing('The given VIN, ' + repr(vin) + ', is already '
@@ -329,7 +329,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
     if ecu_serial in ecu_public_keys:
 
         #TODO: Print to be deleted
-        print(str('%s %s' % (I_TO_PRINT, "ERROR!")))
+        print(str('%s %s' % (I_TO_PRINT, "ERROR! ecu_serial already in ecu_public_keys!")))
         #TODO: Until here
 
         raise uptane.Spoofing('The given ECU Serial, ' + repr(ecu_serial) +
