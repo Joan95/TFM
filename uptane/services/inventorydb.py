@@ -318,11 +318,21 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
 
     if is_primary and vin in primary_ecus_by_vin and \
         primary_ecus_by_vin[vin] is not None:
-      raise uptane.Spoofing('The given VIN, ' + repr(vin) + ', is already '
+
+        #TODO: Print to be deleted
+        print(str('%s %s' % (I_TO_PRINT, "ERROR!")))
+        #TODO: Until here
+
+        raise uptane.Spoofing('The given VIN, ' + repr(vin) + ', is already '
           'associated with a Primary ECU.')
 
     if ecu_serial in ecu_public_keys:
-      raise uptane.Spoofing('The given ECU Serial, ' + repr(ecu_serial) +
+
+        #TODO: Print to be deleted
+        print(str('%s %s' % (I_TO_PRINT, "ERROR!")))
+        #TODO: Until here
+
+        raise uptane.Spoofing('The given ECU Serial, ' + repr(ecu_serial) +
           ', is already associated with a public key.')
 
   # It is expected that the vehicle to which this ECU belongs is already
@@ -337,6 +347,7 @@ def register_ecu(is_primary, vin, ecu_serial, public_key, overwrite=True):
   else:
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, "[!] - ecu_serial is already in ecus_by_vin[vin], vin:", vin)))
+    #TODO: Until here
 
 
   if is_primary:
