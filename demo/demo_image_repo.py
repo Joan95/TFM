@@ -51,8 +51,8 @@ LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
 
 target_files = {
-                    'file1.txt' : "This is the content for file1",
-                    'infotainment_firmware.txt': "This is the content for infotainment_firmware"
+                    'file1.txt' : "This file was created during demo_image_repo.py process. This is the content for file1",
+                    'infotainment_firmware.txt': "This file was created during demo_image_repo.py process. This is the content for infotainment_firmware"
                 }
 
 repo = None

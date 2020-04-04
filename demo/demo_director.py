@@ -64,7 +64,7 @@ uptane.DEMO_MODE = True
 LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
 
-KNOWN_VINS = ['111', '112', '113', 'democar']
+KNOWN_VINS = ['URV', 'UOC', '111', '112', '113', 'democar']
 
 # Dynamic global objects
 #repo = None

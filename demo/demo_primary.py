@@ -321,13 +321,16 @@ def update_cycle():
   # nonces as "sent" and empties the Primary's list of nonces to send.)
   nonces_to_send = primary_ecu.get_nonces_to_send_and_rotate()
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'nonces:', nonces_to_send)))
+  #TODO: Until here
+
   tserver = xmlrpc_client.ServerProxy(
       'http://' + str(demo.TIMESERVER_HOST) + ':' + str(demo.TIMESERVER_PORT))
   #if not server.system.listMethods():
   #  raise Exception('Unable to connect to server.')
 
   print('Submitting a request for a signed time to the Timeserver.')
-
 
   #TODO: Print to be deleted
   print(str('%s %s %s' % (I_TO_PRINT, 'Sending GET get_signed_time_der/get_signed_time request to TIMESERVER in port:', demo.TIMESERVER_PORT)))

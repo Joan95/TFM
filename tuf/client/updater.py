@@ -2056,9 +2056,9 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._safely_get_metadata_file()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._safely_get_metadata_file(metadata_role, metadata_filepath, uncompressed_fileinfo, compression, compressed_fileinfo)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Non-public method that safely downloads a metadata file up to a certain length, and checks its hashes thereafter.')))
     #TODO: Until here
 
     # Store file length and hashes of the uncompressed version metadata.
@@ -2156,9 +2156,9 @@ class SingleRepoUpdater(object):
       A 'tuf.util.TempFile' file-like object containing the metadata or target.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_file()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._get_file(filepath, verify_file_function, file_type, file_length, compression, verify_compressed_file_function, download_safely)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, '...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Non-public method that tries downloading, up to a certain length, a metadata or target file from a list of known mirrors. As soon as the first valid copy of the file is found, the rest of the mirrors will be skipped.')))
     #TODO: Until here
 
 
