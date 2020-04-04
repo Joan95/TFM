@@ -116,6 +116,10 @@ def clean_slate(use_new_keys=False):
 
   print(LOG_PREFIX + 'Loading all keys')
 
+  #TODO: To be deleted
+  use_new_keys = True
+  #TODO: Until here
+
   # Create keys and/or load keys into memory.
   if use_new_keys:
     demo.generate_key('mainroot')

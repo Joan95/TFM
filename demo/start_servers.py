@@ -30,6 +30,8 @@ def main():
   # webdemo)
   di.clean_slate()
 
+  exit()
+
   # Start demo Director, including http server and xmlrpc listener (for
   # manifests, registrations, and webdemo)
   dd.clean_slate()
