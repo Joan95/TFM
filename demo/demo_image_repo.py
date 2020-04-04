@@ -273,13 +273,13 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
-  add_target_to_imagerepo('demo/images/CommonINFO1.0.txt', 'CommonINFO1.0.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/URV1.0.txt', 'URV1.0.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/URV1.1.txt', 'URV1.1.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/URV1.2.txt', 'URV1.2.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/UOC1.0.txt', 'UOC1.0.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/UOC1.1.txt', 'UOC1.1.txt - added in clean_slate() function at demo_image_repo.py')
-  add_target_to_imagerepo('demo/images/UOC1.2.txt', 'UOC1.2.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/CommonINFO1.0.txt', 'CommonINFO1.0.txt')
+  add_target_to_imagerepo('demo/images/URV1.0.txt', 'URV1.0.txt')
+  add_target_to_imagerepo('demo/images/URV1.1.txt', 'URV1.1.txt')
+  add_target_to_imagerepo('demo/images/URV1.2.txt', 'URV1.2.txt')
+  add_target_to_imagerepo('demo/images/UOC1.0.txt', 'UOC1.0.txt')
+  add_target_to_imagerepo('demo/images/UOC1.1.txt', 'UOC1.1.txt')
+  add_target_to_imagerepo('demo/images/UOC1.2.txt', 'UOC1.2.txt')
 
 
   print(LOG_PREFIX + 'Signing and hosting initial repository metadata')
