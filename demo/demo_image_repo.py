@@ -273,13 +273,13 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
-  add_target_to_imagerepo('demo/images/INFO1.0.txt', 'INFO1.0.txt')
-  add_target_to_imagerepo('demo/images/TCU1.0.txt', 'TCU1.0.txt')
-  add_target_to_imagerepo('demo/images/TCU1.1.txt', 'TCU1.1.txt')
-  add_target_to_imagerepo('demo/images/TCU1.2.txt', 'TCU1.2.txt')
-  add_target_to_imagerepo('demo/images/BCU1.0.txt', 'BCU1.0.txt')
-  add_target_to_imagerepo('demo/images/BCU1.1.txt', 'BCU1.1.txt')
-  add_target_to_imagerepo('demo/images/BCU1.2.txt', 'BCU1.2.txt')
+  add_target_to_imagerepo('demo/images/CommonINFO1.0.txt', 'INFO1.0.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/URV1.0.txt', 'TCU1.0.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/URV1.1.txt', 'TCU1.1.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/URV1.2.txt', 'TCU1.2.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/UOC1.0.txt', 'BCU1.0.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/UOC1.1.txt', 'BCU1.1.txt - added in clean_slate() function at demo_image_repo.py')
+  add_target_to_imagerepo('demo/images/UOC1.2.txt', 'BCU1.2.txt - added in clean_slate() function at demo_image_repo.py')
 
 
   print(LOG_PREFIX + 'Signing and hosting initial repository metadata')
