@@ -65,8 +65,9 @@ def clean_slate(use_new_keys=False):
   global repo
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
+  _print = False
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Cleaning slate with use_new_keys:', use_new_keys)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'Cleaning slate with use_new_keys:', use_new_keys)))
   #TODO: Until here
 
   print(LOG_PREFIX + 'Initializing repository')
@@ -74,31 +75,31 @@ def clean_slate(use_new_keys=False):
   # Create target files: file1.txt and infotainment_firmware.txt
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Target files: %s' % target_files.keys())
+  if _print: print(I_TO_PRINT + 'Target files: %s' % target_files.keys())
   #TODO: Until here
 
 
   if os.path.exists(demo.IMAGE_REPO_TARGETS_DIR):
     #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Removing files: ' + demo.IMAGE_REPO_TARGETS_DIR)
+    if _print: print(I_TO_PRINT + 'Removing files: ' + demo.IMAGE_REPO_TARGETS_DIR)
     #TODO: Until here
 
     shutil.rmtree(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Creating directories: ' + demo.IMAGE_REPO_TARGETS_DIR)
+  if _print: print(I_TO_PRINT + 'Creating directories: ' + demo.IMAGE_REPO_TARGETS_DIR)
   #TODO: Until here
 
   os.makedirs(demo.IMAGE_REPO_TARGETS_DIR)
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Writing content for: %s' % target_files.keys())
+  if _print: print(I_TO_PRINT + 'Writing content for: %s' % target_files.keys())
   #TODO: Until here
 
   for target in target_files.keys():
 
     #TODO: Print to be deleted
-    print(I_TO_PRINT + 'Target --> %s' % target)
+    if _print: print(I_TO_PRINT + 'Target --> %s' % target)
     #TODO: Until here
 
     fobj = open(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, target), 'w')
@@ -109,7 +110,7 @@ def clean_slate(use_new_keys=False):
   # Create repo at './repomain'
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Creating new repository at: ' + demo.IMAGE_REPO_NAME)
+  if _print: print(I_TO_PRINT + 'Creating new repository at: ' + demo.IMAGE_REPO_NAME)
   #TODO: Until here
 
   repo = rt.create_new_repository(demo.IMAGE_REPO_NAME)
@@ -126,126 +127,126 @@ def clean_slate(use_new_keys=False):
     demo.generate_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Loading keys for TOP-LEVEL roles: root, timestamp, snapshots, targets, role1')
+  if _print: print(I_TO_PRINT + 'Loading keys for TOP-LEVEL roles: root, timestamp, snapshots, targets, role1')
   #TODO: Until here
 
   key_root_pub = demo.import_public_key('mainroot')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_root_pub:', key_root_pub)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_root_pub:', key_root_pub)))
   #TODO: Until here
 
   key_root_pri = demo.import_private_key('mainroot')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_root_pri:', key_root_pri)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_root_pri:', key_root_pri)))
   #TODO: Until here
 
   key_timestamp_pub = demo.import_public_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_timestamp_pub:', key_timestamp_pub)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_timestamp_pub:', key_timestamp_pub)))
   #TODO: Until here
 
   key_timestamp_pri = demo.import_private_key('maintimestamp')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_timestamp_pri:', key_timestamp_pri)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_timestamp_pri:', key_timestamp_pri)))
   #TODO: Until here
 
   key_snapshot_pub = demo.import_public_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_snapshot_pub:', key_snapshot_pub)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_snapshot_pub:', key_snapshot_pub)))
   #TODO: Until here
 
   key_snapshot_pri = demo.import_private_key('mainsnapshot')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_snapshot_pri:', key_snapshot_pri)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_snapshot_pri:', key_snapshot_pri)))
   #TODO: Until here
 
   key_targets_pub = demo.import_public_key('maintargets')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_targets_pub:', key_targets_pub)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_targets_pub:', key_targets_pub)))
   #TODO: Until here
 
   key_targets_pri = demo.import_private_key('maintargets')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_targets_pri:', key_targets_pri)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_targets_pri:', key_targets_pri)))
   #TODO: Until here
 
   key_role1_pub = demo.import_public_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_role1_pub:', key_role1_pub)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_role1_pub:', key_role1_pub)))
   #TODO: Until here
 
   key_role1_pri = demo.import_private_key('mainrole1')
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'key_role1_pri:', key_role1_pri)))
+  if _print: print(str('%s %s %s' % (I_TO_PRINT, 'key_role1_pri:', key_role1_pri)))
   #TODO: Until here
 
 
   #TODO: Print to be deleted
-  print(str('\n%s %s' % (I_TO_PRINT, 'Adding TOP-LEVEL keys to the main repository')))
+  if _print: print(str('\n%s %s' % (I_TO_PRINT, 'Adding TOP-LEVEL keys to the main repository')))
   #TODO: Until here
 
   # Add top level keys to the main repository.
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_root_pub')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_root_pub')))
   #TODO: Until here
 
   repo.root.add_verification_key(key_root_pub)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_timestamp_pub')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_timestamp_pub')))
   #TODO: Until here
 
   repo.timestamp.add_verification_key(key_timestamp_pub)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_snapshot_pub')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_snapshot_pub')))
   #TODO: Until here
 
   repo.snapshot.add_verification_key(key_snapshot_pub)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_targets_pub')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding verification key_targets_pub')))
   #TODO: Until here
 
   repo.targets.add_verification_key(key_targets_pub)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_root_pri')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_root_pri')))
   #TODO: Until here
 
   repo.root.load_signing_key(key_root_pri)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_timestamp_pri')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_timestamp_pri')))
   #TODO: Until here
 
   repo.timestamp.load_signing_key(key_timestamp_pri)
 
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_snapshot_pri')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_snapshot_pri')))
   #TODO: Until here
 
   repo.snapshot.load_signing_key(key_snapshot_pri)
 
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_targets_pri')))
+  if _print: print(str('%s %s' % (I_TO_PRINT, 'Adding signing key_targets_pri')))
   #TODO: Until here
 
   repo.targets.load_signing_key(key_targets_pri)
@@ -270,7 +271,7 @@ def clean_slate(use_new_keys=False):
 
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Adding some already created targets to imagerepo')
+  if _print: print(I_TO_PRINT + 'Adding some already created targets to imagerepo')
   #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
