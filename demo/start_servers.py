@@ -39,9 +39,6 @@ def main():
   dt.listen()
 
 
-
-
-
 if __name__ == '__main__':
   readline.parse_and_bind('tab: complete')
   main()

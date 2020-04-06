@@ -110,9 +110,6 @@ def clean_slate(use_new_keys=False):
   #print(str('%s %s %s %s' % ('\n\n\n', I_TO_PRINT, 'Forcing the creation of new keys by setting use_new_keys:', use_new_keys)))
   #TODO: Until here
 
-  #TODO: To be deleted
-  use_new_keys = True
-  #TODO: Until here
 
   if use_new_keys:
     demo.generate_key('directorroot')
