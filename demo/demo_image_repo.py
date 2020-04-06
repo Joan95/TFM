@@ -65,7 +65,7 @@ def clean_slate(use_new_keys=False):
   global repo
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[clean_slate()]: ' + ENDCOLORS
-  _print = False
+  _print = True
   #TODO: Print to be deleted
   if _print: print(str('%s %s %s' % (I_TO_PRINT, 'Cleaning slate with use_new_keys:', use_new_keys)))
   #TODO: Until here
