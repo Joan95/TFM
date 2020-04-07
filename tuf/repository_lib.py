@@ -129,7 +129,7 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_generate_and_write_metadata(rolename, metadata_filename, write_partial, targets_directory, metadata_directory, consistent_snapshot, filenames, compression_algorithms, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for rolename:', rolename, 'metadata_filename:', metadata_filename, 'write_partial:', write_partial, 'targets_directory:', targets_directory, 'metadata_directory:', metadata_directory)))
+  print(str('%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Generating and writting metadata for rolename:', rolename, 'metadata_filename:', metadata_filename, 'write_partial:', write_partial, 'targets_directory:', targets_directory, 'metadata_directory:', metadata_directory, 'consistent_snapshot:', consistent_snapshot, 'filenames:', filenames, 'repository_name:', repository_name)))
   #TODO: Until here
 
   metadata = None
