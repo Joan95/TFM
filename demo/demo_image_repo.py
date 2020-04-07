@@ -358,7 +358,7 @@ def add_target_to_imagerepo(target_fname, filepath_in_repo):
   """
   global repo
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[write_to_live(target_fname, filepath_in_repo)]: ' + ENDCOLORS
+  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[add_target_to_imagerepo(target_fname, filepath_in_repo)]: ' + ENDCOLORS
   #TODO: Print to be deleted
   print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Adding target to image repo. Target:',  target_fname, 'filepath_in_repo:', filepath_in_repo)))
   #TODO: Until here
