@@ -2149,7 +2149,7 @@ def sign_metadata(metadata_object, keyids, filename,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata(metadata_object, keyids, filename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Signing file:', filename, 'metadata_object:', metadata_object, 'with keyids:', keyids, 'repository_name:', repository_name)))
+  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Signing metadata:', filename, 'metadata_object:', metadata_object, 'with keyids:', keyids, 'repository_name:', repository_name)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2172,10 +2172,6 @@ def sign_metadata(metadata_object, keyids, filename,
     # Load the signing key.
     key = tuf.keydb.get_key(keyid, repository_name)
     # TODO logger.info('Signing ' + repr(filename) + ' with ' + key['keyid'])
-
-    # TODO: Print to be deleted
-    print (str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing: ', repr(filename), 'with key:', key)))
-    # TODO: Until here
 
     # Create a new signature list.  If 'keyid' is encountered, do not add it
     # to the new list.
