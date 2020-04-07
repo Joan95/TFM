@@ -201,6 +201,10 @@ def _generate_and_write_metadata(rolename, metadata_filename, write_partial,
   signable = sign_metadata(metadata, roleinfo['signing_keyids'],
       metadata_filename, repository_name=repository_name)
 
+  #TODO: Print to be removed
+  print(str('%s %s %s' % (I_TO_PRINT, 'Signed object:', signable)))
+  #TODO: Until here
+
   # Check if the version number of 'rolename' may be automatically incremented,
   # depending on whether if partial metadata is loaded or if the metadata is
   # written with write() / write_partial().
@@ -2170,7 +2174,7 @@ def sign_metadata(metadata_object, keyids, filename,
     # TODO logger.info('Signing ' + repr(filename) + ' with ' + key['keyid'])
 
     # TODO: Print to be deleted
-    print (str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing: ', repr(filename), 'with key:', key['keyid'])))
+    print (str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing: ', repr(filename), 'with key:', key)))
     # TODO: Until here
 
     # Create a new signature list.  If 'keyid' is encountered, do not add it
