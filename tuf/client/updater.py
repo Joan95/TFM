@@ -1327,6 +1327,11 @@ class SingleRepoUpdater(object):
         print(str('%s %s %s' % (I_TO_PRINT, 'Path not exists:', metadata_filepath)))
         #TODO: Until here
 
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Updater:', self.__dict__)))
+    #TODO: Until here
+
     #TODO: Print to be deleted
     print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
     #TODO: Until here
