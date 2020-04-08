@@ -259,12 +259,25 @@ class Updater(object):
     # repository name.
     self.repositories = {}
 
+    #TODO: Print to be deleted
+    print(str('%s %s' % (I_TO_PRINT, 'Create a SingleRepoUpdater object for each repository using pinned.json\'s repository entry, including the mirrors info')))
+    #TODO: Until here
+
     # Create a SingleRepoUpdater object for each repository using pinned.json's
     # repository entry, including the mirrors info.
     for repo_name in self.pinned_metadata['repositories']:
+
+      #TODO: Print to be deleted
+      print(str('%s %s %s' % (I_TO_PRINT, 'Creating SingleRepoUpdater object for:', repo_name)))
+      #TODO: Until here
+
       this_repo = self.pinned_metadata['repositories'][repo_name]
       self.repositories[repo_name] = SingleRepoUpdater(
           repo_name, this_repo['mirrors'])
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'self.repositories:', self.repositories)))
+    #TODO: Until here
 
 
 
