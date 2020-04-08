@@ -277,7 +277,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
 
     I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[Primary.__init__(self, full_client_dir, director_repo_name, vin, ecu_serial, primary_key, time, timeserver_public_key, my_secondaries)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'This class contains the necessary code to perform Uptane validation of images and metadata, and core functionality supporting distribution of metadata and images to Secondary ECUs, combining ECU Manifests into a Vehicle Manifest and signing it, combining tokens for a Timeserver request, validating the response, etc.')))
+    print(str('%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'full_client_dir:', full_client_dir, 'director_repo_name:', director_repo_name, 'vin:', vin, 'ecu_serial:', ecu_serial, 'primary_key:', primary_key, 'time:', time, 'timeserver_public_key:', timeserver_public_key, 'my_secondaries:', my_secondaries)))
     #TODO: Until here
 
     # Check arguments:
