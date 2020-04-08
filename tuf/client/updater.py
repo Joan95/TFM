@@ -1324,7 +1324,7 @@ class SingleRepoUpdater(object):
     #TODO: Else to be deleted
     else:
         #TODO: Print to be deleted
-        print(str('%s %s' % (I_TO_PRINT, 'Path not exists:', metadata_filepath)))
+        print(str('%s %s %s' % (I_TO_PRINT, 'Path not exists:', metadata_filepath)))
         #TODO: Until here
 
     #TODO: Print to be deleted
