@@ -340,6 +340,14 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     print(str('%s %s %s' % (I_TO_PRINT, 'Final Updater object:', self.updater.__dict__)))
     #TODO: Until here
 
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Final keydb object:', tuf.keydb._keydb_dict.__dict__)))
+    #TODO: Until here
+
+    #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'Final Updater object:', tuf.roledb._roledb_dict.__dict__)))
+    #TODO: Until here
+
     if director_repo_name not in self.updater.pinned_metadata['repositories']:
       raise uptane.Error('Given name for the Director repository is not a '
           'known repository, according to the pinned metadata from pinned.json')
