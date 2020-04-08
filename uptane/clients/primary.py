@@ -329,7 +329,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     self.ecu_manifests = {}
 
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Everything initializated, despite of updater')))
+    print(str('%s %s' % (I_TO_PRINT, 'Everything initializated, except from updater')))
 
     # Create a TUF-TAP-4-compliant updater object. This will read pinning.json
     # and create single-repository updaters within it to handle connections to
@@ -337,7 +337,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     self.updater = tuf.client.updater.Updater('updater')
 
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Updater initializated')))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Final Updater object:', self.updater.__dict__)))
     #TODO: Until here
 
     if director_repo_name not in self.updater.pinned_metadata['repositories']:
