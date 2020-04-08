@@ -275,9 +275,9 @@ class Updater(object):
       self.repositories[repo_name] = SingleRepoUpdater(
           repo_name, this_repo['mirrors'])
 
-    #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'self.repositories:', self.repositories)))
-    #TODO: Until here
+      #TODO: Print to be deleted
+      print(str('%s %s%s%s %s' % (I_TO_PRINT, 'self.repositories[', repo_name, ']:', self.repositories[repo_name].__dict__)))
+      #TODO: Until here
 
 
 
