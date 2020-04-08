@@ -1193,6 +1193,9 @@ class SingleRepoUpdater(object):
     # Load current and previous metadata.
     for metadata_set in ['current', 'previous']:
       for metadata_role in ['root', 'targets', 'snapshot', 'timestamp']:
+        #TODO: Print to be deleted
+        print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading metadata for:', metadata_set, 'and:', metadata_role)))
+        #TODO: Until here
         self._load_metadata_from_file(metadata_set, metadata_role)
 
 
@@ -1263,9 +1266,9 @@ class SingleRepoUpdater(object):
       None.
     """
 
-    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._load_metadata_from_file()]: ' + uptane.ENDCOLORS
+    I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[SingleRepoUpdater._load_metadata_from_file(self, metadata_set, metadata_role)]: ' + uptane.ENDCOLORS
     #TODO: Print to be deleted
-    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading current or previous metadata from file if there is a local file. metadata_set:', metadata_set, 'metadata_role:', metadata_role)))
+    print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Loading current or previous metadata from file if there is a local file. metadata_set:', metadata_set, 'and metadata_role:', metadata_role)))
     #TODO: Until here
 
     #TODO: Print to be deleted
@@ -1318,8 +1321,14 @@ class SingleRepoUpdater(object):
           # TODO: Should we also remove the keys of the delegated roles?
           self._import_delegations(metadata_role)
 
+    #TODO: Else to be deleted
+    else:
+        #TODO: Print to be deleted
+        print(str('%s %s' % (I_TO_PRINT, 'Path not exists:', metadata_filepath)))
+        #TODO: Until here
+
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'returning...')))
+    print(str('%s %s' % (I_TO_PRINT, 'Returning...')))
     #TODO: Until here
 
 
