@@ -171,6 +171,9 @@ def clean_slate(
       time=clock,
       timeserver_public_key=key_timeserver_pub)
 
+  #TODO: Print to be deleted
+  print(str('%s %s %s' % (I_TO_PRINT, 'Primary_ecu dictionary:', primary_ecu.__dict__)))
+  #TODO: Until here
 
   if listener_thread is None:
     # TODO: Print to be deleted
