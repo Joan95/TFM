@@ -1186,7 +1186,7 @@ class SingleRepoUpdater(object):
 
 
     #TODO: Print to be deleted
-    print(str('%s %s' % (I_TO_PRINT, 'Loading current and previous metadata')))
+    print(str('%s %s' % (I_TO_PRINT, 'Loading all metadata for current and previous for all the roles root, targets, snapshot and timestamp')))
     #TODO: Until here
 
 
