@@ -345,7 +345,7 @@ class Primary(object): # Consider inheriting from Secondary and refactoring.
     #TODO: Until here
 
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'Final Updater object:', tuf.roledb._roledb_dict)))
+    print(str('%s %s %s' % (I_TO_PRINT, 'Final roledb object:', tuf.roledb._roledb_dict)))
     #TODO: Until here
 
     if director_repo_name not in self.updater.pinned_metadata['repositories']:

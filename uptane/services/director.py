@@ -606,6 +606,9 @@ class Director:
 
 
     #TODO: Print to be deleted
+    print(str('%s %s %s' % (I_TO_PRINT, 'keyDB: ', tuf.keydb._keydb_dict[vin])))
+
+    #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'returning')))
     #TODO: Until here
 
