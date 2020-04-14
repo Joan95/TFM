@@ -606,7 +606,9 @@ class Director:
 
 
     #TODO: Print to be deleted
-    print(str('%s %s %s' % (I_TO_PRINT, 'keyDB: ', tuf.keydb._keydb_dict[vin])))
+    print(str('%s %s %s %s' % (I_TO_PRINT, 'keyDB for VIN', vin, tuf.keydb._keydb_dict[vin])))
+    print(str('\n%s %s %s %s' % (I_TO_PRINT, 'roleDB for VIN', vin, tuf.roledb._roledb_dict[vin])))
+    #TODO: Until here
 
     #TODO: Print to be deleted
     print(str('%s %s ' % (I_TO_PRINT, 'returning')))
