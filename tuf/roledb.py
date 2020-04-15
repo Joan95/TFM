@@ -476,9 +476,6 @@ def get_dirty_roles(repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_dirty_roles(repository_name)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Getting dirty roles for repository_name:', repository_name)))
-  #TODO: Until here
 
   # Does 'repository_name' have the correct format?  Raise 'tuf.FormatError'
   # if not.
@@ -1110,11 +1107,6 @@ def _check_rolename(rolename, repository_name='default'):
   does not exist in the role database.
   """
 
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_check_rolename(rolename, repository_name)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Checking rolename for rolename:', rolename, 'repository_name:', repository_name)))
-  #TODO: Until here
-
   # Does 'rolename' have the correct object format?
   # This check will ensure 'rolename' has the appropriate number of objects
   # and object types, and that all dict keys are properly named.
@@ -1145,12 +1137,6 @@ def _validate_rolename(rolename):
   It is assumed 'rolename' has been checked against 'ROLENAME_SCHEMA'
   prior to calling this function.
   """
-
-  I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[_validate_rolename(rolename)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Validating rolename for rolename:', rolename)))
-  #TODO: Until here
-
 
   if rolename == '':
     raise tuf.InvalidNameError('Rolename must *not* be an empty string.')

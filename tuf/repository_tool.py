@@ -598,9 +598,6 @@ class Repository(object):
 
     tuf.roledb.mark_dirty(roles, self.repository_name)
 
-    #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'Returning ...')))
-    #TODO: Until here
 
 
   def unmark_dirty(self, roles):
