@@ -605,10 +605,6 @@ def role_exists(rolename, repository_name='default'):
   except tuf.UnknownRoleError:
     return False
 
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'Returning boolean TRUE')))
-  #TODO: Until here
-
   return True
 
 
@@ -766,9 +762,6 @@ def get_roleinfo(rolename, repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_roleinfo(rolename, repository_name)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting roleinfo of rolename:', rolename, 'repository_name:', repository_name)))
-  #TODO: Until here
 
   # Is 'repository_name' properly formatted?  If not, raise 'tuf.FormatError'.
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
@@ -780,7 +773,7 @@ def get_roleinfo(rolename, repository_name='default'):
   global _dirty_roles
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'Returning copy of _roledb_dict()')))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'rolename:', rolename, 'roleinfo:', _roledb_dict[repository_name][rolename])))
   #TODO: Until here
 
   return copy.deepcopy(_roledb_dict[repository_name][rolename])
@@ -823,9 +816,6 @@ def get_role_keyids(rolename, repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_keyids(rolename, repository_name)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role keyids for rolename:', rolename, 'repository_name:', repository_name)))
-  #TODO: Until here
 
   # Raise 'tuf.FormatError' if 'repository_name' is improperly formatted.
   tuf.formats.NAME_SCHEMA.check_match(repository_name)
@@ -839,7 +829,7 @@ def get_role_keyids(rolename, repository_name='default'):
   roleinfo = _roledb_dict[repository_name][rolename]
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'returning roleinfo[\'keyids\']:', roleinfo['keyids'])))
+  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'rolename:', rolename, 'repository_name:', repository_name, 'returning roleinfo:', roleinfo['keyids'])))
   #TODO: Until here
 
   return roleinfo['keyids']
