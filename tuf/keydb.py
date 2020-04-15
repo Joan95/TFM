@@ -385,11 +385,6 @@ def get_key(keyid, repository_name='default'):
       ' ' + repr(repository_name))
 
 
-  #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'Returning copy of _keydb_dict()')))
-  #TODO: Until here
-
-
   # Return the key belonging to 'keyid', if found in the key database.
   try:
     return copy.deepcopy(_keydb_dict[repository_name][keyid])

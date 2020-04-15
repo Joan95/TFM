@@ -2149,7 +2149,7 @@ def sign_metadata(metadata_object, keyids, filename,
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[sign_metadata(metadata_object, keyids, filename, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s %s %s' % (I_TO_PRINT, 'Signing metadata:', filename, 'metadata_object:', metadata_object, 'with keyids:', keyids, 'repository_name:', repository_name)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Signing metadata in: ', filename, 'for repository_name:', repository_name)))
   #TODO: Until here
 
   # Do the arguments have the correct format?
@@ -2193,7 +2193,7 @@ def sign_metadata(metadata_object, keyids, filename,
         signable['signatures'].append(signature)
 
         #TODO: Print to be deleted
-        print(str('%s %s %s %s' % (I_TO_PRINT, 'signature:', signature, 'appended to METADATA in format SIGNABLE')))
+        print(str('%s %s %s %s' % (I_TO_PRINT, 'signature used:', signature, 'appended to METADATA in format SIGNABLE')))
         #TODO: Until here
 
       else:

@@ -869,9 +869,6 @@ def get_role_threshold(rolename, repository_name='default'):
   """
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_role_threshold(rolename, repository_name)]: ' + uptane.ENDCOLORS
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting role threshold for rolename:', rolename, 'repository_name:', repository_name)))
-  #TODO: Until here
 
 
   # Raise 'tuf.FormatError' if 'repository_name' is improperly formatted.
@@ -887,7 +884,7 @@ def get_role_threshold(rolename, repository_name='default'):
 
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'Returning roleinfo[\'threshold\']')))
+  print(str('%s %s %s' % (I_TO_PRINT, 'Returning roleinfo[\'threshold\']:', roleinfo['threshold'])))
   #TODO: Until here
 
   return roleinfo['threshold']

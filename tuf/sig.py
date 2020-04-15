@@ -116,7 +116,7 @@ def get_signature_status(signable, role=None, repository_name='default'):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_signature_status(signable, role=None, repository_name)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s %s %s' % (I_TO_PRINT, 'Getting signatures marked as signable for role:', role, 'repository_name:', repository_name, 'signable:', signable)))
+  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Getting signatures marked as signable for role:', role, 'repository_name:', repository_name)))
   #TODO: Until here
 
 
