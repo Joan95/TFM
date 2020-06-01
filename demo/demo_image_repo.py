@@ -51,8 +51,8 @@ LOG_PREFIX = uptane.PLUM_BG + 'ImageRepo:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '[demo/demo_image_repo.py]\t>>Function: ' + ENDCOLORS + ' '
 
 target_files = {
-                    'file1.txt' : "This file was created during demo_image_repo.py process. This is the content for file1",
-                    'infotainment_firmware.txt': "This file was created during demo_image_repo.py process. This is the content for infotainment_firmware"
+                    'infotainment_firmware.txt': "This file was created during demo_image_repo.py process. This is the content for infotainment_firmware",
+		    'UOCMod1_new_firmware.img': "This is a new release with the freshest configuration for board UOCMod1"
                 }
 
 repo = None
@@ -275,13 +275,15 @@ def clean_slate(use_new_keys=False):
   #TODO: Until here
 
   # Add some starting image files, primarily for use with the web frontend.
-  add_target_to_imagerepo('demo/images/CommonINFO1.0.txt', 'CommonINFO1.0.txt')
+  # add_target_to_imagerepo('demo/images/CommonINFO1.0.txt', 'CommonINFO1.0.txt')
+  add_target_to_imagerepo('demo/images/infotainment_firmware.txt', 'infotainment_firmware.txt')
   add_target_to_imagerepo('demo/images/URV1.0.txt', 'URV1.0.txt')
   add_target_to_imagerepo('demo/images/URV1.1.txt', 'URV1.1.txt')
   add_target_to_imagerepo('demo/images/URV1.2.txt', 'URV1.2.txt')
   add_target_to_imagerepo('demo/images/UOC1.0.txt', 'UOC1.0.txt')
   add_target_to_imagerepo('demo/images/UOC1.1.txt', 'UOC1.1.txt')
   add_target_to_imagerepo('demo/images/UOC1.2.txt', 'UOC1.2.txt')
+  add_target_to_imagerepo('demo/images/UOCMod1_new_firmware.img', 'UOCMod1_new_firmware.img')
 
 
   print(LOG_PREFIX + 'Signing and hosting initial repository metadata')

@@ -450,7 +450,7 @@ def get_file_details(filepath, hash_algorithms=['sha256']):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_file_details(filepath, hash_algorithms)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning file details for filepath:', filepath, 'hash_algorithms:', hash_algorithms)))
+  # print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning file details for filepath:', filepath, 'hash_algorithms:', hash_algorithms)))
   #TODO: Until here
 
   # Making sure that the format of 'filepath' is a path string.
@@ -613,7 +613,7 @@ def find_delegated_role(roles, delegated_role):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[find_delegated_role(roles, delegated_role)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning the index of delegated role for roles:', roles, 'delegated_role:', delegated_role)))
+  # print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Returning the index of delegated role for roles:', roles, 'delegated_role:', delegated_role)))
   #TODO: Until here
 
 
@@ -899,7 +899,7 @@ def get_target_hash(target_filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[get_target_hash(target_filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
+  # print(str('%s %s %s' % (I_TO_PRINT, 'Returning target hash for target_filepath:', target_filepath)))
   #TODO: Until here
 
 
@@ -947,7 +947,7 @@ def import_json():
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[import_json()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Importing JSON')))
+  # print(str('%s %s' % (I_TO_PRINT, 'Importing JSON')))
   #TODO: Until here
 
 
@@ -995,7 +995,7 @@ def load_json_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_string(data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
+  # print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON string for data:', data)))
   #TODO: Until here
 
 
@@ -1051,11 +1051,11 @@ def load_der_string(data):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_string(data)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', '?')))
+  # print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER string for data:', '?')))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  # print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
   try:
@@ -1095,7 +1095,7 @@ def load_json_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_json_file(filepath)]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON file for filepath:', filepath)))
+  # print(str('%s %s %s' % (I_TO_PRINT, 'Loading JSON file for filepath:', filepath)))
   #TODO: Until here
 
 
@@ -1124,7 +1124,7 @@ def load_json_file(filepath):
   else:
 
     #TODO: Print to be deleted
-    print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+    # print(str('%s %s ' % (I_TO_PRINT, 'returning')))
     #TODO: Until here
 
     fileobject.close()
@@ -1172,7 +1172,7 @@ def load_der_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_der_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER file for filepath:', filepath)))
+  # print(str('%s %s %s' % (I_TO_PRINT, 'Loading DER file for filepath:', filepath)))
   #TODO: Until here
 
 
@@ -1199,7 +1199,7 @@ def load_der_file(filepath):
     der_fobj.close()
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  # print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
 
@@ -1224,11 +1224,11 @@ def load_file(filepath):
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_file()]: ' + uptane.ENDCOLORS
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'Loading file for filepath:', filepath)))
+  #print(str('%s %s %s' % (I_TO_PRINT, 'Loading file for filepath:', filepath)))
   #TODO: Until here
 
   #TODO: Print to be deleted
-  print(str('%s %s ' % (I_TO_PRINT, 'returning')))
+  #print(str('%s %s ' % (I_TO_PRINT, 'returning')))
   #TODO: Until here
 
   if filepath.endswith('.der'):

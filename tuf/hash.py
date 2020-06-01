@@ -142,9 +142,9 @@ def digest(algorithm=_DEFAULT_HASH_ALGORITHM,
   """
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest()]: ' + uptane.ENDCOLORS
 
-  #TODO: Print to be deleted
-  print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Providing the caller with algorithm:', algorithm, 'and hash_library:', hash_library)))
-  #TODO: Until here
+  # TODO: Print to be deleted
+  # print(str('%s %s %s %s %s' % (I_TO_PRINT, 'Providing the caller with algorithm:', algorithm, 'and hash_library:', hash_library)))
+  # TODO: Until here
 
   # Was a hashlib digest object requested and is it supported?
   # If so, return the digest object.
@@ -220,7 +220,7 @@ def digest_fileobject(file_object, algorithm=_DEFAULT_HASH_ALGORITHM,
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest_fileobject()]: ' + uptane.ENDCOLORS
 
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object given a file object.  The new digest object is updated with the contents of \'file_object\' prior to returning the object to the caller.')))
+  # print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object given a file object.  The new digest object is updated with the contents of \'file_object\' prior to returning the object to the caller.')))
   # TODO: Until here
 
   # Digest object returned whose hash will be updated using 'file_object'.
@@ -249,7 +249,7 @@ def digest_fileobject(file_object, algorithm=_DEFAULT_HASH_ALGORITHM,
       digest_object.update(data)
 
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning digest_object')))
+  # print(str('%s %s' % (I_TO_PRINT, 'Returning digest_object')))
   # TODO: Until here
 
   return digest_object
@@ -292,7 +292,7 @@ def digest_filename(filename, algorithm=_DEFAULT_HASH_ALGORITHM,
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[digest_filename()]: ' + uptane.ENDCOLORS
 
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.')))
+  # print(str('%s %s' % (I_TO_PRINT, 'Generate a digest object, update its hash using a file object specified by filename, and then return it to the caller.')))
   # TODO: Until here
 
   # Open 'filename' in read+binary mode.
@@ -307,7 +307,7 @@ def digest_filename(filename, algorithm=_DEFAULT_HASH_ALGORITHM,
   file_object.close()
 
   # TODO: Print to be deleted
-  print(str('%s %s' % (I_TO_PRINT, 'Returning digest_object')))
+  # print(str('%s %s' % (I_TO_PRINT, 'Returning digest_object')))
   # TODO: Until here
 
   return digest_object

@@ -127,7 +127,7 @@ def clean_slate(
   #TODO: Until here
 
   # Load the private key for this Primary ECU.
-  load_or_generate_key(use_new_keys)
+  load_or_generate_key(vin, use_new_keys)
 
   # TODO: Print to be deleted
   print(str('%s %s' % (I_TO_PRINT, 'Craft the directory structure for the client directory. Schecules deletion for temporary files')))
@@ -264,7 +264,7 @@ def create_primary_pinning_file():
 
 
 
-def load_or_generate_key(use_new_keys=False):
+def load_or_generate_key(vin, use_new_keys=False):
   """Load or generate an ECU's private key."""
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_or_generate_key()]: ' + uptane.ENDCOLORS
@@ -275,19 +275,19 @@ def load_or_generate_key(use_new_keys=False):
   global ecu_key
 
   if use_new_keys:
-    demo.generate_key('primary')
+    demo.generate_key(str('%s%s' % (vin, '_keyPair')))
 
   # Load in from the generated files.
-  key_pub = demo.import_public_key('primary')
+  key_pub = demo.import_public_key(str('%s%s' % (vin, '_keyPair')))
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'primary_key_pub:', key_pub)))
+  print(str('%s %s %s' % (I_TO_PRINT, str('%s%s:' % (vin, '_keyPair')), key_pub)))
   #TODO: Until here
 
-  key_pri = demo.import_private_key('primary')
+  key_pri = demo.import_private_key(str('%s%s' % (vin, '_keyPair')))
 
   #TODO: Print to be deleted
-  print(str('%s %s %s' % (I_TO_PRINT, 'primary_key_pri:', key_pri)))
+  print(str('%s %s %s' % (I_TO_PRINT, str('%s%s' % (vin, '_keyPair:')), key_pri)))
   #TODO: Until here
 
   ecu_key = uptane.common.canonical_key_from_pub_and_pri(key_pub, key_pri)

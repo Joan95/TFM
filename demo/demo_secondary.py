@@ -141,7 +141,7 @@ def clean_slate(
 
 
   # Prepare this ECU's key.
-  load_or_generate_key(use_new_keys)
+  load_or_generate_key(vin, use_new_keys)
 
 
   #TODO: Print to be deleted
@@ -300,7 +300,7 @@ def submit_ecu_manifest_to_primary(signed_ecu_manifest=None):
 
 
 
-def load_or_generate_key(use_new_keys=False):
+def load_or_generate_key(vin, use_new_keys=False):
   """Load or generate an ECU's private key."""
 
   I_TO_PRINT = TO_PRINT + uptane.YELLOW + '[load_or_generate_key(use_new_keys)]: ' + uptane.ENDCOLORS
@@ -311,11 +311,11 @@ def load_or_generate_key(use_new_keys=False):
   global ecu_key
 
   if use_new_keys:
-    demo.generate_key('secondary')
+    demo.generate_key(str('%s%s' % (vin, '_keyPair_secondary')))
 
   # Load in from the generated files.
-  key_pub = demo.import_public_key('secondary')
-  key_pri = demo.import_private_key('secondary')
+  key_pub = demo.import_public_key(str('%s%s' % (vin, '_keyPair_secondary')))
+  key_pri = demo.import_private_key(str('%s%s' % (vin, '_keyPair_secondary')))
 
   ecu_key = uptane.common.canonical_key_from_pub_and_pri(key_pub, key_pri)
 

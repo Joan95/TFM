@@ -65,7 +65,7 @@ LOG_PREFIX = uptane.TEAL_BG + 'Director:' + ENDCOLORS + ' '
 TO_PRINT = uptane.YELLOW + '[demo/demo_director.py]\t>>Function: ' + ENDCOLORS + ' '
 
 # KNOWN_VINS = ['111', '112', '113', 'democar']
-KNOWN_VINS = ['URV', 'UOC', 'democar']
+KNOWN_VINS = {'URV': 'URV1', 'UOC': 'UOC1', 'democar': 'democar1'}
 
 # Dynamic global objects
 #repo = None
@@ -186,12 +186,36 @@ def clean_slate(use_new_keys=False):
       key_targets_pub=key_dirtarg_pub)
 
 
-  for vin in KNOWN_VINS:
+  for vin in KNOWN_VINS.keys():
     #TODO: Print to be deleted
     print(str('%s %s %s' % (I_TO_PRINT, 'Adding new vehicle to director instance with vin: ', vin)))
     #TODO: Until here
 
+    # Create VIN instance in Director's server
     director_service_instance.add_new_vehicle(vin)
+
+    # Generate key pair for this new VIN
+    #demo.generate_key(str(vin + '_keyPair'))
+
+    # Import its public key
+    test_ecu_public_key = demo.import_public_key(str(vin + '_keyPair'))
+
+    # Get ECU's serial
+    test_ecu_serial = KNOWN_VINS[vin]
+
+    # Register ECU Serial
+    director_service_instance.register_ecu_serial(test_ecu_serial, test_ecu_public_key, vin=vin)
+
+    # Vincular fitxer infotainment_firmware.txt
+    for vin in inventory.ecus_by_vin:
+      for ecu in inventory.ecus_by_vin[vin]:
+	add_target_to_director(os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'infotainment_firmware.txt'), 
+	    'infotainment_firmware.txt', 
+	    vin, 
+	    ecu)
+
+
+
 
   # You can tell the Director about ECUs this way:
   # test_ecu_public_key = demo.import_public_key('secondary')
@@ -200,20 +224,20 @@ def clean_slate(use_new_keys=False):
   #     test_ecu_serial, test_ecu_public_key, vin='111')
 
   #TODO: Print to be deleted
-  print(I_TO_PRINT + 'Adding first files')
+  #print(I_TO_PRINT + 'Adding first files')
   #TODO: Until here
 
   # Add a first target file, for use by every ECU in every vehicle in that the
   # Director starts off with. (Currently 3)
   # This copies the file to each vehicle repository's targets directory from
   # the Image Repository.
-  for vin in inventory.ecus_by_vin:
-    for ecu in inventory.ecus_by_vin[vin]:
-      add_target_to_director(
-          os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'infotainment_firmware.txt'),
-          'infotainment_firmware.txt',
-          vin,
-          ecu)
+  # for vin in inventory.ecus_by_vin:
+  #   for ecu in inventory.ecus_by_vin[vin]:
+  #     add_target_to_director(
+  #         os.path.join(demo.IMAGE_REPO_TARGETS_DIR, 'infotainment_firmware.txt'),
+  #         'infotainment_firmware.txt',
+  #         vin,
+  #         ecu)
 
   print(LOG_PREFIX + 'Signing and hosting initial repository metadata')
 
